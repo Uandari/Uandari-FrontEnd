@@ -1,12 +1,12 @@
 export const DASHBOARD_MAIN = '/';
 
-//BASE PAGERS ROUTES
+// BASE PAGERS ROUTES
 export const DASHBOARD_GOALS = 'goals';
 export const DASHBOARD_COLLABORATORS = 'collaborators';
 export const DASHBOARD_ISSUE_TRACKING = 'issue-tracking';
 export const DASHBOARD_RESULTS_LOG = 'results-log';
 
-//LEVEL 1 ROUTES
+// LEVEL 1 ROUTES
 export const DASHBOARD_HOURLY_ISSUES = 'hourly-issues';
 export const DASHBOARD_LIST_OF_ISSUES = 'list-of-issues';
 export const DASHBOARD_PARETO_CHART = 'pareto-chart';
@@ -20,16 +20,17 @@ export const DASHBOARD_5S = '5s';
 export const DASHBOARD_POINTS_PLAN = 'points-plan';
 export const DASHBOARD_STANDARD_WORK_SHEET = 'standard-work-sheet';
 
-//ADMINISTRATOR PANEL ROUTES
+// ADMINISTRATOR PANEL ROUTES
 export const DASHBOARD_USERS = 'users';
 
-//ADMINISTRATIVE AREA PANEL ROUTES ***THESE ROUTES CAN CHANGE***
+// ADMINISTRATIVE AREA PANEL ROUTES ***THESE ROUTES CAN CHANGE***
 export const UPLOAD_CRITICAL_PATH = 'critical-path-upload';
 export const UPLOAD_POINT_PLAN = 'point-plan-upload';
 export const UPLOAD_STIBA = 'stiba-upload';
 export const UPLOAD_ERGONOMICS = 'ergonomics-upload';
 export const UPLOAD_AVAILABILITY_REPORT = 'availability-report-upload';
-export const UPLOAD_CRITICAL_PATH_PERFORMANCE = 'critical-path-performance-upload';
+export const UPLOAD_CRITICAL_PATH_PERFORMANCE =
+  'critical-path-performance-upload';
 export const UPLOAD_OEE = 'oee-upload';
 export const UPLOAD_PPM_FAILURES = 'ppm-failures-upload';
 export const UPLOAD_MOTOR_AUDIT = 'motor-audit-upload';

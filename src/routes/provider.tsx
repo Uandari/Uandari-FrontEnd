@@ -1,5 +1,5 @@
 import Dashboard from '@components/pages/dashboard';
-//import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
+// import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import { createBrowserRouter } from 'react-router-dom';
@@ -40,7 +40,7 @@ import {
   UPLOAD_SCRAP,
   UPLOAD_MAINTENANCE_COSTS,
   UPLOAD_TOOLS,
-  UPLOAD_VBZ
+  UPLOAD_VBZ,
 } from './paths';
 import PrivateRoute from './privateRoute';
 
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: DASHBOARD_HOURLY_ISSUES,
-        //element: <HourlyIssues />,
-      }
+        // element: <HourlyIssues />,
+      },
     ],
     errorElement: <NotFound />,
   },
