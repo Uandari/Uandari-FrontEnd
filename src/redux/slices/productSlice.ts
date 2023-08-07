@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* 
 import { Product } from '@interfaces/Product';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -89,3 +89,4 @@ export const {
 } = productSlice.actions;
 
 export default productSlice.reducer;
+ */

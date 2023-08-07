@@ -1,16 +1,13 @@
 import authorizerSlice from '@redux/slices/authorizerSlice';
 import authSlice from '@redux/slices/authSlice';
-import familySlice from '@redux/slices/familySlice';
+//import productSlice from '@redux/slices/productSlice';
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 export const store = configureStore({
   reducer: {
     authReducer: authSlice,
-    userReducer: userSlice,
-    productReducer: productSlice,
-    familyReducer: familySlice,
-    truckReducer: truckSlice,
+    //productReducer: productSlice,
     notAuthorizerReducer: authorizerSlice,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),

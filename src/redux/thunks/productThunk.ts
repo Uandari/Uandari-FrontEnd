@@ -1,4 +1,4 @@
-import { privateApi } from '@api/axios';
+/* import { privateApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { colors } from '@constants/colors';
 import { FetchedProduct, Product, ProductFormData } from '@interfaces/Product';
@@ -119,3 +119,4 @@ export const deleteProduct =
         dispatch(deleteProductError(customError));
       });
   };
+ */
