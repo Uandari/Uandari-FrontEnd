@@ -1,9 +1,6 @@
 import authorizerSlice from '@redux/slices/authorizerSlice';
 import authSlice from '@redux/slices/authSlice';
 import familySlice from '@redux/slices/familySlice';
-import productSlice from '@redux/slices/productSlice';
-import truckSlice from '@redux/slices/truckSlice';
-import userSlice from '@redux/slices/userSlice';
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
