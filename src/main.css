@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: SFUIDisplay;
+  src: url('assets/fonts/SFUIDisplay-Regular.otf') format('truetype');
+  font-weight: 400; 
+}
+
+@font-face {
+  font-family: SFUIDisplay;
+  src: url('assets/fonts/SFUIDisplay-Medium.otf') format('truetype');
+  font-weight: 500; 
+}
+
+@font-face {
+  font-family: SFUIDisplay;
+  src: url('assets/fonts/SFUIDisplay-Semibold.otf') format('truetype');
+  font-weight: 600; 
+}
+
 body {
   background-color: #f6f6f6; /* Cambia #ff0000 por el color que desees */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A4A8AB; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
 }
