@@ -1,24 +1,25 @@
 export const DASHBOARD_MAIN = '/';
 
 // BASE PAGERS ROUTES
-export const DASHBOARD_GOALS = 'goals';
-export const DASHBOARD_COLLABORATORS = 'collaborators';
-export const DASHBOARD_ISSUE_TRACKING = 'issue-tracking';
-export const DASHBOARD_RESULTS_LOG = 'results-log';
+export const GOALS = 'metas';
+export const COLLABORATORS = 'colaboradores';
+export const ISSUE_TRACKING = 'seguimiento-de-problemas';
+export const RESULTS_LOG = 'registro-de-resultados';
 
 // LEVEL 1 ROUTES
-export const DASHBOARD_HOURLY_ISSUES = 'hourly-issues';
-export const DASHBOARD_LIST_OF_ISSUES = 'list-of-issues';
-export const DASHBOARD_PARETO_CHART = 'pareto-chart';
-export const DASHBOARD_ESCALATED_ISSUES = 'escalated-issues';
-export const DASHBOARD_PROBLEM_EVOLUTION = 'problem-evolution';
-export const DASHBOARD_STAFF_ROTATION = 'staff-rotation';
-export const DASHBOARD_TEAM_GOALS = 'team-goals';
-export const DASHBOARD_SKILLS_MATRIX = 'skills-matrix';
-export const DASHBOARD_CRITICAL_PATH = 'critical-path';
-export const DASHBOARD_5S = '5s';
-export const DASHBOARD_POINTS_PLAN = 'points-plan';
-export const DASHBOARD_STANDARD_WORK_SHEET = 'standard-work-sheet';
+export const HOURLY_ISSUES = 'problemas-hora-por-hora';
+export const LIST_OF_ISSUES = 'listado-de-problemas';
+export const PARETO_CHART = 'diagrama-pareto';
+export const ESCALATED_ISSUES = 'problemas-escalados';
+export const PROBLEM_EVOLUTION = 'evolucion-de-problemas';
+export const STAFF_ROTATION = 'rotacion-de-personal';
+export const TEAM_GOALS = 'metas-de-equipo';
+export const SKILLS_MATRIX = 'skills-matrix';
+export const ASSITENCE = 'asistencia-por-turno';
+export const CRITICAL_PATH = 'ruta-critica';
+export const PAGE_5S = 'pagina-5s';
+export const POINTS_PLAN = 'plan-de-puntos';
+export const STANDARD_WORK_SHEET = 'hojas-de-trabajo-estandar';
 
 // ADMINISTRATOR PANEL ROUTES
 export const DASHBOARD_USERS = 'users';
@@ -44,3 +45,5 @@ export const UPLOAD_TOOLS = 'tools-upload';
 export const UPLOAD_VBZ = 'vbz-upload';
 
 export const LOGIN = '/login';
+
+export const HELP = 'centro-de-ayuda';

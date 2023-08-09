@@ -1,22 +1,15 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export type TabProps = {
-  icon: ReactNode;
+  icon: string;
   title: string;
   path: string;
-  isSubMenu?: boolean;
   active?: boolean;
 };
 
-export default function Tab({
-  icon,
-  title,
-  path,
-  active,
-  isSubMenu,
-}: TabProps) {
+export default function Tab({ icon, title, path, active }: TabProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -38,17 +31,16 @@ export default function Tab({
   return (
     <button
       type="button"
-      className={`flex flex-row items-center justify-start font-semibold cursor-pointer rounded-md p-2 gap-2 hover:bg-white hover:text-primary 
-        ${isActive ? 'text-secondary bg-white' : 'text-white'}
-        ${isSubMenu ? 'w-10/12' : 'w-full'}`}
       onClick={() => navigate(path)}
+      className={`flex gap-2 w-full pl-3 py-[6px] rounded-md hover:bg-slate-200
+        ${isActive && 'bg-white border  border-main_color '}`}
     >
-      {icon} <span>{title}</span>
+      <img src={icon} alt="icon" className="w-5" />
+      <p className="text-main_text_color"> {title} </p>
     </button>
   );
 }
 
 Tab.defaultProps = {
   active: false,
-  isSubMenu: false,
 };
