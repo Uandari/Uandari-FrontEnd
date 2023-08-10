@@ -28,6 +28,8 @@ module.exports = {
       },
       backgroundColor: {
         main_color: '#F2F4F5',
+        main_blue_dark: '#001E50',
+        main_blue_bg: '#F2F4F5',
       },
       spacing: {
         outlet: 'calc(100vh - 72px)',
