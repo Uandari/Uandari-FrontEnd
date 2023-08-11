@@ -1,11 +1,11 @@
 import Dashboard from '@components/pages/dashboard';
-// import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
+import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import { createBrowserRouter } from 'react-router-dom';
 
 import { LOGIN, DASHBOARD_MAIN, HOURLY_ISSUES } from './paths';
-import PrivateRoute from './privateRoute';
+// import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: HOURLY_ISSUES,
-        // element: <HourlyIssues />,
+        element: <HourlyIssues />,
       },
     ],
     errorElement: <NotFound />,
