@@ -2,36 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 @font-face {
   font-family: SFUIDisplay;
   src: url('assets/fonts/SFUIDisplay-Regular.otf') format('truetype');
-  font-weight: 400; 
+  font-weight: 400;
 }
 
 @font-face {
   font-family: SFUIDisplay;
   src: url('assets/fonts/SFUIDisplay-Medium.otf') format('truetype');
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 @font-face {
   font-family: SFUIDisplay;
   src: url('assets/fonts/SFUIDisplay-Semibold.otf') format('truetype');
-  font-weight: 600; 
+  font-weight: 600;
 }
 
 body {
   background-color: #f6f6f6; /* Cambia #ff0000 por el color que desees */
 }
 
-::-webkit-scrollbar-thumb {
-  background: #A4A8AB; 
-  border-radius: 10px;
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #001e50 !important;
+  font-weight: 400;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-  border-radius: 10px;
+.ant-tabs-ink-bar {
+  position: absolute;
+  background: #001e50 !important;
+  pointer-events: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Para navegadores que admiten la propiedad scrollbar-width */
+  -ms-overflow-style: none; /* Para Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
 }
 
 .full-btn-width{

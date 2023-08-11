@@ -41,7 +41,7 @@ import Tab from './tab';
 
 export default function Sidebar() {
   return (
-    <aside className="border border-main_color bg-main_color flex flex-col h-screen text-left w-[360px] px-4 py-6 gap-1 bg-primary overflow-y-auto">
+    <aside className="border border-main_color bg-main_color flex flex-col h-screen text-left w-[360px] px-4 py-6 gap-1 bg-primary overflow-y-auto hide-scrollbar">
       <div>
         <div className="flex items-center gap-2 mb-6">
           <img className="w-10 h-10" src={UserImg} alt="user_image" />

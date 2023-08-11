@@ -1,30 +1,23 @@
-/* import { useEffect } from 'react';
+import DetailBar from './DetailBar';
+import Table from './Table';
+import Topbar from './Topbar';
 
-import { RootState, useAppDispatch, useAppSelector } from '@app/store';
-import CustomButton from '@components/basic/button';
-import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
-import DashboardContainer from '@components/basic/dashboard-container';
-import useErrorModal from '@hooks/useErrorModal';
-import { Product } from '@interfaces/Product';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import { getProducts } from '@redux/thunks/productThunk';
-
-export default function Users() {
+function HourlyIssues() {
   return (
-    <DashboardContainer>
-      <div className="flex flex-col h-full max-h-full gap-2">
-        <div className="title-container flex justify-center">
-          <h1 className="text-3xl font-bold">Gestión de Productos</h1>
+    <div className="flex flex-1 border">
+      <div className="w-[20%]">
+        <DetailBar />
+      </div>
+      <div className="grid grid-rows-6 grid-cols-1 bg-white w-[80%] ">
+        <div className="row-span-1">
+          <Topbar />
         </div>
-
-        <div className="button-container flex">
-          <div className="input w-3/12">
-          </div>
-          <div className="button ml-auto w-1/9">
-          </div>
+        <div className="row-span-5">
+          <Table />
         </div>
       </div>
-    </DashboardContainer>
+    </div>
   );
 }
- */
+
+export default HourlyIssues;
