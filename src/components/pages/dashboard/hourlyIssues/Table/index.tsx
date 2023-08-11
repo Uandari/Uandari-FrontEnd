@@ -1,6 +1,4 @@
 import HeadTitle from './Boards/BoardPieces/HeadTitle';
-import RowBoard from './Boards/BoardPieces/RowBoard';
-import ShiftTab from './Boards/ShiftTab';
 
 function Table() {
   const shiftA = {
@@ -26,7 +24,7 @@ function Table() {
   };
 
   const shiftC = {
-    _22: '22:00 - 23 :00',
+    _22: '22:00 - 23:00',
     _23: '23:00 - 24:00',
     _24: '24:00 - 01:00',
     _01: '01:00 - 02:00',

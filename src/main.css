@@ -51,3 +51,12 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
 }
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Para navegadores que admiten la propiedad scrollbar-width */
+  -ms-overflow-style: none; /* Para Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
+}
