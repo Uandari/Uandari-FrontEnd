@@ -10,12 +10,15 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   LOGIN,
   DASHBOARD_MAIN,
-  HOURLY_ISSUES,
+  HOURLY_ISSUES, ADMIN, ADMIN_USERS, ADMIN_ROLES,
   UPLOADS,
   GOALS,
   ESCALATED_ISSUES,
   CRITICAL_PATH,
 } from './paths';
+import AdminPanel from '@components/pages/admin-panel';
+import UsersList from '@components/pages/admin-panel/users';
+import RolesList from '@components/pages/admin-panel/roles';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -38,6 +41,21 @@ const router = createBrowserRouter([
   {
     path: LOGIN,
     element: <LoginPage />,
+  },
+  {
+    path: ADMIN,
+    element: <AdminPanel />,
+    children: [
+      {
+        path: ADMIN_USERS,
+        element: <UsersList />,
+      },
+      {
+        path: ADMIN_ROLES,
+        element: <RolesList />,
+      },
+    ],
+    errorElement: <NotFound />,
   },
   {
     path: UPLOADS,
