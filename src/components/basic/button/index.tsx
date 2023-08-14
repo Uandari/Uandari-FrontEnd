@@ -1,25 +1,26 @@
-import { ReactNode, MouseEvent } from 'react';
+import { MouseEvent } from 'react';
+
+import { Button, Space } from 'antd';
 
 type ButtonProps = {
   text: string;
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  variant?: 'primary' | 'secondary' | 'error';
-  icon?: ReactNode;
-  disabled?: boolean;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  variant?: 'primary' | 'dashed' | 'text' | 'link' | undefined;
+  icon?: string | undefined; // Cambiado a string | undefined
+  size: 'small' | 'large';
+  className?: string | undefined;
 };
 
-const getVariantClassName = (variant: string, disabled?: boolean): string => {
-  if (disabled) {
-    return 'bg-gray text-white px-4 py-2 rounded-md';
-  }
-
+const getVariantClassName = (variant: string): string => {
   switch (variant) {
     case 'primary':
-      return 'bg-primary text-white px-4 py-2 rounded-md';
-    case 'secondary':
-      return 'bg-secondary text-white px-4 py-2 rounded-md';
-    case 'error':
-      return 'bg-error text-white px-4 py-2 rounded-md';
+      return 'bg-main_blue_dark';
+    case 'dashed':
+      return 'text-main_blue_dark';
+    case 'text':
+      return '';
+    case 'link':
+      return 'text-main_blue_dark font-bold';
     default:
       return '';
   }
@@ -28,26 +29,39 @@ const getVariantClassName = (variant: string, disabled?: boolean): string => {
 export default function CustomButton({
   text,
   onClick,
-  variant = 'primary',
+  variant,
   icon,
-  disabled,
+  size,
+  className
 }: ButtonProps) {
-  let className = 'w-full flex justify-center items-center';
+  className = 'w-full flex justify-center items-center';
   if (variant) {
-    className += ` ${getVariantClassName(variant, disabled)}`;
+    className += ` ${getVariantClassName(variant)}`;
   }
 
   return (
-    
-    <button type="button" className={className} onClick={onClick}>
-      {icon && <span className="mr-[0.5rem]">{icon}</span>}
-      {text}
-    </button>
+    <Space wrap>
+      <Button
+        type={variant}
+        className={className}
+        onClick={onClick}
+        size={size}
+      >
+        {icon && ( 
+          <img
+            className="site-form-item-icon mr-4"
+            src={icon}
+            alt={`${text} start icon`}
+          />
+        )}
+        {text}
+      </Button>
+    </Space>
   );
 }
 
 CustomButton.defaultProps = {
-  variant: 'primary',
-  icon: undefined,
-  disabled: false,
+  variant: undefined,
+  startIcon: undefined,
+  onClick: undefined,
 };

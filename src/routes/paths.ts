@@ -22,7 +22,7 @@ export const POINTS_PLAN = 'plan-de-puntos';
 export const STANDARD_WORK_SHEET = 'hojas-de-trabajo-estandar';
 
 // ADMINISTRATOR PANEL ROUTES
-export const DASHBOARD_USERS = 'users';
+export const DASHBOARD_USERS = 'usuarios';
 
 // ADMINISTRATIVE AREA PANEL ROUTES ***THESE ROUTES CAN CHANGE***
 export const UPLOAD_CRITICAL_PATH = 'critical-path-upload';
