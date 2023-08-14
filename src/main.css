@@ -51,7 +51,3 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
 }
-
-.full-btn-width{
-  width: 100% !important;
-}
