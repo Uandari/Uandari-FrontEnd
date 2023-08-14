@@ -1,24 +1,13 @@
 import PlusIcon from '@assets/plus.svg';
+import { Popover } from 'antd';
+
+import FormBoard from './FormBoard';
 
 export type RowBoardProps = {
   hour: string;
 };
 
 function RowBoard({ hour }: RowBoardProps) {
-  const json = {
-    id: '10',
-    horaInicio: '06:00',
-    horaFin: '07:00',
-    fecha: 'DATE',
-    debeAcumulado: '0',
-    es: '0',
-    esAcumulado: '0',
-    diferencia: '0',
-    diferenciaAcumulada: '0',
-    perdidaTotalDesempeño: '0',
-    perdidaTotalCalidad: '0',
-    perdidaTotalDisponibilidad: '0',
-  };
   return (
     <div className="grid grid-cols-8 border-b border-main_color h-24 ">
       {/* Hora */}
@@ -53,10 +42,12 @@ function RowBoard({ hour }: RowBoardProps) {
       </div>
       {/* Problema */}
       <div className="flex col-span-2 items-center justify-center">
-        <button className="flex items-center gap-1" type="button">
-          <img src={PlusIcon} alt="plus-icon" />
-          <p className="text-main_gray text-sm">Nuevo problema</p>
-        </button>
+        <Popover placement="left" trigger="click" content={<FormBoard />}>
+          <button className="flex items-center gap-1" type="button">
+            <img src={PlusIcon} alt="plus-icon" />
+            <p className="text-main_gray text-sm">Nuevo problema</p>
+          </button>
+        </Popover>
       </div>
     </div>
   );
