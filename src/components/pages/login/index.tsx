@@ -5,12 +5,13 @@ import IconKey from '@assets/iconKey.svg';
 import IconUser from '@assets/iconUser.svg';
 import LoginBackground from '@assets/login-resource.svg';
 import VolkswagenColorLogo from '@assets/volkswagen-logo-color.svg';
+import UandariColorLogo from '@assets/uandari-color-logo.svg';
 import CustomButton from '@components/basic/button';
 import CustomInput from '@components/basic/input';
 import useErrorModal from '@hooks/useErrorModal';
 import { UserCredentials } from '@interfaces/User';
 import { postLogin, resetAuthState } from '@redux/thunks/authThunk';
-import { DASHBOARD_MAIN, DASHBOARD_USERS, GOALS } from '@routes/paths';
+import { DASHBOARD_MAIN, HOURLY_ISSUES, GOALS } from '@routes/paths';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -18,7 +19,7 @@ export default function LoginPage() {
     user: '',
     password: '',
   });
-  
+
   const { data, error } = useAppSelector(
     (state: RootState) => state.authReducer,
   );
@@ -57,11 +58,21 @@ export default function LoginPage() {
 
   return (
     <main className="flex items-center justify-center min-w-full min-h-full bg-white h-full">
+      <div className="flex absolute top-16 left-20">
+        <img
+          src={UandariColorLogo}
+          alt="Uandari Project logo"
+          className='w-12'
+        />
+        <h1 className="text-lg font-semibold text-main_blue_dark ml-4 mt-3">
+          Shopfloor Management
+        </h1>
+      </div>
       <div className="flex flex-col w-auto items-center justify-center px-10">
         <img
           src={VolkswagenColorLogo}
           alt="Volkswagen Logo"
-          className="w-32 mb-4"
+          className="w-24 mb-4"
         />
         <h1 className="text-4xl font-semibold text-center mb-2 text-main_blue_dark">
           Iniciar sesión
@@ -96,17 +107,18 @@ export default function LoginPage() {
               onChange={handleInputChange}
             />
           </div>
-          
-          <CustomButton   
-          text="Iniciar Sesión"
+
+          <div className="mb-6 flex items-center justify-center">
+          <CustomButton
+            text="Iniciar Sesión"
             size="large"
             variant="primary"
-            className='w-96'
-            onClick={() => navigate(`${DASHBOARD_MAIN}${DASHBOARD_USERS}`)}
+            onClick={() => navigate(`${DASHBOARD_MAIN}${HOURLY_ISSUES}`)}
           />
+</div>
         </form>
       </div>
       <img src={LoginBackground} alt="Background" className="w-auto h-full" />
-    </main>
-  );
+    </main>
+  );
 }
