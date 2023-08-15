@@ -32,7 +32,7 @@ export default function CustomButton({
   variant,
   icon,
   size,
-  className
+  className,
 }: ButtonProps) {
   className = 'w-full flex justify-center items-center';
   if (variant) {
@@ -47,7 +47,7 @@ export default function CustomButton({
         onClick={onClick}
         size={size}
       >
-        {icon && ( 
+        {icon && (
           <img
             className="site-form-item-icon mr-4"
             src={icon}
