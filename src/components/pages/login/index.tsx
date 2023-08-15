@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
-import IconKey from '@assets/iconKey.svg';
-import IconUser from '@assets/iconUser.svg';
 import LoginBackground from '@assets/login_img.svg';
 import UandariColorLogo from '@assets/uandari-color-logo.svg';
 import VolkswagenColorLogo from '@assets/volkswagen-logo-color.svg';
-import CustomButton from '@components/basic/button';
-import CustomInput from '@components/basic/input';
 import useErrorModal from '@hooks/useErrorModal';
 import { UserCredentials } from '@interfaces/User';
 import { postLogin, resetAuthState } from '@redux/thunks/authThunk';
 import { DASHBOARD_MAIN, HOURLY_ISSUES } from '@routes/paths';
-import { Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -57,6 +53,10 @@ export default function LoginPage() {
     }));
   };
 
+  const handleSubmit = () => {
+    navigate(DASHBOARD_MAIN);
+  };
+
   return (
     <div className="grid grid-cols-2 relative bg-white h-full overflow-hidden">
       <div className="flex items-center absolute top-12 left-12 ">
@@ -75,7 +75,7 @@ export default function LoginPage() {
           alt="Volkswagen Logo"
           className="w-18 mb-4"
         />
-        <div className="w-[386px]">
+        <div className="w-[420px]">
           <h1 className="text-3xl font-semibold text-center mb-2 text-main_blue_dark">
             Iniciar sesión
           </h1>
@@ -85,42 +85,34 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <Form className="w-full text-center mt-6">
+        <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">
             <Form.Item>
-              <Input placeholder="Número de control" />
+              <Input size="large" placeholder="Número de control" />
             </Form.Item>
-          </div>
-          <div className="mb-6 w-full">
-            <CustomInput
-              type="password"
-              className="bg-main_blue_bg border-none text-lg text-main_text_color px-4 py-2 w-96"
-              placeholder="Número de clave"
-              id="password"
-              name="password"
-              startIcon={IconKey}
-              value={userCredentials.password}
-              onChange={handleInputChange}
-            />
+            <Form.Item>
+              <Input size="large" placeholder="Contraseña" />
+            </Form.Item>
           </div>
 
           <div className="mb-6 flex items-center justify-center">
-            <CustomButton
-              text="Iniciar Sesión"
+            <Button
+              onClick={handleSubmit}
               size="large"
-              variant="primary"
-              onClick={() => navigate(`${DASHBOARD_MAIN}${HOURLY_ISSUES}`)}
-            />
+              className="w-full text-base bg-main_blue_dark text-main_white rounded-lg font-medium hover:text-  "
+            >
+              Iniciar sesión
+            </Button>
           </div>
         </Form>
       </div>
       <div className="col-span-1 bg-main_blue_bg flex justify-center items-center flex-col">
         <img src={LoginBackground} alt="Background" className="w-[60%]" />
         <div className="pl-12 pt-8">
-          <h3 className="text-main_title_color text-3xl font-medium">
+          <h3 className="text-main_title_color text-2xl font-medium">
             ¡Bienvenido de nuevo!
           </h3>
-          <p className="text-main_text_color w-[80%]">
+          <p className="text-main_text_color w-[80%] text-sm">
             Te ayudamos a mejorar la eficiencia de tus procesos al automatizar
             tareas, mejorar la comunicación y la colaboración, además te
             proporcionamos información en tiempo real sobre el rendimiento.
