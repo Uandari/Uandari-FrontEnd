@@ -3,8 +3,9 @@ import Dashboard from '@components/pages/dashboard';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import { createBrowserRouter } from 'react-router-dom';
+import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 
-import { LOGIN, DASHBOARD_MAIN, HOURLY_ISSUES } from './paths';
+import { LOGIN, DASHBOARD_MAIN, HOURLY_ISSUES, ESCALATED_ISSUES } from './paths';
 import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: HOURLY_ISSUES,
         // element: <HourlyIssues />,
       },
+      {
+        path: ESCALATED_ISSUES,
+        element: <EscalatedIssues />
+      }
     ],
     errorElement: <NotFound />,
   },
