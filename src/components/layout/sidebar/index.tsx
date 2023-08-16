@@ -1,21 +1,20 @@
-import FiveSIcon from '@assets/5sIcon.svg';
-import AbilitiesIcon from '@assets/AbilitiesIcon.svg';
-import AssitenceIcon from '@assets/AssitenceIcon.svg';
-import ProblemsEvolutionIcon from '@assets/book-reader.svg';
-import CellsIcon from '@assets/cell.svg';
-import CollaboratorsIcon from '@assets/channel.svg';
-import ResultsIcon from '@assets/chart-line.svg';
-import RotatingPersonalIcon from '@assets/chat-bubble-user.svg';
-import ScaleProblemasIcon from '@assets/clipboard-notes.svg';
-import HourPerHourIcon from '@assets/clock-two 1.svg';
-import CriticalRouteIcon from '@assets/criticalRouteIcon.svg';
-import GoalsIcon from '@assets/crosshair.svg';
-import HelpIcon from '@assets/helpIcon.svg';
-import ProblemListIcon from '@assets/list-ui-alt 1.svg';
-import PointsPlanIcon from '@assets/PointsPlanIcon.svg';
-import StandarWorkIcon from '@assets/StandarWorkIcon.svg';
-import TeamGoals from '@assets/TeamGoals.svg';
-import UserImg from '@assets/UserImg.png';
+import FiveSIcon from '@icons/5sIcon.svg';
+import AbilitiesIcon from '@icons/AbilitiesIcon.svg';
+import AssitenceIcon from '@icons/AssitenceIcon.svg';
+import ProblemsEvolutionIcon from '@icons/book-reader.svg';
+import CellsIcon from '@icons/cell.svg';
+import CollaboratorsIcon from '@icons/channel.svg';
+import ResultsIcon from '@icons/chart-line.svg';
+import RotatingPersonalIcon from '@icons/chat-bubble-user.svg';
+import ScaleProblemasIcon from '@icons/clipboard-notes.svg';
+import HourPerHourIcon from '@icons/clock-two 1.svg';
+import CriticalRouteIcon from '@icons/criticalRouteIcon.svg';
+import GoalsIcon from '@icons/crosshair.svg';
+import HelpIcon from '@icons/helpIcon.svg';
+import ProblemListIcon from '@icons/list-ui-alt 1.svg';
+import PointsPlanIcon from '@icons/PointsPlanIcon.svg';
+import StandarWorkIcon from '@icons/StandarWorkIcon.svg';
+import TeamGoals from '@icons/TeamGoals.svg';
 import {
   ASSITENCE,
   COLLABORATORS,
@@ -36,6 +35,7 @@ import {
   STANDARD_WORK_SHEET,
   TEAM_GOALS,
 } from '@routes/paths';
+import UserImg from '@usersIcons/1.png';
 
 import Tab from './tab';
 
