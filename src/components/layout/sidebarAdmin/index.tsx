@@ -1,10 +1,12 @@
 import IconUser from '@assets/iconUser.svg';
 import UserImg from '@assets/UserImg.png';
-import { DASHBOARD_USERS, DASHBOARD_MAIN } from '@routes/paths';
+import {
+  ADMIN_USERS,
+} from '@routes/paths';
 
 import Tab from './tab';
 
-export default function Sidebar() {
+export default function SidebarAdmin() {
   return (
     <aside className="border border-main_color bg-main_color flex flex-col h-screen text-left w-[360px] px-4 py-6 gap-1 bg-primary overflow-y-auto">
       <div>
@@ -20,7 +22,7 @@ export default function Sidebar() {
         <Tab
           icon={IconUser}
           title="Listado de problemas"
-          path={`${DASHBOARD_MAIN}${DASHBOARD_USERS}`}
+          path={`${ADMIN_USERS}`}
         />
       </div>
     </aside>
