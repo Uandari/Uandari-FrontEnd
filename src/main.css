@@ -33,3 +33,7 @@ body {
   background-color: transparent;
   border-radius: 10px;
 }
+
+.full-btn-width{
+  width: 100% !important;
+}
