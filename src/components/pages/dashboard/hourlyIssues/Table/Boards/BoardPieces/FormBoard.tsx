@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import CalendarIcon from '@assets/calender.svg';
-import CategoryIcon from '@assets/categories.svg';
-import ClockIcon from '@assets/clockIcon.svg';
-import DescriptionIcon from '@assets/description.svg';
-import PeopleIcon from '@assets/people.svg';
-import ProblemTypeIcon from '@assets/problemType.svg';
-import SolutionIcon from '@assets/solution.svg';
+import CalendarIcon from '@icons/calender.svg';
+import CategoryIcon from '@icons/categories.svg';
+import ClockIcon from '@icons/clockIcon.svg';
+import DescriptionIcon from '@icons/description.svg';
+import PeopleIcon from '@icons/people.svg';
+import ProblemTypeIcon from '@icons/problemType.svg';
+import SolutionIcon from '@icons/solution.svg';
 import { Button, DatePicker, Form, Radio, Select } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { format } from 'date-fns';

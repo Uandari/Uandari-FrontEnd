@@ -1,4 +1,4 @@
-import ClockIcon from '@assets/clock-two 1.svg';
+import ClockIcon from '@icons/clock-two 1.svg';
 import { Select } from 'antd';
 
 export type ShiftTabProps = {

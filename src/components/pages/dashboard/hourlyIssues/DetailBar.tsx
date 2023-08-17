@@ -1,5 +1,5 @@
-import GoalsIcon from '@assets/crosshair.svg';
-import SettingsIcon from '@assets/SettingIcon.svg';
+import GoalsIcon from '@icons/crosshair.svg';
+import SettingsIcon from '@icons/SettingIcon.svg';
 import { Tabs, TabsProps } from 'antd';
 
 import AvailabilityTab from './Tabs/AvailabilityTab';
