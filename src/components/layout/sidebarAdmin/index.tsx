@@ -1,9 +1,6 @@
 import IconUser from '@assets/iconUser.svg';
 import UserImg from '@assets/UserImg.png';
-import {
-  DASHBOARD_USERS,
-  DASHBOARD_MAIN
-} from '@routes/paths';
+import { DASHBOARD_USERS, DASHBOARD_MAIN } from '@routes/paths';
 
 import Tab from './tab';
 
