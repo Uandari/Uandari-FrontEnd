@@ -27,6 +27,10 @@ const router = createBrowserRouter([
         path: ESCALATED_ISSUES,
         element: <EscalatedIssues />,
       },
+      {
+        path: ESCALATED_ISSUES,
+        element: <EscalatedIssues />
+      }
     ],
     errorElement: <NotFound />,
   },
