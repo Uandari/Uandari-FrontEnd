@@ -32,7 +32,7 @@ export default function Tab({ icon, title, path, active }: TabProps) {
     <button
       type="button"
       onClick={() => navigate(path)}
-      className={`flex gap-2 w-full pl-3 py-[6px] rounded-md hover:bg-slate-200
+      className={`flex gap-2 w-full pl-3 py-[6px] rounded-md hover:bg-slate-200 
         ${isActive && 'bg-white border  border-main_color '}`}
     >
       <img src={icon} alt="icon" className="w-5" />

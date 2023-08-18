@@ -1,12 +1,12 @@
+import AdminTopbar from '../adminTopbar';
 import Table from './Table';
-import Topbar from './Topbar';
 
 function UsersList() {
   return (
     <div className="flex flex-1 border">
-      <div className="grid grid-rows-6 grid-cols-1 bg-white w-[80%] ">
+      <div className="grid grid-rows-6 grid-cols-1 bg-white ">
         <div className="row-span-1">
-          <Topbar />
+        <AdminTopbar />
         </div>
         <div className="row-span-5">
           <Table />

@@ -40,10 +40,10 @@ function Table() {
       <div className="row-span-1">
         <HeadTitle />
       </div>
-      <div className="overflow-y-auto row-span-6 hide-scrollbar">s
+      <div className="overflow-y-auto row-span-6 hide-scrollbar">
 
         {Object.values(user1).map((hour: string) => {
-          return <RowBoard userName='sadsa' userImage='safsa' userRole='sada' controlNumber='numero de control' line='linea' celule='celula' operation='operacion' turn='turno' />;
+          return <RowBoard userName='Andrés Cordero Ramírez' userImage='user1.png' userRole='Administador' controlNumber='CHW8568' line='EA888' celule='21' operation='21' turn='C' />;
         })}
       </div>
     </div>

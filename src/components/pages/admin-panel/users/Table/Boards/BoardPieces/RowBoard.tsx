@@ -14,10 +14,10 @@ export type RowBoardProps = {
 
 function RowBoard({ userName, userImage, userRole, controlNumber, line,celule, operation, turn }: RowBoardProps) {
   return (
-    <div className="grid grid-cols-8 border-b border-main_color h-24 ">
+    <div className="grid grid-cols-8  border-main_color h-24 ">
       {/* User general info */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {userName} {userImage} {userRole}
+      <img src={userImage} alt='Foto de usuario'/>{userName}{userRole}
       </div>
       {/* Control number */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">

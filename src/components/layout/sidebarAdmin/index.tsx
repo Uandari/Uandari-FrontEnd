@@ -1,6 +1,8 @@
 import IconUser from '@assets/iconUser.svg';
+import RoleIcon from '@assets/roleIcon.svg';
 import UserImg from '@assets/UserImg.png';
 import {
+  ADMIN_ROLES,
   ADMIN_USERS,
 } from '@routes/paths';
 
@@ -21,8 +23,13 @@ export default function SidebarAdmin() {
         </div>
         <Tab
           icon={IconUser}
-          title="Listado de problemas"
+          title="Usuarios"
           path={`${ADMIN_USERS}`}
+        />
+        <Tab
+          icon={RoleIcon}
+          title="Roles"
+          path={`${ADMIN_ROLES}`}
         />
       </div>
     </aside>
