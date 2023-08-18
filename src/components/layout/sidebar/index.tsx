@@ -35,7 +35,7 @@ import {
   STANDARD_WORK_SHEET,
   TEAM_GOALS,
 } from '@routes/paths';
-import UserImg from '@usersIcons/1.png';
+import UserImg from '@usersIcons/userImg1.png';
 
 import Tab from './tab';
 
