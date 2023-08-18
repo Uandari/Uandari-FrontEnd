@@ -30,6 +30,8 @@
       "@routes/*": ["src/routes/*"],
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@usersIcons/*": ["src/assets/usersIcons/*"],
       "@res/*": ["src/res/*"],
       "@mocks/*": ["src/mocks/*"],
       "@interfaces/*": ["src/interfaces/*"],

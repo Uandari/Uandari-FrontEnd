@@ -1,4 +1,4 @@
-import PlusIcon from '@assets/plus.svg';
+import PlusIcon from '@icons/plus.svg';
 import { Popover } from 'antd';
 
 import FormBoard from './FormBoard';

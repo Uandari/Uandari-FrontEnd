@@ -1,5 +1,5 @@
-import ChartIcon from '@assets/analytics.svg';
-import ScrewIcon from '@assets/screw.svg';
+import ChartIcon from '@icons/analytics.svg';
+import ScrewIcon from '@icons/screw.svg';
 
 import CardTab from './CardTab';
 import LabelTab from './LabelTab';
