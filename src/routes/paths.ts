@@ -24,25 +24,7 @@ export const STANDARD_WORK_SHEET = 'hojas-de-trabajo-estandar';
 // ADMINISTRATOR PANEL ROUTES
 export const DASHBOARD_USERS = 'usuarios';
 
-// ADMINISTRATIVE AREA PANEL ROUTES ***THESE ROUTES CAN CHANGE***
-export const UPLOAD_CRITICAL_PATH = 'critical-path-upload';
-export const UPLOAD_POINT_PLAN = 'point-plan-upload';
-export const UPLOAD_STIBA = 'stiba-upload';
-export const UPLOAD_ERGONOMICS = 'ergonomics-upload';
-export const UPLOAD_AVAILABILITY_REPORT = 'availability-report-upload';
-export const UPLOAD_CRITICAL_PATH_PERFORMANCE =
-  'critical-path-performance-upload';
-export const UPLOAD_OEE = 'oee-upload';
-export const UPLOAD_PPM_FAILURES = 'ppm-failures-upload';
-export const UPLOAD_MOTOR_AUDIT = 'motor-audit-upload';
-export const UPLOAD_QRK_EVALUATION = 'qrk-evaluation-upload';
-export const UPLOAD_DIMENSIONAL_EVALUATION = 'dimensional-evaluation-upload';
-export const UPLOAD_LB_7A_PC7_FAILURES = 'lb-7a-pc7-failure-upload';
-export const UPLOAD_IMPURITIES = 'impurities-upload';
-export const UPLOAD_SCRAP = 'scrap-upload';
-export const UPLOAD_MAINTENANCE_COSTS = 'maintenance-costs-upload';
-export const UPLOAD_TOOLS = 'tools-upload';
-export const UPLOAD_VBZ = 'vbz-upload';
+export const UPLOADS = 'subir-archivos/';
 
 export const LOGIN = '/login';
 
