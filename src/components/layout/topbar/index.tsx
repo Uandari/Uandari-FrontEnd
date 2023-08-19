@@ -26,7 +26,7 @@ export default function Topbar({
   
   if (variant == 'primary') {
   return (
-    <div className="border border-b-main_color w-full h-full pl-8 pt-10 relative">
+    <div className=" w-full h-32 pl-8 pt-10 relative">
       <h3 className="text-main_title_color font-semibold text-xl">
         {title}
       </h3>
@@ -45,7 +45,7 @@ export default function Topbar({
     );
   } else {
     return (
-      <div className="border border-b-main_color w-full h-full pl-8 pt-10 relative">
+      <div className="w-full h-28 pl-8 pt-10 relative">
         <h3 className="text-main_title_color font-semibold text-xl">
         {title}
         </h3>

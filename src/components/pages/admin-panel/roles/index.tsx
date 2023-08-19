@@ -1,12 +1,12 @@
+import Topbar from '@components/layout/topbar';
 import Table from './Table';
-import AdminTopbar from '../adminTopbar';
 
 function RolesList() {
   return (
     <div className="flex flex-1 border">
-      <div className="grid grid-rows-6 grid-cols-1 bg-white w-[80%] ">
-        <div className="row-span-1">
-          <AdminTopbar />
+      <div className="grid grid-cols-1 bg-white w-full">
+        <div className="">
+        <Topbar title='Gestión de roles' variant='secondary'/>
         </div>
         <div className="row-span-5">
           <Table />

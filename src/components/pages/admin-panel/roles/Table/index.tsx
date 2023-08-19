@@ -1,5 +1,6 @@
-import HeadTitle from './Boards/BoardPieces/HeadTitle';
+import HeadBoard from './Boards/BoardPieces/HeadBoard.tsx';
 import RowBoard from './Boards/BoardPieces/RowBoard';
+import ShiftTab from './Boards/BoardPieces/ShiftTab.tsx';
 
 function Table() {
   const user1 = {
@@ -15,13 +16,13 @@ function Table() {
 
   return (
     <div className="h-full grid grid-rows-[7] ">
+      <ShiftTab/>
       <div className="row-span-1">
-        <HeadTitle />
+        <HeadBoard />
       </div>
       <div className="overflow-y-auto row-span-6 hide-scrollbar">
-
         {Object.values(user1).map((hour: string) => {
-          return <RowBoard userName='sadsa' userImage='safsa' userRole='sada' controlNumber='numero de control' line='linea' celule='celula' operation='operacion' turn='turno' />;
+          return <RowBoard roleName='Administrador'/>;
         })}
       </div>
     </div>
