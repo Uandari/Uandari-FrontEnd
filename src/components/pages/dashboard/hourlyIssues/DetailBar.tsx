@@ -2,9 +2,9 @@ import GoalsIcon from '@icons/crosshair.svg';
 import SettingsIcon from '@icons/SettingIcon.svg';
 import { Tabs, TabsProps } from 'antd';
 
-import AvailabilityTab from './Tabs/AvailabilityTab';
-import PerformanceTab from './Tabs/PerformanceTab';
-import QualityTab from './Tabs/QualityTab';
+import AvailabilityTab from './modules/Tabs/AvailabilityTab';
+import PerformanceTab from './modules/Tabs/PerformanceTab';
+import QualityTab from './modules/Tabs/QualityTab';
 
 function DetailBar() {
   const itemsTabs: TabsProps['items'] = [
