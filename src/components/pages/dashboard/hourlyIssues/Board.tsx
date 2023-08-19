@@ -1,8 +1,8 @@
-import HeadBoard from './Boards/BoardPieces/HeadBoard';
-import RowBoard from './Boards/BoardPieces/RowBoard';
-import ShiftTab from './Boards/ShiftTab';
+import HeadBoard from './modules/HeadBoard';
+import RowBoard from './modules/RowBoard';
+import ShiftTab from './modules/ShiftTab';
 
-function Table() {
+function Board() {
   const shiftA = {
     _06: '6:00 - 7:00',
     _07: '7:00 - 8:00',
@@ -60,4 +60,4 @@ function Table() {
   );
 }
 
-export default Table;
+export default Board;

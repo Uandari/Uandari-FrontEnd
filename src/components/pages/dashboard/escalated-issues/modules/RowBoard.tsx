@@ -6,12 +6,23 @@ import FourthStateIcon from '@assets/icons/FourthStateIcon.svg';
 import SecondStateIcon from '@assets/icons/SecondStateIcon.svg';
 import ThirdStateIcon from '@assets/icons/ThirdStateIcon.svg';
 import UnCheckIcon from '@assets/icons/unCheckIcon.svg';
+import { EscalatedIssues } from '@interfaces/EscalatedIssue';
 
-export default function RowBoard({ data }: any) {
+export default function RowBoard({ escalatedIssue }: EscalatedIssues) {
   const [issueStateImg, setIssueStateImg] = useState('');
-
+  const {
+    afecta5s,
+    desvioEscala,
+    estado,
+    fechaEscalamiento,
+    idEscalaProblema,
+    idUsuario,
+    impulsor,
+    medidaAcordada,
+    plazo,
+  } = escalatedIssue;
   useEffect(() => {
-    switch (data.estado) {
+    switch (estado) {
       case 1:
         setIssueStateImg(FirstStateIcon);
         break;
@@ -26,34 +37,34 @@ export default function RowBoard({ data }: any) {
         break;
       default:
     }
-  }, [data.estado]);
+  }, [estado]);
 
   return (
     <div className="grid grid-cols-8 border-b border-main_color h-16">
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.fechaEscalamiento}
+        {fechaEscalamiento}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.desvioEscala}
+        {desvioEscala}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.impulsor}
+        {impulsor}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.afecta5s ? (
+        {afecta5s ? (
           <img src={CheckIcon} alt="check-icon" />
         ) : (
           <img src={UnCheckIcon} alt="uncheck-icon" />
         )}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.medidaAcordada}
+        {medidaAcordada}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.idUsuario}
+        {idUsuario}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {data.plazo}
+        {plazo}
       </div>
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
         <img src={issueStateImg} alt="state-icon" />

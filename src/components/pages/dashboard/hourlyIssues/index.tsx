@@ -1,5 +1,5 @@
+import Board from './Board';
 import DetailBar from './DetailBar';
-import Table from './Table';
 import Topbar from './Topbar';
 
 function HourlyIssues() {
@@ -13,7 +13,7 @@ function HourlyIssues() {
           <Topbar />
         </div>
         <div className="row-span-5">
-          <Table />
+          <Board />
         </div>
       </div>
     </div>
