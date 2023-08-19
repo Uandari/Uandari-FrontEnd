@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import AnalticsIcon from '@assets/analytics.svg';
-import CalendarIcon from '@assets/calender.svg';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 

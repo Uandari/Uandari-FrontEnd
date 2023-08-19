@@ -1,6 +1,6 @@
 import GoalsIcon from '@icons/crosshair.svg';
 import PointsPlanIcon from '@icons/PointsPlanIcon.svg';
-import { CRITICAL_PATH, UPLOADS } from '@routes/paths';
+import { CRITICAL_PATH } from '@routes/paths';
 
 import Tab from './tab';
 
