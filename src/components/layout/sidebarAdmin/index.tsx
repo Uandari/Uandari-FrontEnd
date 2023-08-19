@@ -1,6 +1,6 @@
-import IconUser from '@assets/iconUser.svg';
-import RoleIcon from '@assets/roleIcon.svg';
-import UserImg from '@assets/UserImg.png';
+import IconUser from '@icons/usersIcon.svg';
+import RoleIcon from '@icons/roleIcon.svg';
+import UserImg from '@usersIcons/1.png';
 import {
   ADMIN_ROLES,
   ADMIN_USERS,
@@ -18,7 +18,7 @@ export default function SidebarAdmin() {
             <h4 className="text-main_title_color font-medium">
               Usuario Volkswagen
             </h4>
-            <p className="text-main_text_color text-xs ">Coordinador</p>
+            <p className="text-main_text_color text-xs ">Administrador</p>
           </div>
         </div>
         <Tab

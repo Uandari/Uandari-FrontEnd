@@ -1,6 +1,7 @@
 import Board from './Board';
 import DetailBar from './DetailBar';
-import Topbar from './Topbar';
+import Table from './Table';
+import Topbar from '../../../layout/topbar';
 
 function HourlyIssues() {
   return (
@@ -10,7 +11,7 @@ function HourlyIssues() {
       </div>
       <div className="grid grid-rows-6 grid-cols-1 bg-white w-[80%] ">
         <div className="row-span-1">
-          <Topbar />
+          <Topbar variant='primary' title='Registro de problemas hora por hora'/>
         </div>
         <div className="row-span-5">
           <Board />
