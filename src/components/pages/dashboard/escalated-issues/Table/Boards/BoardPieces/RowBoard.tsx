@@ -1,40 +1,63 @@
-import checkIcon from "@assets/check.svg";
-import xIcon from "@assets/x.svg";
-import problemaDefinidoIcon from "@assets/problemaDefinido.svg";
-import solucionDefinidaContramedidaIcon from "@assets/solucionDefinidaContramedida.svg";
-import solucionEfectivaIcon from "@assets/solucionEfectiva.svg";
-import solucionIntroducidaSeguimientoIcon from "@assets/solucionIntroducidaSeguimiento.svg";
+import { useEffect, useState } from 'react';
 
-export default function RowBoard({ data }:any){
-    return (
-        <div className="grid grid-cols-8 border-b border-main_color h-16">
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.fechaEscalamiento}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.desvioEscala}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.impulsor}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.afecta5s ? <img src={checkIcon} /> : <img src={xIcon}/>}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.medidaAcordada}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.idUsuario}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.plazo}
-            </div>
-            <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-                {data.estado === 1 && <img src={problemaDefinidoIcon} />}
-                {data.estado === 2 && <img src={solucionDefinidaContramedidaIcon} />}
-                {data.estado === 3 && <img src={solucionIntroducidaSeguimientoIcon} />}
-                {data.estado === 4 && <img src={solucionEfectivaIcon} />}
-            </div>
-        </div>
-    );
-};
+import CheckIcon from '@assets/icons/checkIcon.svg';
+import FirstStateIcon from '@assets/icons/FirstStateIcon.svg';
+import FourthStateIcon from '@assets/icons/FourthStateIcon.svg';
+import SecondStateIcon from '@assets/icons/SecondStateIcon.svg';
+import ThirdStateIcon from '@assets/icons/ThirdStateIcon.svg';
+import UnCheckIcon from '@assets/icons/unCheckIcon.svg';
+
+export default function RowBoard({ data }: any) {
+  const [issueStateImg, setIssueStateImg] = useState('');
+
+  useEffect(() => {
+    switch (data.estado) {
+      case 1:
+        setIssueStateImg(FirstStateIcon);
+        break;
+      case 2:
+        setIssueStateImg(SecondStateIcon);
+        break;
+      case 3:
+        setIssueStateImg(ThirdStateIcon);
+        break;
+      case 4:
+        setIssueStateImg(FourthStateIcon);
+        break;
+      default:
+    }
+  }, [data.estado]);
+
+  return (
+    <div className="grid grid-cols-8 border-b border-main_color h-16">
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.fechaEscalamiento}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.desvioEscala}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.impulsor}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.afecta5s ? (
+          <img src={CheckIcon} alt="check-icon" />
+        ) : (
+          <img src={UnCheckIcon} alt="uncheck-icon" />
+        )}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.medidaAcordada}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.idUsuario}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {data.plazo}
+      </div>
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        <img src={issueStateImg} alt="state-icon" />
+      </div>
+    </div>
+  );
+}

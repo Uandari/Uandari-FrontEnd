@@ -1,6 +1,6 @@
 import CellBoard from './CellBoard';
 
-function HeadTitle() {
+function HeadBoard() {
   return (
     <div className="grid grid-cols-8 border-b border-main_color h-full">
       <CellBoard title="Hora" />
@@ -14,4 +14,4 @@ function HeadTitle() {
   );
 }
 
-export default HeadTitle;
+export default HeadBoard;
