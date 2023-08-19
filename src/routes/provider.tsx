@@ -13,6 +13,7 @@ import {
   HOURLY_ISSUES,
   UPLOADS,
   GOALS,
+  ESCALATED_ISSUES,
   CRITICAL_PATH,
 } from './paths';
 // import PrivateRoute from './privateRoute';

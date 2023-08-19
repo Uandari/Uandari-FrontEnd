@@ -1,4 +1,4 @@
-import HeadTitle from './Boards/BoardPieces/HeadTitle';
+import HeadBoard from './Boards/BoardPieces/HeadBoard';
 import RowBoard from './Boards/BoardPieces/RowBoard';
 import ShiftTab from './Boards/ShiftTab';
 
@@ -38,7 +38,7 @@ function Table() {
   return (
     <div className="h-full grid grid-rows-[7] ">
       <div className="row-span-1">
-        <HeadTitle />
+        <HeadBoard />
       </div>
       <div className="overflow-y-auto row-span-6 hide-scrollbar">
         <ShiftTab shift="Turno A" />
