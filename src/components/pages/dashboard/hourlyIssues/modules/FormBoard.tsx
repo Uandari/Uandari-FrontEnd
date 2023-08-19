@@ -66,7 +66,7 @@ function FormBoard() {
 
   const [formattedDate, setFormattedDate] = useState<string>('');
   const [categoryType, setCategoryType] = useState('DISPONIBILIDAD');
-  const [arrayProblems, setArrayProlems] = useState(availabilityProblems);
+  const [arrayProblems, setArrayProblems] = useState(availabilityProblems);
 
   const handleProblemTypeChange = (event: any) => {
     setCategoryType(event.target.value);

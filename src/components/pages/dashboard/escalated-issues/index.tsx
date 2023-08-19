@@ -1,4 +1,4 @@
-import Table from './Table';
+import Board from './Board';
 import Topbar from './Topbar';
 
 export default function EscalatedIssues() {
@@ -9,7 +9,7 @@ export default function EscalatedIssues() {
           <Topbar />
         </div>
         <div className="row-span-5">
-          <Table />
+          <Board />
         </div>
       </div>
     </div>
