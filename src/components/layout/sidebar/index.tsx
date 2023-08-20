@@ -10,7 +10,6 @@ import ScaleProblemasIcon from '@icons/clipboard-notes.svg';
 import HourPerHourIcon from '@icons/clock-two 1.svg';
 import CriticalRouteIcon from '@icons/criticalRouteIcon.svg';
 import GoalsIcon from '@icons/crosshair.svg';
-import HelpIcon from '@icons/helpIcon.svg';
 import ProblemListIcon from '@icons/list-ui-alt 1.svg';
 import PointsPlanIcon from '@icons/PointsPlanIcon.svg';
 import StandarWorkIcon from '@icons/StandarWorkIcon.svg';
@@ -22,7 +21,6 @@ import {
   DASHBOARD_MAIN,
   ESCALATED_ISSUES,
   GOALS,
-  HELP,
   HOURLY_ISSUES,
   ISSUE_TRACKING,
   LIST_OF_ISSUES,
@@ -38,11 +36,13 @@ import {
 import UserImg from '@usersIcons/1.png';
 
 import Tab from './tab';
+import OpenUserManual from '@components/basic/userManualButton';
 
 export default function Sidebar() {
+
   return (
     <aside className="border border-main_color bg-main_color flex flex-col h-screen text-left w-[360px] px-4 py-6 gap-1 bg-primary overflow-y-auto hide-scrollbar">
-      <div>
+      <div className='flex-grow'>
         <div className="flex items-center gap-2 mb-6">
           <img className="w-10 h-10" src={UserImg} alt="user_image" />
           <div>
@@ -136,14 +136,10 @@ export default function Sidebar() {
           path={`${DASHBOARD_MAIN}${STANDARD_WORK_SHEET}`}
         />
 
-        <div className="mt-12">
-          <Tab
-            icon={HelpIcon}
-            title="Centro de ayuda"
-            path={`${DASHBOARD_MAIN}${HELP}`}
-          />
-        </div>
       </div>
+        <div className="mt-1 ">
+          <OpenUserManual />
+        </div>
     </aside>
   );
 }
