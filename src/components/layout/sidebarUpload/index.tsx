@@ -1,13 +1,13 @@
 import GoalsIcon from '@icons/crosshair.svg';
 import PointsPlanIcon from '@icons/PointsPlanIcon.svg';
 import { CRITICAL_PATH } from '@routes/paths';
-
 import Tab from './tab';
+import OpenUserManual from '@components/basic/userManualButton';
 
 export default function SidebarUpload() {
   return (
     <aside className="border border-main_color bg-main_color flex flex-col h-screen text-left w-[360px] px-4 py-6 gap-1 bg-primary overflow-y-auto hide-scrollbar">
-      <div>
+      <div className='flex-grow'>
         <div className="flex items-center gap-2 mb-6">
           <div>
             <h4 className="text-main_title_color font-medium">
@@ -43,7 +43,12 @@ export default function SidebarUpload() {
         />
         <Tab icon={GoalsIcon} title="Herramientas" path={`${CRITICAL_PATH}`} />
         <Tab icon={GoalsIcon} title="VBZ" path={`${CRITICAL_PATH}`} />
+
       </div>
+      <div className="mt-1 ">
+        <OpenUserManual />
+      </div>
+
     </aside>
   );
 }
