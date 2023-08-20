@@ -1,58 +1,14 @@
-import React, { useEffect, useState } from 'react';
 
-import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import LoginBackground from '@assets/login_img.svg';
 import UandariColorLogo from '@assets/uandari-color-logo.svg';
 import VolkswagenColorLogo from '@assets/volkswagen-logo-color.svg';
-import useErrorModal from '@hooks/useErrorModal';
-import { UserCredentials } from '@interfaces/User';
-import { postLogin, resetAuthState } from '@redux/thunks/authThunk';
-import { DASHBOARD_MAIN, HOURLY_ISSUES } from '@routes/paths';
+import { DASHBOARD_MAIN } from '@routes/paths';
 import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
-  const [userCredentials, setUserCredentials] = useState<UserCredentials>({
-    user: '',
-    password: '',
-  });
 
-  const { data, error } = useAppSelector(
-    (state: RootState) => state.authReducer,
-  );
-  const { openErrorModal } = useErrorModal(error);
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (sessionStorage.getItem('jwtToken')) {
-      navigate(DASHBOARD_MAIN);
-    }
-  }, [navigate]);
-
-  useEffect(() => {
-    if (error) {
-      openErrorModal();
-      dispatch(resetAuthState());
-    }
-  }, [dispatch, error, openErrorModal]);
-
-  useEffect(() => {
-    if (data) {
-      navigate(DASHBOARD_MAIN);
-    }
-  }, [data, navigate]);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const { name, value } = e.target;
-    setUserCredentials((prevState: UserCredentials) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
   const handleSubmit = () => {
     navigate(DASHBOARD_MAIN);
   };
