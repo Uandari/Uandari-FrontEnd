@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export type TabProps = {
+export type SidebarTabProps = {
   icon: string;
   title: string;
   path: string;
   active?: boolean;
 };
 
-export default function Tab({ icon, title, path, active }: TabProps) {
+export default function SidebarTab({ icon, title, path, active }: SidebarTabProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -41,6 +41,6 @@ export default function Tab({ icon, title, path, active }: TabProps) {
   );
 }
 
-Tab.defaultProps = {
+SidebarTab.defaultProps = {
   active: false,
 };
