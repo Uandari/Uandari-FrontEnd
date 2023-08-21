@@ -1,17 +1,19 @@
 export interface UserCredentials {
-  user: string;
+  numeroDeControl: string;
   password: string;
 }
 
 export interface UserFormData {
-  name: string;
-  email: string;
-  employeeId: string;
-  maternalSurname: string;
-  paternalSurname: string;
-  role: string;
-  shift: string;
-  password: string;
+  idUsuario: string,
+  numeroDeControl: string,
+  nombre: string,
+  apellidos: string,
+  avatar: string,
+  rol: string,
+  linea: string,
+  celula: string,
+  operacion: string,
+  turno: string,
 }
 
 export interface User extends UserFormData {
@@ -33,8 +35,12 @@ export interface FetchedUsers {
 
 export enum Roles {
   ADMIN = 'Admin',
-  PICKING_SUPERVISOR = 'Supervisor Picking',
-  ADUANA_SUPERVISOR = 'Supervisor Aduanas',
-  DELIVERY_SUPERVISOR = 'Supervisor Delivery',
-  PICKER = 'Pickero',
+  ADMINISTRATOR = 'Administrador',
+  COORDINADOR = 'Coordinador',
+  TEAM_LEADER = 'Team Leader',
+  AREA_INDUSTRIAL_ENGINEERING = 'Area Ingenieria Industrial',
+  AREA_HUMAN_RESOURCES = 'Area Recursos Humanos',
+  AREA_MAINTENENCE = 'Area Mantenimiento',
+  AREA_MOUNTING = 'Area Montaje',
+  AREA_QUALITY = 'Area Calidad',
 }
