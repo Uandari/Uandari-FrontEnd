@@ -1,6 +1,5 @@
 import Board from './Board';
 import DetailBar from './DetailBar';
-import Table from './Table';
 import Topbar from '../../../layout/topbar';
 
 function HourlyIssues() {
@@ -9,11 +8,14 @@ function HourlyIssues() {
       <div className="w-[20%]">
         <DetailBar />
       </div>
-      <div className="grid grid-rows-6 grid-cols-1 bg-white w-[80%] ">
-        <div className="row-span-1">
-          <Topbar variant='primary' title='Registro de problemas hora por hora'/>
+      <div className="flex flex-1 flex-col bg-white">
+        <div>
+          <Topbar
+            variant="primary"
+            title="Registro de problemas hora por hora"
+          />
         </div>
-        <div className="row-span-5">
+        <div className="flex-1 overflow-y-auto">
           <Board />
         </div>
       </div>

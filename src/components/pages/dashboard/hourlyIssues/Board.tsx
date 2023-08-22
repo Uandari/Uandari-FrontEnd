@@ -35,9 +35,27 @@ function Board() {
     _04: '04:00 - 05:00',
     _05: '05:00 - 06:00',
   };
+
+  const problemsArray = [
+    {
+      id: '1',
+      hour: '6:00',
+      title: 'Averías o fallas en equipos',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...',
+    },
+    {
+      id: '2',
+      hour: '6:00',
+      title: 'Averías o fallas en equipos',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...',
+    },
+  ];
+
   return (
     <div className="h-full grid grid-rows-[7] ">
-      <div className="row-span-1">
+      <div className="row-span-1 border-t border-main_color">
         <HeadBoard />
       </div>
       <div className="overflow-y-auto row-span-6 hide-scrollbar">
@@ -48,7 +66,7 @@ function Board() {
 
         <ShiftTab shift="Turno B" />
         {Object.values(shiftB).map((hour: string) => {
-          return <RowBoard hour={hour} />;
+          return <RowBoard hour={hour} problems={problemsArray} />;
         })}
 
         <ShiftTab shift="Turno C" />

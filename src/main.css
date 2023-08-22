@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -51,3 +51,11 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
 }
+#root > main > main > div > div > div.flex-1.overflow-y-auto.bg-main_white > div > div.ant-tabs-content-holder > div{
+  height: 100%;
+  overflow-y: scroll;
+}
+/* 
+
+
+*/

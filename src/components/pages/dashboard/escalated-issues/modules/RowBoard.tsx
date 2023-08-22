@@ -7,20 +7,27 @@ import SecondStateIcon from '@assets/icons/SecondStateIcon.svg';
 import ThirdStateIcon from '@assets/icons/ThirdStateIcon.svg';
 import UnCheckIcon from '@assets/icons/unCheckIcon.svg';
 import { EscalatedIssues } from '@interfaces/EscalatedIssue';
+import { Popover } from 'antd';
 
-export default function RowBoard({ escalatedIssue }: EscalatedIssues) {
+import FormStatus from './FormStatus';
+
+export default function RowBoard({
+  afecta5s,
+  desvioEscala,
+  estado,
+  fechaEscalamiento,
+  idEscalaProblema,
+  idUsuario,
+  impulsor,
+  medidaAcordada,
+  plazo,
+}: EscalatedIssues) {
   const [issueStateImg, setIssueStateImg] = useState('');
-  const {
-    afecta5s,
-    desvioEscala,
-    estado,
-    fechaEscalamiento,
-    idEscalaProblema,
-    idUsuario,
-    impulsor,
-    medidaAcordada,
-    plazo,
-  } = escalatedIssue;
+
+  /* const handleChangeStatus = () => {
+
+  }; */
+
   useEffect(() => {
     switch (estado) {
       case 1:
@@ -41,33 +48,39 @@ export default function RowBoard({ escalatedIssue }: EscalatedIssues) {
 
   return (
     <div className="grid grid-cols-8 border-b border-main_color h-16">
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {fechaEscalamiento}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray ">
         {desvioEscala}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {impulsor}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {afecta5s ? (
           <img src={CheckIcon} alt="check-icon" />
         ) : (
           <img src={UnCheckIcon} alt="uncheck-icon" />
         )}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {medidaAcordada}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {idUsuario}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <div className="flex items-center justify-center text-main_gray">
         {plazo}
       </div>
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        <img src={issueStateImg} alt="state-icon" />
+      <div className="flex items-center justify-center text-main_gray">
+        <Popover placement="left" title={<FormStatus />} trigger="click">
+          <img
+            className="cursor-pointer"
+            src={issueStateImg}
+            alt="state-icon"
+          />
+        </Popover>
       </div>
     </div>
   );

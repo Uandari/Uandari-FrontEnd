@@ -8,13 +8,13 @@ function AvailabilityTab() {
   return (
     <div>
       <div className="flex w-full items-center justify-between mb-4">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center px-2">
           <img className="w-5" src={ChartIcon} alt="" />
           <p className="text-main_title_color font-medium">
             Total de problemas
           </p>
         </div>
-        <p className="font-medium text-main_title_color text-lg">4</p>
+        <p className="font-medium text-main_title_color text-lg px-2">4</p>
       </div>
 
       <div className="flex flex-col gap-y-4">
