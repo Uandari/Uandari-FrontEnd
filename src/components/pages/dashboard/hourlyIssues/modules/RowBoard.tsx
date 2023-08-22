@@ -2,17 +2,26 @@ import PlusIcon from '@icons/plus.svg';
 import { Popover } from 'antd';
 
 import FormBoard from './FormBoard';
+import ProblemCard from './ProblemCard';
 
 export type RowBoardProps = {
   hour: string;
+  problems?: ProblemCardProps[];
 };
 
-function RowBoard({ hour }: RowBoardProps) {
+export type ProblemCardProps = {
+  id: string;
+  hour: string;
+  title: string;
+  description: string;
+};
+
+function RowBoard({ hour, problems }: RowBoardProps) {
   return (
-    <div className="grid grid-cols-8 border-b border-main_color h-24 ">
+    <div className="grid grid-cols-8 border-b border-main_color">
       {/* Hora */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        {hour}
+        <div className="py-6">{hour}</div>
       </div>
       {/* Es */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color ">
@@ -41,7 +50,14 @@ function RowBoard({ hour }: RowBoardProps) {
         0
       </div>
       {/* Problema */}
-      <div className="flex col-span-2 items-center justify-center">
+      <div className="flex flex-col col-span-2 items-center justify-center py-4">
+        {problems &&
+          problems.length > 0 &&
+          problems.map(() => (
+            <div>
+              <ProblemCard />
+            </div>
+          ))}
         <Popover placement="left" trigger="click" content={<FormBoard />}>
           <button className="flex items-center gap-1" type="button">
             <img src={PlusIcon} alt="plus-icon" />
@@ -54,3 +70,7 @@ function RowBoard({ hour }: RowBoardProps) {
 }
 
 export default RowBoard;
+
+RowBoard.defaultProps = {
+  problems: [],
+};

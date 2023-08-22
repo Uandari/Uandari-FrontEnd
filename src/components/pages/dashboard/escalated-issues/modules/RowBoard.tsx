@@ -7,6 +7,9 @@ import SecondStateIcon from '@assets/icons/SecondStateIcon.svg';
 import ThirdStateIcon from '@assets/icons/ThirdStateIcon.svg';
 import UnCheckIcon from '@assets/icons/unCheckIcon.svg';
 import { EscalatedIssues } from '@interfaces/EscalatedIssue';
+import { Popover } from 'antd';
+
+import FormStatus from './FormStatus';
 
 export default function RowBoard({
   afecta5s,
@@ -20,6 +23,10 @@ export default function RowBoard({
   plazo,
 }: EscalatedIssues) {
   const [issueStateImg, setIssueStateImg] = useState('');
+
+  /* const handleChangeStatus = () => {
+
+  }; */
 
   useEffect(() => {
     switch (estado) {
@@ -67,7 +74,13 @@ export default function RowBoard({
         {plazo}
       </div>
       <div className="flex items-center justify-center text-main_gray">
-        <img src={issueStateImg} alt="state-icon" />
+        <Popover placement="left" title={<FormStatus />} trigger="click">
+          <img
+            className="cursor-pointer"
+            src={issueStateImg}
+            alt="state-icon"
+          />
+        </Popover>
       </div>
     </div>
   );

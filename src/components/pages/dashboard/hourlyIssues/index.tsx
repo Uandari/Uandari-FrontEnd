@@ -8,14 +8,14 @@ function HourlyIssues() {
       <div className="w-[20%]">
         <DetailBar />
       </div>
-      <div className="flex flex-1 flex-col bg-white w-[80%] ">
+      <div className="flex flex-1 flex-col bg-white">
         <div>
           <Topbar
             variant="primary"
             title="Registro de problemas hora por hora"
           />
         </div>
-        <div className="row-span-5">
+        <div className="flex-1 overflow-y-auto">
           <Board />
         </div>
       </div>
