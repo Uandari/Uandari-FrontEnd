@@ -9,7 +9,12 @@ export type SidebarTabProps = {
   active?: boolean;
 };
 
-export default function SidebarTab({ icon, title, path, active }: SidebarTabProps) {
+export default function SidebarTab({
+  icon,
+  title,
+  path,
+  active,
+}: SidebarTabProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isActive, setIsActive] = useState<boolean>(false);

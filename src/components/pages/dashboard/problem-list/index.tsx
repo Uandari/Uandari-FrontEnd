@@ -1,3 +1,4 @@
+import Topbar from '@components/layout/topbar';
 import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
 
@@ -25,11 +26,9 @@ function IssuesList() {
   ];
 
   return (
-    <div className=" flex flex-1 flex-col">
-      <div className="h-20 flex items-center pl-9 text-main_title_color font-semibold text-2xl bg-white">
-        Listado de problemas
-      </div>
-      <div className="flex-1 overflow-y-auto bg-main_white">
+    <div className="flex flex-1 flex-col">
+      <Topbar title="Listado de problemas" />
+      <div className="flex-1 overflow-y-auto bg-main_white px-4">
         <Tabs className="h-full flex flex-1" size="large" items={pages} />
       </div>
     </div>

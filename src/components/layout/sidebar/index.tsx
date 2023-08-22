@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import OpenUserManual from '@components/basic/userManualButton';
 import FiveSIcon from '@icons/5sIcon.svg';
 import AbilitiesIcon from '@icons/AbilitiesIcon.svg';
 import AssitenceIcon from '@icons/AssitenceIcon.svg';
@@ -39,6 +40,8 @@ import {
 } from '@routes/paths';
 import UserImg from '@usersIcons/1.png';
 
+import SidebarTab from './sidebarTab';
+
 type SidebarProps = {
   children: ReactNode;
   userTitle: string;
@@ -65,22 +68,22 @@ export default function Sidebar({
           </div>
         </div>
 
-        <Tab
+        <SidebarTab
           icon={GoalsIcon}
           title="Metas"
           path={`${DASHBOARD_MAIN}${GOALS}`}
         />
-        <Tab
+        <SidebarTab
           icon={CollaboratorsIcon}
           title="Colaboradores"
           path={`${DASHBOARD_MAIN}${COLLABORATORS}`}
         />
-        <Tab
+        <SidebarTab
           icon={CellsIcon}
           title="Seguimiento de problemas"
           path={`${DASHBOARD_MAIN}${ISSUE_TRACKING}`}
         />
-        <Tab
+        <SidebarTab
           icon={ResultsIcon}
           title="Registro de resultados"
           path={`${DASHBOARD_MAIN}${RESULTS_LOG}`}
@@ -88,68 +91,72 @@ export default function Sidebar({
 
         <h4 className="text-main_gray mt-4 mb-2 text-sm">Nivel 1</h4>
 
-        <Tab
+        <SidebarTab
           icon={HourPerHourIcon}
           title="Registro de problemas hora por hora"
           path={`${DASHBOARD_MAIN}${HOURLY_ISSUES}`}
         />
 
-        <Tab
+        <SidebarTab
           icon={ProblemListIcon}
           title="Listado de problemas"
           path={`${DASHBOARD_MAIN}${ISSUES_LIST}`}
         />
 
-        <Tab
+        <SidebarTab
           icon={ScaleProblemasIcon}
           title="Problemas a escalar"
           path={`${DASHBOARD_MAIN}${ESCALATED_ISSUES}`}
         />
 
-        <Tab
+        <SidebarTab
           icon={ProblemsEvolutionIcon}
           title="Evolución de problemas"
           path={`${DASHBOARD_MAIN}${PROBLEM_EVOLUTION}`}
         />
-        <Tab
+        <SidebarTab
           icon={RotatingPersonalIcon}
           title="Rotación de personal"
           path={`${DASHBOARD_MAIN}${STAFF_ROTATION}`}
         />
-        <Tab
+        <SidebarTab
           icon={TeamGoals}
           title="Metas de equipo"
           path={`${DASHBOARD_MAIN}${TEAM_GOALS}`}
         />
-        <Tab
+        <SidebarTab
           icon={AbilitiesIcon}
           title="Matriz de habilidades"
           path={`${DASHBOARD_MAIN}${SKILLS_MATRIX}`}
         />
-        <Tab
+        <SidebarTab
           icon={AssitenceIcon}
           title="Asistencia por turno"
           path={`${DASHBOARD_MAIN}${ASSITENCE}`}
         />
-        <Tab
+        <SidebarTab
           icon={CriticalRouteIcon}
           title="Ruta crítica"
           path={`${DASHBOARD_MAIN}${CRITICAL_PATH}`}
         />
-        <Tab icon={FiveSIcon} title="5s" path={`${DASHBOARD_MAIN}${PAGE_5S}`} />
-        <Tab
+        <SidebarTab
+          icon={FiveSIcon}
+          title="5s"
+          path={`${DASHBOARD_MAIN}${PAGE_5S}`}
+        />
+        <SidebarTab
           icon={PointsPlanIcon}
           title="Plan de puntos"
           path={`${DASHBOARD_MAIN}${POINTS_PLAN}`}
         />
-        <Tab
+        <SidebarTab
           icon={StandarWorkIcon}
           title="Hojas de trabajo estándar"
           path={`${DASHBOARD_MAIN}${STANDARD_WORK_SHEET}`}
         />
 
         <div className="mt-12">
-          <Tab
+          <SidebarTab
             icon={HelpIcon}
             title="Centro de ayuda"
             path={`${DASHBOARD_MAIN}${HELP}`}
