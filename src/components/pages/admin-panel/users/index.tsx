@@ -3,13 +3,12 @@ import CustomTabs from '@components/layout/tabs';
 
 function UsersList() {
   return (
-    <div className="flex flex-1 border">
-      <div className="grid grid-cols-1 bg-white w-full">
-        <div className="">
+    <div className="border border-b grid bg-white w-full h-screen">
+      <div className="sticky top-0">
         <Topbar title='Gestión de usuarios' variant='secondary'/>
-        </div>
         <CustomTabs />
       </div>
+      
     </div>
   );
 }

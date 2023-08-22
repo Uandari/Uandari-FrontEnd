@@ -3,17 +3,16 @@ import Table from './Table';
 
 function RolesList() {
   return (
-    <div className="flex flex-1 border">
-      <div className="grid grid-cols-1 bg-white w-full">
-        <div className="">
+    <div className="border grid bg-white w-full h-screen">
+      <div className="sticky top-0">
         <Topbar title='Gestión de roles' variant='secondary'/>
-        </div>
+      </div>
         <div className="row-span-5">
           <Table />
         </div>
-      </div>
     </div>
   );
 }
 
 export default RolesList;
+

@@ -4,7 +4,7 @@ import FormBoard from './FormBoard';
 
 function ShiftTab() {
   return (
-    <div className="flex justify-between items-center px-4 py-2 border-b border-main_color">
+    <div className="flex justify-between items-center px-4 border-b border-t border-main_color">
       <div className="flex items-center gap-2">
         <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">

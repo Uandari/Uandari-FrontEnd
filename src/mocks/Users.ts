@@ -15,7 +15,6 @@ export const initialUserInfo = {
 
 export const UsersListMock: UserFormData[] = [
   {
-    idUsuario: '',
     numeroDeControl: '',
     nombre: '',
     apellidos: '',
@@ -27,7 +26,6 @@ export const UsersListMock: UserFormData[] = [
     turno: '-',
   },
   {
-    idUsuario: '',
     numeroDeControl: '',
     nombre: '',
     apellidos: '',
@@ -39,7 +37,6 @@ export const UsersListMock: UserFormData[] = [
     turno: '-',
   },
   {
-    idUsuario: '',
     numeroDeControl: '',
     nombre: '',
     apellidos: '',
@@ -51,17 +48,6 @@ export const UsersListMock: UserFormData[] = [
     turno: '-',
   },
   {
-    name: 'Ojbaldo',
-    paternalSurname: 'Rodriguez',
-    maternalSurname: 'Hernandez',
-    role: 'Supervisor Aduana',
-    shift: 'Matutino',
-    email: 'osvaldo@cbqasolutions.com',
-    employeeId: '999666',
-    password: 'UnaGatitaQueLeGustaElMamboUwU',
-  },
-  {
-    idUsuario: '',
     numeroDeControl: '',
     nombre: '',
     apellidos: '',
@@ -73,7 +59,6 @@ export const UsersListMock: UserFormData[] = [
     turno: '-',
   },
   {
-    idUsuario: '',
     numeroDeControl: '',
     nombre: '',
     apellidos: '',

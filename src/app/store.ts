@@ -1,5 +1,6 @@
 import authorizerSlice from '@redux/slices/authorizerSlice';
 import authSlice from '@redux/slices/authSlice';
+import userSlice from '@redux/slices/userSlice';
 import hourxhourSlice from '@redux/slices/hourxhourSlice';
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
@@ -7,6 +8,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 export const store = configureStore({
   reducer: {
     authReducer: authSlice,
+    userReducer: userSlice,
     notAuthorizerReducer: authorizerSlice,
     hourxhourReducer: hourxhourSlice,
   },

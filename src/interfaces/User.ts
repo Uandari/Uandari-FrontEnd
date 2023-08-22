@@ -4,33 +4,33 @@ export interface UserCredentials {
 }
 
 export interface UserFormData {
-  idUsuario: string,
   numeroDeControl: string,
   nombre: string,
   apellidos: string,
   avatar: string,
   rol: string,
+  turno: string,
   linea: string,
   celula: string,
   operacion: string,
-  turno: string,
 }
-
 export interface User extends UserFormData {
-  userId?: number;
-  isUserAdmin?: boolean;
-  currentPassword?: string;
+  idUsuario?: string,
+  usuarioEsAdmin?: boolean;
+  contraseñaActual?: string;
 }
 
 export interface FetchedUsers {
-  userId: number;
-  email: string;
-  name: string;
-  paternalSurname: string;
-  maternalSurname: string;
-  shift: string;
-  employeeId: string;
-  roleName: string;
+  idUsuario?: string,
+  numeroDeControl: string,
+  nombre: string,
+  apellidos: string,
+  avatar: string,
+  rol: string,
+  turno: string,
+  linea: string,
+  celula: string,
+  operacion: string,
 }
 
 export enum Roles {
@@ -43,4 +43,9 @@ export enum Roles {
   AREA_MAINTENENCE = 'Area Mantenimiento',
   AREA_MOUNTING = 'Area Montaje',
   AREA_QUALITY = 'Area Calidad',
+}
+export enum Turnos {
+  TURN_A = 'Turno A',
+  TURN_B = 'Turno B',
+  TURN_C = 'Turno C',
 }
