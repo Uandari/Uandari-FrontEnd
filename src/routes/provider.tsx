@@ -1,6 +1,10 @@
+import AdminPanel from '@components/pages/admin-panel';
+import RolesList from '@components/pages/admin-panel/roles';
+import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
+import IssuesList from '@components/pages/dashboard/problem-list';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import UploadPanel from '@components/pages/upload-panel';
@@ -10,14 +14,15 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   LOGIN,
   DASHBOARD_MAIN,
-  HOURLY_ISSUES, ADMIN, ADMIN_USERS, ADMIN_ROLES,
+  HOURLY_ISSUES,
+  ADMIN,
+  ADMIN_USERS,
+  ADMIN_ROLES,
   UPLOADS,
-  ESCALATED_ISSUES,
   CRITICAL_PATH,
+  ISSUES_LIST,
+  ESCALATED_ISSUES,
 } from './paths';
-import AdminPanel from '@components/pages/admin-panel';
-import UsersList from '@components/pages/admin-panel/users';
-import RolesList from '@components/pages/admin-panel/roles';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -33,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: ESCALATED_ISSUES,
         element: <EscalatedIssues />,
+      },
+      {
+        path: ISSUES_LIST,
+        element: <IssuesList />,
       },
     ],
     errorElement: <NotFound />,

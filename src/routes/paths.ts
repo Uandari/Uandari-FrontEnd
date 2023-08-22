@@ -8,7 +8,7 @@ export const RESULTS_LOG = 'registro-de-resultados';
 
 // LEVEL 1 ROUTES
 export const HOURLY_ISSUES = 'problemas-hora-por-hora';
-export const LIST_OF_ISSUES = 'listado-de-problemas';
+export const ISSUES_LIST = 'listado-de-problemas';
 export const PARETO_CHART = 'diagrama-pareto';
 export const ESCALATED_ISSUES = 'problemas-escalados';
 export const PROBLEM_EVOLUTION = 'evolucion-de-problemas';

@@ -1,8 +1,8 @@
+import { EscalatedIssues } from '@interfaces/EscalatedIssue';
 import { EscalatedIssuesMock } from '@mocks/EscalatedIssues';
 
 import HeadBoard from './modules/HeadBoard';
 import RowBoard from './modules/RowBoard';
-import { EscalatedIssues } from '@interfaces/EscalatedIssue';
 
 function Board() {
   const mockData = EscalatedIssuesMock;
@@ -18,7 +18,11 @@ function Board() {
             desvioEscala={escalatedIssue.desvioEscala}
             estado={escalatedIssue.estado}
             fechaEscalamiento={escalatedIssue.fechaEscalamiento}
-            idEscalaProblema={escalatedIssue}
+            idEscalaProblema={escalatedIssue.idEscalaProblema}
+            idUsuario={escalatedIssue.idUsuario}
+            impulsor={escalatedIssue.impulsor}
+            medidaAcordada={escalatedIssue.medidaAcordada}
+            plazo={escalatedIssue.plazo}
           />
         ))}
       </div>
