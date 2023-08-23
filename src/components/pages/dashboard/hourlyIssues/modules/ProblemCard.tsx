@@ -15,7 +15,7 @@ function ProblemCard() {
   return (
     <div>
       <button type="button" onClick={showDrawer}>
-        <div className="px-4 cursor-pointer mb-6 text-left">
+        <div className="px-4 cursor-pointer mb-3 text-left">
           <p className="text-main_title_color text-sm font-medium">
             Averías o fallas en equipos
           </p>

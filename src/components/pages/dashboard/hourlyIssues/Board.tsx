@@ -40,14 +40,14 @@ function Board() {
     {
       id: '1',
       hour: '6:00',
-      title: 'Averías o fallas en equipos',
+      title: 'Problema 1',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...',
     },
     {
       id: '2',
       hour: '6:00',
-      title: 'Averías o fallas en equipos',
+      title: 'Probema 2',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...',
     },

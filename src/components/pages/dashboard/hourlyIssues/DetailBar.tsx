@@ -1,29 +1,11 @@
-import AvailabilityTab from '@components/layout/tabs/AvailabilityTab';
-import PerformanceTab from '@components/layout/tabs/PerformanceTab';
-import QualityTab from '@components/layout/tabs/QualityTab';
+import LabelTab from '@components/layout/tabs/LabelTab';
 import GoalsIcon from '@icons/crosshair.svg';
+import ScrewIcon from '@icons/screw.svg';
 import SettingsIcon from '@icons/SettingIcon.svg';
-import { Tabs, TabsProps } from 'antd';
+
+import CardTab from './modules/Tabs/CardTab';
 
 function DetailBar() {
-  const itemsTabs: TabsProps['items'] = [
-    {
-      key: '1',
-      label: 'Disponibilidad',
-      children: <AvailabilityTab />,
-    },
-    {
-      key: '2',
-      label: 'Desempeño',
-      children: <PerformanceTab />,
-    },
-    {
-      key: '3',
-      label: 'Calidad',
-      children: <QualityTab />,
-    },
-  ];
-
   return (
     <div className="w-full h-screen pt-6 border-r border-main_color overflow-y-auto bg-white hide-scrollbar">
       <div className="flex justify-between items-center w-full px-3 ">
@@ -38,7 +20,33 @@ function DetailBar() {
           <img src={SettingsIcon} alt="settings-icon" />
         </button>
       </div>
-      <Tabs color="#A10909" defaultActiveKey="1" items={itemsTabs} />
+      <div className="flex flex-col gap-y-4 mt-8 border-t pt-2 border-main_color">
+        <LabelTab
+          icon={ScrewIcon}
+          title="Averías o fallas de equipo"
+          quantity="3"
+        />
+        <LabelTab
+          icon={ScrewIcon}
+          title="Cambios o ajustes de herramientas o modelo (Piezas)"
+          quantity="3"
+        />
+        <LabelTab
+          icon={ScrewIcon}
+          title="Cambio de herramientas o modelo (Piezas)"
+          quantity="3"
+        />
+        <LabelTab
+          icon={ScrewIcon}
+          title="Paros planeados (Mantenimiento)"
+          quantity="3"
+        />
+      </div>
+      <CardTab
+        status="En proceso"
+        problem="Averías o fallas en equipos"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
+      />
     </div>
   );
 }
