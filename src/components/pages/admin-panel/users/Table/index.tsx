@@ -2,7 +2,6 @@ import userImage from '@usersIcons/1.png';
 
 import HeadBoard from './Boards/BoardPieces/HeadBoard';
 import RowBoard from './Boards/BoardPieces/RowBoard';
-import ShiftTab from './Boards/BoardPieces/ShiftTab';
 import useUsers from '@hooks/useUsers';
 import { useEffect, useState } from 'react';
 import { FetchedUsers } from '@interfaces/User';
@@ -10,6 +9,8 @@ import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import useErrorModal from '@hooks/useErrorModal';
 import { getUsers, resetUserError } from '@redux/thunks/userThunk';
 import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
+import { Button, Form, Input, Popover } from 'antd';
+import FormBoard from './Boards/BoardPieces/FormBoard';
 
 export default function Table() {
   const {
@@ -73,7 +74,25 @@ export default function Table() {
 
   return (
     <div className="h-full grid grid-rows-[7]">
-      <ShiftTab />
+      <div className="flex justify-between items-center px-4 border-b border-main_color">
+      <div className="flex items-center gap-2">
+        <Form className="w-[400px] text-center mt-2">
+          <div className="mb-4 w-full">
+            <Form.Item>
+              <Input size="large" placeholder="Buscar usuario" />
+            </Form.Item>
+          </div>
+        </Form>
+      </div>
+      <Popover placement="leftTop" trigger="click" content={<FormBoard />}>
+        <Button
+          size="large"
+          className=" text-base bg-main_blue_dark text-main_white rounded-lg font-medium hover:text-  "
+        >
+          Registrar nuevo usuario
+        </Button>
+      </Popover>
+    </div>
       <div className="row-span-1">
         <HeadBoard />
       </div>
