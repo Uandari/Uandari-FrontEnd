@@ -1,3 +1,9 @@
+import CalendarIcon from '@assets/icons/calender.svg';
+import CategoryIcon from '@assets/icons/categoryIcon.svg';
+import ClockIcon from '@assets/icons/clockIcon.svg';
+import DescriptionIcon from '@assets/icons/description.svg';
+import QuantityIcon from '@assets/icons/quantity.svg';
+import SolutionIcon from '@assets/icons/solution.svg';
 import {
   Drawer,
   Space,
@@ -20,7 +26,7 @@ function DrawerComponent({ open, onClose }: DrawerComponentProps) {
     <div>
       <Drawer
         title="Detalle problema"
-        width={720}
+        width={620}
         onClose={onClose}
         open={open}
         bodyStyle={{ paddingBottom: 80 }}
@@ -37,95 +43,93 @@ function DrawerComponent({ open, onClose }: DrawerComponentProps) {
           </Space>
         }
       >
-        <Form layout="vertical" hideRequiredMark>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item
-                name="name"
-                label="Name"
-                rules={[{ required: true, message: 'Please enter user name' }]}
-              >
-                <Input placeholder="Please enter user name" />
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item
-                name="url"
-                label="Url"
-                rules={[{ required: true, message: 'Please enter url' }]}
-              >
-                <Input
-                  style={{ width: '100%' }}
-                  addonBefore="http://"
-                  addonAfter=".com"
-                  placeholder="Please enter url"
-                />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item
-                name="owner"
-                label="Owner"
-                rules={[{ required: true, message: 'Please select an owner' }]}
-              >
-                <Select
-                  options={[
-                    {
-                      value: 'En proceso',
-                      label: '',
-                    },
-                    {
-                      value: 'Solucionado',
-                      label: '',
-                    },
-                    {
-                      value: 'A escalar',
-                      label: '',
-                    },
-                  ]}
-                  placeholder="Please select an owner"
-                />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item
-                name="dateTime"
-                label="DateTime"
-                rules={[
-                  { required: true, message: 'Please choose the dateTime' },
-                ]}
-              >
-                <DatePicker.RangePicker
-                  style={{ width: '100%' }}
-                  getPopupContainer={(trigger) => trigger.parentElement!}
-                />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={24}>
-              <Form.Item
-                name="description"
-                label="Description"
-                rules={[
-                  {
-                    required: true,
-                    message: 'please enter url description',
-                  },
-                ]}
-              >
-                <Input.TextArea
-                  rows={4}
-                  placeholder="please enter url description"
-                />
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
+        <div>
+          <div className="flex items-start gap-9 justify-between">
+            <div>
+              <h2 className="text-main_title_color font-medium text-2xl">
+                Nombre del problema
+              </h2>
+              <div className="flex gap-x-2 items-center mt-2">
+                <img src={CategoryIcon} alt="category-icon" />
+                <p className="text-main_text_color text-xs">
+                  Área a la que pertenece
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-2">
+              <img src={CalendarIcon} alt="calendar-icon" />
+              <p className="text-main_text_color">08/22/2023</p>
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-start justify-between">
+            <div>
+              <p className="text-main_text_color">Involucrado 1</p>
+              <p className="text-main_text_color">Involucrado 2</p>
+              <p className="text-main_text_color">Involucrado 3</p>
+            </div>
+            <div>
+              <p className="text-main_text_color">Fecha estimada de solución</p>
+              <div className="flex items-center justify-end gap-2">
+                <img src={ClockIcon} alt="clock-icon" />
+                <p className="font-medium text-main_text_color">10/22/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 flex gap-x-5 items-start">
+            <img className="w-5" src={DescriptionIcon} alt="description-icon" />
+            <p className="text-main_text_color">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+
+          <div className="mt-10 flex gap-x-5 items-start">
+            <img className="w-5" src={SolutionIcon} alt="description-icon" />
+            <p className="text-main_text_color">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div className="mt-10 flex gap-x-5 items-start">
+            <img className="w-5" src={QuantityIcon} alt="description-icon" />
+            <p className="text-main_text_color font-medium">
+              13 motores producidos de 20
+            </p>
+          </div>
+          <p className="text-main_text_color mt-8">Estado del problema</p>
+          <Select
+            placeholder="Selecciona el estado del problema"
+            className="w-full"
+            showSearch
+            optionFilterProp="children"
+            options={[
+              {
+                value: 'IN_PROCESS',
+                label: 'En proceso',
+              },
+              {
+                value: 'FIXED',
+                label: 'Solucionada',
+              },
+              {
+                value: 'ESCALATED',
+                label: 'Escalar problema',
+              },
+            ]}
+          />
+        </div>
       </Drawer>
     </div>
   );
