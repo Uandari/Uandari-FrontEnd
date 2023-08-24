@@ -7,7 +7,7 @@ import { es } from 'date-fns/locale';
 
 type TopBarProps = {
   title: string;
-  variant?: 'primary';
+  variant?: 'primary' | 'secondary';
 };
 
 export default function Topbar({ title, variant }: TopBarProps) {
@@ -45,5 +45,5 @@ export default function Topbar({ title, variant }: TopBarProps) {
 }
 
 Topbar.defaultProps = {
-  variant: '',
+  variant: 'primary',
 };

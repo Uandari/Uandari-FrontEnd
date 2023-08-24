@@ -1,6 +1,9 @@
+/* eslint-disable import/extensions */
+import { Button, Form, Input, Popover } from 'antd';
+
+import FormBoard from './Boards/BoardPieces/FormBoard.tsx';
 import HeadBoard from './Boards/BoardPieces/HeadBoard.tsx';
 import RowBoard from './Boards/BoardPieces/RowBoard';
-import ShiftTab from './Boards/BoardPieces/ShiftTab.tsx';
 
 function Table() {
   const user1 = {
@@ -16,13 +19,31 @@ function Table() {
 
   return (
     <div className="h-full grid grid-rows-[7] ">
-      <ShiftTab/>
+      <div className="flex justify-between items-center px-4 border-b border-t border-main_color">
+        <div className="flex items-center gap-2">
+          <Form className="w-[400px] text-center  mt-5 ">
+            <div className="mb-4 w-full">
+              <Form.Item>
+                <Input size="large" placeholder="Buscar usuario" />
+              </Form.Item>
+            </div>
+          </Form>
+        </div>
+        <Popover placement="leftTop" trigger="click" content={<FormBoard />}>
+          <Button
+            size="large"
+            className=" text-base bg-main_blue_dark text-main_white rounded-lg font-medium"
+          >
+            Registrar nuevo usuario
+          </Button>
+        </Popover>
+      </div>
       <div className="row-span-1">
         <HeadBoard />
       </div>
       <div className="overflow-y-auto row-span-6 hide-scrollbar">
         {Object.values(user1).map((hour: string) => {
-          return <RowBoard roleName='Administrador'/>;
+          return <RowBoard roleName="Administrador" />;
         })}
       </div>
     </div>
