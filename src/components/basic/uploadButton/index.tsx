@@ -3,8 +3,7 @@ import { Upload } from 'antd';
 
 const { Dragger } = Upload;
 
-export default function UploadButton({
-  }) {
+export default function UploadButton() {
   return (
     <div className="flex items-center justify-center mt-32">
       <div className="upload-box w-outlet h-64">
@@ -23,4 +22,3 @@ export default function UploadButton({
     </div>
   );
 }
-

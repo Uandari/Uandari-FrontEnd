@@ -1,11 +1,11 @@
 /* eslint-disable import/extensions */
 import { Button, Form, Input, Popover } from 'antd';
 
-import FormBoard from './Boards/BoardPieces/FormBoard.tsx';
-import HeadBoard from './Boards/BoardPieces/HeadBoard.tsx';
-import RowBoard from './Boards/BoardPieces/RowBoard';
+import FormBoard from './modules/FormBoard';
+import HeadBoard from './modules/HeadBoard';
+import RowBoard from './modules/RowBoard';
 
-function Table() {
+export default function Board() {
   const user1 = {
     _06: '6:00 - 7:00',
     _07: '7:00 - 8:00',
@@ -49,5 +49,3 @@ function Table() {
     </div>
   );
 }
-
-export default Table;

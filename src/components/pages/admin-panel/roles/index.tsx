@@ -1,6 +1,6 @@
 import Topbar from '@components/layout/topbar';
 
-import Table from './Table';
+import Table from './board';
 
 function RolesList() {
   return (

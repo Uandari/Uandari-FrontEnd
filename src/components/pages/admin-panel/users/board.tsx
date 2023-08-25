@@ -9,11 +9,11 @@ import { getUsers, resetUserError } from '@redux/thunks/userThunk';
 import userImage from '@usersIcons/1.png';
 import { Button, Form, Input, Popover } from 'antd';
 
-import FormBoard from './Boards/BoardPieces/FormBoard';
-import HeadBoard from './Boards/BoardPieces/HeadBoard';
-import RowBoard from './Boards/BoardPieces/RowBoard';
+import FormBoard from './modules/FormBoard';
+import HeadBoard from './modules/HeadBoard';
+import RowBoard from './modules/RowBoard';
 
-export default function Table() {
+export default function Board() {
   const {
     isModalOpen,
     isModalOpenToUpdate,

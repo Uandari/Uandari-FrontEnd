@@ -1,5 +1,6 @@
-import CustomTabs from '@components/layout/tabs';
 import Topbar from '@components/layout/topbar';
+
+import CustomTabs from './modules/Tabs';
 
 function UsersList() {
   return (
