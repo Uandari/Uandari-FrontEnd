@@ -4,12 +4,12 @@ import editIcon from '@icons/editIcon.svg';
 export type RowBoardProps = {
   userName: string;
   userImage: string;
-  userRole: string;
-  controlNumber: string;
-  line: string;
-  celule: string;
-  operation: string;
-  turn: string;
+  userRole?: string;
+  controlNumber?: string;
+  line?: string;
+  celule?: string;
+  operation?: string;
+  turn?: string;
 };
 
 function RowBoard({
@@ -67,3 +67,12 @@ function RowBoard({
 }
 
 export default RowBoard;
+
+RowBoard.defaultProps = {
+  userRole: '',
+  controlNumber: '',
+  line: '',
+  celule: '',
+  operation: '',
+  turn: '',
+};
