@@ -3,7 +3,7 @@ export const DASHBOARD_MAIN = '/';
 // BASE PAGERS ROUTES
 export const GOALS = 'metas';
 export const COLLABORATORS = 'colaboradores';
-export const ISSUE_TRACKING = 'seguimiento-de-problemas';
+export const ISSUES_TRACKING = 'seguimiento-de-problemas';
 export const RESULTS_LOG = 'registro-de-resultados';
 
 // LEVEL 1 ROUTES

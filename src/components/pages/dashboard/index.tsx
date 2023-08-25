@@ -25,7 +25,7 @@ import {
   ESCALATED_ISSUES,
   GOALS,
   HOURLY_ISSUES,
-  ISSUE_TRACKING,
+  ISSUES_TRACKING,
   ISSUES_LIST,
   PAGE_5S,
   POINTS_PLAN,
@@ -61,7 +61,7 @@ export default function Dashboard() {
           <SidebarTab
             icon={CellsIcon}
             title="Seguimiento de problemas"
-            path={`${DASHBOARD_MAIN}${ISSUE_TRACKING}`}
+            path={`${DASHBOARD_MAIN}${ISSUES_TRACKING}`}
           />
           <SidebarTab
             icon={ResultsIcon}

@@ -4,6 +4,7 @@ import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
+import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
@@ -22,6 +23,7 @@ import {
   CRITICAL_PATH,
   ISSUES_LIST,
   ESCALATED_ISSUES,
+  ISSUES_TRACKING,
 } from './paths';
 // import PrivateRoute from './privateRoute';
 
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: ISSUES_LIST,
         element: <IssuesList />,
+      },
+      {
+        path: ISSUES_TRACKING,
+        element: <IssuesTracking />,
       },
     ],
     errorElement: <NotFound />,
