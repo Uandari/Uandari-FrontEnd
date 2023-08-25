@@ -1,9 +1,9 @@
-import LabelTab from '@components/layout/tabs/LabelTab';
 import GoalsIcon from '@icons/crosshair.svg';
 import ScrewIcon from '@icons/screw.svg';
 import SettingsIcon from '@icons/SettingIcon.svg';
 
 import CardTab from './modules/Tabs/CardTab';
+import LabelTab from './modules/Tabs/LabelTab';
 
 function DetailBar() {
   return (
