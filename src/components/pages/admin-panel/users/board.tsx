@@ -85,7 +85,16 @@ export default function Board() {
             </div>
           </Form>
         </div>
-        <Popover placement="leftTop" trigger="click" content={<FormBoard />}>
+        <Popover
+          placement="leftTop"
+          trigger="click"
+          content={
+            <FormBoard
+              userIdToUpdate={selectedUser?.idUser}
+              onClose={handleClose}
+            />
+          }
+        >
           <Button
             size="large"
             className=" text-base bg-main_blue_dark text-main_white rounded-lg font-medium"
@@ -101,9 +110,11 @@ export default function Board() {
         {usersData.length > 0 ? (
           usersData.map((user) => (
             <RowBoard
+              imageUrl="../../../../assets/usersIcons/1.png"
+              role={user.idRole}
               userName={`${user.name} ${user.lastNames}`}
               controlNumber={user.controlNumber}
-              // onDelete={() => handleDeleteUser(user.userId)}
+              onDelete={() => handleDeleteUser(user.idUser)}
               // onUpdate={() => handleUpdate(user)}
             />
           ))

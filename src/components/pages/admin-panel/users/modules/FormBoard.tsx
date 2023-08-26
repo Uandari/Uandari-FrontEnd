@@ -1,47 +1,87 @@
 import { useEffect } from 'react';
 
+import { useAppDispatch } from '@app/store';
+import useForm from '@hooks/useForm';
+import useUsers from '@hooks/useUsers';
 import UserIcon from '@icons/iconUser.svg';
+import { User, UserFormData } from '@interfaces/User';
+import { initialUserInfo } from '@mocks/Users';
+import { getUser } from '@redux/thunks/userThunk';
 import { Button, Form, Input, Select } from 'antd';
+import {
+  usersCreateValidation,
+  usersUpdateValidations,
+} from 'src/formValidations/usersValidations';
 
-function FormBoard() {
+type FormBoardProps = {
+  onClose: (callback?: () => void) => void;
+  userIdToUpdate?: number;
+};
+
+function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
   const rolesMock = [
     { value: 'Administrador', label: 'Administrador' },
     { value: 'Coordinador', label: 'Coordinador' },
     { value: 'Team Leader', label: 'Team Leader' },
   ];
-  const linesMock = [
-    { value: 'Cigueñal', label: 'Cigueñal' },
-    { value: 'Monobloc', label: 'Monobloc' },
-  ];
-  const celulesMock = [
-    { value: '1', label: '1' },
-    { value: '2', label: '2' },
-    { value: '3', label: '3' },
-    { value: '4', label: '4' },
-    { value: '5', label: '5' },
-    { value: '6', label: '6' },
-    { value: '7', label: '7' },
-  ];
-  const operationsMock = [
-    { value: '1', label: '1' },
-    { value: '2', label: '2' },
-    { value: '3', label: '3' },
-    { value: '4', label: '4' },
-    { value: '5', label: '5' },
-    { value: '6', label: '6' },
-    { value: '7', label: '7' },
-  ];
-  const turnsMock = [
-    { value: 'Turno A', label: 'Turno A' },
-    { value: 'Turno B', label: 'Turno B' },
-    { value: 'Turno C', label: 'Turno C' },
-  ];
 
-  useEffect(() => {}, []);
+  const dispatch = useAppDispatch();
+
+  const { handleCreateUser, handleUpdateUser } = useUsers();
+
+  const handleCreateOrUpdateUser = (state: UserFormData) => {
+    const userModifiable = { ...state };
+
+    if (userIdToUpdate) {
+      handleUpdateUser({
+        ...userModifiable,
+        idUser: userIdToUpdate,
+      });
+    } else {
+      const userInfoToCreate: User = { ...state };
+      delete userInfoToCreate.idUser;
+
+      handleCreateUser(userInfoToCreate);
+    }
+    onClose();
+  };
+
+  const { errors, handleInputChange, handleSubmit, state, setState, reset } =
+    useForm<UserFormData>(
+      initialUserInfo,
+      userIdToUpdate ? usersUpdateValidations : usersCreateValidation,
+      handleCreateOrUpdateUser,
+    );
+
+  useEffect(() => {
+    if (userIdToUpdate) {
+      dispatch(getUser(userIdToUpdate))
+        .then((userData: UserFormData) => {
+          setState({
+            name: userData.name,
+            lastNames: userData.lastNames,
+            controlNumber: userData.controlNumber,
+            mail: userData.mail,
+            password: userData.password,
+            idRole: userData.idRole,
+            imageUrl: userData.imageUrl,
+          });
+        })
+        .catch((error) => {
+          console.error(
+            'Error al extraer los datos del usuario:',
+            error.message,
+          );
+        });
+    }
+  }, [dispatch, userIdToUpdate, setState]);
+
   return (
     <div className="w-[365px]">
       <div className="px-5 pt-3">
-        <p className="text-main_text_color font-medium">Registro de usuario</p>
+        <p className="text-main_text_color font-medium">
+          {userIdToUpdate ? 'Editar Usuario' : 'Registro de Usuario'}
+        </p>
       </div>
       <div className="pt-6">
         <Form.Item>
@@ -68,33 +108,6 @@ function FormBoard() {
             <Select defaultValue={rolesMock[0].label} options={rolesMock} />
           </div>
         </Form.Item>
-        <Form.Item>
-          <div className="flex items-center gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
-            <Select defaultValue={linesMock[0].label} options={linesMock} />
-          </div>
-        </Form.Item>
-        <Form.Item>
-          <div className="flex items-center gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
-            <Select defaultValue={celulesMock[0].label} options={celulesMock} />
-          </div>
-        </Form.Item>
-        <Form.Item>
-          <div className="flex items-center gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
-            <Select
-              defaultValue={operationsMock[0].label}
-              options={operationsMock}
-            />
-          </div>
-        </Form.Item>
-        <Form.Item>
-          <div className="flex items-center gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
-            <Select defaultValue={turnsMock[0].label} options={turnsMock} />
-          </div>
-        </Form.Item>
         <div className="flex justify-end">
           <Form.Item>
             <Button
@@ -113,3 +126,7 @@ function FormBoard() {
 }
 
 export default FormBoard;
+
+FormBoard.defaultProps = {
+  userIdToUpdate: undefined,
+};
