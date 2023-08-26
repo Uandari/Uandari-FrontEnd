@@ -25,7 +25,7 @@ export const createUser =
   async (dispatch) => {
     dispatch(createUsersStart());
     await privateApi
-      .post('/user/create', userData)
+      .post('/usuarios/registerUser', userData)
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
@@ -50,7 +50,7 @@ export const getUser =
   (userId: number): AppThunkAction<Promise<User>> =>
   async (dispatch) => {
     try {
-      const response = await privateApi.post('/user/get', {
+      const response = await privateApi.post('/usuarios/getUserById', {
         userId,
       });
 
@@ -88,7 +88,7 @@ export const updateUser =
   async (dispatch) => {
     dispatch(updateUserStart);
     await privateApi
-      .put('/user/update', userData)
+      .put('/usuarios/updateUser', userData)
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
@@ -113,7 +113,7 @@ export const deleteUser =
   (userId: number): AppThunkAction =>
   async (dispatch) => {
     await privateApi
-      .post('/user/delete', { userId })
+      .post('/usuarios/deleteUser', { userId })
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
