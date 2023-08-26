@@ -18,3 +18,17 @@ export interface User extends UserFormData {
   verifiedAccount?: number;
   token?: string;
 }
+
+export interface FetchedUsers {
+  idUser: number;
+  name: string;
+  lastNames: string;
+  controlNumber: string;
+  mail: string;
+  password: string;
+  idRole: number;
+  token: string;
+  verifiedAccount: number;
+  imageUrl: string;
+  isDelete: number;
+}

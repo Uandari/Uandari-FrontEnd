@@ -68,7 +68,7 @@ export const getUser =
 export const getUsers = (): AppThunkAction => async (dispatch) => {
   dispatch(getUsersStart());
   privateApi
-    .get('/user/')
+    .get('/usuarios/getAllUsers')
     .then((response) => {
       if (response.data.isError) {
         const customError = new CustomApiError(response.data).message;

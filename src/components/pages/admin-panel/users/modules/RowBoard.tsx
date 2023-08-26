@@ -3,7 +3,7 @@ import editIcon from '@icons/editIcon.svg';
 
 export type RowBoardProps = {
   userName: string;
-  userImage: string;
+  userImage?: string;
   userRole?: string;
   controlNumber?: string;
   line?: string;
@@ -75,4 +75,5 @@ RowBoard.defaultProps = {
   celule: '',
   operation: '',
   turn: '',
+  userImage: '',
 };

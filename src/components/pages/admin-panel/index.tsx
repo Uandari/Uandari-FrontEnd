@@ -1,8 +1,9 @@
 import Sidebar from '@components/layout/sidebar';
 import SidebarTab from '@components/layout/sidebar/sidebarTab';
-import RoleIcon from '@icons/roleIcon.svg';
+// import RoleIcon from '@icons/roleIcon.svg';
 import IconUser from '@icons/usersIcon.svg';
-import { ADMIN_ROLES, ADMIN_USERS } from '@routes/paths';
+// import { ADMIN_ROLES, ADMIN_USERS } from '@routes/paths';
+import { ADMIN_USERS } from '@routes/paths';
 import UserImg from '@usersIcons/2.png';
 import { Outlet } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ export default function AdminPanel() {
             title="Usuarios"
             path={`${ADMIN_USERS}`}
           />
-          <SidebarTab icon={RoleIcon} title="Roles" path={`${ADMIN_ROLES}`} />
+          {/* <SidebarTab icon={RoleIcon} title="Roles" path={`${ADMIN_ROLES}`} /> */}
         </Sidebar>
         <Outlet />
       </div>
