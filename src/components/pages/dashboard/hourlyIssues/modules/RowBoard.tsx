@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import DropIcon from '@icons/dropIcon.svg';
 import PlusIcon from '@icons/plus.svg';
@@ -9,22 +9,65 @@ import ProblemCard from './ProblemCard';
 
 export type RowBoardProps = {
   hour: string;
-  problems?: ProblemCardProps[];
+  date: string;
+  must: number;
+  mustAccumulative: number;
+  is: number;
+  isAccumulative: number;
+  difference: number;
+  accumulativeDifference: number;
+  idUser: number;
+  idCell: number;
+  issues: IssuesCardProps[];
 };
 
-export type ProblemCardProps = {
-  id: string;
-  hour: string;
-  title: string;
+export type IssuesCardProps = {
+  idhourxhourIssue: number;
   description: string;
+  type: IssuesType;
 };
 
-function RowBoard({ hour, problems }: RowBoardProps) {
+export type IssuesType = {
+  name: string;
+};
+
+function RowBoard({
+  hour,
+  date,
+  must,
+  mustAccumulative,
+  is,
+  isAccumulative,
+  difference,
+  accumulativeDifference,
+  idUser,
+  idCell,
+  issues,
+}: RowBoardProps) {
   const [showAllProblems, setShowAllProblems] = useState(false);
-  const additionalProblemCount = problems!.length - 1;
+  const [countedIssues, setCountedIssues] = useState(0);
+  const [isValue, setIsValue] = useState<number>(is);
+  const [mustValue, setMustValue] = useState<number>(must);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value } = e.target;
+
+    if (name === 'is') {
+      setIsValue(Number(value));
+    } else if (name === 'must') {
+      setMustValue(Number(value));
+    }
+  };
+
+  useEffect(() => {
+    /* Hide all the problem list */
+    setCountedIssues(issues.length - 1);
+  }, [issues.length]);
 
   return (
-    <div className="grid grid-cols-8 border-b border-main_color">
+    <div className="grid grid-cols-9 border-b border-main_color">
       {/* Hora */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
         <div className="py-6">{hour}</div>
@@ -34,6 +77,9 @@ function RowBoard({ hour, problems }: RowBoardProps) {
         <input
           className="w-full h-full border-none text-center outline-none text-lg cursor-pointer"
           type="number"
+          value={isValue}
+          name="is"
+          onChange={(e) => handleInputChange(e)}
         />
       </div>
       {/* Debe */}
@@ -41,32 +87,49 @@ function RowBoard({ hour, problems }: RowBoardProps) {
         <input
           className="w-full h-full border-none text-center outline-none text-lg cursor-pointer"
           type="number"
+          value={mustValue}
+          name="must"
+          onChange={(e) => handleInputChange(e)}
         />
+      </div>
+      {/* Es acumulado */}
+      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+        {isAccumulative}
       </div>
       {/* Debe acumulado */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        0
+        {mustAccumulative}
       </div>
       {/* Diferencia */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        0
+        {difference}
       </div>
       {/* Diferencia acumulada */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        0
+        {accumulativeDifference}
       </div>
       {/* Problema */}
       <div className="flex flex-col col-span-2 items-center justify-center pt-4 pb-2">
-        {problems && problems.length > 0 && (
+        {issues && issues.length > 0 && (
           <div>
-            <ProblemCard />
+            <ProblemCard
+              key={issues[0].idhourxhourIssue}
+              id={issues[0].idhourxhourIssue}
+              title={issues[0].type.name}
+              description={issues[0].description}
+            />
             {showAllProblems &&
-              problems.slice(1).map(() => (
-                <div>
-                  <ProblemCard />
-                </div>
-              ))}
-            {additionalProblemCount > 0 && (
+              issues
+                .slice(1)
+                .map((issue) => (
+                  <ProblemCard
+                    key={issue.idhourxhourIssue}
+                    id={issue.idhourxhourIssue}
+                    title={issue.type.name}
+                    description={issue.description}
+                  />
+                ))}
+            {countedIssues > 0 && (
               <button
                 type="button"
                 onClick={() => setShowAllProblems(!showAllProblems)}
@@ -86,7 +149,7 @@ function RowBoard({ hour, problems }: RowBoardProps) {
                   ) : (
                     <div className="mb-2 flex gap-x-2">
                       <p className="text-main_gray hover:text-main_text_color">
-                        Ver {additionalProblemCount} problemas
+                        Ver {countedIssues} problemas
                       </p>
                       <img src={DropIcon} alt="drop-icon" />
                     </div>
@@ -108,7 +171,3 @@ function RowBoard({ hour, problems }: RowBoardProps) {
 }
 
 export default RowBoard;
-
-RowBoard.defaultProps = {
-  problems: [],
-};

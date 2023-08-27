@@ -2,7 +2,13 @@ import { useState } from 'react';
 
 import DrawerComponent from './Drawer';
 
-function ProblemCard() {
+type ProblemCardProps = {
+  id: number;
+  title: string;
+  description: string;
+};
+
+function ProblemCard({ id, title, description }: ProblemCardProps) {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -16,13 +22,8 @@ function ProblemCard() {
     <div>
       <button type="button" onClick={showDrawer}>
         <div className="px-4 cursor-pointer mb-3 text-left">
-          <p className="text-main_title_color text-sm font-medium">
-            Averías o fallas en equipos
-          </p>
-          <p className="text-sm text-main_text_color">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et...
-          </p>
+          <p className="text-main_title_color text-sm font-medium">{title}</p>
+          <p className="text-sm text-main_text_color">{description}</p>
         </div>
       </button>
 
