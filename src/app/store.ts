@@ -1,16 +1,15 @@
 import authorizerSlice from '@redux/slices/authorizerSlice';
 import authSlice from '@redux/slices/authSlice';
-//import productSlice from '@redux/slices/productSlice';
+import hourxhourSlice from '@redux/slices/hourxhourSlice';
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 export const store = configureStore({
   reducer: {
     authReducer: authSlice,
-    //productReducer: productSlice,
     notAuthorizerReducer: authorizerSlice,
+    hourxhourReducer: hourxhourSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

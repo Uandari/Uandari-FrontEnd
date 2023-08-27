@@ -1,8 +1,9 @@
 export interface IssueCard {
-  id: string;
+  id: number;
   typeProblem: string;
   category: string;
-  status: string;
+  quantity: number;
+  status: 'PENDING' | 'FINISHED';
   dateToSolveProblem: string;
   participants: User[];
   dateCreated: string;

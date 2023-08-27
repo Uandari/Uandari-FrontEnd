@@ -1,25 +1,47 @@
 import BulletsButton from '@assets/icons/bulletsButton.svg';
 import CategoryIcon from '@assets/icons/categories.svg';
 import ClockIcon from '@assets/icons/clockIcon.svg';
+import ResolveIcon from '@assets/icons/escalateIcon.svg';
 import PeopleIcon from '@assets/icons/people.svg';
 import ProblemTypeIcon from '@assets/icons/problemType.svg';
 import QuantityIcon from '@assets/icons/quantity.svg';
+import EscalateIcon from '@assets/icons/resolveIcon.svg';
 import StatusPendingIcon from '@assets/icons/statusIcon.svg';
 import StatusFinishedIcon from '@assets/icons/statusSuccessIcon.svg';
+import { User } from '@interfaces/IssueCard';
 import { Popover } from 'antd';
 
 type IssueCardProps = {
+  id: number;
+  typeProblem: string;
+  category: string;
+  quantity: number;
   status: 'PENDING' | 'FINISHED';
+  dateToSolveProblem: string;
+  participants: User[];
+  dateCreated: string;
 };
 
-function IssueCard({ status }: IssueCardProps) {
+function IssueCard({
+  id,
+  typeProblem,
+  category,
+  quantity,
+  status,
+  dateToSolveProblem,
+  participants,
+  dateCreated,
+}: IssueCardProps) {
   return (
-    <div className="w-full bg-white border border-main_color px-4 py-3 rounded-xl relative mb-4">
+    <button
+      type="button"
+      className="w-full bg-white border border-main_color px-4 py-3 rounded-xl relative mb-4 hover:bg-[#FBFCFC] text-left "
+    >
       <div className="flex gap-12">
         <div className="flex gap-x-2">
-          <p className="text-main_gray font-medium text-lg">#8014 - </p>
+          <p className="text-main_gray font-medium text-lg">#{id} - </p>
           <p className="text-main_title_color font-medium text-lg">
-            Averías o fallas en equipos
+            {typeProblem}
           </p>
         </div>
         {status === 'PENDING' ? (
@@ -37,29 +59,25 @@ function IssueCard({ status }: IssueCardProps) {
       <div className="flex items-center gap-x-8 my-3">
         <div className="flex gap-1">
           <img src={CategoryIcon} alt="icon-description" />
-          <p className="text-main_text_color">Disponibilidad</p>
-        </div>
-        <div className="flex gap-1">
-          <img src={ProblemTypeIcon} alt="icon-description" />
-          <p className="text-main_text_color">Averías</p>
+          <p className="text-main_text_color">{category}</p>
         </div>
         <div className="flex gap-1">
           <img src={QuantityIcon} alt="icon-description" />
-          <p className="text-main_text_color">16 motores</p>
+          <p className="text-main_text_color">{quantity} motores</p>
         </div>
         <div className="flex gap-1">
           <img src={ClockIcon} alt="icon-description" />
-          <p className="text-main_text_color">8/03/2023</p>
+          <p className="text-main_text_color"> {dateToSolveProblem} </p>
         </div>
         <div className="flex gap-1">
           <img src={PeopleIcon} alt="icon-description" />
-          <p className="text-main_text_color">3 responsables</p>
+          <p className="text-main_text_color">
+            {participants.length} responsables
+          </p>
         </div>
       </div>
       <hr />
-      <p className="text-main_text_color pt-2">
-        Añadido el 2 de Agosto de 2023
-      </p>
+      <p className="text-main_gray pt-2">Añadido el {dateCreated}</p>
       <div className="absolute right-6 top-6 cursor-pointer">
         <Popover
           placement="left"
@@ -67,16 +85,18 @@ function IssueCard({ status }: IssueCardProps) {
           content={
             <div className="flex flex-col">
               <button
-                className="text-main_text_color text-left hover:bg-slate-100 px-3 rounded-md"
+                className="text-main_text_color flex items-center gap-2 text-left hover:bg-slate-100 px-3 rounded-md"
                 type="button"
               >
-                Escalar
+                <img className="w-4" src={EscalateIcon} alt="escalate-icon" />
+                <p>Escalar</p>
               </button>
               <button
-                className="text-main_text_color text-left hover:bg-slate-100 px-3 rounded-md"
+                className="text-main_text_color flex items-center gap-2 text-left hover:bg-slate-100 px-3 rounded-md"
                 type="button"
               >
-                Resolver
+                <img className="w-4" src={ResolveIcon} alt="resolve-icon" />
+                <p>Resolver</p>
               </button>
             </div>
           }
@@ -84,7 +104,7 @@ function IssueCard({ status }: IssueCardProps) {
           <img src={BulletsButton} alt="icon-bullets" />
         </Popover>
       </div>
-    </div>
+    </button>
   );
 }
 
