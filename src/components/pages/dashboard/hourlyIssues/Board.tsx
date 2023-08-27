@@ -1,12 +1,7 @@
-import { useEffect } from 'react';
-
 import { HourxHourCardMock } from '@mocks/HourxHourCard';
-import { getHoursXHours } from '@redux/thunks/hourperhourThunk';
-import { shiftA, shiftB, shiftC } from 'src/commons/enums';
 
 import HeadBoard from './modules/HeadBoard';
 import RowBoard from './modules/RowBoard';
-import ShiftTab from './modules/ShiftTab';
 
 function Board() {
   // Arreglo de horas a representar

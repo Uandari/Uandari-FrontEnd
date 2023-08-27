@@ -1,7 +1,7 @@
 import ClockIcon from '@icons/clock-two 1.svg';
 import { Select } from 'antd';
 
-export type ShiftTabProps = {
+export type CellTabProps = {
   shift: string;
 };
 
@@ -20,7 +20,7 @@ const shiftsLabels = [
   },
 ];
 
-function ShiftTab({ shift }: ShiftTabProps) {
+function CellTab({ shift }: CellTabProps) {
   return (
     <div className="flex justify-between items-center px-4 py-2 border-b border-main_color">
       <div className="flex items-center gap-2">
@@ -35,4 +35,4 @@ function ShiftTab({ shift }: ShiftTabProps) {
   );
 }
 
-export default ShiftTab;
+export default CellTab;
