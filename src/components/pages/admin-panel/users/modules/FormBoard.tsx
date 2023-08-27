@@ -8,10 +8,11 @@ import { User, UserFormData } from '@interfaces/User';
 import { initialUserInfo } from '@mocks/Users';
 import { getUser } from '@redux/thunks/userThunk';
 import { Button, Form, Input, Select } from 'antd';
+
 import {
   usersCreateValidation,
   usersUpdateValidations,
-} from 'src/formValidations/usersValidations';
+} from '../../../../../formValidations/usersValidations';
 
 type FormBoardProps = {
   onClose: (callback?: () => void) => void;
@@ -20,9 +21,9 @@ type FormBoardProps = {
 
 function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
   const rolesMock = [
-    { value: 'Administrador', label: 'Administrador' },
-    { value: 'Coordinador', label: 'Coordinador' },
-    { value: 'Team Leader', label: 'Team Leader' },
+    { value: 1, label: 'Administrador' },
+    { value: 2, label: 'Coordinador' },
+    { value: 3, label: 'Team Leader' },
   ];
 
   const dispatch = useAppDispatch();
@@ -79,7 +80,7 @@ function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
   return (
     <div className="w-[365px]">
       <div className="px-5 pt-3">
-        <p className="text-main_text_color font-medium">
+        <p className="text-main_white font-medium hover:text-main_white">
           {userIdToUpdate ? 'Editar Usuario' : 'Registro de Usuario'}
         </p>
       </div>
@@ -111,10 +112,11 @@ function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
         <div className="flex justify-end">
           <Form.Item>
             <Button
-              className="bg-[#1677ff]"
+              className="bg-main_blue_dark"
               htmlType="submit"
               type="primary"
               size="large"
+              onClick={handleSubmit}
             >
               Guardar
             </Button>

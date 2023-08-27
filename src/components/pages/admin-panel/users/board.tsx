@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
+import imagenUsuario from '@assets/usersIcons/1.png';
 import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
 import useErrorModal from '@hooks/useErrorModal';
 import useUsers from '@hooks/useUsers';
 import { FetchedUsers } from '@interfaces/User';
-import { UsersListMock } from '@mocks/Users';
 import { getUsers, resetUserError } from '@redux/thunks/userThunk';
-import userImage from '@usersIcons/1.png';
 import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
@@ -80,7 +79,11 @@ export default function Board() {
           <Form className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
-                <Input size="large" placeholder="Buscar usuario" />
+                <Input
+                  size="large"
+                  placeholder="Buscar usuario"
+                  onChange={handleInputChange}
+                />
               </Form.Item>
             </div>
           </Form>
@@ -89,15 +92,20 @@ export default function Board() {
           placement="leftTop"
           trigger="click"
           content={
-            <FormBoard
-              userIdToUpdate={selectedUser?.idUser}
-              onClose={handleClose}
-            />
+            isModalOpenToUpdate ? (
+              <FormBoard
+                userIdToUpdate={selectedUser?.idUser}
+                onClose={handleClose}
+              />
+            ) : (
+              isModalOpen && <FormBoard onClose={handleClose} />
+            ) // Esto mostrará null como contenido si la condición no se cumple
           }
         >
           <Button
             size="large"
-            className=" text-base bg-main_blue_dark text-main_white rounded-lg font-medium"
+            className=" text-base bg-main_blue_dark text-main_white rounded-lg mb-4 font-medium"
+            onClick={handleOpenModal}
           >
             Registrar nuevo usuario
           </Button>
@@ -106,16 +114,17 @@ export default function Board() {
       <div className="row-span-1">
         <HeadBoard />
       </div>
-      <div className="overflow-y-auto row-span-6 hide-scrollbar">
+      <div className="overflow-y-auto" style={{ maxHeight: '70vh' }}>
         {usersData.length > 0 ? (
           usersData.map((user) => (
             <RowBoard
-              imageUrl="../../../../assets/usersIcons/1.png"
+              key={user.idUser}
+              imageUrl={imagenUsuario}
               role={user.idRole}
               userName={`${user.name} ${user.lastNames}`}
               controlNumber={user.controlNumber}
               onDelete={() => handleDeleteUser(user.idUser)}
-              // onUpdate={() => handleUpdate(user)}
+              onUpdate={() => handleUpdate(user)}
             />
           ))
         ) : (

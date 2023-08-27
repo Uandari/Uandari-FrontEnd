@@ -113,7 +113,7 @@ export const deleteUser =
   (userId: number): AppThunkAction =>
   async (dispatch) => {
     await privateApi
-      .post('/usuarios/deleteUser', { userId })
+      .post('/usuarios/deleteUser' /* , { userId } */)
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
