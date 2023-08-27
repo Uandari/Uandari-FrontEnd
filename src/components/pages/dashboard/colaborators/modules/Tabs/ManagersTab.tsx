@@ -1,7 +1,5 @@
-import { UsersListMock } from '@mocks/Users';
-import Board from '../../boardBase';
-import RowBoard from '../RowBoard';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
+import imagenUsuario10 from '@assets/usersIcons/10.png';
 import imagenUsuario2 from '@assets/usersIcons/2.png';
 import imagenUsuario3 from '@assets/usersIcons/3.png';
 import imagenUsuario4 from '@assets/usersIcons/4.png';
@@ -10,7 +8,10 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import imagenUsuario10 from '@assets/usersIcons/10.png';
+import { UsersListMock } from '@mocks/Users';
+
+import Board from '../../boardBase';
+import RowBoard from '../RowBoard';
 
 export default function ManagersTab() {
   const userImages = [
@@ -26,32 +27,32 @@ export default function ManagersTab() {
     imagenUsuario9,
     imagenUsuario10,
   ];
-  
+
   function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * userImages.length);
     return userImages[randomIndex];
   }
 
-
   const roleMap: Record<string, string> = {
-    '1': 'Administrador',
-    '2': 'Coordinador',
-    '3': 'Team Leader',
+    '1': 'Gerente',
+    '2': 'Administrador',
+    '3': 'Coordinador',
+    '4': 'Team Leader',
     // Agrega más mapeos según sea necesario
   };
 
   return (
-  <Board>
-    {UsersListMock
-          .filter(user => user.idRole === '1') // Filtrar usuarios con idRole igual a 1
-          .map((user) => (
-            <RowBoard
-              key={user.controlNumber}
-              userName={`${user.name} ${user.lastNames}`}
-              controlNumber={user.controlNumber}
-              role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-              imageUrl={getRandomImageUrl()}
-            />
-          ))}
-  </Board>)
+    <Board>
+      {UsersListMock.filter((user) => user.idRole === '1') // Filtrar usuarios con idRole igual a 1
+        .map((user) => (
+          <RowBoard
+            key={user.controlNumber}
+            userName={`${user.name} ${user.lastNames}`}
+            controlNumber={user.controlNumber}
+            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+            imageUrl={getRandomImageUrl()}
+          />
+        ))}
+    </Board>
+  );
 }
