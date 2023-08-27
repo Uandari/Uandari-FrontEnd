@@ -52,8 +52,6 @@ export default function CustomInput({
           )
         }
       />
-
-
     </Space>
   );
 }
@@ -67,4 +65,5 @@ CustomInput.defaultProps = {
   name: undefined,
   value: undefined,
   onChange: undefined,
+  className: undefined,
 };

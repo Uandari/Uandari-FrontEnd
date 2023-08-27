@@ -28,6 +28,4 @@ export const ADMIN_ROLES = 'roles';
 
 export const UPLOADS = 'subir-archivos/';
 
-export const LOGIN = '/login';
-
-export const HELP = 'centro-de-ayuda';
+export const LOGIN = 'login';

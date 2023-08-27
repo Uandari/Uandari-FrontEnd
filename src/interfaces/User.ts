@@ -1,40 +1,34 @@
 export interface UserCredentials {
-  user: string;
+  controlNumber: string;
   password: string;
 }
 
 export interface UserFormData {
   name: string;
-  email: string;
-  employeeId: string;
-  maternalSurname: string;
-  paternalSurname: string;
-  role: string;
-  shift: string;
+  lastNames: string;
+  controlNumber: string;
+  mail: string;
   password: string;
+  idRole: string;
+  imageUrl?: string;
 }
-
 export interface User extends UserFormData {
-  userId?: number;
-  isUserAdmin?: boolean;
-  currentPassword?: string;
+  idUser: number;
+  isDeleted?: number;
+  verifiedAccount?: number;
+  token?: string;
 }
 
 export interface FetchedUsers {
-  userId: number;
-  email: string;
+  idUser: number;
   name: string;
-  paternalSurname: string;
-  maternalSurname: string;
-  shift: string;
-  employeeId: string;
-  roleName: string;
-}
-
-export enum Roles {
-  ADMIN = 'Admin',
-  PICKING_SUPERVISOR = 'Supervisor Picking',
-  ADUANA_SUPERVISOR = 'Supervisor Aduanas',
-  DELIVERY_SUPERVISOR = 'Supervisor Delivery',
-  PICKER = 'Pickero',
+  lastNames: string;
+  controlNumber: string;
+  mail: string;
+  password: string;
+  idRole: number;
+  token: string;
+  verifiedAccount: number;
+  imageUrl: string;
+  isDelete: number;
 }
