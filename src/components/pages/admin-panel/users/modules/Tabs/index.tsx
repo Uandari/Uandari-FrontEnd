@@ -1,22 +1,30 @@
 import { Tabs, TabsProps } from 'antd';
 
 import AdministratorsTab from './AdministratorsTab';
+import AllTab from './AllTab';
+import CoordinatorsTab from './CoordinatorsTab';
+import TeamLeadersTab from './TeamLeadersTab';
 
 const itemsTabs: TabsProps['items'] = [
   {
     key: '1',
+    label: 'Todos',
+    children: <AllTab />,
+  },
+  {
+    key: '2',
     label: 'Administradores',
     children: <AdministratorsTab />,
   },
   {
-    key: '2',
+    key: '3',
     label: 'Coordinadores',
-    children: <AdministratorsTab />,
+    children: <CoordinatorsTab />,
   },
   {
-    key: '3',
+    key: '4',
     label: 'Team Leaders',
-    children: <AdministratorsTab />,
+    children: <TeamLeadersTab />,
   },
 ];
 

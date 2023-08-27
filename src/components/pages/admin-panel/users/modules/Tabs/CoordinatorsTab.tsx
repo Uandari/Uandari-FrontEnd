@@ -12,7 +12,7 @@ import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
 
-export default function AdministratorsTab() {
+export default function CoordinatorsTab() {
   const userImages = [
     imagenUsuario1,
     imagenUsuario2,
@@ -43,7 +43,7 @@ export default function AdministratorsTab() {
   return (
   <Board>
     {UsersListMock
-          .filter(user => user.idRole === '1') // Filtrar usuarios con idRole igual a 1
+          .filter(user => user.idRole === '2') // Filtrar usuarios con idRole igual a 1
           .map((user) => (
             <RowBoard
               key={user.controlNumber}

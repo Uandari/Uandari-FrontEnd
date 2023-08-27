@@ -1,19 +1,29 @@
-import { useEffect, useState } from 'react';
+/* import { useEffect, useState } from 'react';
 
-import { RootState, useAppDispatch, useAppSelector } from '@app/store';
-import imagenUsuario from '@assets/usersIcons/1.png';
-import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
+import { RootState, useAppDispatch, useAppSelector } from '@app/store';*/
+
+import { UsersListMock } from '@mocks/Users';
+/* import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
 import useErrorModal from '@hooks/useErrorModal';
 import useUsers from '@hooks/useUsers';
 import { FetchedUsers } from '@interfaces/User';
-import { getUsers, resetUserError } from '@redux/thunks/userThunk';
+import { getUsers, resetUserError } from '@redux/thunks/userThunk'; */
 import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
 import HeadBoard from './modules/HeadBoard';
 import RowBoard from './modules/RowBoard';
 
-export default function Board() {
+export type BoardProps = {
+  children: React.ReactNode;
+};
+
+export default function Board({
+  children
+}: BoardProps) {
+ 
+
+  /* 
   const {
     isModalOpen,
     isModalOpenToUpdate,
@@ -26,7 +36,6 @@ export default function Board() {
     searchTerm,
     handleInputChange,
   } = useUsers();
-
   const [usersData, setUsersData] = useState<FetchedUsers[]>([]);
 
   const dispatch = useAppDispatch();
@@ -71,7 +80,7 @@ export default function Board() {
   if (loading) {
     return <CircleProgressIndicator />;
   }
-
+ */
   return (
     <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
@@ -82,7 +91,7 @@ export default function Board() {
                 <Input
                   size="large"
                   placeholder="Buscar usuario"
-                  onChange={handleInputChange}
+                /* onChange={handleInputChange} */
                 />
               </Form.Item>
             </div>
@@ -92,20 +101,24 @@ export default function Board() {
           placement="leftTop"
           trigger="click"
           content={
-            isModalOpenToUpdate ? (
-              <FormBoard
-                userIdToUpdate={selectedUser?.idUser}
-                onClose={handleClose}
-              />
-            ) : (
-              isModalOpen && <FormBoard onClose={handleClose} />
-            ) // Esto mostrará null como contenido si la condición no se cumple
+            <FormBoard
+            /* userIdToUpdate={selectedUser?.idUser} */
+            />
+            /*  isModalOpenToUpdate ? (
+               <FormBoard
+                 userIdToUpdate={selectedUser?.idUser}
+                 onClose={handleClose}
+               />
+             ) : (
+               isModalOpen && <FormBoard onClose={handleClose} />
+             ) // Esto mostrará null como contenido si la condición no se cumple
+           } */
           }
         >
           <Button
             size="large"
-            className=" text-base bg-main_blue_dark text-main_white rounded-lg mb-4 font-medium"
-            onClick={handleOpenModal}
+            className=" text-base bg-main_blue_dark  text-main_white rounded-lg mb-4  font-medium"
+          /* onClick={handleOpenModal} */
           >
             Registrar nuevo usuario
           </Button>
@@ -115,24 +128,22 @@ export default function Board() {
         <HeadBoard />
       </div>
       <div className="overflow-y-auto" style={{ maxHeight: '70vh' }}>
-        {usersData.length > 0 ? (
-          usersData.map((user) => (
-            <RowBoard
-              key={user.idUser}
-              imageUrl={imagenUsuario}
-              role={user.idRole}
-              userName={`${user.name} ${user.lastNames}`}
-              controlNumber={user.controlNumber}
-              onDelete={() => handleDeleteUser(user.idUser)}
-              onUpdate={() => handleUpdate(user)}
-            />
-          ))
-        ) : (
-          <div className="text-xl text-gray text-center mt-10">
-            No se encontraron usuarios
-          </div>
-        )}
+        {children}
+        
+
       </div>
     </div>
   );
 }
+
+/* usersData.map((user) => (
+  <RowBoard
+    key={user.idUser}
+    imageUrl={imagenUsuario}
+    role={user.idRole}
+    userName={`${user.name} ${user.lastNames}`}
+    controlNumber={user.controlNumber}
+    onDelete={() => handleDeleteUser(user.idUser)}
+    onUpdate={() => handleUpdate(user)}
+  />
+)) */

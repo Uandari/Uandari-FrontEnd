@@ -4,7 +4,7 @@ import editIcon from '@icons/editIcon.svg';
 export type RowBoardProps = {
   userName: string;
   controlNumber: string;
-  role: number;
+  role: string;
   imageUrl: string;
   onDelete?: () => void;
   onUpdate?: () => void;

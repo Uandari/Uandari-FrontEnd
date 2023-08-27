@@ -9,11 +9,11 @@ export interface UserFormData {
   controlNumber: string;
   mail: string;
   password: string;
-  idRole?: number;
+  idRole: string;
   imageUrl?: string;
 }
 export interface User extends UserFormData {
-  idUser?: number;
+  idUser: number;
   isDeleted?: number;
   verifiedAccount?: number;
   token?: string;

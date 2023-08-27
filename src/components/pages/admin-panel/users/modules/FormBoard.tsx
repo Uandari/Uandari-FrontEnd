@@ -15,17 +15,17 @@ import {
 } from '../../../../../formValidations/usersValidations';
 
 type FormBoardProps = {
-  onClose: (callback?: () => void) => void;
+  /* onClose: (callback?: () => void) => void; */
   userIdToUpdate?: number;
 };
 
-function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
+function FormBoard({ /* onClose, */ userIdToUpdate }: FormBoardProps) {
   const rolesMock = [
     { value: 1, label: 'Administrador' },
     { value: 2, label: 'Coordinador' },
     { value: 3, label: 'Team Leader' },
   ];
-
+/* 
   const dispatch = useAppDispatch();
 
   const { handleCreateUser, handleUpdateUser } = useUsers();
@@ -76,11 +76,11 @@ function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
         });
     }
   }, [dispatch, userIdToUpdate, setState]);
-
+ */
   return (
     <div className="w-[365px]">
       <div className="px-5 pt-3">
-        <p className="text-main_white font-medium hover:text-main_white">
+        <p className="text-black font-medium ">
           {userIdToUpdate ? 'Editar Usuario' : 'Registro de Usuario'}
         </p>
       </div>
@@ -116,7 +116,7 @@ function FormBoard({ onClose, userIdToUpdate }: FormBoardProps) {
               htmlType="submit"
               type="primary"
               size="large"
-              onClick={handleSubmit}
+              /* onClick={handleSubmit} */
             >
               Guardar
             </Button>
