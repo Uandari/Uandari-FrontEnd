@@ -47,6 +47,16 @@ function DetailBar() {
         problem="Averías o fallas en equipos"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
       />
+      <CardTab
+        status="En proceso"
+        problem="Averías o fallas en equipos"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
+      />
+      <CardTab
+        status="En proceso"
+        problem="Averías o fallas en equipos"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
+      />
     </div>
   );
 }

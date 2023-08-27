@@ -8,17 +8,18 @@ import FormBoard from './FormBoard';
 import ProblemCard from './ProblemCard';
 
 export type RowBoardProps = {
-  hour: string;
-  date: string;
-  must: number;
-  mustAccumulative: number;
-  is: number;
-  isAccumulative: number;
-  difference: number;
-  accumulativeDifference: number;
-  idUser: number;
-  idCell: number;
-  issues: IssuesCardProps[];
+  completeHour?: string;
+  hour?: string;
+  date?: string;
+  must?: number;
+  mustAccumulative?: number;
+  is?: number;
+  isAccumulative?: number;
+  difference?: number;
+  accumulativeDifference?: number;
+  idUser?: number;
+  idCell?: number;
+  issues?: IssuesCardProps[];
 };
 
 export type IssuesCardProps = {
@@ -32,6 +33,7 @@ export type IssuesType = {
 };
 
 function RowBoard({
+  completeHour,
   hour,
   date,
   must,
@@ -46,8 +48,8 @@ function RowBoard({
 }: RowBoardProps) {
   const [showAllProblems, setShowAllProblems] = useState(false);
   const [countedIssues, setCountedIssues] = useState(0);
-  const [isValue, setIsValue] = useState<number>(is);
-  const [mustValue, setMustValue] = useState<number>(must);
+  const [isValue, setIsValue] = useState<number>(is ?? 0);
+  const [mustValue, setMustValue] = useState<number>(must ?? 0);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -63,14 +65,16 @@ function RowBoard({
 
   useEffect(() => {
     /* Hide all the problem list */
-    setCountedIssues(issues.length - 1);
-  }, [issues.length]);
+    if (issues) {
+      setCountedIssues(issues.length - 1);
+    }
+  }, [issues]);
 
   return (
     <div className="grid grid-cols-9 border-b border-main_color">
       {/* Hora */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
-        <div className="py-6">{hour}</div>
+        <div className="py-6">{completeHour}</div>
       </div>
       {/* Es */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color ">
@@ -171,3 +175,18 @@ function RowBoard({
 }
 
 export default RowBoard;
+
+RowBoard.defaultProps = {
+  completeHour: null,
+  hour: null,
+  date: null,
+  must: null,
+  mustAccumulative: null,
+  is: null,
+  isAccumulative: null,
+  difference: null,
+  accumulativeDifference: null,
+  idUser: null,
+  idCell: null,
+  issues: null,
+};
