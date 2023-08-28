@@ -43,15 +43,15 @@ function RowBoard({
       </div>
       {/* Shift */}
       <div className="flex items-center justify-center text-main_gray">
-        {shift}
+        {celule}
       </div>
       {/* Celule */}
       <div className="flex items-center justify-center text-main_gray">
-        {celule}
+        {operation}
       </div>
       {/* Operation */}
       <div className="flex items-center justify-center text-main_gray">
-        {operation}
+        {shift}
       </div>
     </div>
   );
