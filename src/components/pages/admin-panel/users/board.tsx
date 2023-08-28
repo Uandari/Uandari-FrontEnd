@@ -1,6 +1,6 @@
 /* import { useEffect, useState } from 'react';
 
-import { RootState, useAppDispatch, useAppSelector } from '@app/store';*/
+import { RootState, useAppDispatch, useAppSelector } from '@app/store'; */
 
 import { UsersListMock } from '@mocks/Users';
 /* import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
@@ -18,11 +18,7 @@ export type BoardProps = {
   children: React.ReactNode;
 };
 
-export default function Board({
-  children
-}: BoardProps) {
- 
-
+export default function Board({ children }: BoardProps) {
   /* 
   const {
     isModalOpen,
@@ -91,7 +87,7 @@ export default function Board({
                 <Input
                   size="large"
                   placeholder="Buscar usuario"
-                /* onChange={handleInputChange} */
+                  /* onChange={handleInputChange} */
                 />
               </Form.Item>
             </div>
@@ -118,7 +114,7 @@ export default function Board({
           <Button
             size="large"
             className=" text-base bg-main_blue_dark  text-main_white rounded-lg mb-4  font-medium"
-          /* onClick={handleOpenModal} */
+            /* onClick={handleOpenModal} */
           >
             Registrar nuevo usuario
           </Button>
@@ -129,8 +125,6 @@ export default function Board({
       </div>
       <div className="overflow-y-auto" style={{ maxHeight: '70vh' }}>
         {children}
-        
-
       </div>
     </div>
   );
