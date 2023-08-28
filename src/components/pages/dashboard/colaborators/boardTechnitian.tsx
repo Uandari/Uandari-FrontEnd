@@ -10,7 +10,7 @@ import { FetchedUsers } from '@interfaces/User';
 import { getUsers, resetUserError } from '@redux/thunks/userThunk'; */
 import { Button, Form, Input, Popover } from 'antd';
 
-import HeadBoard from './modules/boardBase/HeadBoard';
+import HeadBoard from './modules/boardTechnitian/HeadBoard';
 
 export type BoardProps = {
   children: React.ReactNode;

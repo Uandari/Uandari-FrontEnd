@@ -11,7 +11,7 @@ import imagenUsuario9 from '@assets/usersIcons/9.png';
 import { UsersListMock } from '@mocks/Users';
 
 import Board from '../../boardBase';
-import RowBoard from '../RowBoard';
+import RowBoard from '../boardBase/RowBoard';
 
 export default function ManagersTab() {
   const userImages = [

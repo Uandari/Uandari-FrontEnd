@@ -8,10 +8,10 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import { UsersListMock } from '@mocks/Users';
+import { TechnitiansListMock } from '@mocks/Technitian';
 
-import Board from '../../boardBase';
-import RowBoard from '../RowBoard';
+import Board from '../../boardTechnitian';
+import RowBoard from '../boardTechnitian/RowBoard';
 
 export default function TechnitiansTab() {
   const userImages = [
@@ -35,13 +35,17 @@ export default function TechnitiansTab() {
 
   return (
     <Board>
-      {UsersListMock.map((user) => (
+      {TechnitiansListMock.map((technitian) => (
         <RowBoard
-          key={user.controlNumber}
-          userName={`${user.name} ${user.lastNames}`}
-          controlNumber={user.controlNumber}
+          key={technitian.controlNumber}
+          userName={`${technitian.name} ${technitian.lastNames}`}
+          controlNumber={technitian.controlNumber}
           // eslint-disable-next-line jsx-a11y/aria-role
-          role="Técnico"
+          celule={technitian.celule}
+          line={technitian.line}
+          motor={technitian.motor}
+          operation={technitian.operation}
+          shift={technitian.shift}
           imageUrl={getRandomImageUrl()}
         />
       ))}
