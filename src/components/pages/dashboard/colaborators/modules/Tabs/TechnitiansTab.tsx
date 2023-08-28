@@ -8,12 +8,12 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import { UsersListMock } from '@mocks/Users';
+import { TechnitiansListMock } from '@mocks/Technitian';
 
-import Board from '../../board';
-import RowBoard from '../RowBoard';
+import Board from '../../boardTechnitian';
+import RowBoard from '../boardTechnitian/RowBoard';
 
-export default function AdministratorsTab() {
+export default function TechnitiansTab() {
   const userImages = [
     imagenUsuario1,
     imagenUsuario2,
@@ -33,22 +33,19 @@ export default function AdministratorsTab() {
     return userImages[randomIndex];
   }
 
-  const roleMap: Record<string, string> = {
-    '1': 'Gerente',
-    '2': 'Administrador',
-    '3': 'Coordinador',
-    '4': 'Team Leader',
-    // Agrega más mapeos según sea necesario
-  };
-
   return (
     <Board>
-      {UsersListMock.map((user) => (
+      {TechnitiansListMock.map((technitian) => (
         <RowBoard
-          key={user.controlNumber}
-          userName={`${user.name} ${user.lastNames}`}
-          controlNumber={user.controlNumber}
-          role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+          key={technitian.controlNumber}
+          userName={`${technitian.name} ${technitian.lastNames}`}
+          controlNumber={technitian.controlNumber}
+          // eslint-disable-next-line jsx-a11y/aria-role
+          celule={technitian.celule}
+          line={technitian.line}
+          motor={technitian.motor}
+          operation={technitian.operation}
+          shift={technitian.shift}
           imageUrl={getRandomImageUrl()}
         />
       ))}

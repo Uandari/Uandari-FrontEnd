@@ -10,8 +10,8 @@ import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import { UsersListMock } from '@mocks/Users';
 
-import Board from '../../board';
-import RowBoard from '../RowBoard';
+import Board from '../../boardBase';
+import RowBoard from '../boardBase/RowBoard';
 
 export default function AdministratorsTab() {
   const userImages = [

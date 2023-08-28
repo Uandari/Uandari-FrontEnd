@@ -24,7 +24,9 @@ import {
   ISSUES_LIST,
   ESCALATED_ISSUES,
   ISSUES_TRACKING,
+  COLLABORATORS,
 } from './paths';
+import Colaborators from '@components/pages/dashboard/colaborators';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: ISSUES_TRACKING,
         element: <IssuesTracking />,
+      },
+      {
+        path: COLLABORATORS,
+        element: <Colaborators />,
       },
     ],
     errorElement: <NotFound />,

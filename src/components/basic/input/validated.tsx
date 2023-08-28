@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+/* import { ChangeEvent } from 'react';
 
 import { Input, Space } from 'antd';
 
@@ -109,3 +109,4 @@ ValidatedFormInput.defaultProps = {
   onChange: undefined,
   className: undefined,
 };
+ */

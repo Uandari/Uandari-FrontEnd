@@ -10,9 +10,7 @@ import { FetchedUsers } from '@interfaces/User';
 import { getUsers, resetUserError } from '@redux/thunks/userThunk'; */
 import { Button, Form, Input, Popover } from 'antd';
 
-import FormBoard from './modules/FormBoard';
-import HeadBoard from './modules/HeadBoard';
-import RowBoard from './modules/RowBoard';
+import HeadBoard from './modules/boardTechnitian/HeadBoard';
 
 export type BoardProps = {
   children: React.ReactNode;
@@ -86,39 +84,13 @@ export default function Board({ children }: BoardProps) {
               <Form.Item>
                 <Input
                   size="large"
-                  placeholder="Buscar usuario"
+                  placeholder="Buscar colaborador"
                   /* onChange={handleInputChange} */
                 />
               </Form.Item>
             </div>
           </Form>
         </div>
-        <Popover
-          placement="leftTop"
-          trigger="click"
-          content={
-            <FormBoard
-            /* userIdToUpdate={selectedUser?.idUser} */
-            />
-            /*  isModalOpenToUpdate ? (
-               <FormBoard
-                 userIdToUpdate={selectedUser?.idUser}
-                 onClose={handleClose}
-               />
-             ) : (
-               isModalOpen && <FormBoard onClose={handleClose} />
-             ) // Esto mostrará null como contenido si la condición no se cumple
-           } */
-          }
-        >
-          <Button
-            size="large"
-            className=" text-base bg-main_blue_dark  text-main_white rounded-lg mb-4  font-medium"
-            /* onClick={handleOpenModal} */
-          >
-            Registrar nuevo usuario
-          </Button>
-        </Popover>
       </div>
       <div className="row-span-1">
         <HeadBoard />
