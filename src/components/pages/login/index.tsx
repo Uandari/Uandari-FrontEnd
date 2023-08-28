@@ -47,7 +47,7 @@ export default function LoginPage() {
               <Input size="large" placeholder="Número de control" />
             </Form.Item>
             <Form.Item>
-              <Input size="large" placeholder="Contraseña" />
+              <Input size="large" placeholder="Contraseña"  type='password'/>
             </Form.Item>
           </div>
 
