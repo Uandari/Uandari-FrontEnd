@@ -4,6 +4,8 @@ import { useAppDispatch } from '@app/store';
 import useForm from '@hooks/useForm';
 import useUsers from '@hooks/useUsers';
 import UserIcon from '@icons/iconUser.svg';
+import roleIcon from '@icons/role.svg';
+import controlNumberIcon from '@icons/controlNumber.svg';
 import { User, UserFormData } from '@interfaces/User';
 import { initialUserInfo } from '@mocks/Users';
 import { getUser } from '@redux/thunks/userThunk';
@@ -87,7 +89,7 @@ function FormBoard({ /* onClose, */ userIdToUpdate }: FormBoardProps) {
       <div className="pt-6">
         <Form.Item>
           <div className="flex items-start gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
+            <img src={controlNumberIcon} alt="problemType-icon" />
             <Input placeholder="Número de control" />
           </div>
         </Form.Item>
@@ -105,7 +107,7 @@ function FormBoard({ /* onClose, */ userIdToUpdate }: FormBoardProps) {
         </Form.Item>
         <Form.Item>
           <div className="flex items-center gap-2">
-            <img src={UserIcon} alt="problemType-icon" />
+            <img src={roleIcon} alt="problemType-icon" />
             <Select defaultValue={rolesMock[0].label} options={rolesMock} />
           </div>
         </Form.Item>

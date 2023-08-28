@@ -22,7 +22,7 @@ function RowBoard({
   return (
     <div className="grid grid-cols-8  border-b border-main_color h-24 ">
       {/* User general info */}
-      <div className="flex items-center col-span-2 justify-center text-main_gray border-main_color">
+      <div className="flex items-center col-span-2 pl-24  text-main_gray border-main_color">
         <img src={imageUrl} className="h-12 mr-3" alt="Foto de usuario" />
         <div className="flex flex-col">
           <div className="text-main_title_color">{userName}</div>

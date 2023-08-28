@@ -2,10 +2,12 @@ import AdminPanel from '@components/pages/admin-panel';
 import RolesList from '@components/pages/admin-panel/roles';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
+import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
+import TeamGoals from '@components/pages/dashboard/team-goals';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import UploadPanel from '@components/pages/upload-panel';
@@ -25,8 +27,8 @@ import {
   ESCALATED_ISSUES,
   ISSUES_TRACKING,
   COLLABORATORS,
+  TEAM_GOALS,
 } from './paths';
-import Colaborators from '@components/pages/dashboard/colaborators';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
         path: COLLABORATORS,
         element: <Colaborators />,
       },
+      {
+        path: TEAM_GOALS,
+        element: <TeamGoals />,
+      },
     ],
     errorElement: <NotFound />,
   },
@@ -69,10 +75,6 @@ const router = createBrowserRouter([
       {
         path: ADMIN_USERS,
         element: <UsersList />,
-      },
-      {
-        path: ADMIN_ROLES,
-        element: <RolesList />,
       },
     ],
     errorElement: <NotFound />,
