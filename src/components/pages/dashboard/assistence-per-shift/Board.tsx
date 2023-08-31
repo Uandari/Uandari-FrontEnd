@@ -5,7 +5,7 @@ import RowBoard from './modules/RowBoard';
 const shifts = [
   { title: '1ER TURNO' },
   { title: '2DO TURNO' },
-  { title: '3ER TURNO' },
+  { title: '3ER TURNO' },c
 ];
 
 export default function Board() {
