@@ -18,7 +18,7 @@ import PointsPlanIcon from '@icons/PointsPlanIcon.svg';
 import StandarWorkIcon from '@icons/StandarWorkIcon.svg';
 import TeamGoals from '@icons/TeamGoals.svg';
 import {
-  ASSITENCE,
+  ASSISTENCE_PER_SHIFT,
   COLLABORATORS,
   CRITICAL_PATH,
   DASHBOARD_MAIN,
@@ -112,7 +112,7 @@ export default function Dashboard() {
           <SidebarTab
             icon={AssitenceIcon}
             title="Asistencia por turno"
-            path={`${DASHBOARD_MAIN}${ASSITENCE}`}
+            path={`${DASHBOARD_MAIN}${ASSISTENCE_PER_SHIFT}`}
           />
           <SidebarTab
             icon={CriticalRouteIcon}
