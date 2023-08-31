@@ -1,26 +1,14 @@
 import CellBoard from './CellBoard';
 
-export type HeadBoardProps = {
-  days: number;
-};
 
-export default function HeadBoard({ days }: HeadBoardProps) {
-  const cellBoards = [];
-
-  for (let i = 0; i < days; i++) {
-    cellBoards.push(
-      <CellBoard key={i} title={String(i + 1)} />
-    );
-  }
-
+export default function HeadBoard() {
   return (
-    <div>
-      <div className={`flex border-main_color justify-end`}>
-        <div className='w-3'></div>
-        <div className='flex justify-start w-auto'>
-          {cellBoards}
-        </div>
+      <div className="grid grid-cols-6 border-b border-main_color h-full">
+        <CellBoard title='' colSpan='1'/>
+        <CellBoard title='Presente'/>
+        <CellBoard title='Ausentes'/>
+        <CellBoard title='Prestados'/>
+        <CellBoard title='Capacitación/Taller KVP'/>
       </div>
-    </div>
   );
 }
