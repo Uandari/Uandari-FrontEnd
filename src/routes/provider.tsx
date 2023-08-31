@@ -22,7 +22,6 @@ import {
   HOURLY_ISSUES,
   ADMIN,
   ADMIN_USERS,
-  ADMIN_ROLES,
   UPLOADS,
   CRITICAL_PATH,
   ISSUES_LIST,
@@ -34,7 +33,9 @@ import {
   ADMIN_CELLS,
   GOALS,
   STANDARD_WORKSHEETS,
+  ASSISTENCE_PER_SHIFT,
 } from './paths';
+import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: STANDARD_WORKSHEETS,
         element: <StandardWorksheet />,
+      },
+      {
+        path: ASSISTENCE_PER_SHIFT,
+        element: <AssistencePerShift />,
       },
     ],
     errorElement: <NotFound />,

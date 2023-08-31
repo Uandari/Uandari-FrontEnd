@@ -1,4 +1,4 @@
-import ColorChangingBox from "./ColorChangingBox";
+import ColorChangingBox from "./Tabs/ColorChangingBox";
 
 export type RowBoardProps = {
   month: string;
