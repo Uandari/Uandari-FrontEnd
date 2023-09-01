@@ -11,16 +11,17 @@ const shifts = [
 export default function Board() {
 
   return (
-    <div className="h-full grid ">
-        <HeadBoard />
-      <div className="overflow-y-auto" style={{ maxHeight: '70vh' }}>{shifts.map((shiftTitle) => (
+    
+
+<div className="grid grid-cols-6 grid-rows-2 g">
+        <div className="col-span-6"><HeadBoard /></div>
+    <div className="col-span-6 row-start-2">{shifts.map((shiftTitle) => (
         <div>
           <RowBoard shift={shiftTitle.title} />
         </div>
       ))}
-
-      </div>
-    </div>
+</div>
+</div>
 
   );
 }
