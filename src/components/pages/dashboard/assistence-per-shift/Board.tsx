@@ -12,13 +12,15 @@ export default function Board() {
   return (
     
 
-    <div className="">
-            <div className="h-36"><HeadBoard /></div>
-        <div className="">{shifts.map((shiftTitle) => (
-              <RowBoard shift={shiftTitle.title} />
-          ))}
-    </div>
-    </div>
-    
-      );
+<div className="grid grid-cols-6 grid-rows-2 g">
+        <div className="col-span-6"><HeadBoard /></div>
+    <div className="col-span-6 row-start-2">{shifts.map((shiftTitle) => (
+        <div>
+          <RowBoard shift={shiftTitle.title} />
+        </div>
+      ))}
+</div>
+</div>
+
+  );
 }
