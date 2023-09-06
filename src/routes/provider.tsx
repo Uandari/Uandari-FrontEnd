@@ -1,5 +1,4 @@
 import AdminPanel from '@components/pages/admin-panel';
-import RolesList from '@components/pages/admin-panel/roles';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import Colaborators from '@components/pages/dashboard/colaborators';
@@ -28,6 +27,8 @@ import {
   ISSUES_TRACKING,
   COLLABORATORS,
   TEAM_GOALS,
+  ADMIN_LINES,
+  ADMIN_CELLS,
 } from './paths';
 // import PrivateRoute from './privateRoute';
 
@@ -74,6 +75,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: ADMIN_USERS,
+        element: <UsersList />,
+      },
+      {
+        path: ADMIN_CELLS,
+        element: <UsersList />,
+      },
+      {
+        path: ADMIN_LINES,
+        element: <UsersList />,
+      },
+      {
+        path: ADMIN_ROLES,
         element: <UsersList />,
       },
     ],
