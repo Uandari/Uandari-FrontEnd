@@ -34,16 +34,17 @@ export default function AdministratorsTab() {
 
 
   const roleMap: Record<string, string> = {
-    '1': 'Administrador',
-    '2': 'Coordinador',
-    '3': 'Team Leader',
-    // Agrega más mapeos según sea necesario
+    '1': 'Gerentes',
+    '2': 'Administradores',
+    '3': 'Coordinadores',
+    '4': 'Team Leaders',
+    '5': 'Visualizadores',
   };
 
   return (
   <Board>
     {UsersListMock
-          .filter(user => user.idRole === '1') // Filtrar usuarios con idRole igual a 1
+          .filter(user => user.idRole === '2') 
           .map((user) => (
             <RowBoard
               key={user.controlNumber}
