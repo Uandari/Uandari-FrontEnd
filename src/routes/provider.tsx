@@ -30,6 +30,7 @@ import {
   ADMIN_LINES,
   ADMIN_CELLS,
 } from './paths';
+import CellsList from '@components/pages/admin-panel/cells';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -79,16 +80,16 @@ const router = createBrowserRouter([
       },
       {
         path: ADMIN_CELLS,
-        element: <UsersList />,
+        element: <CellsList />,
       },
-      {
+      /* {
         path: ADMIN_LINES,
-        element: <UsersList />,
-      },
-      {
+        element: <LinesList />,
+      }, */
+      /* {
         path: ADMIN_ROLES,
-        element: <UsersList />,
-      },
+        element: <RolesList />,
+      }, */
     ],
     errorElement: <NotFound />,
   },

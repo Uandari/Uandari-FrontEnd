@@ -2,7 +2,7 @@ import Topbar from '@components/layout/topbar';
 
 import CustomTabs from './modules/Tabs';
 
-function UsersList() {
+export default function UsersList() {
   return (
     <div className="border border-b grid bg-white flex-1 h-screen">
       <div className="sticky top-0">
@@ -12,5 +12,3 @@ function UsersList() {
     </div>
   );
 }
-
-export default UsersList;
