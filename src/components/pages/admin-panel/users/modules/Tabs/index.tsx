@@ -5,6 +5,7 @@ import AllTab from './AllTab';
 import CoordinatorsTab from './CoordinatorsTab';
 import ManagersTab from './ManagersTab';
 import TeamLeadersTab from './TeamLeadersTab';
+import VisualizersTab from './VisualizersTab';
 
 const itemsTabs: TabsProps['items'] = [
   {
@@ -31,6 +32,11 @@ const itemsTabs: TabsProps['items'] = [
     key: '5',
     label: 'Team Leaders',
     children: <TeamLeadersTab />,
+  },
+  {
+    key: '6',
+    label: 'Visualizadores',
+    children: <VisualizersTab />,
   },
 ];
 

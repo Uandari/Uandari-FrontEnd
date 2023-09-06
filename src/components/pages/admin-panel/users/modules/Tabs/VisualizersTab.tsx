@@ -12,7 +12,7 @@ import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
 
-export default function VisualizerTab() {
+export default function VisualizersTab() {
   const userImages = [
     imagenUsuario1,
     imagenUsuario2,
