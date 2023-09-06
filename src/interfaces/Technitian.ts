@@ -5,6 +5,6 @@ export interface TechnitianFormData {
   motor: string;
   line: string;
   shift: string;
-  celule: string;
+  cell: string;
   operation: string;
 }

@@ -4,7 +4,7 @@ export type RowBoardProps = {
   motor: string;
   line: string;
   shift: string;
-  celule: string;
+  cell: string;
   operation: string;
   imageUrl: string;
 };
@@ -15,7 +15,7 @@ function RowBoard({
   motor,
   line,
   shift,
-  celule,
+  cell,
   operation,
   imageUrl,
 }: RowBoardProps) {
@@ -43,7 +43,7 @@ function RowBoard({
       </div>
       {/* Shift */}
       <div className="flex items-center justify-center text-main_gray">
-        {celule}
+        {cell}
       </div>
       {/* Celule */}
       <div className="flex items-center justify-center text-main_gray">

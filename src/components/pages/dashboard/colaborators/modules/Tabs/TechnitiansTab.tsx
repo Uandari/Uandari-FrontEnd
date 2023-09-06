@@ -41,7 +41,7 @@ export default function TechnitiansTab() {
           userName={`${technitian.name} ${technitian.lastNames}`}
           controlNumber={technitian.controlNumber}
           // eslint-disable-next-line jsx-a11y/aria-role
-          celule={technitian.celule}
+          cell={technitian.cell}
           line={technitian.line}
           motor={technitian.motor}
           operation={technitian.operation}
