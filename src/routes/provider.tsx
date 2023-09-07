@@ -3,6 +3,7 @@ import CellsList from '@components/pages/admin-panel/cells';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import Colaborators from '@components/pages/dashboard/colaborators';
+import CriticalPath from '@components/pages/dashboard/critical-path';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: TEAM_GOALS,
         element: <TeamGoals />,
+      },
+      {
+        path: CRITICAL_PATH,
+        element: <CriticalPath />,
       },
     ],
     errorElement: <NotFound />,
