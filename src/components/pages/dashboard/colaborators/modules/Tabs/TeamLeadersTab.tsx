@@ -34,19 +34,20 @@ export default function TeamLeadersTab() {
   }
 
   const roleMap: Record<string, string> = {
-    '1': 'Administrador',
-    '2': 'Coordinador',
-    '3': 'Team Leader',
-    // Agrega más mapeos según sea necesario
+    1: 'Gerentes',
+    2: 'Administradores',
+    3: 'Coordinadores',
+    4: 'Team Leaders',
+    5: 'Visualizadores',
   };
 
   return (
     <Board>
-      {UsersListMock.filter((user) => user.idRole === '3') // Filtrar usuarios con idRole igual a 1
+      {UsersListMock.filter((user) => user.idRole === 33) 
         .map((user) => (
           <RowBoard
             key={user.controlNumber}
-            userName={`${user.name} ${user.lastNames}`}
+            userName={`${user.name} ${user.lastnames}`}
             controlNumber={user.controlNumber}
             role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
             imageUrl={getRandomImageUrl()}

@@ -1,6 +1,6 @@
 export type RowBoardProps = {
   userName: string;
-  controlNumber: string;
+  controlNumber: number;
   role: string;
   imageUrl: string;
 };

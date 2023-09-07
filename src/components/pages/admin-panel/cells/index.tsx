@@ -11,7 +11,9 @@ export default function CellsList() {
         <Board>
       {CellsListMock.map((cell) => (
         <RowBoard
-          key={cell.controlNumber}
+          key={cell.id}
+          cellNumber={cell.cellName}
+          line={cell.idLine}
         />
       ))}
     </Board>

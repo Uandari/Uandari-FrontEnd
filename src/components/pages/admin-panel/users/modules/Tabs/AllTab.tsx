@@ -34,11 +34,11 @@ export default function AdministratorsTab() {
   }
 
   const roleMap: Record<string, string> = {
-    '1': 'Gerente',
-    '2': 'Administrador',
-    '3': 'Coordinador',
-    '4': 'Team Leader',
-    // Agrega más mapeos según sea necesario
+    1: 'Gerentes',
+    2: 'Administradores',
+    3: 'Coordinadores',
+    4: 'Team Leaders',
+    5: 'Visualizadores',
   };
 
   return (
@@ -46,7 +46,7 @@ export default function AdministratorsTab() {
       {UsersListMock.map((user) => (
         <RowBoard
           key={user.controlNumber}
-          userName={`${user.name} ${user.lastNames}`}
+          userName={`${user.name} ${user.lastnames}`}
           controlNumber={user.controlNumber}
           role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
           imageUrl={getRandomImageUrl()}

@@ -26,7 +26,7 @@ export default function AdministratorsTab() {
     imagenUsuario9,
     imagenUsuario10,
   ];
-  
+
   function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * userImages.length);
     return userImages[randomIndex];
@@ -34,25 +34,25 @@ export default function AdministratorsTab() {
 
 
   const roleMap: Record<string, string> = {
-    '1': 'Gerentes',
-    '2': 'Administradores',
-    '3': 'Coordinadores',
-    '4': 'Team Leaders',
-    '5': 'Visualizadores',
+    1: 'Gerentes',
+    2: 'Administradores',
+    3: 'Coordinadores',
+    4: 'Team Leaders',
+    5: 'Visualizadores',
   };
 
   return (
-  <Board>
-    {UsersListMock
-          .filter(user => user.idRole === '2') 
-          .map((user) => (
-            <RowBoard
-              key={user.controlNumber}
-              userName={`${user.name} ${user.lastNames}`}
-              controlNumber={user.controlNumber}
-              role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-              imageUrl={getRandomImageUrl()}
-            />
-          ))}
-  </Board>)
+    <Board>
+      {UsersListMock
+        .filter(user => user.idRole === 2)
+        .map((user) => (
+          <RowBoard
+            key={user.controlNumber}
+            userName={`${user.name} ${user.lastnames}`}
+            controlNumber={user.controlNumber}
+            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+            imageUrl={getRandomImageUrl()}
+          />
+        ))}
+    </Board>)
 }

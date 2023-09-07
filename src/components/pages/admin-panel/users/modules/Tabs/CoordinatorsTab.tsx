@@ -44,11 +44,11 @@ export default function CoordinatorsTab() {
   return (
   <Board>
     {UsersListMock
-          .filter(user => user.idRole === '3') 
+          .filter(user => user.idRole === 3) 
           .map((user) => (
             <RowBoard
               key={user.controlNumber}
-              userName={`${user.name} ${user.lastNames}`}
+              userName={`${user.name} ${user.lastnames}`}
               controlNumber={user.controlNumber}
               role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
               imageUrl={getRandomImageUrl()}

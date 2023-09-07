@@ -1,7 +1,7 @@
 import { privateApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { colors } from '@constants/colors';
-import { User, UserFormData } from '@interfaces/User';
+import { User } from '@interfaces/User';
 import {
   createUserError,
   createUserSuccess,
@@ -21,7 +21,7 @@ import CustomApiError from '@utils/ApiError';
 import Swal from 'sweetalert2';
 
 export const createUser =
-  (userData: UserFormData): AppThunkAction =>
+  (userData: User): AppThunkAction =>
   async (dispatch) => {
     dispatch(createUsersStart());
     await privateApi
@@ -113,7 +113,7 @@ export const deleteUser =
   (userId: number): AppThunkAction =>
   async (dispatch) => {
     await privateApi
-      .post('/usuarios/deleteUser' /* , { userId } */)
+      .post('/usuarios/deleteUser'  , { userId } )
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;

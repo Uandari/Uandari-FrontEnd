@@ -1,9 +1,9 @@
-import deleteIcon from '@icons/deleteIcon.svg';
+/* import deleteIcon from '@icons/deleteIcon.svg';
 import editIcon from '@icons/editIcon.svg';
-
+ */
 export type RowBoardProps = {
   cellNumber: string,
-  line: string,
+  line: number,
 
 };
 

@@ -43,11 +43,11 @@ export default function ManagersTab() {
 
   return (
     <Board>
-      {UsersListMock.filter((user) => user.idRole === '1') 
+      {UsersListMock.filter((user) => user.idRole === 1) 
         .map((user) => (
           <RowBoard
             key={user.controlNumber}
-            userName={`${user.name} ${user.lastNames}`}
+            userName={`${user.name} ${user.lastnames}`}
             controlNumber={user.controlNumber}
             role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
             imageUrl={getRandomImageUrl()}
