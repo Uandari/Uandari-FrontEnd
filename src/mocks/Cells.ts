@@ -1,27 +1,41 @@
-import { CellFormData } from '@interfaces/Cell';
+import { Cell } from '@interfaces/Cell';
 
-export const initialUserInfo = {
-  idUser: null,
-  name: '',
-  lastNames: '',
-  controlNumber: '',
-  mail: '',
-  password: '',
-  idRole: '0',
-  verifiedAccount: 1,
-  token: '',
-  imageUrl: '',
-  isDeleted: 0,
+export const initialCellInfo = {
+  id: 0,
+  cellName: "",
+  idUser: 0,
+  idLine: 0,
 };
 
-export const CellsListMock: CellFormData[] = [
+export const CellsListMock: Cell[] = [
   {
-    name: 'Andrés',
-    controlNumber: 'WF16S51AW6F1',
-    lastNames: 'Cordero Ramírez',
-    mail: 'andresmcorderor@gmail.com',
-    password: 'efawfa1w81as56f189',
-    idRole: '1',
-    imageUrl: '',
+    id: 0,
+    cellName: "1",
+    idUser: 2,
+    idLine: 3,
+  },
+  {
+    id: 0,
+    cellName: "2",
+    idUser: 8,
+    idLine: 1,
+  },
+  {
+    id: 0,
+    cellName: "3",
+    idUser: 11,
+    idLine: 2,
+  },
+  {
+    id: 0,
+    cellName: "4",
+    idUser: 1,
+    idLine: 3,
+  },
+  {
+    id: 0,
+    cellName: "5",
+    idUser: 6,
+    idLine: 4,
   },
 ];
