@@ -22,7 +22,7 @@ export const POINTS_PLAN = 'plan-de-puntos';
 export const STANDARD_WORK_SHEET = 'hojas-de-trabajo-estandar';
 
 // ADMINISTRATOR PANEL ROUTES
-export const ADMIN = 'admin/';
+export const ADMIN = '/admin/';
 export const ADMIN_USERS = 'usuarios';
 export const ADMIN_CELLS = 'celulas';
 export const ADMIN_LINES = 'lineas';

@@ -3,12 +3,33 @@ import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
 import HeadBoard from './modules/HeadBoard';
+import useUsers from '@hooks/useUsers';
 
 export type BoardProps = {
   children: React.ReactNode;
 };
 
 export default function Board({ children }: BoardProps) {
+  const {
+    isModalOpen,
+    isModalOpenToUpdate,
+    handleOpenModal,
+    handleCloseModal,
+    handleDeleteUser,
+    setIsModalOpenToUpdate,
+    setSelectedUser,
+    selectedUser,
+    searchTerm,
+    handleInputChange,
+  } = useUsers();
+
+  const handleClose = (callback?: () => void) => {
+    handleCloseModal();
+    if (callback) {
+      callback();
+    }
+  };
+
   return (
     <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
@@ -19,6 +40,8 @@ export default function Board({ children }: BoardProps) {
                 <Input
                   size="large"
                   placeholder="Buscar usuario"
+                  value={searchTerm}
+                  onChange={handleInputChange}
                 />
               </Form.Item>
             </div>
@@ -28,7 +51,9 @@ export default function Board({ children }: BoardProps) {
           placement="leftTop"
           trigger="click"
           content={
-            <FormBoard
+
+
+            <FormBoard userIdToUpdate={selectedUser?.id} onClose={handleClose}
             />
           }
         >
@@ -47,5 +72,17 @@ export default function Board({ children }: BoardProps) {
         {children}
       </div>
     </div>
+
+/* {
+    isModalOpenToUpdate && (
+      <NewUserModal
+        userIdToUpdate={selectedUser?.userId}
+        onClose={handleClose}
+      />
+    )
+  }
+  { isModalOpen && <NewUserModal onClose={handleClose} /> }
+     */
+    
   );
 }

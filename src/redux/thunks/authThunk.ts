@@ -10,18 +10,16 @@ import {
 import CustomApiError from '@utils/ApiError';
 
 export const postLogin =
-  (user: string, password: string): AppThunkAction =>
+  (controlNumber: string, password: string): AppThunkAction =>
   async (dispatch) => {
     dispatch(authDataStart());
-    // TODO: delete deviceId once endpoint has been updated
     publicApi
       .post('/user/login', {
-        deviceId: 'iphone14id',
-        employeeId: user,
-        password,
+        controlNumber: controlNumber,
+        password: password,
       })
       .then((response) => {
-        sessionStorage.setItem('jwtToken', response.data.payload);
+        sessionStorage.setItem('Token', response.data.payload);
         dispatch(authorizerData(response.data.payload));
         dispatch(authDataSuccess(response.data.payload));
       })

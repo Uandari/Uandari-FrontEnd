@@ -3,14 +3,14 @@ import editIcon from '@icons/editIcon.svg';
 
 export type RowBoardProps = {
   userName: string;
-  controlNumber: number;
+  controlNumber: string;
   role: string;
   imageUrl: string;
-  onDelete?: () => void;
-  onUpdate?: () => void;
+  onDelete: () => void;
+  onUpdate: () => void;
 };
 
-function RowBoard({
+export default function RowBoard({
   userName,
   controlNumber,
   role,
@@ -53,8 +53,6 @@ function RowBoard({
     </div>
   );
 }
-
-export default RowBoard;
 
 RowBoard.defaultProps = {
   onUpdate: undefined,

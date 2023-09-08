@@ -1,16 +1,54 @@
 
+import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import LoginBackground from '@assets/login_img.svg';
 import UandariColorLogo from '@assets/uandari-color-logo.svg';
 import VolkswagenColorLogo from '@assets/volkswagen-logo-color.svg';
-import { DASHBOARD_MAIN } from '@routes/paths';
+import { UserCredentials } from '@interfaces/User';
+import { postLogin } from '@redux/thunks/authThunk';
+import { ADMIN, ADMIN_USERS } from '@routes/paths';
 import { Button, Form, Input } from 'antd';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
 
+  const [userCredentials, setUserCredentials] = useState<UserCredentials>({
+    controlNumber: '',
+    password: '',
+  });
+
+
+  
+  const { data } = useAppSelector(
+    (state: RootState) => state.authReducer,
+  );
+
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const handleSubmit = () => {
-    navigate(DASHBOARD_MAIN);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('Token')) {
+      // Navigate to dashboard if user has jwtToken
+      navigate(ADMIN + ADMIN_USERS);
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    // Handle validation for correct login in state
+    if (data) {
+      // Navigate to dashboard if correct data has been send
+      navigate(ADMIN + ADMIN_USERS);
+    }
+  }, [data, navigate]);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value } = e.target;
+    setUserCredentials((prevState: UserCredentials) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -44,16 +82,21 @@ export default function LoginPage() {
         <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">
             <Form.Item>
-              <Input size="large" placeholder="Número de control" />
+              <Input size="large" placeholder="Número de control" name='controlNumber' id='control_number'
+              value={userCredentials.controlNumber} onChange={handleInputChange}/>
             </Form.Item>
             <Form.Item>
-              <Input size="large" placeholder="Contraseña"  type='password'/>
+              <Input size="large" placeholder="Contraseña"  type='password' name='password' id='password' value={userCredentials.password} onChange={handleInputChange}/>
             </Form.Item>
           </div>
 
           <div className="mb-6 flex items-center justify-center">
             <Button
-              onClick={handleSubmit}
+               onClick={() =>
+                dispatch(
+                  postLogin(userCredentials.controlNumber, userCredentials.password),
+                )
+              }
               size="large"
               className="w-full text-base bg-main_blue_dark text-main_white rounded-lg font-medium hover:text-  "
             >

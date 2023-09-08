@@ -1,16 +1,18 @@
 export interface User {
-  id: number;
+	id?: number;
 	name: string;
 	lastnames: string;
-	controlNumber: number;
-	email: string;
+	controlNumber: string;
+	mail: string;
 	password: string;
 	idRole: number;
+	verifiedAccount: number;
+	token: string;
 	imageUrl: string;
-	mail: string;
-  }
+	isDeleted: number;
+}
 
-  export interface UserCredentials extends User{
-    controlNumber: number;
-    password: string;
-  }
+export interface UserCredentials {
+	controlNumber: string;
+	password: string;
+}
