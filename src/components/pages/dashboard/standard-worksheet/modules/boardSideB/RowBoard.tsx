@@ -50,7 +50,7 @@ function RowBoard({
   }, [status]);
   return (
     <div className="grid grid-cols-8  border-main_color h-16">
-      <div className="flex items-center  border-r justify-center text-main_gray">
+      <div className="flex items-center border-b  border-r justify-center text-main_gray">
         {idDeviation}
       </div>
       <div className="flex items-center border-b justify-center text-main_gray">
