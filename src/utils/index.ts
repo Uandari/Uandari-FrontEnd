@@ -43,9 +43,9 @@ export function enumToArray<T extends Record<keyof T, string>>(
 }
 
 export function getToken(): string | null {
-  return sessionStorage.getItem('Token');
+  return localStorage.getItem('token');
 }
 
 export function removeToken(): void {
-  sessionStorage.removeItem('Token');
+  localStorage.removeItem('token');
 }

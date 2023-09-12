@@ -10,11 +10,11 @@ type PrivateRouteProps = {
 };
 
 function PrivateRoute({ element }: PrivateRouteProps) {
-  const { jwt } = useAppSelector(
+  const { bearer } = useAppSelector(
     (state: RootState) => state.notAuthorizerReducer,
   );
 
-  return !jwt ? <Navigate to={LOGIN} /> : element;
+  return !bearer ? <Navigate to={LOGIN} /> : element;
 }
 
 export default PrivateRoute;

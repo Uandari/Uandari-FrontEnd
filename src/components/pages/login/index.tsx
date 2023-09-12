@@ -27,8 +27,8 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (sessionStorage.getItem('Token')) {
-      // Navigate to dashboard if user has jwtToken
+    if (localStorage.getItem('token')) {
+      // Navigate to dashboard if user has token
       navigate(ADMIN + ADMIN_USERS);
     }
   }, [navigate]);

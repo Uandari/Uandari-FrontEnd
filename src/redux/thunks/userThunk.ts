@@ -1,4 +1,4 @@
-import { privateApi } from '@api/axios';
+import { privateApi, publicApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { colors } from '@constants/colors';
 import { User } from '@interfaces/User';
@@ -67,7 +67,7 @@ export const getUser =
 
 export const getUsers = (): AppThunkAction => async (dispatch) => {
     dispatch(getUsersStart());
-  await privateApi
+  await publicApi
     .get('/user/')
     .then((response) => {
       if (response.data.isError) {

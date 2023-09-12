@@ -1,4 +1,4 @@
-import { publicApi } from '@api/axios';
+import { privateApi, publicApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { authorizerData } from '@redux/slices/authorizerSlice';
 import {
@@ -19,7 +19,7 @@ export const postLogin =
         password: password,
       })
       .then((response) => {
-        sessionStorage.setItem('Token', response.data.payload);
+        localStorage.setItem('token', response.data.payload.token);
         dispatch(authorizerData(response.data.payload));
         dispatch(authDataSuccess(response.data.payload));
       })
