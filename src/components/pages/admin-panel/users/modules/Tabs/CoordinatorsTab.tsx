@@ -13,7 +13,6 @@ import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import useUsers from '@hooks/useUsers';
 import { User } from '@interfaces/User';
-import { UsersListMock } from '@mocks/Users';
 import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';
