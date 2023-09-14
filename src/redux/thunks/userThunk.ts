@@ -20,6 +20,8 @@ import {
 import CustomApiError from '@utils/ApiError';
 import Swal from 'sweetalert2';
 
+const token = localStorage.getItem('token');
+
 export const createUser =
   (userData: User): AppThunkAction =>
   async (dispatch) => {
@@ -66,12 +68,13 @@ export const getUser =
   };
 
 export const getUsers = (): AppThunkAction => async (dispatch) => {
-  const token = localStorage.getItem("token");
-    dispatch(getUsersStart());
+  dispatch(getUsersStart());
   await publicApi
     .get('/user/', {
-     headers: {"Content-Type": "application/json",
-     Authorization: `Bearer ${token}`,},
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then((response) => {
       if (response.data.isError) {
@@ -85,7 +88,7 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
       const customError = new CustomApiError(error).message;
       dispatch(getUsersError(customError));
     });
-  };
+};
 
 export const updateUser =
   (userData: User): AppThunkAction =>
@@ -117,7 +120,7 @@ export const deleteUser =
   (userId: number): AppThunkAction =>
   async (dispatch) => {
     await privateApi
-      .post('/user/delete'  , { userId } )
+      .post('/user/delete', { userId })
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;

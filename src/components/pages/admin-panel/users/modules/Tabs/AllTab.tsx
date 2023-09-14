@@ -11,10 +11,8 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
 import useUsers from '@hooks/useUsers';
 import { User } from '@interfaces/User';
-import { UsersListMock } from '@mocks/Users';
 import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';
@@ -58,9 +56,7 @@ export default function AdministratorsTab() {
   const [usersData, setUsersData] = useState<User[]>([]);
 
   const dispatch = useAppDispatch();
-  const { data, loading, error } = useAppSelector(
-    (state: RootState) => state.userReducer,
-  );
+  const { data } = useAppSelector((state: RootState) => state.userReducer);
 
   const handleUpdate = (user: User) => {
     setSelectedUser(user);
@@ -98,7 +94,7 @@ export default function AdministratorsTab() {
             key={user.controlNumber}
             userName={`${user.name} ${user.lastnames}`}
             controlNumber={user.controlNumber}
-            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+            role={roleMap[user.idRole.toString()] || 'Rol indefinido'}
             imageUrl={getRandomImageUrl()}
             onDelete={() => handleDeleteUser(user.id ?? 0)}
             onUpdate={() => handleUpdate(user)}
