@@ -66,9 +66,13 @@ export const getUser =
   };
 
 export const getUsers = (): AppThunkAction => async (dispatch) => {
+  const token = localStorage.getItem("token");
     dispatch(getUsersStart());
   await publicApi
-    .get('/user/')
+    .get('/user/', {
+     headers: {"Content-Type": "application/json",
+     Authorization: `Bearer ${token}`,},
+    })
     .then((response) => {
       if (response.data.isError) {
         const customError = new CustomApiError(response.data).message;
