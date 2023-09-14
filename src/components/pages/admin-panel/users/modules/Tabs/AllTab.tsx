@@ -61,7 +61,6 @@ export default function AllTab() {
     dispatch(getUsers());
   }, [dispatch]);
 
-
   useEffect(() => {
     if (Array.isArray(data)) {
       setUsersData(
@@ -74,7 +73,6 @@ export default function AllTab() {
 
 
   return (
-
     <Board>
       {usersData.length > 0 ? (
         usersData.map((user) => (
