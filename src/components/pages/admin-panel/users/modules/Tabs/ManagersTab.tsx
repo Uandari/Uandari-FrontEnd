@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+
+import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
 import imagenUsuario2 from '@assets/usersIcons/2.png';
@@ -8,7 +11,9 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import { UsersListMock } from '@mocks/Users';
+import useUsers from '@hooks/useUsers';
+import { User } from '@interfaces/User';
+import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';
 import RowBoard from '../RowBoard';
@@ -34,24 +39,75 @@ export default function ManagersTab() {
   }
 
   const roleMap: Record<string, string> = {
-    '1': 'Gerentes',
-    '2': 'Administradores',
-    '3': 'Coordinadores',
-    '4': 'Team Leaders',
-    '5': 'Visualizadores',
+    1: 'Gerente',
+    2: 'Administrador',
+    3: 'Coordinador',
+    4: 'Team Leader',
+    5: 'Visualizador',
   };
+
+  const {
+    handleDeleteUser,
+    setIsModalOpenToUpdate,
+    setSelectedUser,
+    searchTerm,
+  } = useUsers();
+
+  const [usersData, setUsersData] = useState<User[]>([]);
+
+  const dispatch = useAppDispatch();
+  const { data } = useAppSelector((state: RootState) => state.userReducer);
+
+  const handleUpdate = (user: User) => {
+    setSelectedUser(user);
+    setIsModalOpenToUpdate(true);
+  };
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (Array.isArray(data)) {
+      setUsersData(
+        (data as User[]).filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+    }
+  }, [data, searchTerm]);
+
+  useEffect(() => {
+    if (Array.isArray(data)) {
+      setUsersData(
+        (data as User[]).filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+    }
+  }, [data, searchTerm]);
 
   return (
     <Board>
-      {UsersListMock.filter((user) => user.idRole === 1).map((user) => (
-        <RowBoard
-          key={user.controlNumber}
-          userName={`${user.name} ${user.lastnames}`}
-          controlNumber={user.controlNumber}
-          role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-          imageUrl={getRandomImageUrl()}
-        />
-      ))}
+      {usersData.length > 0 ? (
+        usersData
+          .filter((user) => user.idRole === 1)
+          .map((user) => (
+            <RowBoard
+              key={user.controlNumber}
+              userName={`${user.name} ${user.lastnames}`}
+              controlNumber={user.controlNumber}
+              role={roleMap[user.idRole.toString()] || 'Rol indefinido'}
+              imageUrl={getRandomImageUrl()}
+              onDelete={() => handleDeleteUser(user.id ?? 0)}
+              onUpdate={() => handleUpdate(user)}
+            />
+          ))
+      ) : (
+        <div className="text-center text-xl mt-28 text-gray">
+          No se encontraron usuarios
+        </div>
+      )}
     </Board>
   );
 }
