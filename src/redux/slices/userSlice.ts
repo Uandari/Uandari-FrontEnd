@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { FetchedUsers, User } from '@interfaces/User';
+import { User } from '@interfaces/User';
 import { createSlice } from '@reduxjs/toolkit';
 
 interface InitialStateType<T> {
@@ -8,7 +8,7 @@ interface InitialStateType<T> {
   error: string | null;
 }
 
-type UserState = InitialStateType<FetchedUsers[] | User | null>;
+type UserState = InitialStateType<User[] | null>;
 
 const initialState: UserState = {
   data: null,

@@ -12,7 +12,7 @@ import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
 
-export default function AdministratorsTab() {
+export default function VisualizersTab() {
   const userImages = [
     imagenUsuario1,
     imagenUsuario2,
@@ -26,7 +26,7 @@ export default function AdministratorsTab() {
     imagenUsuario9,
     imagenUsuario10,
   ];
-
+  
   function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * userImages.length);
     return userImages[randomIndex];
@@ -42,17 +42,17 @@ export default function AdministratorsTab() {
   };
 
   return (
-    <Board>
-      {UsersListMock
-        .filter(user => user.idRole === 2)
-        .map((user) => (
-          <RowBoard
-            key={user.controlNumber}
-            userName={`${user.name} ${user.lastnames}`}
-            controlNumber={user.controlNumber}
-            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-            imageUrl={getRandomImageUrl()}
-          />
-        ))}
-    </Board>)
+  <Board>
+    {UsersListMock
+          .filter(user => user.idRole === 5) 
+          .map((user) => (
+            <RowBoard
+              key={user.controlNumber}
+              userName={`${user.name} ${user.lastnames}`}
+              controlNumber={user.controlNumber}
+              role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+              imageUrl={getRandomImageUrl()}
+            />
+          ))}
+  </Board>)
 }

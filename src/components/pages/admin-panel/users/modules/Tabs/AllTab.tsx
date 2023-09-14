@@ -12,6 +12,12 @@ import { UsersListMock } from '@mocks/Users';
 
 import Board from '../../board';
 import RowBoard from '../RowBoard';
+import useUsers from '@hooks/useUsers';
+import { User } from '@interfaces/User';
+import { useEffect, useState } from 'react';
+import { RootState, useAppDispatch, useAppSelector } from '@app/store';
+import { getUsers } from '@redux/thunks/userThunk';
+import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
 
 export default function AdministratorsTab() {
   const userImages = [
@@ -34,24 +40,77 @@ export default function AdministratorsTab() {
   }
 
   const roleMap: Record<string, string> = {
-    '1': 'Gerente',
-    '2': 'Administrador',
-    '3': 'Coordinador',
-    '4': 'Team Leader',
-    // Agrega más mapeos según sea necesario
+    1: 'Gerente',
+    2: 'Administrador',
+    3: 'Coordinador',
+    4: 'Team Leader',
+    5: 'Visualizador',
   };
 
+  const {
+    handleDeleteUser,
+    setIsModalOpenToUpdate,
+    setSelectedUser,
+    searchTerm,
+  } = useUsers();
+  
+  const [usersData, setUsersData] = useState<User[]>([]);
+
+  const dispatch = useAppDispatch();
+  const { data, loading, error } = useAppSelector(
+    (state: RootState) => state.userReducer,
+  );
+  
+  const handleUpdate = (user: User) => {
+    setSelectedUser(user);
+    setIsModalOpenToUpdate(true);
+  };
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
+
+  useEffect(() => {
+    if (Array.isArray(data)) {
+      setUsersData(
+        (data as User[]).filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+    }
+  }, [data, searchTerm]);
+
+  
+  useEffect(() => {
+    if (Array.isArray(data)) {
+      setUsersData(
+        (data as User[]).filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+    }
+  }, [data, searchTerm]);
   return (
+
     <Board>
-      {UsersListMock.map((user) => (
-        <RowBoard
+      {usersData.length > 0 ? (
+            usersData.map((user) => (
+              <RowBoard
           key={user.controlNumber}
-          userName={`${user.name} ${user.lastNames}`}
+          userName={`${user.name} ${user.lastnames}`}
           controlNumber={user.controlNumber}
           role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
           imageUrl={getRandomImageUrl()}
+          onDelete={() => handleDeleteUser(user.id ?? 0)}
+          onUpdate={() => handleUpdate(user)}
         />
-      ))}
+            ))
+          ) : (
+            <div className="text-center text-xl mt-28 text-gray">
+              No se encontraron usuarios
+            </div>
+          )}
     </Board>
   );
 }

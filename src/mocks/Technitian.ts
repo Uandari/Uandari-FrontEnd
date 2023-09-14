@@ -8,7 +8,7 @@ export const initialTechnitianInfo = {
   motor: '',
   line: '',
   shift: '',
-  celule: '',
+  cell: '',
   operation: '',
 };
 
@@ -20,7 +20,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA888',
     line: 'Monoblock',
     shift: 'Turno A',
-    celule: '3',
+    cell: '3',
     operation: '5',
   },
   {
@@ -30,7 +30,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA211',
     line: 'Cigueñal',
     shift: 'Turno B',
-    celule: '7',
+    cell: '7',
     operation: '12',
   },
   {
@@ -40,7 +40,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA888',
     line: 'Monoblock',
     shift: 'Turno C',
-    celule: '1',
+    cell: '1',
     operation: '8',
   },
   {
@@ -50,7 +50,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA211',
     line: 'Cigueñal',
     shift: 'Turno A',
-    celule: '5',
+    cell: '5',
     operation: '15',
   },
   {
@@ -60,7 +60,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA888',
     line: 'Monoblock',
     shift: 'Turno B',
-    celule: '2',
+    cell: '2',
     operation: '10',
   },
   {
@@ -70,7 +70,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA211',
     line: 'Cigueñal',
     shift: 'Turno C',
-    celule: '8',
+    cell: '8',
     operation: '18',
   },
   {
@@ -80,7 +80,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA888',
     line: 'Monoblock',
     shift: 'Turno A',
-    celule: '4',
+    cell: '4',
     operation: '7',
   },
   {
@@ -90,7 +90,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA211',
     line: 'Cigueñal',
     shift: 'Turno B',
-    celule: '6',
+    cell: '6',
     operation: '13',
   },
   {
@@ -100,7 +100,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA888',
     line: 'Monoblock',
     shift: 'Turno C',
-    celule: '9',
+    cell: '9',
     operation: '9',
   },
   {
@@ -110,7 +110,7 @@ export const TechnitiansListMock: TechnitianFormData[] = [
     motor: 'EA211',
     line: 'Cigueñal',
     shift: 'Turno A',
-    celule: '10',
+    cell: '10',
     operation: '20',
   },
 ];

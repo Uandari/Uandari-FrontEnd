@@ -7,7 +7,7 @@ export const usersCreateValidation: ConfigValidation[] = [
     functionValidationRegex: isRequired,
   },
   {
-    name: 'lastNames',
+    name: 'lastnames',
     functionValidationRegex: isRequired,
   },
   {
@@ -24,10 +24,6 @@ export const usersCreateValidation: ConfigValidation[] = [
   },
   {
     name: 'idRole',
-    functionValidationRegex: isRequired,
-  },
-  {
-    name: 'imageUrl',
     functionValidationRegex: isRequired,
   },
 ];
@@ -55,10 +51,6 @@ export const usersUpdateValidations: ConfigValidation[] = [
   },
   {
     name: 'idRole',
-    functionValidationRegex: isRequired,
-  },
-  {
-    name: 'imageUrl',
     functionValidationRegex: isRequired,
   },
 ];

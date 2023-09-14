@@ -1,6 +1,8 @@
-import { Form, Input } from 'antd';
 
-import HeadBoard from './modules/boardTechnitian/HeadBoard';
+import { Button, Form, Input, Popover } from 'antd';
+
+import FormBoard from './modules/FormBoard';
+import HeadBoard from './modules/HeadBoard';
 
 export type BoardProps = {
   children: React.ReactNode;
@@ -16,13 +18,28 @@ export default function Board({ children }: BoardProps) {
               <Form.Item>
                 <Input
                   size="large"
-                  placeholder="Buscar colaborador"
-                  /* onChange={handleInputChange} */
+                  placeholder="Buscar usuario"
                 />
               </Form.Item>
             </div>
           </Form>
         </div>
+        <Popover
+          placement="leftTop"
+          trigger="click"
+          content={
+            <FormBoard
+            />
+
+          }
+        >
+          <Button
+            size="large"
+            className=" text-base bg-main_blue_dark  text-main_white rounded-lg mb-4  font-medium"
+          >
+            Registrar nuevo usuario
+          </Button>
+        </Popover>
       </div>
       <div className="row-span-1">
         <HeadBoard />

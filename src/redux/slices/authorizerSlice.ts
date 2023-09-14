@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getToken } from '@utils/index';
 
 interface ResponseState {
-  jwt: string | null;
+  bearer: string | null;
 }
 
 const initialState: ResponseState = {
-  jwt: getToken(),
+  bearer: getToken(),
 };
 
 export const notAuthorizerSlice = createSlice({
@@ -15,10 +15,10 @@ export const notAuthorizerSlice = createSlice({
   initialState,
   reducers: {
     authorizerData(state, action) {
-      state.jwt = action.payload;
+      state.bearer = action.payload;
     },
     authorizerResetState(state) {
-      state.jwt = '';
+      state.bearer = '';
     },
   },
 });
