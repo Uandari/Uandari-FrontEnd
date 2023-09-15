@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+export interface User {
+  id: number;
+  name: string;
+  lastnames: string;
+  controlNumber: string;
+  mail: string;
+  role: string;
+  imageUrl: string;
+}
+
+>>>>>>> f218f5d (feature: user crud integration in progress)
 export interface UserCredentials {
   controlNumber: string;
   password: string;
