@@ -19,7 +19,7 @@ export const postLogin =
         password,
       })
       .then((response) => {
-        localStorage.setItem('token', response.data.payload.token);
+        localStorage.setItem('accessToken', response.data.payload.accessToken);
         dispatch(authorizerData(response.data.payload));
         dispatch(authDataSuccess(response.data.payload));
       })

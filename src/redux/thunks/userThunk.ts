@@ -20,7 +20,7 @@ import {
 import CustomApiError from '@utils/ApiError';
 import Swal from 'sweetalert2';
 
-const token = localStorage.getItem('token');
+const accessToken = localStorage.getItem('accessToken');
 
 export const createUser =
   (userData: User): AppThunkAction =>
@@ -73,7 +73,7 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
     .get('/user/', {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     })
     .then((response) => {

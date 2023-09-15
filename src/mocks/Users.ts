@@ -9,7 +9,7 @@ export const initialUserInfo = {
   password: '',
   role: '',
   verifiedAccount: 0,
-  token: '',
+  accessToken: '',
   imageUrl: '',
 };
 
