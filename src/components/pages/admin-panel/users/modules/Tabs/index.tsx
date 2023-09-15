@@ -1,42 +1,46 @@
 import { Tabs, TabsProps } from 'antd';
 
-import AdministratorsTab from './AdministratorsTab';
-import AllTab from './AllTab';
-import CoordinatorsTab from './CoordinatorsTab';
-import ManagersTab from './ManagersTab';
-import TeamLeadersTab from './TeamLeadersTab';
-import VisualizersTab from './VisualizersTab';
+import DynamicTab from './DynamicTab';
+
+const tabsTitles: Record<string, string> = {
+  0: 'Todos',
+  1: 'Gerente',
+  2: 'Administrador',
+  3: 'Coordinador',
+  4: 'Team Leader',
+  5: 'Visualizador',
+};
 
 const itemsTabs: TabsProps['items'] = [
   {
     key: '1',
-    label: 'Todos',
-    children: <AllTab />,
+    label: tabsTitles[0],
+    children: <DynamicTab allUsersTab />,
   },
   {
     key: '2',
-    label: 'Gerentes',
-    children: <ManagersTab />,
+    label: tabsTitles[1],
+    children: <DynamicTab idRole={1} />,
   },
   {
     key: '3',
-    label: 'Administradores',
-    children: <AdministratorsTab />,
+    label: tabsTitles[2],
+    children: <DynamicTab idRole={2} />,
   },
   {
     key: '4',
-    label: 'Coordinadores',
-    children: <CoordinatorsTab />,
+    label: tabsTitles[3],
+    children: <DynamicTab idRole={3} />,
   },
   {
     key: '5',
-    label: 'Team Leaders',
-    children: <TeamLeadersTab />,
+    label: tabsTitles[4],
+    children: <DynamicTab idRole={4} />,
   },
   {
     key: '6',
-    label: 'Visualizadores',
-    children: <VisualizersTab />,
+    label: tabsTitles[5],
+    children: <DynamicTab idRole={5} />,
   },
 ];
 
