@@ -117,7 +117,7 @@ export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
                 controlNumber={user.controlNumber}
                 role={roleMap[user.idRole.toString()] || 'Rol indefinido'}
                 imageUrl={getRandomImageUrl()}
-                onDelete={() => handleDeleteUser(user.id ?? 0)}
+                onDelete={() => handleDeleteUser(user.id)}
                 onUpdate={() => handleUpdate(user)}
               />
             ))
