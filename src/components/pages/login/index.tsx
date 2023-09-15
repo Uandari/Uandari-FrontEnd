@@ -27,8 +27,8 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      // Navigate to dashboard if user has token
+    if (localStorage.getItem('accessToken')) {
+      // Navigate to dashboard if user has accessToken
       navigate(ADMIN + ADMIN_USERS);
     }
   }, [navigate]);
