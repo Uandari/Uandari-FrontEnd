@@ -11,23 +11,23 @@ import CustomApiError from '@utils/ApiError';
 
 export const postLogin =
   (controlNumber: string, password: string): AppThunkAction =>
-    async (dispatch) => {
-      dispatch(authDataStart());
-      publicApi
-        .post('/user/login', {
-          controlNumber: controlNumber,
-          password: password,
-        })
-        .then((response) => {
-          localStorage.setItem('accessToken', response.data.payload.accessToken);
-          dispatch(authorizerData(response.data.payload.accessToken));
-          dispatch(authDataSuccess(response.data.payload.accessToken));
-        })
-        .catch((error) => {
-          const customError = new CustomApiError(error).message;
-          dispatch(authDataError(customError));
-        });
-    };
+  async (dispatch) => {
+    dispatch(authDataStart());
+    publicApi
+      .post('/user/login', {
+        controlNumber,
+        password,
+      })
+      .then((response) => {
+        localStorage.setItem('token', response.data.payload.token);
+        dispatch(authorizerData(response.data.payload));
+        dispatch(authDataSuccess(response.data.payload));
+      })
+      .catch((error) => {
+        const customError = new CustomApiError(error).message;
+        dispatch(authDataError(customError));
+      });
+  };
 
 export const resetAuthState = (): AppThunkAction => async (dispatch) => {
   dispatch(authResetState());

@@ -1,4 +1,3 @@
-
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import LoginBackground from '@assets/login_img.svg';
 import UandariColorLogo from '@assets/uandari-color-logo.svg';
@@ -14,7 +13,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
-
   const [userCredentials, setUserCredentials] = useState<UserCredentials>({
     controlNumber: '',
     password: '',
@@ -27,9 +25,7 @@ export default function LoginPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const {
-    searchTerm,
-  } = useUsers();
+  const { searchTerm } = useUsers();
 
   const userData = useAppSelector((state: RootState) => state.userReducer).data;
   const [usersData, setUsersData] = useState<UserFetched[]>([]);
@@ -39,8 +35,10 @@ export default function LoginPage() {
       navigate(ADMIN + ADMIN_USERS);
     }
   }, [navigate]); */
-  
-  const userWithControlNumber = usersData.find((user) => user.controlNumber === userCredentials.controlNumber);
+
+  const userWithControlNumber = usersData.find(
+    (user) => user.controlNumber === userCredentials.controlNumber,
+  );
   useEffect(() => {
     if (localStorage.getItem('accessToken')) {
       if (userWithControlNumber) {
@@ -65,13 +63,13 @@ export default function LoginPage() {
             redirectPath = UPLOADS;
             break;
           default:
-            console.log("No se detecte ningún usuario valido")
+            console.log('No se detecte ningún usuario valido');
             break;
         }
         navigate(redirectPath);
       }
     }
-  }, [navigate]); 
+  }, [navigate]);
 
   useEffect(() => {
     if (data) {
@@ -97,13 +95,13 @@ export default function LoginPage() {
             redirectPath = UPLOADS;
             break;
           default:
-            console.log("No se detecte ningún usuario valido")
+            console.log('No se detecte ningún usuario valido');
             break;
         }
         navigate(redirectPath);
       }
     }
-  }, [data, navigate]); 
+  }, [data, navigate]);
 
   /* useEffect(() => {
     // Handle validation for correct login in state
@@ -124,7 +122,6 @@ export default function LoginPage() {
     dispatch(getUsers());
   }, [dispatch]);
 
-
   useEffect(() => {
     if (Array.isArray(userData)) {
       setUsersData(
@@ -134,7 +131,6 @@ export default function LoginPage() {
       );
     }
   }, [userData, searchTerm]);
-  
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -177,19 +173,37 @@ export default function LoginPage() {
         <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">
             <Form.Item>
-              <Input size="large" type='text' placeholder="Número de control" name='controlNumber' id='controlNumber'
-              value={userCredentials.controlNumber} onChange={handleInputChange}/>
+              <Input
+                size="large"
+                type="text"
+                placeholder="Número de control"
+                name="controlNumber"
+                id="controlNumber"
+                value={userCredentials.controlNumber}
+                onChange={handleInputChange}
+              />
             </Form.Item>
             <Form.Item>
-              <Input size="large" placeholder="Contraseña"  type='password' name='password' id='password' value={userCredentials.password} onChange={handleInputChange}/>
+              <Input
+                size="large"
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                id="password"
+                value={userCredentials.password}
+                onChange={handleInputChange}
+              />
             </Form.Item>
           </div>
 
           <div className="mb-6 flex items-center justify-center">
             <Button
-               onClick={() =>
+              onClick={() =>
                 dispatch(
-                  postLogin(userCredentials.controlNumber, userCredentials.password),
+                  postLogin(
+                    userCredentials.controlNumber,
+                    userCredentials.password,
+                  ),
                 )
               }
               disabled={loading}
