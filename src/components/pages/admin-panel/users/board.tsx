@@ -10,13 +10,7 @@ export type BoardProps = {
 
 export default function Board({ children }: BoardProps) {
   const {
-    isModalOpen,
-    isModalOpenToUpdate,
-    handleOpenModal,
     handleCloseModal,
-    handleDeleteUser,
-    setIsModalOpenToUpdate,
-    setSelectedUser,
     selectedUser,
     searchTerm,
     handleInputChange,
@@ -38,7 +32,7 @@ export default function Board({ children }: BoardProps) {
               <Form.Item>
                 <Input
                   size="large"
-                  placeholder="Buscar usuario"
+                  placeholder="Buscar usuario por nombre"
                   value={searchTerm}
                   onChange={handleInputChange}
                 />
@@ -72,15 +66,5 @@ export default function Board({ children }: BoardProps) {
       </div>
     </div>
 
-    /* {
-    isModalOpenToUpdate && (
-      <NewUserModal
-        userIdToUpdate={selectedUser?.userId}
-        onClose={handleClose}
-      />
-    )
-  }
-  { isModalOpen && <NewUserModal onClose={handleClose} /> }
-     */
   );
 }

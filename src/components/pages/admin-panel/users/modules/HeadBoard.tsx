@@ -2,9 +2,9 @@ import CellBoard from './CellBoard';
 
 function HeadBoard() {
   return (
-    <div className="grid grid-cols-4 border-b  border-main_color h-full">
-      <CellBoard title="Usuario" colSpan="col-span-2 " />
-      <CellBoard title="Número de control" />
+    <div className="grid grid-cols-2 border-b  border-main_color h-full">
+      <CellBoard title="Usuario"  />
+      <CellBoard title="Número de control"  />
     </div>
   );
 }

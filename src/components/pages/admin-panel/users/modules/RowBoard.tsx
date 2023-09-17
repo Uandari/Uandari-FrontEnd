@@ -25,11 +25,11 @@ export default function RowBoard({
         <img src={imageUrl} className="h-12 mr-3" alt="Avatar de usuario" />
         <div className="flex flex-col">
           <div className="text-main_title_color">{userName}</div>
-          <div className="text-main_gray">{role}</div>
+          <div className="text-main_gray mb-">{role}</div>
         </div>
       </div>
       {/* Control number */}
-      <div className="flex items-center justify-start  pl-28 text-center text-main_gray">
+      <div className="flex items-center justify-start  pl-32 text-center text-main_gray">
         {controlNumber}
       </div>
 
