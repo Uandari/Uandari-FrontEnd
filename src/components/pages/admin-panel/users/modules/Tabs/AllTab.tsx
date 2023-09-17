@@ -19,12 +19,8 @@ import { getUsers } from '@redux/thunks/userThunk';
 import Board from '../../board';
 import RowBoard from '../RowBoard';
 
-export type TabProps = {
-  idRole?: number;
-  allUsersTab?: boolean;
-};
 
-export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
+export default function AllTab() {
   const userImages = [
     imagenUsuario1,
     imagenUsuario2,
@@ -44,13 +40,6 @@ export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
     return userImages[randomIndex];
   }
 
-  const roleMap: Record<string, string> = {
-    1: 'Gerente',
-    2: 'Administrador',
-    3: 'Coordinador',
-    4: 'Team Leader',
-    5: 'Visualizador',
-  };
 
   const {
     handleDeleteUser,
@@ -73,15 +62,6 @@ export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
     dispatch(getUsers());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (Array.isArray(data)) {
-      setUsersData(
-        (data as User[]).filter((item) =>
-          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
-        ),
-      );
-    }
-  }, [data, searchTerm]);
 
   useEffect(() => {
     if (Array.isArray(data)) {
@@ -92,36 +72,23 @@ export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
       );
     }
   }, [data, searchTerm]);
+
+
   return (
+
     <Board>
       {usersData.length > 0 ? (
-        allUsersTab === true ? (
-          usersData.map((user) => (
-            <RowBoard
-              key={user.controlNumber}
-              userName={`${user.name} ${user.lastnames}`}
-              controlNumber={user.controlNumber}
-              role={roleMap[user.idRole.toString()] || 'Rol indefinido'}
-              imageUrl={getRandomImageUrl()}
-              onDelete={() => handleDeleteUser(user.id ?? 0)}
-              onUpdate={() => handleUpdate(user)}
-            />
-          ))
-        ) : (
-          usersData
-            .filter((user) => user.idRole === idRole)
-            .map((user) => (
-              <RowBoard
-                key={user.controlNumber}
-                userName={`${user.name} ${user.lastnames}`}
-                controlNumber={user.controlNumber}
-                role={roleMap[user.idRole.toString()] || 'Rol indefinido'}
-                imageUrl={getRandomImageUrl()}
-                onDelete={() => handleDeleteUser(user.id)}
-                onUpdate={() => handleUpdate(user)}
-              />
-            ))
-        )
+        usersData.map((user) => (
+          <RowBoard
+            key={user.controlNumber}
+            userName={`${user.name} ${user.lastNames}`}
+            controlNumber={user.controlNumber}
+            role={user.role}
+            imageUrl={user.imageUrl || getRandomImageUrl()}
+            onDelete={() => handleDeleteUser(user.id ?? 0)}
+            onUpdate={() => handleUpdate(user)}
+          />
+        ))
       ) : (
         <div className="text-center text-xl mt-28 text-gray">
           No se encontraron usuarios
@@ -131,7 +98,10 @@ export default function DynamicTab({ idRole, allUsersTab }: TabProps) {
   );
 }
 
-DynamicTab.defaultProps = {
-  idRole: 0,
+
+
+
+AllTab.defaultProps = {
+  role: "Rol",
   allUsersTab: true,
 };
