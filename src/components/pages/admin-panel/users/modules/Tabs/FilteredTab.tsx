@@ -13,7 +13,7 @@ import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import useUsers from '@hooks/useUsers';
-import { User } from '@interfaces/User';
+import { UserFetched } from '@interfaces/User';
 import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';
@@ -42,8 +42,6 @@ export default function FilteredTab({ role }: TabProps) {
     const randomIndex = Math.floor(Math.random() * userImages.length);
     return userImages[randomIndex];
   }
-
-
   const {
     handleDeleteUser,
     setIsModalOpenToUpdate,
@@ -51,12 +49,12 @@ export default function FilteredTab({ role }: TabProps) {
     searchTerm,
   } = useUsers();
 
-  const [usersData, setUsersData] = useState<User[]>([]);
+  const [usersData, setUsersData] = useState<UserFetched[]>([]);
 
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state: RootState) => state.userReducer);
 
-  const handleUpdate = (user: User) => {
+  const handleUpdate = (user: UserFetched) => {
     setSelectedUser(user);
     setIsModalOpenToUpdate(true);
   };
@@ -69,7 +67,7 @@ export default function FilteredTab({ role }: TabProps) {
   useEffect(() => {
     if (Array.isArray(data)) {
       setUsersData(
-        (data as User[]).filter((item) =>
+        (data as UserFetched[]).filter((item) =>
           item.name.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
@@ -90,7 +88,7 @@ export default function FilteredTab({ role }: TabProps) {
             controlNumber={user.controlNumber}
             role={user.role}
             imageUrl={user.imageUrl || getRandomImageUrl()}
-            onDelete={() => handleDeleteUser(user.idUser || 0)}
+            onDelete={() => handleDeleteUser(user.idUser)}
             onUpdate={() => handleUpdate(user)}
           />
         ))

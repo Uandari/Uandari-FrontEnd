@@ -1,14 +1,30 @@
-export interface User {
-  idUser?: number;
+export interface UserCredentials {
+  controlNumber: string;
+  password: string;
+}
+
+export interface UserFormData {
   name: string;
   lastNames: string;
   controlNumber: string;
   mail: string;
+  idRole: number;
   role: string;
   imageUrl: string;
+  password: string;
 }
 
-export interface UserCredentials {
+export interface User extends UserFormData {
+  idUser?: number;
+}
+
+export interface UserFetched {
+  idUser: number;
+  name: string;
+  lastNames: string;
   controlNumber: string;
-  password: string;
+  mail: string;
+  idRole: number;
+  role: string;
+  imageUrl: string;
 }
