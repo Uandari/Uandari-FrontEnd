@@ -1,7 +1,7 @@
 import { User } from '@interfaces/User';
 
 export const initialUserInfo = {
-  id: 0,
+  idUser: 0,
   name: '',
   lastNames: '',
   controlNumber: '',
@@ -15,7 +15,7 @@ export const initialUserInfo = {
 
 export const UsersListMock: User[] = [
   {
-    id: 1,
+    idUser: 1,
     name: 'Andrés',
     controlNumber: '21615156',
     lastNames: 'Cordero Ramírez',
@@ -25,7 +25,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 2,
+    idUser: 2,
     name: 'Ricardo',
     controlNumber: '4514941951',
     lastNames: ' González Flores',
@@ -35,7 +35,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 3,
+    idUser: 3,
     name: 'Emiliano ',
     controlNumber: '1851561671',
     lastNames: 'Loza Cedillo',
@@ -45,7 +45,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 4,
+    idUser: 4,
     name: 'Joseph',
     controlNumber: '519156',
     lastNames: 'Camargo',
@@ -55,7 +55,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 5,
+    idUser: 5,
     name: 'Alice Johnson',
     controlNumber: '1191619156',
     lastNames: 'Smith',
@@ -65,7 +65,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 6,
+    idUser: 6,
     name: 'John Doe',
     controlNumber: '45616515618',
     lastNames: 'Doe',
@@ -75,7 +75,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 7,
+    idUser: 7,
     name: 'Emily Davis',
     controlNumber: '6515215619',
     lastNames: 'Johnson',
@@ -85,7 +85,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 8,
+    idUser: 8,
     name: 'Michael Smith',
     controlNumber: '12512968505',
     lastNames: 'Brown',
@@ -95,7 +95,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 9,
+    idUser: 9,
     name: 'Joseph',
     controlNumber: '12591561645',
     lastNames: 'Camargo',
@@ -105,7 +105,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 10,
+    idUser: 10,
     name: 'Alice Johnson',
     controlNumber: '511891981561',
     lastNames: 'Smith',
@@ -115,7 +115,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 11,
+    idUser: 11,
     name: 'John Doe',
     controlNumber: '54561641915',
     lastNames: 'Doe',
@@ -125,7 +125,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 12,
+    idUser: 12,
     name: 'Emily Davis',
     controlNumber: '6816781321',
     lastNames: 'Johnson',
@@ -135,7 +135,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 13,
+    idUser: 13,
     name: 'Michael Smith',
     controlNumber: '1261685165',
     lastNames: 'Brown',
@@ -145,7 +145,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 14,
+    idUser: 14,
     name: 'Sophia Williams',
     controlNumber: '52265156196',
     lastNames: 'Martinez',
@@ -155,7 +155,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 15,
+    idUser: 15,
     name: 'John Doe',
     controlNumber: '4561648156',
     lastNames: 'Doe',
@@ -165,7 +165,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 16,
+    idUser: 16,
     name: 'Emily Davis',
     controlNumber: '1671614815',
     lastNames: 'Johnson',
@@ -175,7 +175,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 17,
+    idUser: 17,
     name: 'Michael Smith',
     controlNumber: '1296813216',
     lastNames: 'Brown',
@@ -185,7 +185,7 @@ export const UsersListMock: User[] = [
     imageUrl: '',
   },
   {
-    id: 18,
+    idUser: 18,
     name: 'Sophia Williams',
     controlNumber: '9819812314',
     lastNames: 'Martinez',

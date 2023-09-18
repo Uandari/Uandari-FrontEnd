@@ -5,8 +5,8 @@ import AllTab from './AllTab';
 
 const tabsTitles: Record<string, string> = {
   0: 'Todos',
-  1: 'Gerentes',
-  2: 'Administradores',
+  1: 'Administradores',
+  2: 'Gerentes',
   3: 'Coordinadores',
   4: 'Team Leaders',
   5: 'Visualizadores',
@@ -20,12 +20,12 @@ const itemsTabs: TabsProps['items'] = [
   },
   {
     key: '2',
-    label: tabsTitles[2],
+    label: tabsTitles[1],
     children: <DynamicTab role="Administrador" />,
   },
   {
     key: '3',
-    label: tabsTitles[1],
+    label: tabsTitles[2],
     children: <DynamicTab role="Gerente" />,
   },
   {
