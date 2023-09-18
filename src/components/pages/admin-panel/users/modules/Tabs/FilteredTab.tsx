@@ -85,12 +85,12 @@ export default function FilteredTab({ role }: TabProps) {
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user) => (
           <RowBoard
-            key={user.id}
+            key={user.idUser}
             userName={`${user.name} ${user.lastNames}`}
             controlNumber={user.controlNumber}
             role={user.role}
             imageUrl={user.imageUrl || getRandomImageUrl()}
-            onDelete={() => handleDeleteUser(user.id)}
+            onDelete={() => handleDeleteUser(user.idUser || 0)}
             onUpdate={() => handleUpdate(user)}
           />
         ))

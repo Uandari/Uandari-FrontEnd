@@ -29,11 +29,6 @@ function FormBoard({ onClose,
   const { handleCreateUser, handleUpdateUser, searchTerm, } = useUsers();
   const [form] = Form.useForm();
 
-  const rolesMock = rolesData.map((role) => ({
-    value: role.idRole,
-    label: role.name,
-  }));
-
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
