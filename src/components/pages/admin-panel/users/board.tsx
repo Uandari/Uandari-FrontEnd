@@ -27,7 +27,7 @@ export default function Board({ children }: BoardProps) {
     <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
         <div className="flex items-center gap-2">
-          <Form className="w-[400px] text-center mt-2">
+          <Form  className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
                 <Input
