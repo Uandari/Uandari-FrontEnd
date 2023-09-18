@@ -44,9 +44,9 @@ export default function Board({ children }: BoardProps) {
           placement="leftTop"
           trigger="click"
           content={
-            <FormBoard
-              userIdToUpdate={selectedUser?.id}
-              onClose={handleClose}
+
+
+            <FormBoard userIdToUpdate={selectedUser?.idUser} onClose={handleClose}
             />
           }
         >
