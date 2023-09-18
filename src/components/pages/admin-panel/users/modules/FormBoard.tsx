@@ -6,14 +6,15 @@ import passwordIcon from '@icons/password.svg';
 import lastNamesIcon from '@icons/lastNames.svg';
 import controlNumberIcon from '@icons/controlNumber.svg';
 import { Button, Form, Input, Select } from 'antd';
-import { User } from '@interfaces/User';
+import { User, UserFormData } from '@interfaces/User';
+import useForm from '@hooks/useForm';
 import { initialUserInfo } from '@mocks/Users';
 import useUsers from '@hooks/useUsers';
-import { usersCreateValidation, usersUpdateValidations } from '../../../../../formValidations/usersValidations';
 import { useEffect, useState } from 'react';
 import { Role } from '@interfaces/Role';
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import { getRoles } from '@redux/thunks/roleThunk';
+import { getUser } from '@redux/thunks/userThunk';
 
 type FormBoardProps = {
   onClose: (callback?: () => void) => void;
@@ -23,9 +24,9 @@ type FormBoardProps = {
 function FormBoard({ onClose,
   userIdToUpdate, }: FormBoardProps) {
 
+  const dispatch = useAppDispatch();
   const [rolesData, setRolesData] = useState<Role[]>([]);
   const { data } = useAppSelector((state: RootState) => state.roleReducer);
-  const dispatch = useAppDispatch();
   const { handleCreateUser, handleUpdateUser, searchTerm, } = useUsers();
   const [form] = Form.useForm();
 
@@ -37,7 +38,7 @@ function FormBoard({ onClose,
     console.log('Failed:', errorInfo);
   };
 
-  const handleCreateOrUpdateUser = (state: User) => {
+  const handleCreateOrUpdateUser = (state: UserFormData) => {
     const userModifiable = { ...state };
 
     if (userIdToUpdate) {
@@ -55,11 +56,31 @@ function FormBoard({ onClose,
   };
 
   const { handleInputChange, handleSubmit, state, setState } =
-    useForm<User>(
+    useForm<UserFormData>(
       initialUserInfo,
-      userIdToUpdate ? usersUpdateValidations : usersCreateValidation,
       handleCreateOrUpdateUser,
     );
+
+  useEffect(() => {
+    if (userIdToUpdate) {
+      dispatch(getUser(userIdToUpdate))
+        .then((userData: UserFormData) => {
+          setState({
+            name: userData.name,
+            lastNames: userData.lastNames,
+            controlNumber: userData.controlNumber,
+            mail: userData.mail,
+            password: '',
+            imageUrl: userData.imageUrl,
+            idRole: 1,
+            role: userData.role,
+          });
+        })
+        .catch((error) => {
+          console.error('Error fetching user details:', error.message);
+        });
+    }
+  }, [dispatch, userIdToUpdate, setState]);
 
   useEffect(() => {
     if (Array.isArray(data)) {
@@ -161,7 +182,6 @@ function FormBoard({ onClose,
           <Form.Item>
             <Button
               className="bg-main_blue_dark"
-              htmlType="submit"
               type="primary"
               size="large"
               onClick={handleSubmit}

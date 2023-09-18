@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
-import { Administrator } from '@interfaces/Admin';
-import { UserFormData } from '@interfaces/User';
+import { colors } from '@constants/colors';
+import { User } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -16,7 +16,7 @@ const useUsers = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDrawerOpenToUpdate, setIsDrawerOpenToUpdate] = useState(false);
   const [searchTerm, setSearhTerm] = useState('');
-  const [selectedUser, setSelectedUser] = useState<Administrator | null>(null);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -49,7 +49,7 @@ const useUsers = () => {
     });
   };
 
-  const handleCreateUser = async (userData: Administrator) => {
+  const handleCreateUser = async (userData: User) => {
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
@@ -57,10 +57,6 @@ const useUsers = () => {
   const handleUpdateUser = async (userData: Administrator) => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
-  };
-
-  const handleGetUser = async (controlNumber: string) => {
-    await dispatch(getUser(controlNumber));
   };
 
   const handleInputChange = (

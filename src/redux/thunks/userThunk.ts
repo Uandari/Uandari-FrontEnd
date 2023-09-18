@@ -1,9 +1,7 @@
 import { publicApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { colors } from '@constants/colors';
-import { Administrator } from '@interfaces/Admin';
-import { User } from '@interfaces/IssueCard';
-import { UserFormData } from '@interfaces/User';
+import { User } from '@interfaces/User';
 import {
   createUserError,
   createUserSuccess,
@@ -25,16 +23,11 @@ import Swal from 'sweetalert2';
 const accessToken = localStorage.getItem('accessToken');
 
 export const createUser =
-  (userData: Administrator): AppThunkAction =>
+  (userData: User): AppThunkAction =>
   async (dispatch) => {
     dispatch(createUsersStart());
-    await publicApi
-      .post('/user/create', userData, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
+    await privateApi
+      .post('/user/create', userData)
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
@@ -56,22 +49,19 @@ export const createUser =
   };
 
 export const getUser =
-  (controlNumber: string): AppThunkAction<Promise<Administrator>> =>
+  (userId: number): AppThunkAction<Promise<User>> =>
   async (dispatch) => {
     try {
-      const response = await publicApi.get(`/user/${controlNumber}`, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
+      const response = await privateApi.post('/user', {
+        userId,
       });
 
-      if (response.data.isError) {
-        throw new Error(response.data.clientMessage);
-      }
-      dispatch(getUserSuccess);
+        if (response.data.isError) {
+          throw new Error(response.data.clientMessage);
+        }
+        dispatch(getUserSuccess);
 
-      return response.data.payload[0];
+      return response.data.payload;
     } catch (error) {
       return Promise.reject(error);
     }
@@ -96,16 +86,11 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
 };
 
 export const updateUser =
-  (userData: Administrator): AppThunkAction =>
+  (userData: User): AppThunkAction =>
   async (dispatch) => {
     dispatch(updateUserStart);
-    await publicApi
-      .put('/user/update', userData, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
+    await privateApi
+      .put('/user/update', userData)
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;
@@ -127,19 +112,10 @@ export const updateUser =
   };
 
 export const deleteUser =
-  (controlNumber: string): AppThunkAction =>
+  (userId: number): AppThunkAction =>
   async (dispatch) => {
-    await publicApi
-      .post(
-        '/user/delete',
-        { controlNumber },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
-          },
-        },
-      )
+    await privateApi
+      .post('/user/delete', { userId })
       .then((response) => {
         if (response.data.isError) {
           const customError = new CustomApiError(response.data).message;

@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-=======
 export interface User {
   idUser?: number;
   name: string;
   lastNames: string;
   controlNumber: string;
   mail: string;
+  idRole: number;
   role: string;
   imageUrl: string;
 }
 
->>>>>>> f218f5d (feature: user crud integration in progress)
 export interface UserCredentials {
   controlNumber: string;
   password: string;
@@ -35,4 +33,19 @@ export interface UserFetched {
   controlNumber: string;
   role: string;
   idRole: number;
+}
+
+export interface User extends UserFormData {
+  idUser?: number;
+}
+
+export interface UserFetched {
+  idUser: number;
+  name: string;
+  lastNames: string;
+  controlNumber: string;
+  mail: string;
+  idRole: number;
+  role: string;
+  imageUrl: string;
 }
