@@ -4,11 +4,13 @@ import userSlice from '@redux/slices/userSlice';
 import hourxhourSlice from '@redux/slices/hourxhourSlice';
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import roleSlice from '@redux/slices/roleSlice';
 
 export const store = configureStore({
   reducer: {
     authReducer: authSlice,
     userReducer: userSlice,
+    roleReducer: roleSlice,
     notAuthorizerReducer: authorizerSlice,
     hourxhourReducer: hourxhourSlice,
   },

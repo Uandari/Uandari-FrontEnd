@@ -85,7 +85,7 @@ export default function AllTab() {
             controlNumber={user.controlNumber}
             role={user.role}
             imageUrl={user.imageUrl || getRandomImageUrl()}
-            onDelete={() => handleDeleteUser(user.id ?? 0)}
+            onDelete={() => handleDeleteUser(user.idUser ?? 0)}
             onUpdate={() => handleUpdate(user)}
           />
         ))
