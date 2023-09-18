@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
 import { colors } from '@constants/colors';
-import { User } from '@interfaces/User';
+import { User, UserFetched, UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -15,7 +15,7 @@ const useUsers = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenToUpdate, setIsModalOpenToUpdate] = useState(false);
   const [searchTerm, setSearhTerm] = useState('');
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [selectedUser, setSelectedUser] = useState<UserFetched | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -48,7 +48,7 @@ const useUsers = () => {
     });
   };
 
-  const handleCreateUser = async (userData: User) => {
+  const handleCreateUser = async (userData: UserFormData) => {
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
@@ -57,6 +57,7 @@ const useUsers = () => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
   };
+  
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
