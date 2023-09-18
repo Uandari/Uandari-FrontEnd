@@ -8,7 +8,7 @@ interface InitialStateType<T> {
   error: string | null;
 }
 
-type RoleState = InitialStateType<Role[] | Role | null >;
+type RoleState = InitialStateType<Role[] | null>;
 
 const initialState: RoleState = {
   data: null,

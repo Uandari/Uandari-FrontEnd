@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 =======
 export interface User {
-  id?: number;
+  idUser?: number;
   name: string;
   lastNames: string;
   controlNumber: string;
