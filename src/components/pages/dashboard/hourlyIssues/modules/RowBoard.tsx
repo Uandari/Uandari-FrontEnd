@@ -48,13 +48,56 @@ function RowBoard({
 }: RowBoardProps) {
   const [showAllProblems, setShowAllProblems] = useState(false);
   const [countedIssues, setCountedIssues] = useState(0);
+
+  const [isLargeIs, setIsLargeIs] = useState(false);
   const [isValue, setIsValue] = useState<number>(is ?? 0);
+
+  const [isLargeMust, setIsLargeMust] = useState(false);
   const [mustValue, setMustValue] = useState<number>(must ?? 0);
+
+  const handleInputClickIs = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.currentTarget.select(); // Selecciona todo el texto dentro del input
+    setIsLargeIs(true);
+  };
+
+  const handleInputBlurIs = () => {
+    setIsLargeIs(false);
+  };
+
+  const handleInputKeyPressIs = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      setIsLargeIs(false);
+      window.getSelection()?.removeAllRanges();
+    }
+  };
+
+  const handleInputClickMust = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.currentTarget.select(); // Selecciona todo el texto dentro del input
+    setIsLargeMust(true);
+  };
+
+  const handleInputBlurMust = () => {
+    setIsLargeMust(false);
+  };
+
+  const handleInputKeyPressMust = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+  ) => {
+    if (e.key === 'Enter') {
+      setIsLargeMust(false);
+      window.getSelection()?.removeAllRanges();
+    }
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
+
+    // Verificar si el valor contiene la letra 'e' antes de actualizar el estado
+    if (/[eE]/.test(value)) {
+      return; // Salir de la función sin actualizar el estado
+    }
 
     if (name === 'is') {
       setIsValue(Number(value));
@@ -71,29 +114,47 @@ function RowBoard({
   }, [issues]);
 
   return (
-    <div className="grid grid-cols-9 border-b border-main_color">
+    <div className="grid grid-cols-11 border-b border-main_color">
       {/* Hora */}
       <div className="flex items-center justify-center text-main_gray border-r border-main_color">
         <div className="py-6">{completeHour}</div>
       </div>
+      {/* Operación */}
+      <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
+        <div className="py-6">450</div>
+      </div>
+      {/* Tiempo de paro */}
+      <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
+        <div className="py-6">37</div>
+      </div>
       {/* Es */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color ">
         <input
-          className="w-full h-full border-none text-center outline-none text-lg cursor-pointer"
+          className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
+            isLargeIs ? 'input-focused' : ''
+          }`}
           type="number"
           value={isValue}
           name="is"
           onChange={(e) => handleInputChange(e)}
+          onClick={(e) => handleInputClickIs(e)}
+          onBlur={handleInputBlurIs}
+          onKeyPress={handleInputKeyPressIs}
         />
       </div>
       {/* Debe */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
         <input
-          className="w-full h-full border-none text-center outline-none text-lg cursor-pointer"
+          className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
+            isLargeMust ? 'input-focused' : ''
+          }`}
           type="number"
           value={mustValue}
           name="must"
           onChange={(e) => handleInputChange(e)}
+          onClick={(e) => handleInputClickMust(e)}
+          onBlur={handleInputBlurMust}
+          onKeyPress={handleInputKeyPressMust}
         />
       </div>
       {/* Es acumulado */}

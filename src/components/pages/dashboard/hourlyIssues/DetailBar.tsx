@@ -2,8 +2,8 @@ import GoalsIcon from '@icons/crosshair.svg';
 import ScrewIcon from '@icons/screw.svg';
 import SettingsIcon from '@icons/SettingIcon.svg';
 
-import CardTab from './modules/Tabs/CardTab';
-import LabelTab from './modules/Tabs/LabelTab';
+import CardTab from './modules/detail-components/CardTab';
+import LabelTab from './modules/detail-components/LabelTab';
 
 function DetailBar() {
   return (

@@ -5,8 +5,10 @@ function HeadBoard() {
   return (
     <div>
       <CellTab shift="Matutino" />
-      <div className="grid grid-cols-9 border-b border-main_color h-full">
+      <div className="grid grid-cols-11 border-b border-main_color h-full">
         <CellBoard title="Hora" />
+        <CellBoard title="Operación" />
+        <CellBoard title="Tiempo de paro" />
         <CellBoard title="Es" />
         <CellBoard title="Debe" />
         <CellBoard title="Es acumulado" />
