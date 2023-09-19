@@ -100,6 +100,7 @@ function FormBoard({ onClose,
     form.validateFields(['controlNumber', 'name', 'lastNames', 'mail', 'role']);
   }, [form]);
 
+  
   return (
     <Form form={form} initialValues={{ remember: true }}
       onFinish={onFinish}

@@ -26,8 +26,13 @@ export const createUser =
   (userData: UserFormData): AppThunkAction =>
     async (dispatch) => {
       dispatch(createUsersStart());
-      await privateApi
-        .post('/user/create', { userData })
+      await publicApi
+        .post('/user/create',  userData , {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           if (response.data.isError) {
             const customError = new CustomApiError(response.data).message;
