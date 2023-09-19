@@ -2,28 +2,28 @@ import { Role } from '@interfaces/Role';
 
 export const initialRoleInfo = {
   id: 0,
-	name: '',
+  name: '',
 };
 
 export const RolesListMock: Role[] = [
   {
     id: 1,
-    name: 'Gerente'
+    name: 'Gerente',
   },
   {
     id: 2,
-    name: 'Administrador'
+    name: 'Administrador',
   },
   {
     id: 3,
-    name: 'Coordinador'
+    name: 'Coordinador',
   },
   {
     id: 4,
-    name: 'Team Leader'
+    name: 'Team Leader',
   },
   {
     id: 5,
-    name: 'Visualizador'
+    name: 'Visualizador',
   },
 ];

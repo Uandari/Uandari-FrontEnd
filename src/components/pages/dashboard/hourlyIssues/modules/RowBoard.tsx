@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import DropIcon from '@icons/dropIcon.svg';
 import PlusIcon from '@icons/plus.svg';
+import { areas } from '@mocks/Areas';
+import { operations } from '@mocks/Operations';
 import { Popover } from 'antd';
 
 import FormBoard from './FormBoard';
@@ -35,6 +37,22 @@ export type IssuesType = {
   name: string;
 };
 
+export type ItemProps = {
+  id: number;
+  name: string;
+};
+
+type SearchableItem = {
+  id: number;
+  name: string;
+};
+
+type SearchFunctionProps = {
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  items: SearchableItem[];
+  setFilteredItems: React.Dispatch<React.SetStateAction<SearchableItem[]>>;
+};
+
 function RowBoard({
   completeHour,
   hour,
@@ -52,96 +70,109 @@ function RowBoard({
   area,
   time,
 }: RowBoardProps) {
+  // Problems states
   const [showAllProblems, setShowAllProblems] = useState(false);
   const [countedIssues, setCountedIssues] = useState(0);
 
-  const [isLargeIs, setIsLargeIs] = useState(false);
-  const [isValue, setIsValue] = useState<number>(is ?? 0);
+  // State values of inputs
+  const [isValue, setIsValue] = useState<number | null>(is ?? null);
+  const [mustValue, setMustValue] = useState<number | null>(must ?? null);
+  const [timeValue, setTimeValue] = useState<number | null>(time ?? null);
+  const [areaValue, setAreaValue] = useState<string | null>(area ?? null);
+  const [operationValue, setOperationValue] = useState<string | null>(
+    operation ?? null,
+  );
 
-  const [isLargeMust, setIsLargeMust] = useState(false);
-  const [mustValue, setMustValue] = useState<number>(must ?? 0);
+  // Estado para el input enfocado y su nombre
+  const [focusedInput, setFocusedInput] = useState<string | null>(null);
 
-  const [isLargeTime, setIsLargeTime] = useState(false);
-  const [timeValue, setTimeValue] = useState<number>(time ?? 0);
+  // State values for search operations
+  const [searchOperationTerm, setSearchOperationTerm] = useState('');
+  const [filteredOperations, setFilteredOperations] = useState(operations);
 
-  const [isLargeArea, setIsLargeArea] = useState(false);
-  const [areaValue, setAreaValue] = useState<string>(area ?? '');
+  const [searchAreaTerm, setSearchAreasTerm] = useState('');
+  const [filteredAreas, setFilteredAreas] = useState(areas);
 
-  const [isLargeOperation, setIsLargeOperation] = useState(false);
-  const [operationValue, setOperationValue] = useState<string>(operation ?? '');
-
-  /* Makes input bigger */
   const handleInputClick = (e: React.MouseEvent<HTMLInputElement>) => {
     const inputName = e.currentTarget.name;
     e.currentTarget.select();
-    switch (inputName) {
-      case 'must':
-        setIsLargeMust(true);
-        break;
-      case 'is':
-        setIsLargeIs(true);
-        break;
-      case 'time':
-        setIsLargeTime(true);
+    setFocusedInput(inputName);
+  };
+
+  const handleSearchChangeOperations = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const newSearchTerm = e.target.value;
+    setSearchOperationTerm(newSearchTerm);
+
+    // Filter operations based on search terms
+    const filtered = operations.filter((operationName) =>
+      operationName.name.toLowerCase().includes(newSearchTerm.toLowerCase()),
+    );
+
+    setFilteredOperations(filtered);
+  };
+
+  const handleSearchChangeAreas = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const newSearchTerm = e.target.value;
+    setSearchAreasTerm(newSearchTerm);
+
+    // Filter operations based on search terms
+    const filtered = areas.filter((areasName) =>
+      areasName.name.toLowerCase().includes(newSearchTerm.toLowerCase()),
+    );
+
+    setFilteredAreas(filtered);
+  };
+
+  const handleSearchChange =
+    ({ setSearchTerm, items, setFilteredItems }: SearchFunctionProps) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const newSearchTerm = e.target.value;
+      setSearchTerm(newSearchTerm);
+
+      // Filter items based on search terms
+      const filtered = items.filter((item) =>
+        item.name.toLowerCase().includes(newSearchTerm.toLowerCase()),
+      );
+
+      setFilteredItems(filtered);
+    };
+
+  const handleInputBlur = () => {
+    setFocusedInput(null);
+  };
+
+  const handleItemSelected = (type: 'area' | 'operation', item: ItemProps) => {
+    switch (type) {
+      case 'area':
+        setAreaValue(item.name);
         break;
       case 'operation':
-        setIsLargeOperation(true);
-        break;
-      case 'area':
-        setIsLargeArea(true);
+        setOperationValue(item.name);
         break;
       default:
         break;
     }
   };
 
-  /* Click outside the input */
-  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    const inputName = e.currentTarget.name;
-    e.currentTarget.select();
-    switch (inputName) {
-      case 'must':
-        setIsLargeMust(false);
-        break;
-      case 'is':
-        setIsLargeIs(false);
-        break;
-      case 'time':
-        setIsLargeTime(false);
-        break;
-      case 'operation':
-        setIsLargeOperation(false);
-        break;
-      case 'area':
-        setIsLargeArea(false);
-        break;
-      default:
-        break;
-    }
-  };
-
-  /* Press enter key send data to DB */
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log('Enter pressend in: ', e.currentTarget.name);
     if (e.key === 'Enter') {
       window.getSelection()?.removeAllRanges();
+      setFocusedInput(null);
+
       const inputName = e.currentTarget.name;
-      e.currentTarget.select();
       switch (inputName) {
         case 'must':
-          setIsLargeMust(false);
+          /* Call endpoint */
           break;
         case 'is':
-          setIsLargeIs(false);
+          /* Call endpoint */
           break;
         case 'time':
-          setIsLargeTime(false);
-          break;
-        case 'operation':
-          setIsLargeOperation(false);
-          break;
-        case 'area':
-          setIsLargeArea(false);
+          /* Call endpoint */
           break;
         default:
           break;
@@ -154,15 +185,16 @@ function RowBoard({
   ) => {
     const { name, value } = e.target;
 
-    // Verificar si el valor contiene la letra 'e' antes de actualizar el estado
     if (/[eE]/.test(value)) {
-      return; // Salir de la función sin actualizar el estado
+      return; // Do not update the state
     }
 
     if (name === 'is') {
       setIsValue(Number(value));
     } else if (name === 'must') {
       setMustValue(Number(value));
+    } else if (name === 'time') {
+      setTimeValue(Number(value));
     }
   };
 
@@ -177,43 +209,110 @@ function RowBoard({
     <div className="grid grid-cols-12 border-b border-main_color">
       {/* Hora */}
       <div className="flex items-center text-center justify-center text-main_gray border-r border-main_color">
-        <div className="py-6">{completeHour}</div>
+        <p className="py-6">{completeHour}</p>
       </div>
       {/* Operación */}
-      <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
-        <div className="py-6">450</div>
+      <div className="flex items-center justify-center text-main_text_color border-r border-main_color relative">
+        <p className="absolute">{operationValue}</p>
+        <Popover
+          placement="right"
+          trigger="click"
+          content={
+            <div className="flex flex-col items-start h-32 overflow-y-scroll">
+              <input
+                type="text"
+                placeholder="Buscar operación"
+                value={searchOperationTerm}
+                onChange={handleSearchChange({
+                  items: operations,
+                  setSearchTerm: setSearchOperationTerm,
+                  setFilteredItems: setFilteredOperations,
+                })}
+                className="outline-none mb-1"
+              />
+              {filteredOperations.map((item) => (
+                <button
+                  type="button"
+                  className="hover:bg-main_blue_bg text-left w-full p-1 rounded-md pl-2"
+                  key={item.id}
+                  onClick={() => handleItemSelected('operation', item)}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          }
+        >
+          <button type="button" className="text-transparent h-full w-full z-10">
+            btn
+          </button>
+        </Popover>
       </div>
+
       {/* Tiempo de paro */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
         <input
           className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
-            isLargeTime ? 'input-focused' : ''
+            focusedInput === 'time' ? 'input-focused' : ''
           }`}
           type="number"
-          value={timeValue}
+          value={timeValue !== null ? timeValue.toString() : ''}
           name="time"
           onChange={(e) => handleInputChange(e)}
           onClick={(e) => handleInputClick(e)}
-          onBlur={(e) => handleInputBlur(e)}
+          onBlur={handleInputBlur}
           onKeyPress={(e) => handleInputKeyPress(e)}
         />
       </div>
       {/* Área responsable */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
-        <div className="py-6 text-sm">Mantenimiento</div>
+        <p className="absolute">{areaValue}</p>
+        <Popover
+          placement="right"
+          trigger="click"
+          content={
+            <div className="flex flex-col items-start h-32 overflow-y-scroll">
+              <input
+                type="text"
+                placeholder="Buscar área"
+                value={searchAreaTerm}
+                onChange={handleSearchChange({
+                  items: areas,
+                  setSearchTerm: setSearchAreasTerm,
+                  setFilteredItems: setFilteredAreas,
+                })}
+                className="outline-none mb-1"
+              />
+              {filteredAreas.map((item) => (
+                <button
+                  type="button"
+                  className="hover:bg-main_blue_bg text-left w-full p-1 rounded-md pl-2"
+                  key={item.id}
+                  onClick={() => handleItemSelected('area', item)}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          }
+        >
+          <button type="button" className="text-transparent h-full w-full z-10">
+            btn
+          </button>
+        </Popover>
       </div>
       {/* Es */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color ">
         <input
           className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
-            isLargeIs ? 'input-focused' : ''
+            focusedInput === 'is' ? 'input-focused' : ''
           }`}
           type="number"
-          value={isValue}
+          value={isValue !== null ? isValue.toString() : ''}
           name="is"
           onChange={(e) => handleInputChange(e)}
           onClick={(e) => handleInputClick(e)}
-          onBlur={(e) => handleInputBlur(e)}
+          onBlur={handleInputBlur}
           onKeyPress={(e) => handleInputKeyPress(e)}
         />
       </div>
@@ -221,33 +320,33 @@ function RowBoard({
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
         <input
           className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
-            isLargeMust ? 'input-focused' : ''
+            focusedInput === 'must' ? 'input-focused' : ''
           }`}
           type="number"
-          value={mustValue}
+          value={mustValue !== null ? mustValue?.toString() : ''}
           name="must"
           onChange={(e) => handleInputChange(e)}
           onClick={(e) => handleInputClick(e)}
-          onBlur={(e) => handleInputBlur(e)}
+          onBlur={handleInputBlur}
           onKeyPress={(e) => handleInputKeyPress(e)}
         />
       </div>
       {/* Es acumulado */}
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <p className="flex items-center justify-center text-main_gray border-r border-main_color">
         {isAccumulative}
-      </div>
+      </p>
       {/* Debe acumulado */}
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <p className="flex items-center justify-center text-main_gray border-r border-main_color">
         {mustAccumulative}
-      </div>
+      </p>
       {/* Diferencia */}
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <p className="flex items-center justify-center text-main_gray border-r border-main_color">
         {difference}
-      </div>
+      </p>
       {/* Diferencia acumulada */}
-      <div className="flex items-center justify-center text-main_gray border-r border-main_color">
+      <p className="flex items-center justify-center text-main_gray border-r border-main_color">
         {accumulativeDifference}
-      </div>
+      </p>
       {/* Problema */}
       <div className="flex flex-col col-span-2 items-center justify-center pt-4 pb-2">
         {issues && issues.length > 0 && (
@@ -274,7 +373,7 @@ function RowBoard({
                 type="button"
                 onClick={() => setShowAllProblems(!showAllProblems)}
               >
-                <p className="text-main_blue text-sm cursor-pointer pl-4">
+                <div className="text-main_blue text-sm cursor-pointer pl-4">
                   {showAllProblems ? (
                     <div className="mb-2 flex gap-x-2">
                       <p className="text-main_gray hover:text-main_text_color">
@@ -294,7 +393,7 @@ function RowBoard({
                       <img src={DropIcon} alt="drop-icon" />
                     </div>
                   )}
-                </p>
+                </div>
               </button>
             )}
           </div>

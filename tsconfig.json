@@ -24,6 +24,7 @@
       "@api/*": ["src/api/*"],
       "@app/*": ["src/app/*"],
       "@components/*": ["src/components/*"],
+      "@commons/*": ["src/commons/*"],
       "@constants/*": ["src/constants/*"],
       "@hooks/*": ["src/hooks/*"],
       "@redux/*": ["src/redux/*"],
