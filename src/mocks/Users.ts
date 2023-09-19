@@ -10,7 +10,7 @@ export const initialUserInfo = {
   idRole: 0,
   role: '',
   verifiedAccount: 1,
-  accessToken: '',
+  token: '',
   imageUrl: '',
 };
 
