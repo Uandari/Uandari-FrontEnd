@@ -23,30 +23,30 @@ import Swal from 'sweetalert2';
 const accessToken = localStorage.getItem('accessToken');
 
 export const createUser =
-  (userData: User): AppThunkAction =>
-  async (dispatch) => {
-    dispatch(createUsersStart());
-    await privateApi
-      .post('/user/create', userData)
-      .then((response) => {
-        if (response.data.isError) {
-          const customError = new CustomApiError(response.data).message;
+  (userData: UserFormData): AppThunkAction =>
+    async (dispatch) => {
+      dispatch(createUsersStart());
+      await privateApi
+        .post('/user/create', { userData })
+        .then((response) => {
+          if (response.data.isError) {
+            const customError = new CustomApiError(response.data).message;
+            dispatch(createUserError(customError));
+            return;
+          }
+          dispatch(createUserSuccess(response.data.payload));
+          Swal.fire({
+            title: 'Creado',
+            text: 'El usuario ha sido creado',
+            icon: 'success',
+            confirmButtonColor: colors.success,
+          });
+        })
+        .catch((error) => {
+          const customError = new CustomApiError(error).message;
           dispatch(createUserError(customError));
-          return;
-        }
-        dispatch(createUserSuccess(response.data.payload));
-        Swal.fire({
-          title: 'Creado',
-          text: 'El usuario ha sido creado',
-          icon: 'success',
-          confirmButtonColor: colors.success,
         });
-      })
-      .catch((error) => {
-        const customError = new CustomApiError(error).message;
-        dispatch(createUserError(customError));
-      });
-  };
+    };
 
 export const getUser =
   (userId: number): AppThunkAction<Promise<User>> =>
