@@ -22,7 +22,7 @@ export default function Topbar({ title, variant, underline }: TopBarProps) {
 
   if (variant === 'primary') {
     return (
-      <div className=" w-full h-28 pl-8 pt-10 relative bg-main_white">
+      <div className={`w-full h-28 pl-8 pt-10 relative bg-main_white ${underline ? 'border-b' : ''}`}>
         <h3 className="text-main_title_color font-semibold text-xl">{title}</h3>
         <div className="flex items-center gap-2">
           <img src={CalendarIcon} alt="calendar-icon" />

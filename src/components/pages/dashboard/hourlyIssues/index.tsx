@@ -21,7 +21,7 @@ function HourlyIssues() {
         <div>
           <Topbar
             variant="primary"
-            title="Registro de problemas hora por hora"
+            title="Registro de problemas hora por hora" underline
           />
         </div>
         <div className="flex-1 overflow-y-auto">
