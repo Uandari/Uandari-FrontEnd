@@ -11,23 +11,20 @@ type ProblemCardProps = {
 function ProblemCard({ id, title, description }: ProblemCardProps) {
   const [open, setOpen] = useState(false);
 
-  const showDrawer = () => {
-    setOpen(true);
+  const toggleDrawer = () => {
+    setOpen(!open);
   };
 
-  const onClose = () => {
-    setOpen(false);
-  };
   return (
     <div>
-      <button type="button" onClick={showDrawer}>
+      <button type="button" onClick={toggleDrawer}>
         <div className="px-4 cursor-pointer mb-3 text-left">
           <p className="text-main_title_color text-sm font-medium">{title}</p>
           <p className="text-sm text-main_text_color">{description}</p>
         </div>
       </button>
 
-      <DrawerComponent onClose={onClose} open={open} />
+      <DrawerComponent onClose={toggleDrawer} open={open} />
     </div>
   );
 }

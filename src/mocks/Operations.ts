@@ -1,5 +1,9 @@
 export const operations = [
   {
+    id: 0,
+    name: 'OK',
+  },
+  {
     id: 1,
     name: '450',
   },
@@ -45,6 +49,10 @@ export const operations = [
   },
   {
     id: 12,
-    name: 'Sin team',
+    name: 'Ausentismo',
+  },
+  {
+    id: 13,
+    name: 'Falta de material',
   },
 ];

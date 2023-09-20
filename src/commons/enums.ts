@@ -25,3 +25,18 @@ export const hoursToRender = [
   { shortHour: '04:00', completeHour: '04:00 - 05:00' },
   { shortHour: '05:00', completeHour: '05:00 - 06:00' },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: 'Disponibilidad',
+  },
+  {
+    id: 2,
+    name: 'Desempeño',
+  },
+  {
+    id: 3,
+    name: 'Calidad',
+  },
+];

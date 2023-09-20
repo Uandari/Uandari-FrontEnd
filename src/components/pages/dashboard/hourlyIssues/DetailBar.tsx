@@ -1,8 +1,10 @@
 import GoalsIcon from '@icons/crosshair.svg';
 import CollapsedIcon from '@icons/open-close-icon.svg';
 import ScrewIcon from '@icons/screw.svg';
+import { cardIssues } from '@mocks/CardIssues';
+import { labelTabs } from '@mocks/LabelTabs';
 
-import CardTab from './modules/detail-components/CardTab';
+import IssueCard from './modules/detail-components/IssueCard';
 import LabelTab from './modules/detail-components/LabelTab';
 
 export type DetailBarProps = {
@@ -38,43 +40,21 @@ function DetailBar({ collapsed, setCollapsed }: DetailBarProps) {
           />
         </button>
       </div>
+      {/* Label Tabs */}
       <div className="flex flex-col gap-y-4 mt-8 border-t pt-2 border-main_color">
-        <LabelTab
-          icon={ScrewIcon}
-          title="Averías o fallas de equipo"
-          quantity="3"
-        />
-        <LabelTab
-          icon={ScrewIcon}
-          title="Cambios o ajustes de herramientas o modelo (Piezas)"
-          quantity="3"
-        />
-        <LabelTab
-          icon={ScrewIcon}
-          title="Cambio de herramientas o modelo (Piezas)"
-          quantity="3"
-        />
-        <LabelTab
-          icon={ScrewIcon}
-          title="Paros planeados (Mantenimiento)"
-          quantity="3"
-        />
+        {labelTabs.map((labelTab) => (
+          <LabelTab title={labelTab.title} quantity={labelTab.quantity} />
+        ))}
       </div>
-      <CardTab
-        status="En proceso"
-        problem="Averías o fallas en equipos"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
-      />
-      <CardTab
-        status="En proceso"
-        problem="Averías o fallas en equipos"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
-      />
-      <CardTab
-        status="En proceso"
-        problem="Averías o fallas en equipos"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
-      />
+      {/* Card Issues */}
+      {cardIssues.map((cardIssue) => (
+        <IssueCard
+          key={cardIssue.id}
+          problem={cardIssue.problem}
+          status={cardIssue.status}
+          description={cardIssue.description}
+        />
+      ))}
     </div>
   );
 }

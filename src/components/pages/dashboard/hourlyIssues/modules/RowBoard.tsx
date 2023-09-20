@@ -93,40 +93,14 @@ function RowBoard({
   const [searchAreaTerm, setSearchAreasTerm] = useState('');
   const [filteredAreas, setFilteredAreas] = useState(areas);
 
+  // Select the full text of the current input
   const handleInputClick = (e: React.MouseEvent<HTMLInputElement>) => {
     const inputName = e.currentTarget.name;
     e.currentTarget.select();
     setFocusedInput(inputName);
   };
 
-  const handleSearchChangeOperations = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const newSearchTerm = e.target.value;
-    setSearchOperationTerm(newSearchTerm);
-
-    // Filter operations based on search terms
-    const filtered = operations.filter((operationName) =>
-      operationName.name.toLowerCase().includes(newSearchTerm.toLowerCase()),
-    );
-
-    setFilteredOperations(filtered);
-  };
-
-  const handleSearchChangeAreas = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const newSearchTerm = e.target.value;
-    setSearchAreasTerm(newSearchTerm);
-
-    // Filter operations based on search terms
-    const filtered = areas.filter((areasName) =>
-      areasName.name.toLowerCase().includes(newSearchTerm.toLowerCase()),
-    );
-
-    setFilteredAreas(filtered);
-  };
-
+  // Search Items
   const handleSearchChange =
     ({ setSearchTerm, items, setFilteredItems }: SearchFunctionProps) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -145,6 +119,7 @@ function RowBoard({
     setFocusedInput(null);
   };
 
+  // Select item from the list
   const handleItemSelected = (type: 'area' | 'operation', item: ItemProps) => {
     switch (type) {
       case 'area':
@@ -158,6 +133,7 @@ function RowBoard({
     }
   };
 
+  // Call endpoints to update the state of each hour
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       window.getSelection()?.removeAllRanges();
@@ -186,7 +162,7 @@ function RowBoard({
     const { name, value } = e.target;
 
     if (/[eE]/.test(value)) {
-      return; // Do not update the state
+      return; // Do not update the state when press e
     }
 
     if (name === 'is') {
@@ -213,7 +189,9 @@ function RowBoard({
       </div>
       {/* Operación */}
       <div className="flex items-center justify-center text-main_text_color border-r border-main_color relative">
-        <p className="absolute">{operationValue}</p>
+        <div className="w-full h-full absolute flex justify-center items-center overflow-hidden pl-2">
+          <p className="">{operationValue}</p>
+        </div>
         <Popover
           placement="right"
           trigger="click"
@@ -265,8 +243,10 @@ function RowBoard({
         />
       </div>
       {/* Área responsable */}
-      <div className="flex items-center justify-center text-main_text_color border-r border-main_color">
-        <p className="absolute">{areaValue}</p>
+      <div className="flex items-center justify-center text-main_text_color border-r border-main_color relative">
+        <div className="w-full h-full flex justify-center items-center absolute pl-1">
+          <p className="">{areaValue}</p>
+        </div>
         <Popover
           placement="right"
           trigger="click"
