@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import DropIcon from '@icons/dropIcon.svg';
 import PlusIcon from '@icons/plus.svg';
@@ -234,6 +234,8 @@ function RowBoard({
             focusedInput === 'time' ? 'input-focused' : ''
           }`}
           type="number"
+          onWheel={(e) => e.currentTarget.blur()}
+          min={0}
           value={timeValue !== null ? timeValue.toString() : ''}
           name="time"
           onChange={(e) => handleInputChange(e)}
@@ -288,6 +290,8 @@ function RowBoard({
             focusedInput === 'is' ? 'input-focused' : ''
           }`}
           type="number"
+          onWheel={(e) => e.currentTarget.blur()}
+          min={0}
           value={isValue !== null ? isValue.toString() : ''}
           name="is"
           onChange={(e) => handleInputChange(e)}
@@ -302,7 +306,9 @@ function RowBoard({
           className={`w-full h-full border-none text-center outline-none text-lg cursor-pointer ${
             focusedInput === 'must' ? 'input-focused' : ''
           }`}
+          onWheel={(e) => e.currentTarget.blur()}
           type="number"
+          min={0}
           value={mustValue !== null ? mustValue?.toString() : ''}
           name="must"
           onChange={(e) => handleInputChange(e)}

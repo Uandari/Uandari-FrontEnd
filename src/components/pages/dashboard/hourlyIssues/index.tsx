@@ -18,7 +18,7 @@ function HourlyIssues() {
         <DetailBar collapsed={collapsed} setCollapsed={setCollapsed} />
       </div>
       <div className="flex flex-1 flex-col bg-white">
-        <div>
+        <div className="z-[1000] ">
           <Topbar
             variant="primary"
             title="Registro de problemas hora por hora"

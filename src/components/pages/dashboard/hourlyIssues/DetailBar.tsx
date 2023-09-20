@@ -41,20 +41,26 @@ function DetailBar({ collapsed, setCollapsed }: DetailBarProps) {
         </button>
       </div>
       {/* Label Tabs */}
-      <div className="flex flex-col gap-y-4 mt-8 border-t pt-2 border-main_color">
+      <div
+        className={`flex flex-col gap-y-4 mt-8 border-t pt-2 border-main_color ${
+          collapsed ? 'hidden' : ''
+        }`}
+      >
         {labelTabs.map((labelTab) => (
           <LabelTab title={labelTab.title} quantity={labelTab.quantity} />
         ))}
       </div>
       {/* Card Issues */}
-      {cardIssues.map((cardIssue) => (
-        <IssueCard
-          key={cardIssue.id}
-          problem={cardIssue.problem}
-          status={cardIssue.status}
-          description={cardIssue.description}
-        />
-      ))}
+      <div className={collapsed ? 'hidden' : ''}>
+        {cardIssues.map((cardIssue) => (
+          <IssueCard
+            key={cardIssue.id}
+            problem={cardIssue.problem}
+            status={cardIssue.status}
+            description={cardIssue.description}
+          />
+        ))}
+      </div>
     </div>
   );
 }
