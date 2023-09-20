@@ -8,9 +8,10 @@ import { es } from 'date-fns/locale';
 type TopBarProps = {
   title: string;
   variant?: 'primary' | 'secondary';
+  underline: boolean;
 };
 
-export default function Topbar({ title, variant }: TopBarProps) {
+export default function Topbar({ title, variant, underline }: TopBarProps) {
   const [formattedDate, setFormattedDate] = useState<string>('');
   useEffect(() => {
     const currentDate = new Date();
@@ -38,7 +39,7 @@ export default function Topbar({ title, variant }: TopBarProps) {
     );
   }
   return (
-    <div className="w-full h-28 pl-8 pt-10 relative bg-main_white">
+    <div className={`w-full h-28 pl-8 pt-10 relative bg-main_white ${underline ? 'border-b' : ''}`}>
       <h3 className="text-main_title_color font-semibold text-xl">{title}</h3>
     </div>
   );
@@ -46,4 +47,5 @@ export default function Topbar({ title, variant }: TopBarProps) {
 
 Topbar.defaultProps = {
   variant: 'primary',
+  underline: false,
 };

@@ -14,11 +14,6 @@ export default function UploadPanel() {
           <SidebarTitle sidebarTitle='Nivel 1' />
 
           <SidebarTab icon={GoalsIcon} title="Ruta Crítica" path={`${CRITICAL_PATH}`} />
-          <SidebarTab
-            icon={PointsPlanIcon}
-            title="Plan de Puntos"
-            path={`${CRITICAL_PATH}`}
-          />
 
         </Sidebar>
         <Outlet />

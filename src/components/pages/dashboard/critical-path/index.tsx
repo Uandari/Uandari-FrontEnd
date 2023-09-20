@@ -8,7 +8,6 @@ export default function CriticalPath() {
           <Topbar variant="secondary" title="Ruta crítica" />
         </div>
         <div className="flex-1 overflow-y-auto">
-          asfas
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ import TeamGoals from '@components/pages/dashboard/team-goals';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
 import UploadPanel from '@components/pages/upload-panel';
-import CriticalPathUpload from '@components/pages/upload-panel/critical-path';
 import { createBrowserRouter } from 'react-router-dom';
 
 import {
@@ -106,7 +105,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: CRITICAL_PATH,
-        element: <DynamicUploadPage topbarTitle='Subir archivo de ruta crítica' topbarVariant='secondary' />,
+        element: <DynamicUploadPage topbarTitle='Subir archivo de ruta crítica' topbarVariant='secondary' topbarUnderline/>,
       },
     ],
     errorElement: <NotFound />,
