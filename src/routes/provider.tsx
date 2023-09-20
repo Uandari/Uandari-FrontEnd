@@ -32,6 +32,7 @@ import {
   ADMIN_LINES,
   ADMIN_CELLS,
 } from './paths';
+import DynamicUploadPage from '@components/pages/upload-panel/dynamicUploadPage';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -105,7 +106,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: CRITICAL_PATH,
-        element: <CriticalPathUpload />,
+        element: <DynamicUploadPage topbarTitle='Subir archivo de ruta crítica' topbarVariant='secondary' />,
       },
     ],
     errorElement: <NotFound />,
