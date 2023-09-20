@@ -1,3 +1,8 @@
+
+import GoalsIcon from '../assets/icons/crosshair.svg';
+import PointsPlanIcon from '../assets/icons/PointsPlanIcon.svg';
+import { POINTS_PLAN } from '@routes/paths';
+
 // Hours Array for Hour per Hour Page
 export const hoursToRender = [
   { shortHour: '06:00', completeHour: '6:00 - 7:00' },
@@ -38,5 +43,54 @@ export const categories = [
   {
     id: 3,
     name: 'Calidad',
+  },
+];
+
+
+export const boardPerAreas = [
+  {
+    area: 'ÁREA DE INGENIERÍA INDUSTRIAL',
+    level1: true,
+    level2: true,
+    tableros: [
+      { titulo: 'Ruta crítica', icono: '../assets/icons/crosshair.svg', path: 'ruta-critica', subidaTitulo: 'Subir archivo de Ruta Crítica', level: "Level 1"  },
+      { titulo: 'Plan de Puntos', icono: '../assets/icons/PointsPlanIcon.svg', path: 'plan-de-puntos', subidaTitulo: 'Subir archivo de Plan de Puntos', level: "Level 1"  },
+      { titulo: 'Ergonomía', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Ergonomía', level: "Level 2"  },
+      { titulo: 'Desempeño Ruta Crítica', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Desempeño de Ruta Crítica', level: "Level 2"  },
+      { titulo: 'OEE', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de OEE', level: "Level 2"  },
+      { titulo: 'SCRAP', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de SCRAP', level: "Level 2"  },
+      { titulo: 'Costos de Mantenimiento', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Costos de Mantenimiento', level: "Level 2"  },
+      { titulo: 'Herramientas', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Herramientas', level: "Level 2"  },
+      { titulo: 'VBZ', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de VBZ', level: "Level 2"  },
+    ],
+  },
+  {
+    area: 'ÁREA DE RECURSOS HUMANOS',
+    level1: false,
+    level2: true,
+    tableros: [{ titulo: 'STIBA', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de STIBA', level: "Level 2"  }],
+  },
+  {
+    area: 'ÁREA DE MANTENIMIENTO',
+    level1: false,
+    level2: true,
+    tableros: [{ titulo: 'Reporte Disponibilidad', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Reporte de Disponibilidad', level: "Level 2"  }],
+  },
+  {
+    area: 'ÁREA DE MONTAJE',
+    level1: false,
+    level2: true,
+    tableros: [{ titulo: 'Fallas PPM', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Fallas PPM', level: "Level 2"  }],
+  },
+  {
+    area: 'ÁREA DE CALIDAD',
+    level1: false,
+    level2: true,
+    tableros: [
+      { titulo: 'Auditoría de Motor', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Auditoría de Motor', level: "Level 2"  },
+      { titulo: 'Evaluación QRK', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Evaluación QRK', level: "Level 2"  },
+      { titulo: 'Fallas LB 7A/PC7', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Fallas LB 7A/PC7', level: "Level 2"  },
+      { titulo: 'Evaluación Dimensional', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Evaluación Dimensional', level: "Level 2"  },
+      { titulo: 'Impurezas', icono: 'icono2.png', path: '/plan-puntos', subidaTitulo: 'Subir archivo de Impureaz', level: "Level 2"  }],
   },
 ];
