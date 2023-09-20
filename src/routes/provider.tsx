@@ -30,7 +30,9 @@ import {
   TEAM_GOALS,
   ADMIN_LINES,
   ADMIN_CELLS,
+  GOALS,
 } from './paths';
+import Goals from '@components/pages/dashboard/goals';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -62,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: TEAM_GOALS,
         element: <TeamGoals />,
+      },
+      {
+        path: GOALS,
+        element: <Goals />,
       },
     ],
     errorElement: <NotFound />,
