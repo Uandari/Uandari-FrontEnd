@@ -10,6 +10,7 @@ export default defineConfig({
       '@api': `${path.resolve(__dirname, './src/api/')}`,
       '@app': `${path.resolve(__dirname, './src/app/')}`,
       '@components': `${path.resolve(__dirname, './src/components/')}`,
+      '@commons': `${path.resolve(__dirname, './src/commons/')}`,
       '@constants': `${path.resolve(__dirname, './src/constants/')}`,
       '@hooks': `${path.resolve(__dirname, './src/hooks/')}`,
       '@redux': `${path.resolve(__dirname, './src/redux/')}`,

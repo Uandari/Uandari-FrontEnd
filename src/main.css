@@ -55,7 +55,10 @@ body {
   height: 100%;
   overflow-y: scroll;
 }
-/* 
 
-
-*/
+.input-focused {
+  transform: scale(1.1); /* Cambia el valor según tus preferencias */
+  transition: transform 0.15s ease; /* Controla la duración y la suavidad de la animación */
+  z-index: 1; /* Asegura que el input esté en la parte superior para que sobresalga */
+  box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.137);
+}

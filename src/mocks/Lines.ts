@@ -2,16 +2,16 @@ import { Line } from '@interfaces/Line';
 
 export const initialLineInfo = {
   id: 0,
-	lineName: "",
+  lineName: '',
 };
 
 export const LinesListMock: Line[] = [
   {
     id: 1,
-    lineName: 'Cigueñal'
+    lineName: 'Cigueñal',
   },
   {
     id: 2,
-    lineName: 'Monoblock'
+    lineName: 'Monoblock',
   },
 ];

@@ -1,4 +1,5 @@
 import AdminPanel from '@components/pages/admin-panel';
+import CellsList from '@components/pages/admin-panel/cells';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import Colaborators from '@components/pages/dashboard/colaborators';
@@ -30,7 +31,6 @@ import {
   ADMIN_LINES,
   ADMIN_CELLS,
 } from './paths';
-import CellsList from '@components/pages/admin-panel/cells';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: HOURLY_ISSUES,
+        path: '/',
         element: <HourlyIssues />,
       },
       {

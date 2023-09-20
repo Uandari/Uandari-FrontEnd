@@ -65,7 +65,7 @@ function FormBoard() {
   ];
 
   const [formattedDate, setFormattedDate] = useState<string>('');
-  const [categoryType, setCategoryType] = useState('DISPONIBILIDAD');
+  const [categoryType, setCategoryType] = useState('Disponibilidad');
   const [arrayProblems, setArrayProblems] = useState(availabilityProblems);
 
   const handleProblemTypeChange = (event: any) => {
@@ -79,7 +79,21 @@ function FormBoard() {
     );
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    switch (categoryType) {
+      case 'Disponibilidad':
+        setArrayProblems(availabilityProblems);
+        break;
+      case 'Desempeño':
+        setArrayProblems(performaceProblems);
+        break;
+      case 'Calidad':
+        setArrayProblems(qualityProblems);
+        break;
+      default:
+        break;
+    }
+  }, [availabilityProblems, categoryType, performaceProblems, qualityProblems]);
   return (
     <div className="w-[365px]">
       <div className="px-5 pt-3">
@@ -97,9 +111,9 @@ function FormBoard() {
             buttonStyle="solid"
             defaultValue={categoryType}
           >
-            <Radio.Button value="DISPONIBILIDAD">Disponibilidad</Radio.Button>
-            <Radio.Button value="DESEMPENO">Desempeño</Radio.Button>
-            <Radio.Button value="CALIDAD">Calidad</Radio.Button>
+            <Radio.Button value="Disponibilidad">Disponibilidad</Radio.Button>
+            <Radio.Button value="Desempeño">Desempeño</Radio.Button>
+            <Radio.Button value="Calidad">Calidad</Radio.Button>
           </Radio.Group>
         </Form.Item>
       </div>
@@ -147,9 +161,18 @@ function FormBoard() {
         <div className="flex items-start gap-2">
           <img src={PeopleIcon} alt="problemType-icon" />
           <Select
-            mode="multiple"
+            showSearch
             allowClear
-            placeholder="Selecciona a los responsables"
+            placeholder="Selecciona al responsable"
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              (option?.label ?? '').includes(input)
+            }
+            filterSort={(optionA, optionB) =>
+              (optionA?.label ?? '')
+                .toLowerCase()
+                .localeCompare((optionB?.label ?? '').toLowerCase())
+            }
             options={peopleMock}
           />
         </div>

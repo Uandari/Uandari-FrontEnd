@@ -74,7 +74,7 @@ export default function Dashboard() {
           <SidebarTab
             icon={HourPerHourIcon}
             title="Registro de problemas hora por hora"
-            path={`${DASHBOARD_MAIN}${HOURLY_ISSUES}`}
+            path={`${DASHBOARD_MAIN}`}
           />
 
           <SidebarTab

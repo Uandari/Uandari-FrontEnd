@@ -6,7 +6,7 @@ export type CellBoardTypes = {
 function CellBoard({ title, colSpan }: CellBoardTypes) {
   return (
     <div
-      className={`text-main_text_color ${colSpan} text-sm text-center flex items-center justify-center border-r border-main_color py-2 px-1`}
+      className={`text-main_text_color ${colSpan} text-sm text-center flex items-center justify-center border-r border-main_color py-2 px-2`}
     >
       <p> {title} </p>
     </div>
