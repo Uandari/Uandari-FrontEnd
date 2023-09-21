@@ -18,7 +18,7 @@ const itemsTabs: TabsProps['items'] = [
 
 export default function CustomTabs() {
   return (
-    <div className="w-full px-2">
+    <div className="w-full">
       <Tabs defaultActiveKey="1" items={itemsTabs} />
     </div>
   );

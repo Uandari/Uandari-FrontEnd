@@ -72,7 +72,11 @@ function RowBoard({
         {term}
       </div>
       <div className="flex items-center border-b justify-center text-main_gray">
-        <Popover placement="left" title={<FormStatus />} trigger="click">
+        <Popover
+          placement="left"
+          title={<FormStatus idDeviation={idDeviation} />}
+          trigger="click"
+        >
           <img
             className="cursor-pointer"
             src={issueStateImg}

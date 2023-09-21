@@ -1,10 +1,14 @@
 import { Button, Select } from 'antd';
 
-function FormStatus() {
+export type FormStatusProps = {
+  idDeviation: number;
+};
+
+function FormStatus({ idDeviation }: FormStatusProps) {
   return (
     <div className="px-2 pt-2">
       <h4>Estado de escalamiento</h4>
-      <p className="text-main_gray mb-2">#1245</p>
+      <p className="text-main_gray mb-2">#{idDeviation}</p>
       <Select
         showSearch
         placeholder="Selecciona el estado del problema"

@@ -6,7 +6,7 @@ export type BoardProps = {
 
 export default function Board({ children }: BoardProps) {
   return (
-    <div className="h-full grid grid-rows-[7]">
+    <div className="h-full grid grid-rows-[8]">
       <div className="row-span-1">
         <HeadBoard />
       </div>
