@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import DropIcon from '@icons/dropIcon.svg';
 import PlusIcon from '@icons/plus.svg';
@@ -165,12 +165,18 @@ function RowBoard({
       return; // Do not update the state when press e
     }
 
-    if (name === 'is') {
-      setIsValue(Number(value));
-    } else if (name === 'must') {
-      setMustValue(Number(value));
-    } else if (name === 'time') {
-      setTimeValue(Number(value));
+    switch (name) {
+      case 'is':
+        setIsValue(Number(value));
+        break;
+      case 'must':
+        setMustValue(Number(value));
+        break;
+      case 'time':
+        setTimeValue(Number(value));
+        break;
+      default:
+        break;
     }
   };
 
