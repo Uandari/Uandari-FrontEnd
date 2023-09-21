@@ -13,7 +13,7 @@ import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
 import useUsers from '@hooks/useUsers';
-import { User, UserFetched } from '@interfaces/User';
+import { UserFetched } from '@interfaces/User';
 import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';

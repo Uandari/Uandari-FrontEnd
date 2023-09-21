@@ -8,10 +8,10 @@ export interface UserFormData {
   lastNames: string;
   controlNumber: string;
   mail: string;
-  idRole: number;
-  role: string;
-  imageUrl: string;
   password: string;
+  idRole: number;
+  token: string;
+  imageUrl: string;
 }
 
 export interface User extends UserFormData {
@@ -22,9 +22,8 @@ export interface UserFetched {
   idUser: number;
   name: string;
   lastNames: string;
-  controlNumber: string;
-  mail: string;
-  idRole: number;
-  role: string;
   imageUrl: string;
+  controlNumber: string;
+  role: string;
+  idRole: number;
 }
