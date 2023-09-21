@@ -47,7 +47,11 @@ function DetailBar({ collapsed, setCollapsed }: DetailBarProps) {
         }`}
       >
         {labelTabs.map((labelTab) => (
-          <LabelTab title={labelTab.title} quantity={labelTab.quantity} />
+          <LabelTab
+            key={labelTab.id}
+            title={labelTab.title}
+            quantity={labelTab.quantity}
+          />
         ))}
       </div>
       {/* Card Issues */}
