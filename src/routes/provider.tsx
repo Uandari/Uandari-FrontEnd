@@ -4,6 +4,7 @@ import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
+import Goals from '@components/pages/dashboard/goals';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
@@ -34,7 +35,6 @@ import {
   GOALS,
   STANDARD_WORKSHEETS,
 } from './paths';
-import Goals from '@components/pages/dashboard/goals';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([

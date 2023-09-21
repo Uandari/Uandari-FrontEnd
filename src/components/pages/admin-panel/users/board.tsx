@@ -1,9 +1,8 @@
-
+import useUsers from '@hooks/useUsers';
 import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
 import HeadBoard from './modules/HeadBoard';
-import useUsers from '@hooks/useUsers';
 
 export type BoardProps = {
   children: React.ReactNode;
@@ -51,9 +50,9 @@ export default function Board({ children }: BoardProps) {
           placement="leftTop"
           trigger="click"
           content={
-
-
-            <FormBoard userIdToUpdate={selectedUser?.id} onClose={handleClose}
+            <FormBoard
+              userIdToUpdate={selectedUser?.id}
+              onClose={handleClose}
             />
           }
         >
@@ -73,7 +72,7 @@ export default function Board({ children }: BoardProps) {
       </div>
     </div>
 
-/* {
+    /* {
     isModalOpenToUpdate && (
       <NewUserModal
         userIdToUpdate={selectedUser?.userId}
@@ -83,6 +82,5 @@ export default function Board({ children }: BoardProps) {
   }
   { isModalOpen && <NewUserModal onClose={handleClose} /> }
      */
-    
   );
 }

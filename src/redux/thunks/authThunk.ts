@@ -15,8 +15,8 @@ export const postLogin =
     dispatch(authDataStart());
     publicApi
       .post('/user/login', {
-        controlNumber: controlNumber,
-        password: password,
+        controlNumber,
+        password,
       })
       .then((response) => {
         localStorage.setItem('token', response.data.payload.token);
