@@ -1,5 +1,5 @@
 export default function SideATab() {
   return (
-   <div>afasf</div>
+   <div>Lado A</div>
   );
 }
