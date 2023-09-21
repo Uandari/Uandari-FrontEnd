@@ -1,18 +1,14 @@
 export interface User {
-	id?: number;
-	name: string;
-	lastnames: string;
-	controlNumber: string;
-	mail: string;
-	password: string;
-	idRole: number;
-	verifiedAccount: number;
-	token: string;
-	imageUrl: string;
-	isDeleted: number;
+  id?: number;
+  name: string;
+  lastnames: string;
+  controlNumber: string;
+  mail: string;
+  role: string;
+  imageUrl: string;
 }
 
 export interface UserCredentials {
-	controlNumber: string;
-	password: string;
+  controlNumber: string;
+  password: string;
 }
