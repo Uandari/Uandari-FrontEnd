@@ -33,7 +33,7 @@ import {
   RESULTS_LOG,
   SKILLS_MATRIX,
   STAFF_ROTATION,
-  STANDARD_WORK_SHEET,
+  STANDARD_WORKSHEETS,
   TEAM_GOALS,
 } from '@routes/paths';
 import UserImg from '@usersIcons/1.png';
@@ -132,7 +132,7 @@ export default function Dashboard() {
           <SidebarTab
             icon={StandarWorkIcon}
             title="Hojas de trabajo estándar"
-            path={`${DASHBOARD_MAIN}${STANDARD_WORK_SHEET}`}
+            path={`${DASHBOARD_MAIN}${STANDARD_WORKSHEETS}`}
           />
         </Sidebar>
         <Outlet />

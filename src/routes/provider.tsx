@@ -4,9 +4,11 @@ import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
+import Goals from '@components/pages/dashboard/goals';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
+import StandardWorksheet from '@components/pages/dashboard/standard-worksheet';
 import TeamGoals from '@components/pages/dashboard/team-goals';
 import LoginPage from '@components/pages/login';
 import NotFound from '@components/pages/not-found';
@@ -31,8 +33,8 @@ import {
   ADMIN_LINES,
   ADMIN_CELLS,
   GOALS,
+  STANDARD_WORKSHEETS,
 } from './paths';
-import Goals from '@components/pages/dashboard/goals';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -68,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: GOALS,
         element: <Goals />,
+      },
+      {
+        path: STANDARD_WORKSHEETS,
+        element: <StandardWorksheet />,
       },
     ],
     errorElement: <NotFound />,

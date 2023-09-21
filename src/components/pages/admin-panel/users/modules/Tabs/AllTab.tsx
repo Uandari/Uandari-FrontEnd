@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+
+import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
 import imagenUsuario2 from '@assets/usersIcons/2.png';
@@ -8,16 +11,14 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
+import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
+import useUsers from '@hooks/useUsers';
+import { User } from '@interfaces/User';
 import { UsersListMock } from '@mocks/Users';
+import { getUsers } from '@redux/thunks/userThunk';
 
 import Board from '../../board';
 import RowBoard from '../RowBoard';
-import useUsers from '@hooks/useUsers';
-import { User } from '@interfaces/User';
-import { useEffect, useState } from 'react';
-import { RootState, useAppDispatch, useAppSelector } from '@app/store';
-import { getUsers } from '@redux/thunks/userThunk';
-import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
 
 export default function AdministratorsTab() {
   const userImages = [
@@ -53,14 +54,14 @@ export default function AdministratorsTab() {
     setSelectedUser,
     searchTerm,
   } = useUsers();
-  
+
   const [usersData, setUsersData] = useState<User[]>([]);
 
   const dispatch = useAppDispatch();
   const { data, loading, error } = useAppSelector(
     (state: RootState) => state.userReducer,
   );
-  
+
   const handleUpdate = (user: User) => {
     setSelectedUser(user);
     setIsModalOpenToUpdate(true);
@@ -69,7 +70,6 @@ export default function AdministratorsTab() {
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
-
 
   useEffect(() => {
     if (Array.isArray(data)) {
@@ -81,7 +81,6 @@ export default function AdministratorsTab() {
     }
   }, [data, searchTerm]);
 
-  
   useEffect(() => {
     if (Array.isArray(data)) {
       setUsersData(
@@ -92,25 +91,24 @@ export default function AdministratorsTab() {
     }
   }, [data, searchTerm]);
   return (
-
     <Board>
       {usersData.length > 0 ? (
-            usersData.map((user) => (
-              <RowBoard
-          key={user.controlNumber}
-          userName={`${user.name} ${user.lastnames}`}
-          controlNumber={user.controlNumber}
-          role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-          imageUrl={getRandomImageUrl()}
-          onDelete={() => handleDeleteUser(user.id ?? 0)}
-          onUpdate={() => handleUpdate(user)}
-        />
-            ))
-          ) : (
-            <div className="text-center text-xl mt-28 text-gray">
-              No se encontraron usuarios
-            </div>
-          )}
+        usersData.map((user) => (
+          <RowBoard
+            key={user.controlNumber}
+            userName={`${user.name} ${user.lastnames}`}
+            controlNumber={user.controlNumber}
+            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+            imageUrl={getRandomImageUrl()}
+            onDelete={() => handleDeleteUser(user.id ?? 0)}
+            onUpdate={() => handleUpdate(user)}
+          />
+        ))
+      ) : (
+        <div className="text-center text-xl mt-28 text-gray">
+          No se encontraron usuarios
+        </div>
+      )}
     </Board>
   );
 }

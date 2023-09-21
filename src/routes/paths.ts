@@ -19,7 +19,7 @@ export const ASSITENCE = 'asistencia-por-turno';
 export const CRITICAL_PATH = 'ruta-critica';
 export const PAGE_5S = 'pagina-5s';
 export const POINTS_PLAN = 'plan-de-puntos';
-export const STANDARD_WORK_SHEET = 'hojas-de-trabajo-estandar';
+export const STANDARD_WORKSHEETS = 'hojas-de-trabajo-estandar';
 
 // ADMINISTRATOR PANEL ROUTES
 export const ADMIN = '/admin/';
