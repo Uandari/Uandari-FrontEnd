@@ -70,10 +70,10 @@ function FormBoard({ onClose,
             lastNames: userData.lastNames,
             controlNumber: userData.controlNumber,
             mail: userData.mail,
-            password: '',
-            imageUrl: userData.imageUrl,
+            password: 'contraseñaEstatica',
             idRole: 1,
-            role: userData.role,
+            token: '',
+            imageUrl: userData.imageUrl,
           });
         })
         .catch((error) => {
