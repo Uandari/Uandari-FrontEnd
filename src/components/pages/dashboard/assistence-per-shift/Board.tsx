@@ -14,7 +14,7 @@ export default function Board() {
       </div>
       <div className="row-span-4">
         {shifts.map((shiftTitle) => (
-          <RowBoard shift={shiftTitle.title} />
+          <TodayRowBoard shift={shiftTitle.title} />
         ))}
       </div>
     </div>

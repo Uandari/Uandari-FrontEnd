@@ -2,7 +2,6 @@ import AdminPanel from '@components/pages/admin-panel';
 import CellsList from '@components/pages/admin-panel/cells';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
-import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import Goals from '@components/pages/dashboard/goals';
