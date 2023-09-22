@@ -8,9 +8,10 @@ import { es } from 'date-fns/locale';
 type TopBarProps = {
   title: string;
   variant?: 'primary' | 'secondary';
+  issues?: number;
 };
 
-export default function Topbar({ title, variant }: TopBarProps) {
+export default function Topbar({ title, variant, issues }: TopBarProps) {
   const [formattedDate, setFormattedDate] = useState<string>('');
   useEffect(() => {
     const currentDate = new Date();
@@ -28,12 +29,14 @@ export default function Topbar({ title, variant }: TopBarProps) {
           <p className="text-main_text_color text-sm">{formattedDate}</p>
         </div>
 
-        <div className="absolute bottom-8 right-8 flex gap-2 items-center">
-          <img src={AnalticsIcon} alt="chart-icon" />
-          <p className="text-main_title_color text-sm">
-            Problemas <span className="text-main_text_color">4</span>
-          </p>
-        </div>
+        {issues !== undefined && issues > 0 && (
+          <div className="absolute bottom-8 right-8 flex gap-2 items-center">
+            <img src={AnalticsIcon} alt="chart-icon" />
+            <p className="text-main_title_color text-sm">
+              Problemas: <span className="text-main_text_color">{issues}</span>
+            </p>
+          </div>
+        )}
       </div>
     );
   }
@@ -46,4 +49,5 @@ export default function Topbar({ title, variant }: TopBarProps) {
 
 Topbar.defaultProps = {
   variant: 'primary',
+  issues: null,
 };
