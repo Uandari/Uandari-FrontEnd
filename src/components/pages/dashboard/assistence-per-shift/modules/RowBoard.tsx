@@ -1,51 +1,72 @@
 export type RowBoardProps = {
-  shift: string;
+  day: string;
+  presentMust: number;
+  presentIs: number;
+  absentMust: number;
+  absentIs: number;
+  borrowedMust: number;
+  borrowedIs: number;
+  trainingMust: number;
+  trainingIs: number;
 };
 
-export default function RowBoard({ shift }: RowBoardProps) {
+function RowBoard({ day, presentMust, presentIs, absentMust, absentIs, borrowedMust, borrowedIs, trainingMust, trainingIs }: RowBoardProps) {
   return (
-    <div className="border-b border-main_color ">
-      <div className="grid grid-cols-6 grid-rows-3">
-        <div className="row-span-2  border-r text-center font-medium text-main_title_color">
-          {shift}
-        </div>
-        <div className="grid grid-rows-2 col-span-5 h-full">
-          <div className="grid grid-cols-5 h-full">
-            <div className="border-r border-b text-center font-medium text-main_title_color">
-              Debe
-            </div>
-            <div className=" border-r font-medium text-main_gray border-b text-center ">
-              19
-            </div>
-            <div className=" border-r font-medium text-main_gray border-b text-center">
-              21
-            </div>
-            <div className=" border-r font-medium text-main_gray border-b text-center ">
-              23
-            </div>
-            <div className=" border-r font-medium text-main_gray border-b text-center">
-              25
-            </div>
+    <div className="grid grid-cols-5 border-b border-main_color h-16 ">
+      <div className="flex items-center justify-center  text-center text-main_text_color">
+        {day}
+      </div>
+      <div className="flex items-center justify-center text-center ">
+        <div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Debe</p>
+            {presentMust}
           </div>
-          <div className="grid grid-cols-5">
-            <div className=" border-r text-center font-medium text-main_title_color">
-              Es
-            </div>
-            <div className=" border-r font-medium text-main_gray text-center ">
-              20
-            </div>
-            <div className=" border-r  font-medium text-main_gray text-center ">
-              22
-            </div>
-            <div className=" border-r  font-medium text-main_gray text-center">
-              24
-            </div>
-            <div className=" border-r font-medium text-main_gray text-center ">
-              25
-            </div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Es</p>
+            {presentIs}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center text-center ">
+        <div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Debe</p>
+            {presentMust}
+          </div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Es</p>
+            {presentIs}
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center justify-center text-center ">
+        <div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Debe</p>
+            {presentMust}
+          </div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Es</p>
+            {presentIs}
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center justify-center text-center ">
+        <div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Debe</p>
+            {presentMust}
+          </div>
+          <div className="flex items-center font-medium">
+            <p className="mr-2 text-main_gray font-normal">Es</p>
+            {presentIs}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default RowBoard;

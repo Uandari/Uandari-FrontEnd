@@ -1,17 +1,28 @@
 import Topbar from '@components/layout/topbar';
+import { Tabs, TabsProps } from 'antd';
 
-import Board from './Board';
+import TodayTab from './modules/Tabs/TodayTab';
+import HistoricalTab from './modules/Tabs/HistoricalTab';
+
+const pages: TabsProps['items'] = [
+  {
+    key: '1',
+    label: 'Asistencia del día de hoy',
+    children: <TodayTab />,
+  },
+  {
+    key: '2',
+    label: 'Histórico de asistencias',
+    children: <HistoricalTab />,
+  },
+];
 
 export default function AssistencePerShift() {
   return (
-    <div className="flex flex-1 border">
-      <div className="flex flex-1 flex-col bg-white">
-        <div className="border-b">
-          <Topbar variant="primary" title="Asistencia por turno" />
-        </div>
-        <div className="flex-1 overflow-y-auto">
-          <Board />
-        </div>
+    <div className="flex flex-1 flex-col">
+      <Topbar title="Asistencia por turno" variant="primary" />
+      <div className="flex flex-1 overflow-y-auto bg-main_white">
+        <Tabs className="h-full flex flex-1 " size="large" items={pages} />
       </div>
     </div>
   );
