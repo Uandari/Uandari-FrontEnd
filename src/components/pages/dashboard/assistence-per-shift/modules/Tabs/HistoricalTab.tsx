@@ -1,10 +1,8 @@
-import React from 'react';
 import RowBoard from '../RowBoard';
 import { UsersListMock } from '@mocks/Assistence';
 import { Select } from 'antd';
 
 export default function HistoricalTab() {
-  // Arreglo de opciones para los meses de enero a diciembre
   const months = [
     { value: '01', label: 'Enero' },
     { value: '02', label: 'Febrero' },
@@ -38,7 +36,7 @@ export default function HistoricalTab() {
               .toLowerCase()
               .localeCompare((optionB?.label ?? '').toLowerCase())
           }
-          options={months} // Utiliza el arreglo de meses como opciones
+          options={months}
         />
       </div>
       <div className="grid  grid-cols-5 border-y border-main_color h-11">

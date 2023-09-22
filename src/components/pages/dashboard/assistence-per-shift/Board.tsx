@@ -1,5 +1,5 @@
 import HeadBoard from './modules/HeadBoard';
-import RowBoard from './modules/RowBoard';
+import TodayRowBoard from './modules/TodayRowBoard';
 const shifts = [
   { title: '1ER TURNO' },
   { title: '2DO TURNO' },
