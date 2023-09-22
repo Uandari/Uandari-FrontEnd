@@ -1,4 +1,3 @@
-
 import HeadBoard from './modules/HeadBoard';
 import RowBoard from './modules/RowBoard';
 const shifts = [
@@ -8,17 +7,16 @@ const shifts = [
 ];
 
 export default function Board() {
-
   return (
-    
-
-<div className="">
-        <div className="h-36"><HeadBoard /></div>
-    <div className="">{shifts.map((shiftTitle) => (
+    <div className="grid grid-rows-6">
+      <div className="row-span-2">
+        <HeadBoard />
+      </div>
+      <div className="row-span-4">
+        {shifts.map((shiftTitle) => (
           <RowBoard shift={shiftTitle.title} />
-      ))}
-</div>
-</div>
-
+        ))}
+      </div>
+    </div>
   );
 }
