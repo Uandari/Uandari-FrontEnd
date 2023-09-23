@@ -21,7 +21,7 @@ export default function AssistencePerShift() {
   return (
     <div className="flex flex-1 flex-col">
       <Topbar title="Asistencia por turno" variant="primary" />
-      <div className="flex flex-1 bg-main_white">
+      <div className="flex flex-1 overflow-y-scroll bg-main_white">
         <Tabs className="h-full flex flex-1 " size="large" items={pages} />
       </div>
     </div>
