@@ -7,9 +7,10 @@ import { es } from 'date-fns/locale';
 type TopBarProps = {
   title: string;
   variant?: 'primary' | 'secondary';
+  issues?: number;
 };
 
-export default function Topbar({ title, variant }: TopBarProps) {
+export default function Topbar({ title, variant, issues }: TopBarProps) {
   const [formattedDate, setFormattedDate] = useState<string>('');
   useEffect(() => {
     const currentDate = new Date();
@@ -38,4 +39,5 @@ export default function Topbar({ title, variant }: TopBarProps) {
 
 Topbar.defaultProps = {
   variant: 'primary',
+  issues: null,
 };
