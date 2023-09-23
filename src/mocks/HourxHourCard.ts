@@ -5,6 +5,11 @@ export const HourxHourCardMock: HourXHour[] = [
     idHourxHour: 1,
     hour: '11:00',
     date: '2023/08/26',
+    /* 
+    idAreas: 1
+    idOperation: 3
+    downTime: 50
+    */
     must: 50,
     mustAccumulative: 20,
     is: 50,
