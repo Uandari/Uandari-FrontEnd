@@ -10,7 +10,17 @@ export type RowBoardProps = {
   trainingIs: number;
 };
 
-function RowBoard({ day, presentMust, presentIs, absentMust, absentIs, borrowedMust, borrowedIs, trainingMust, trainingIs }: RowBoardProps) {
+function RowBoard({
+  day,
+  presentMust,
+  presentIs,
+  absentMust,
+  absentIs,
+  borrowedMust,
+  borrowedIs,
+  trainingMust,
+  trainingIs,
+}: RowBoardProps) {
   return (
     <div className="grid grid-cols-5 border-b border-main_color h-16 ">
       <div className="flex items-center justify-center  text-center text-main_text_color">

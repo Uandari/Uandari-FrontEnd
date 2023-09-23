@@ -1,7 +1,7 @@
-import { Assistence } from "@interfaces/Assistence";
+import { Assistence } from '@interfaces/Assistence';
 
 export const initialAssistenceInfo = {
-  day: "",
+  day: '',
   presentMust: 0,
   presentIs: 0,
   absentMust: 0,
@@ -9,12 +9,12 @@ export const initialAssistenceInfo = {
   borrowedMust: 0,
   borrowedIs: 0,
   trainingMust: 0,
-  trainingIs: 0
+  trainingIs: 0,
 };
 
-export const UsersListMock: Assistence[] = [
+export const AssitanceListMock: Assistence[] = [
   {
-    day: "Martes 01",
+    day: 'Lunes 02',
     presentMust: 12,
     presentIs: 12,
     absentMust: 12,
@@ -22,10 +22,10 @@ export const UsersListMock: Assistence[] = [
     borrowedMust: 12,
     borrowedIs: 12,
     trainingMust: 12,
-    trainingIs: 12
+    trainingIs: 12,
   },
   {
-    day: "Martes 01",
+    day: 'Martes 03',
     presentMust: 12,
     presentIs: 12,
     absentMust: 12,
@@ -33,10 +33,10 @@ export const UsersListMock: Assistence[] = [
     borrowedMust: 12,
     borrowedIs: 12,
     trainingMust: 12,
-    trainingIs: 12
+    trainingIs: 12,
   },
   {
-    day: "Martes 01",
+    day: 'Miércoles 04',
     presentMust: 12,
     presentIs: 12,
     absentMust: 12,
@@ -44,10 +44,10 @@ export const UsersListMock: Assistence[] = [
     borrowedMust: 12,
     borrowedIs: 12,
     trainingMust: 12,
-    trainingIs: 12
+    trainingIs: 12,
   },
   {
-    day: "Martes 01",
+    day: 'Jueves 05',
     presentMust: 12,
     presentIs: 12,
     absentMust: 12,
@@ -55,10 +55,10 @@ export const UsersListMock: Assistence[] = [
     borrowedMust: 12,
     borrowedIs: 12,
     trainingMust: 12,
-    trainingIs: 12
+    trainingIs: 12,
   },
   {
-    day: "Martes 01",
+    day: 'Viernes 06',
     presentMust: 12,
     presentIs: 12,
     absentMust: 12,
@@ -66,7 +66,6 @@ export const UsersListMock: Assistence[] = [
     borrowedMust: 12,
     borrowedIs: 12,
     trainingMust: 12,
-    trainingIs: 12
+    trainingIs: 12,
   },
-  
 ];
