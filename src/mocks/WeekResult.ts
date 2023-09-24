@@ -2,31 +2,31 @@ export const weekResults = {
   total: 100,
   yearStatistics: [
     {
-      label: '1',
+      label: 'L',
       Cantidad: 20,
     },
     {
-      label: '2',
+      label: 'M',
       Cantidad: 10,
     },
     {
-      label: '3',
+      label: 'M',
       Cantidad: 20,
     },
     {
-      label: '4',
+      label: 'J',
       Cantidad: 10,
     },
     {
-      label: '5',
+      label: 'V',
       Cantidad: 20,
     },
     {
-      label: '6',
+      label: 'S',
       Cantidad: 25,
     },
     {
-      label: '7',
+      label: 'D',
       Cantidad: 5,
     },
   ],

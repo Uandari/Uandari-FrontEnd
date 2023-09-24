@@ -1,3 +1,4 @@
+import CardStatistics from '@components/basic/card_statistics/index';
 import { currentYearResults } from '@mocks/CurrentYearResults';
 import { IssueCardMock } from '@mocks/IssuesCard';
 import { monthResults } from '@mocks/MonthResults';
@@ -18,7 +19,6 @@ import {
 } from 'recharts';
 
 import Total from './IssueReports/StatisticComponent';
-import CardStatistics from '../../CardStatistics';
 import IssueCard from '../../IssueCard';
 
 function GeneralPanel() {
@@ -80,8 +80,9 @@ function GeneralPanel() {
             {yearStatusIssues.map((card) => (
               <CardStatistics
                 percentage={card.percentage}
-                type={card.title}
+                title={card.name}
                 quantity={card.quantity}
+                description="problemas"
               />
             ))}
           </div>

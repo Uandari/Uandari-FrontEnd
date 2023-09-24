@@ -2,10 +2,12 @@ import AdminPanel from '@components/pages/admin-panel';
 import CellsList from '@components/pages/admin-panel/cells';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
+import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import Goals from '@components/pages/dashboard/goals';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
+import IssuesEvolution from '@components/pages/dashboard/issues-evolution';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
 import StandardWorksheet from '@components/pages/dashboard/standard-worksheet';
@@ -19,7 +21,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   LOGIN,
   DASHBOARD_MAIN,
-  HOURLY_ISSUES,
   ADMIN,
   ADMIN_USERS,
   UPLOADS,
@@ -29,13 +30,12 @@ import {
   ISSUES_TRACKING,
   COLLABORATORS,
   TEAM_GOALS,
-  ADMIN_LINES,
   ADMIN_CELLS,
   GOALS,
   STANDARD_WORKSHEETS,
   ASSISTENCE_PER_SHIFT,
+  ISSUES_EVOLUTION,
 } from './paths';
-import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -79,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: ASSISTENCE_PER_SHIFT,
         element: <AssistencePerShift />,
+      },
+      {
+        path: ISSUES_EVOLUTION,
+        element: <IssuesEvolution />,
       },
     ],
     errorElement: <NotFound />,

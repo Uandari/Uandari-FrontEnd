@@ -1,0 +1,83 @@
+Date : 2023-09-24 16:13:39
+Directory : c:\Users\ricar\Desktop\front-vw\vw-frontend
+Total : 30 files,  149 codes, -2 comments, 11 blanks, all 158 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript     |         10 |        383 |          0 |         10 |        393 |
+| CSS            |          1 |         -3 |          3 |          0 |          0 |
+| TypeScript JSX |         19 |       -231 |         -5 |          1 |       -235 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                                     | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                        |         30 |        149 |         -2 |         11 |        158 |
+| src                                                                                                                                                      |         30 |        149 |         -2 |         11 |        158 |
+| src (Files)                                                                                                                                              |          1 |         -3 |          3 |          0 |          0 |
+| src\components                                                                                                                                           |         18 |       -235 |         -5 |          1 |       -239 |
+| src\components\basic                                                                                                                                     |          1 |        124 |          0 |         10 |        134 |
+| src\components\basic\drawer                                                                                                                              |          1 |        124 |          0 |         10 |        134 |
+| src\components\pages                                                                                                                                     |         17 |       -359 |         -5 |         -9 |       -373 |
+| src\components\pages\dashboard                                                                                                                           |         17 |       -359 |         -5 |         -9 |       -373 |
+| src\components\pages\dashboard (Files)                                                                                                                   |          1 |         -1 |          0 |          0 |         -1 |
+| src\components\pages\dashboard\hourlyIssues                                                                                                              |          5 |       -117 |          0 |         -5 |       -122 |
+| src\components\pages\dashboard\hourlyIssues (Files)                                                                                                      |          1 |         -1 |          0 |          0 |         -1 |
+| src\components\pages\dashboard\hourlyIssues\modules                                                                                                      |          4 |       -116 |          0 |         -5 |       -121 |
+| src\components\pages\dashboard\hourlyIssues\modules (Files)                                                                                              |          3 |       -124 |          0 |         -6 |       -130 |
+| src\components\pages\dashboard\hourlyIssues\modules\detail-components                                                                                    |          1 |          8 |          0 |          1 |          9 |
+| src\components\pages\dashboard\issues-evolution                                                                                                          |          1 |         12 |          0 |          3 |         15 |
+| src\components\pages\dashboard\issues-tracking                                                                                                           |         10 |       -253 |         -5 |         -7 |       -265 |
+| src\components\pages\dashboard\issues-tracking\modules                                                                                                   |         10 |       -253 |         -5 |         -7 |       -265 |
+| src\components\pages\dashboard\issues-tracking\modules (Files)                                                                                           |          1 |         -9 |          0 |          4 |         -5 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs                                                                                              |          9 |       -244 |         -5 |        -11 |       -260 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel                                                                                 |          6 |        -77 |         -5 |        -10 |        -92 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel (Files)                                                                         |          1 |        -13 |         -5 |         -4 |        -22 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports                                                                    |          5 |        -64 |          0 |         -6 |        -70 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\IssuesHistory                                                                                |          1 |        -79 |          0 |          0 |        -79 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\PendingProblems                                                                              |          1 |        -42 |          0 |         -1 |        -43 |
+| src\components\pages\dashboard\issues-tracking\modules\Tabs\SolvedProblems                                                                               |          1 |        -46 |          0 |          0 |        -46 |
+| src\interfaces                                                                                                                                           |          2 |         14 |          0 |          2 |         16 |
+| src\mocks                                                                                                                                                |          8 |        369 |          0 |          8 |        377 |
+| src\routes                                                                                                                                               |          1 |          4 |          0 |          0 |          4 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                                                 | language       | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\drawer\index.tsx                                                                        | TypeScript JSX |        124 |          0 |         10 |        134 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\DetailBar.tsx                                                    | TypeScript JSX |         -1 |          0 |          0 |         -1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\Drawer.tsx                                               | TypeScript JSX |       -132 |          0 |         -7 |       -139 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\IssueCardDetail.tsx                                      | TypeScript JSX |         33 |          0 |          9 |         42 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\ProblemCard.tsx                                          | TypeScript JSX |        -25 |          0 |         -8 |        -33 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\detail-components\IssueCard.tsx                          | TypeScript JSX |          8 |          0 |          1 |          9 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\index.tsx                                                                     | TypeScript JSX |         -1 |          0 |          0 |         -1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-evolution\index.tsx                                                    | TypeScript JSX |         12 |          0 |          3 |         15 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\IssueCard.tsx                                         | TypeScript JSX |         -9 |          0 |          4 |         -5 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\ActualMonth.tsx        | TypeScript JSX |         -9 |          0 |         -3 |        -12 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\ActualWeek.tsx         | TypeScript JSX |         -9 |          0 |         -3 |        -12 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\ActualYear.tsx         | TypeScript JSX |         -9 |          0 |         -3 |        -12 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\StatisticComponent.tsx | TypeScript JSX |         85 |          0 |          8 |         93 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\Total.tsx              | TypeScript JSX |       -122 |          0 |         -5 |       -127 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\index.tsx                           | TypeScript JSX |        -13 |         -5 |         -4 |        -22 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\IssuesHistory\index.tsx                          | TypeScript JSX |        -79 |          0 |          0 |        -79 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\PendingProblems\index.tsx                        | TypeScript JSX |        -42 |          0 |         -1 |        -43 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\SolvedProblems\index.tsx                         | TypeScript JSX |        -46 |          0 |          0 |        -46 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Assistence.ts                                                                                 | TypeScript     |          0 |          0 |          1 |          1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Issue.ts                                                                                      | TypeScript     |         14 |          0 |          1 |         15 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\main.css                                                                                                 | CSS            |         -3 |          3 |          0 |          0 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\CurrentYearResults.ts                                                                              | TypeScript     |         87 |          0 |          1 |         88 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\IssueMock.ts                                                                                       | TypeScript     |         29 |          0 |          1 |         30 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\MonthResults.ts                                                                                    | TypeScript     |         55 |          0 |          1 |         56 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\PendingProblems.ts                                                                                 | TypeScript     |         21 |          0 |          1 |         22 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\SemesterResult.ts                                                                                  | TypeScript     |         38 |          0 |          1 |         39 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\TotalResults.ts                                                                                    | TypeScript     |         55 |          0 |          1 |         56 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\WeekResult.ts                                                                                      | TypeScript     |         67 |          0 |          1 |         68 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\YearStatusIssues.ts                                                                                | TypeScript     |         17 |          0 |          1 |         18 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\provider.tsx                                                                                      | TypeScript JSX |          4 |          0 |          0 |          4 |
+| Total                                                                                                                                                    |                |        149 |         -2 |         11 |        158 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

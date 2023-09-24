@@ -24,12 +24,11 @@ import {
   DASHBOARD_MAIN,
   ESCALATED_ISSUES,
   GOALS,
-  HOURLY_ISSUES,
   ISSUES_TRACKING,
   ISSUES_LIST,
   PAGE_5S,
   POINTS_PLAN,
-  PROBLEM_EVOLUTION,
+  ISSUES_EVOLUTION,
   RESULTS_LOG,
   SKILLS_MATRIX,
   STAFF_ROTATION,
@@ -92,7 +91,7 @@ export default function Dashboard() {
           <SidebarTab
             icon={ProblemsEvolutionIcon}
             title="Evolución de problemas"
-            path={`${DASHBOARD_MAIN}${PROBLEM_EVOLUTION}`}
+            path={`${DASHBOARD_MAIN}${ISSUES_EVOLUTION}`}
           />
           <SidebarTab
             icon={RotatingPersonalIcon}

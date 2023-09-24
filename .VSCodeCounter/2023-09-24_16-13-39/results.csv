@@ -1,0 +1,249 @@
+"filename", "language", "JSON", "HTML", "TypeScript", "JavaScript", "JSON with Comments", "CSS", "TypeScript JSX", "XML", "Markdown", "Properties", "comment", "blank", "total"
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\.env", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\.eslintrc.cjs", "JavaScript", 0, 0, 0, 89, 0, 0, 0, 0, 0, 0, 0, 1, 90
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\.eslintrc.json", "JSON with Comments", 0, 0, 0, 0, 38, 0, 0, 0, 0, 0, 0, 1, 39
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\.github\pull_request_template.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 10, 28
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\.prettierrc.json", "JSON", 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\index.html", "HTML", 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\package-lock.json", "JSON", 8876, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8877
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\package.json", "JSON", 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 63
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\postcss.config.js", "JavaScript", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\api\axios.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 1, 8, 36
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\app\store.ts", "TypeScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 5, 31
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\5sIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\AbilitiesIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\AssitenceIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\FirstStateIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 8
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\FourthStateIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 1, 5
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\PointsPlanIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\SecondStateIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 1, 9
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\SettingIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 1, 5
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\StandarWorkIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\TeamGoals.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\ThirdStateIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 1, 10
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\analytics.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\arrow-down.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\arrow-growth.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\book-reader.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\bulletsButton.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\calender.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\categories.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\categoryIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\cell.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\channel.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\chart-line.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\chat-bubble-user.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\checkIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\clipboard-notes.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\clock-two 1.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\clockIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\controlNumber.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\criticalRouteIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\crosshair.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\deleteIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\description.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\downloadIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\dropIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\editIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\escalateIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\helpIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\iconKey.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\iconUser.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\inboxIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 1, 18
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\list-ui-alt 1.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\open-close-icon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\people.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\plus.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\problemType.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\quantity.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\resolveIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\role.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\roleIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\screw.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\solution.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\statusIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\statusSuccessIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\unCheckIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\usersIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\login_img.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 186, 0, 0, 0, 1, 187
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\not-found.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\uandari-color-logo.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\volkswagen-logo-color.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 1, 10
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\commons\enums.ts", "TypeScript", 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 1, 2, 43
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\card\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 4, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\circle_progress_indicator\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 8
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\dashboard-container\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\drawer\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 124, 0, 0, 0, 0, 10, 134
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\input\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 5, 70
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\input\validated.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 1, 113
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\uploadButton\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 3, 25
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\userManualButton\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 4, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\layout\sidebar\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 5, 42
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\layout\sidebar\sidebarTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 8, 52
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\layout\sidebar\sidebarTitle.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\layout\topbar\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 6, 44
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 0, 6, 53
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 3, 25
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\modules\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\modules\FormBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 67, 0, 0, 0, 1, 8, 76
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\modules\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\cells\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 22, 4, 45
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 2, 46
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 70, 0, 0, 0, 10, 7, 87
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\FormBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 116, 0, 0, 0, 0, 12, 128
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 3, 5, 61
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\AdministratorsTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\AllTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 102, 0, 0, 0, 0, 13, 115
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\CoordinatorsTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\ManagersTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\TeamLeadersTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\VisualizersTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 46, 0, 0, 0, 0, 4, 50
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 4, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\modules\Tabs\Assitance\AssitanceRow.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 155, 0, 0, 0, 6, 7, 168
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\modules\Tabs\Assitance\AssitenceTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 3, 26
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\modules\Tabs\Assitance\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 2, 16
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\modules\Tabs\Historical\HistoricalTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 3, 47
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\assistence-per-shift\modules\Tabs\Historical\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 4, 83
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 2, 3, 28
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\boardTechnitian.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 31, 0, 0, 0, 1, 4, 36
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 4, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\Tabs\ColaboratorsTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 6, 44
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\Tabs\TechnitiansTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 49, 0, 0, 0, 1, 6, 56
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardTechnitian\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardTechnitian\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 3, 18
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardTechnitian\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 7, 3, 51
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\Board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 4, 34
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\modules\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\modules\FormStatus.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 3, 45
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\modules\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 2, 17
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 78, 0, 0, 0, 3, 7, 88
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\escalated-issues\modules\ShiftTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\goals\GoalsReport.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 55, 0, 0, 0, 0, 6, 61
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\goals\MonthDetails.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 125, 0, 0, 0, 0, 8, 133
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\goals\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 6, 39
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\Board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 3, 5, 53
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\DetailBar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 65, 0, 0, 0, 2, 5, 72
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 31, 0, 0, 0, 1, 5, 37
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\FormBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 182, 0, 0, 0, 4, 11, 197
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 2, 8, 67
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\IssueCardDetail.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 9, 42
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 369, 0, 0, 0, 24, 30, 423
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\detail-components\IssueCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 43, 0, 0, 0, 0, 8, 51
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\hourlyIssues\modules\detail-components\LabelTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 3, 21
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 135, 0, 0, 0, 0, 7, 142
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-evolution\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 39, 0, 0, 0, 0, 5, 44
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\CardStatistics.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 49, 0, 0, 0, 0, 4, 53
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\IssueCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 0, 8, 107
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\IssueReports\StatisticComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 85, 0, 0, 0, 0, 8, 93
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0, 4, 147
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\IssuesHistory\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 170, 0, 0, 0, 0, 6, 176
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\PendingProblems\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 5, 149
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\SolvedProblems\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 6, 150
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\Board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 4, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 34, 0, 0, 0, 0, 5, 39
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\CardStatistics.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 3, 40
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\DayQuantity.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 2, 42
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 11, 71
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\Tabs\Pareto\Chart.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 0, 4, 55
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\Tabs\Pareto\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 124, 0, 0, 0, 10, 17, 151
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\Tabs\Quality\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 4, 29
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\Tabs\VolumeAvailability\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 4, 29
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\boardSideA.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 4, 14
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\boardSideB.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\Tabs\SideATab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\Tabs\SideBTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 3, 26
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\Tabs\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 4, 26
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideB\CellBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideB\FormStatus.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 4, 49
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideB\HeadBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideB\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 85, 0, 0, 0, 0, 7, 92
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\Board.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 107, 0, 0, 0, 2, 10, 119
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\modules\ColorChangingBox.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 3, 5, 40
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\modules\GoalsCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 2, 42
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\modules\RowBoard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 81, 0, 0, 0, 1, 8, 90
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\login\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 107, 0, 0, 0, 3, 14, 124
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\not-found\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 2, 10
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\upload-panel\critical-path\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 4, 21
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\upload-panel\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 4, 29
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\constants\colors.ts", "TypeScript", 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\constants\index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\formValidations\usersValidations.ts", "TypeScript", 0, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0, 3, 57
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\hooks\useErrorModal.ts", "TypeScript", 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\hooks\useForm.ts", "TypeScript", 0, 0, 85, 0, 0, 0, 0, 0, 0, 0, 0, 19, 104
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\hooks\useUsers.ts", "TypeScript", 0, 0, 74, 0, 0, 0, 0, 0, 0, 0, 0, 12, 86
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\APIGatewayResponse.ts", "TypeScript", 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 9
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Assistence.ts", "TypeScript", 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Cell.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\EscalatedIssue.ts", "TypeScript", 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\HourXHour.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 2, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Issue.ts", "TypeScript", 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\IssueCard.ts", "TypeScript", 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 2, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Line.ts", "TypeScript", 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Role.ts", "TypeScript", 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Technitian.ts", "TypeScript", 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\User.ts", "TypeScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 2, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\main.css", "CSS", 0, 0, 0, 0, 0, 54, 0, 0, 0, 0, 3, 11, 68
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\main.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 1, 4, 19
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Areas.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 1, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Assistence.ts", "TypeScript", 0, 0, 69, 0, 0, 0, 0, 0, 0, 0, 0, 3, 72
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\AssitanceDay.ts", "TypeScript", 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 1, 36
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\CardIssues.ts", "TypeScript", 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 1, 38
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\CardsGoalTeam.ts", "TypeScript", 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 1, 38
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\CellSelect.ts", "TypeScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 1, 27
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Cells.ts", "TypeScript", 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 3, 42
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\CurrentYearResults.ts", "TypeScript", 0, 0, 87, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\EscalatedIssues.ts", "TypeScript", 0, 0, 179, 0, 0, 0, 0, 0, 0, 0, 0, 2, 181
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\GoalsForYear.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 1, 28
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\GoalsStatus.ts", "TypeScript", 0, 0, 74, 0, 0, 0, 0, 0, 0, 0, 0, 1, 75
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\HourxHourCard.ts", "TypeScript", 0, 0, 134, 0, 0, 0, 0, 0, 0, 0, 5, 2, 141
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\IssueMock.ts", "TypeScript", 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\IssuesCard.ts", "TypeScript", 0, 0, 460, 0, 0, 0, 0, 0, 0, 0, 0, 2, 462
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\LabelTabs.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 1, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Lines.ts", "TypeScript", 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\MonthGoals.ts", "TypeScript", 0, 0, 98, 0, 0, 0, 0, 0, 0, 0, 0, 1, 99
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\MonthResults.ts", "TypeScript", 0, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 1, 56
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Operations.ts", "TypeScript", 0, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 1, 59
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\ParetoCharts.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 1, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\PendingProblems.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 1, 22
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\ProblemList.ts", "TypeScript", 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 1, 192
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\ProblemListCards.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 1, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Roles.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 3, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\SemesterResult.ts", "TypeScript", 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 1, 39
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Shifts.ts", "TypeScript", 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\StandardWorksheetB.ts", "TypeScript", 0, 0, 132, 0, 0, 0, 0, 0, 0, 0, 0, 2, 134
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\TeamGoals.ts", "TypeScript", 0, 0, 187, 0, 0, 0, 0, 0, 0, 0, 7, 1, 195
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Technitian.ts", "TypeScript", 0, 0, 114, 0, 0, 0, 0, 0, 0, 0, 0, 3, 117
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\TotalResults.ts", "TypeScript", 0, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 1, 56
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Users.ts", "TypeScript", 0, 0, 177, 0, 0, 0, 0, 0, 0, 0, 0, 3, 180
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\WeekResult.ts", "TypeScript", 0, 0, 67, 0, 0, 0, 0, 0, 0, 0, 0, 1, 68
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\YearStatusIssues.ts", "TypeScript", 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 1, 18
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\slices\authSlice.ts", "TypeScript", 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 1, 6, 45
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\slices\authorizerSlice.ts", "TypeScript", 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 1, 6, 30
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\slices\hourxhourSlice.ts", "TypeScript", 0, 0, 77, 0, 0, 0, 0, 0, 0, 0, 1, 7, 85
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\slices\userSlice.ts", "TypeScript", 0, 0, 102, 0, 0, 0, 0, 0, 0, 0, 1, 7, 110
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\thunks\authThunk.ts", "TypeScript", 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 3, 35
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\thunks\hourperhourThunk.ts", "TypeScript", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 1, 2, 23
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\thunks\userThunk.ts", "TypeScript", 0, 0, 135, 0, 0, 0, 0, 0, 0, 0, 0, 9, 144
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\paths.ts", "TypeScript", 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 3, 6, 34
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\privateRoute.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 7, 21
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\provider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 117, 0, 0, 0, 11, 4, 132
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\utils\ApiError.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 6, 27
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\utils\index.ts", "TypeScript", 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 1, 12, 52
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\utils\validations.ts", "TypeScript", 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 7, 22
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\tailwind.config.js", "JavaScript", 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 1, 2, 53
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 24, 2, 46
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\tsconfig.node.json", "JSON", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\vite.config.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 3, 30
+"Total", "-", 8957, 13, 3584, 145, 58, 54, 5474, 379, 18, 1, 287, 835, 19805
