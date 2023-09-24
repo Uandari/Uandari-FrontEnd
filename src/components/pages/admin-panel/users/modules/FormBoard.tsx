@@ -17,11 +17,10 @@ import { getRoles } from '@redux/thunks/roleThunk';
 import { getUser } from '@redux/thunks/userThunk';
 
 type FormBoardProps = {
-  onClose: (callback?: () => void) => void;
   userIdToUpdate?: number;
 };
 
-function FormBoard({ onClose,
+function FormBoard({ 
   userIdToUpdate, }: FormBoardProps) {
 
   const dispatch = useAppDispatch();
@@ -39,11 +38,9 @@ function FormBoard({ onClose,
   };
 
   const handleCreateOrUpdateUser = (state: UserFormData) => {
-    const userModifiable = { ...state };
-
     if (userIdToUpdate) {
       handleUpdateUser({
-        ...userModifiable,
+        ...state,
         idUser: userIdToUpdate,
       });
     } else {
@@ -52,7 +49,6 @@ function FormBoard({ onClose,
 
       handleCreateUser(userInfoToCreate);
     }
-    onClose();
   };
 
   const { handleInputChange, handleSubmit, state, setState } =
@@ -70,10 +66,9 @@ function FormBoard({ onClose,
             lastNames: userData.lastNames,
             controlNumber: userData.controlNumber,
             mail: userData.mail,
-            password: 'contraseñaEstatica',
-            idRole: 1,
-            token: '',
-            imageUrl: userData.imageUrl,
+            password: userData.password,
+            idRole: userData.idRole,
+            imageUrl: '',
           });
         })
         .catch((error) => {
@@ -158,12 +153,12 @@ function FormBoard({ onClose,
             rules={[{ required: true, message: 'Por favor, selecciona un rol' }]} style={{ width: '100%' }} >
             <Select
               id='role'
-              value={state.role}
+              value={state.idRole}
               placeholder='Rol de usuario'
-              onChange={(value) => setState({ ...state, role: value })}
+              onChange={(value) => setState({ ...state, idRole: value })}
             >
               {rolesData.map((role) => (
-                <Select.Option key={role.idRole} value={role.name}>
+                <Select.Option key={role.idRole} value={role.idRole}>
                   {role.name}
                 </Select.Option>
               ))}

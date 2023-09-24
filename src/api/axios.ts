@@ -4,6 +4,8 @@ import axios from 'axios';
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
+const cleanApi = axios.create();
+
 const publicApi = axios.create({
   baseURL: apiBaseUrl,
 });
@@ -32,4 +34,4 @@ privateApi.interceptors.response.use(
   },
 );
 
-export { publicApi, privateApi };
+export { cleanApi, publicApi, privateApi };

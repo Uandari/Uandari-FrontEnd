@@ -31,6 +31,9 @@ export default function Board({ children }: BoardProps) {
             <div className="mb-4 w-full">
               <Form.Item>
                 <Input
+                type='text'
+                id='search'
+                name='search'
                   size="large"
                   placeholder="Buscar usuario por nombre"
                   value={searchTerm}
@@ -46,7 +49,7 @@ export default function Board({ children }: BoardProps) {
           content={
 
 
-            <FormBoard userIdToUpdate={selectedUser?.idUser} onClose={handleClose}
+            <FormBoard userIdToUpdate={selectedUser?.idUser} 
             />
           }
         >

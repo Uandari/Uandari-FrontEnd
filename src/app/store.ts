@@ -14,6 +14,7 @@ export const store = configureStore({
     notAuthorizerReducer: authorizerSlice,
     hourxhourReducer: hourxhourSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
