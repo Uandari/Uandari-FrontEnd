@@ -22,7 +22,7 @@ export interface UserFormData {
   mail: string;
   password: string;
   idRole: number;
-  role: string;
+  token: string;
   imageUrl: string;
   password: string;
 }

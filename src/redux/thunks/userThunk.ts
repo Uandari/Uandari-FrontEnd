@@ -26,8 +26,13 @@ export const createUser =
   (userData: UserFormData): AppThunkAction =>
     async (dispatch) => {
       dispatch(createUsersStart());
-      await privateApi
-        .post('/user/create', { userData })
+      await publicApi
+        .post('/user/create',  userData , {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           if (response.data.isError) {
             const customError = new CustomApiError(response.data).message;
@@ -113,28 +118,28 @@ export const updateUser =
 
 export const deleteUser =
   (userId: number): AppThunkAction =>
-  async (dispatch) => {
-    await privateApi
-      .post('/user/delete', { userId })
-      .then((response) => {
-        if (response.data.isError) {
-          const customError = new CustomApiError(response.data).message;
+    async (dispatch) => {
+      await privateApi
+        .post('/user/delete', { userId })
+        .then((response) => {
+          if (response.data.isError) {
+            const customError = new CustomApiError(response.data).message;
+            dispatch(deleteUserError(customError));
+            return;
+          }
+          dispatch(deleteUserSuccess());
+          Swal.fire({
+            title: 'Eliminado',
+            text: 'El usuario ha sido eliminado',
+            icon: 'success',
+            confirmButtonColor: colors.success,
+          });
+        })
+        .catch((error) => {
+          const customError = new CustomApiError(error).message;
           dispatch(deleteUserError(customError));
-          return;
-        }
-        dispatch(deleteUserSuccess());
-        Swal.fire({
-          title: 'Eliminado',
-          text: 'El usuario ha sido eliminado',
-          icon: 'success',
-          confirmButtonColor: colors.success,
         });
-      })
-      .catch((error) => {
-        const customError = new CustomApiError(error).message;
-        dispatch(deleteUserError(customError));
-      });
-  };
+    };
 
 export const resetUserError = (): AppThunkAction => async (dispatch) => {
   dispatch(resetUserMessageError());

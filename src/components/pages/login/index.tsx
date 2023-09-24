@@ -2,9 +2,11 @@ import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import LoginBackground from '@assets/login_img.svg';
 import UandariColorLogo from '@assets/uandari-color-logo.svg';
 import VolkswagenColorLogo from '@assets/volkswagen-logo-color.svg';
-import { UserCredentials } from '@interfaces/User';
+import useUsers from '@hooks/useUsers';
+import { UserCredentials, UserFetched } from '@interfaces/User';
 import { postLogin } from '@redux/thunks/authThunk';
-import { ADMIN, ADMIN_USERS } from '@routes/paths';
+import { getUsers } from '@redux/thunks/userThunk';
+import { ADMIN, ADMIN_USERS, DASHBOARD_MAIN, UPLOADS } from '@routes/paths';
 import { Button, Form, Input } from 'antd';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -15,12 +17,25 @@ export default function LoginPage() {
     password: '',
   });
 
+  const { data, loading, error } = useAppSelector(
+    (state: RootState) => state.authReducer,
+  );
+  const { openErrorModal } = useErrorModal(error);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const {
+    searchTerm,
+  } = useUsers();
+
+  const userData = useAppSelector((state: RootState) => state.userReducer).data;
+  const [usersData, setUsersData] = useState<UserFetched[]>([]);
 
   
   const { data } = useAppSelector(
     (state: RootState) => state.authReducer,
   );
-  const { openErrorModal } = useErrorModal(error);
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -31,10 +46,53 @@ export default function LoginPage() {
 
 
   useEffect(() => {
+    if (Array.isArray(userData)) {
+      setUsersData(
+        (userData as UserFetched[]).filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+    }
+  }, [userData, searchTerm]);
+  
+  /* useEffect(() => {
     if (localStorage.getItem('accessToken')) {
       navigate(ADMIN + ADMIN_USERS);
     }
-  }, [navigate]);
+  }, [navigate]); */
+  
+   const userWithControlNumber = usersData.find((user) => user.controlNumber === userCredentials.controlNumber);
+  useEffect(() => {
+    if (localStorage.getItem('accessToken')) {
+      if (userWithControlNumber) {
+        let redirectPath = '';
+        switch (userWithControlNumber.role) {
+          case 'Administrador':
+            redirectPath = ADMIN;
+            break;
+          case 'Gerente':
+            redirectPath = DASHBOARD_MAIN;
+            break;
+          case 'Coordinador':
+            redirectPath = DASHBOARD_MAIN;
+            break;
+          case 'Team Leader':
+            redirectPath = DASHBOARD_MAIN;
+            break;
+          case 'Visualizador':
+            redirectPath = DASHBOARD_MAIN;
+            break;
+          case 'Área':
+            redirectPath = UPLOADS;
+            break;
+          default:
+            console.log("No se detecte ningún usuario valido")
+            break;
+        }
+        navigate(redirectPath);
+      }
+    }
+  }, [navigate]); 
 
   useEffect(() => {
     // Handle validation for correct login in state
@@ -42,7 +100,7 @@ export default function LoginPage() {
       // Navigate to dashboard if correct data has been send
       navigate(ADMIN + ADMIN_USERS);
     }
-  }, [data, navigate]);
+  }, [data, navigate]); */
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -85,15 +143,8 @@ export default function LoginPage() {
         <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">
             <Form.Item>
-              <Input
-                size="large"
-                type="text"
-                placeholder="Número de control"
-                name="controlNumber"
-                id="controlNumber"
-                value={userCredentials.controlNumber}
-                onChange={handleInputChange}
-              />
+              <Input size="large" placeholder="Número de control" name='controlNumber' id='control_number'
+              value={userCredentials.controlNumber} onChange={handleInputChange}/>
             </Form.Item>
             <Form.Item>
               <Input
