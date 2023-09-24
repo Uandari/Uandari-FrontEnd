@@ -1,21 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-export default function ColorChangingBox() {
-  const colors = ['main_white', 'main_red', 'main_yellow', 'main_green'];
-  const [currentColorIndex, setCurrentColorIndex] = useState(0);
+type ColorChangingBoxProps = {
+  day: { day: number; state: number };
+  onUpdateDayState: (day: number, newState: number) => void;
+};
+
+export default function ColorChangingBox({
+  day,
+  onUpdateDayState,
+}: ColorChangingBoxProps) {
+  // Allows to render just once, and not every time the component renders useMemo
+  const colors = useMemo(
+    () => ['main_white', 'main_red', 'main_yellow', 'main_green', 'blue-500'],
+    [],
+  );
+  const [currentColorIndex, setCurrentColorIndex] = useState(day.state);
+  const [currentColor, setCurrentColor] = useState('');
 
   const handleClick = () => {
-    setCurrentColorIndex((prevIndex) =>
-      prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-    );
+    // Calcula el índice del próximo color en función del estado actual
+    const nextColorIndex = (currentColorIndex + 1) % colors.length;
+
+    // Actualiza el estado y el color actual
+    setCurrentColorIndex(nextColorIndex);
+    onUpdateDayState(day.day, nextColorIndex);
   };
-
-  const currentColor = colors[currentColorIndex];
-
+  useEffect(() => {
+    setCurrentColor(colors[currentColorIndex]);
+  }, [colors, currentColorIndex]);
   return (
-    <div
+    <button
+      type="button"
       onClick={handleClick}
-      className={`cursor-pointer bg-${currentColor} border-l border-t w-full`}>
-    </div>
+      className={`cursor-pointer bg-${currentColor} h-full w-full absolute top-0 left-0`}
+      aria-label="Change value and color"
+    />
   );
 }

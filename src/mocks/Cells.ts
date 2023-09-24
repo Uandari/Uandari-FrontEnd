@@ -10,31 +10,31 @@ export const initialCellInfo = {
 export const CellsListMock: Cell[] = [
   {
     id: 0,
-    cellName: '1',
+    cellName: 'Célula 1',
     idUser: 2,
     idLine: 3,
   },
   {
     id: 0,
-    cellName: '2',
+    cellName: 'Célula 2',
     idUser: 8,
     idLine: 1,
   },
   {
     id: 0,
-    cellName: '3',
+    cellName: 'Célula 3',
     idUser: 11,
     idLine: 2,
   },
   {
     id: 0,
-    cellName: '4',
+    cellName: 'Célula 4',
     idUser: 1,
     idLine: 3,
   },
   {
     id: 0,
-    cellName: '5',
+    cellName: 'Célula 5',
     idUser: 6,
     idLine: 4,
   },
