@@ -7,7 +7,7 @@ import { operations } from '@mocks/Operations';
 import { Popover } from 'antd';
 
 import FormBoard from './FormBoard';
-import ProblemCard from './ProblemCard';
+import ProblemCard from './IssueCardDetail';
 
 export type RowBoardProps = {
   completeHour?: string;

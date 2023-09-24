@@ -3,9 +3,9 @@ import ArrowGrowth from '@assets/icons/arrow-growth.svg';
 
 type CardStatisticsProps = {
   type: string;
-  quantity?: string;
+  quantity?: number;
   problem?: string;
-  percentage: string;
+  percentage: number;
 };
 
 export default function CardStatistics({

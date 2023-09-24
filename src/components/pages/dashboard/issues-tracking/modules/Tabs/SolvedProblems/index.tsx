@@ -1,4 +1,5 @@
 import { IssueCardSolvedMock } from '@mocks/IssuesCard';
+import { pendingProblems } from '@mocks/PendingProblems';
 import { Select, Tooltip, DatePicker } from 'antd';
 import {
   ResponsiveContainer,
@@ -14,50 +15,6 @@ import IssueCard from '../../IssueCard';
 
 function SolvedProblems() {
   const { RangePicker } = DatePicker;
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
 
   const onChange = (value: string) => {
     console.log(`selected ${value}`);
@@ -87,17 +44,14 @@ function SolvedProblems() {
           </div>
         </div>
         <div className="flex flex-1 flex-col px-3 py-3 border-l border-main_color">
-          <h2 className="text-2xl font-medium">36 problemas resueltos</h2>
-          <p className="text-main_text_color mt-1 mb-5">
-            En total la cantidad de problemas tuvo un aumento de 3.32% por cada
-            mes
-          </p>
+          <h2 className="text-2xl font-medium mb-4">
+            {pendingProblems.total} problemas pendientes
+          </h2>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart
               width={500}
               height={200}
-              data={data}
-              syncId="anyId"
+              data={pendingProblems.yearStatistics}
               margin={{
                 top: 10,
                 right: 30,
@@ -106,13 +60,13 @@ function SolvedProblems() {
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
               <YAxis />
+              <XAxis dataKey="day" />
               <Tooltip />
               <Legend />
               <Line
                 type="monotone"
-                dataKey="uv"
+                dataKey="Cantidad"
                 stroke="#165BAA"
                 fill="#165BAA"
               />

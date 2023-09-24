@@ -1,4 +1,10 @@
+import { currentYearResults } from '@mocks/CurrentYearResults';
 import { IssueCardMock } from '@mocks/IssuesCard';
+import { monthResults } from '@mocks/MonthResults';
+import { semesterResult } from '@mocks/SemesterResult';
+import { totalResults } from '@mocks/TotalResults';
+import { weekResults } from '@mocks/WeekResult';
+import { yearStatusIssues } from '@mocks/YearStatusIssues';
 import { Tabs, TabsProps } from 'antd';
 import {
   LineChart,
@@ -11,10 +17,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import ActualMonth from './IssueReports/ActualMonth';
-import ActualWeek from './IssueReports/ActualWeek';
-import ActualYear from './IssueReports/ActualYear';
-import Total from './IssueReports/Total';
+import Total from './IssueReports/StatisticComponent';
 import CardStatistics from '../../CardStatistics';
 import IssueCard from '../../IssueCard';
 
@@ -23,91 +26,71 @@ function GeneralPanel() {
     {
       key: '1',
       label: 'Total',
-      children: <Total />,
+      children: (
+        <Total
+          key="Total"
+          issuesStatistics={totalResults.issuesStatistics}
+          total={totalResults.total}
+          timeStatistics={totalResults.yearStatistics}
+        />
+      ),
     },
     {
       key: '2',
       label: 'Año actual',
-      children: <ActualYear />,
+      children: (
+        <Total
+          key="Total"
+          issuesStatistics={currentYearResults.issuesStatistics}
+          total={currentYearResults.total}
+          timeStatistics={currentYearResults.yearStatistics}
+        />
+      ),
     },
     {
       key: '3',
       label: 'Mes actual',
-      children: <ActualMonth />,
+      children: (
+        <Total
+          key="Total"
+          issuesStatistics={monthResults.issuesStatistics}
+          total={monthResults.total}
+          timeStatistics={monthResults.yearStatistics}
+        />
+      ),
     },
     {
       key: '4',
       label: 'Semana actual',
-      children: <ActualWeek />,
+      children: (
+        <Total
+          key="Total"
+          issuesStatistics={weekResults.issuesStatistics}
+          total={weekResults.total}
+          timeStatistics={weekResults.yearStatistics}
+        />
+      ),
     },
   ];
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-    },
-    {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-    },
-    {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-    },
-  ];
-
   return (
     <div className="flex w-full flex-grow flex-1">
       <div className="grid grid-rows-1 grid-cols-3 w-full">
         <div className="col-span-2">
           <div className="grid grid-cols-3 gap-x-4 px-4">
-            <CardStatistics
-              percentage="25"
-              type="Problemas pendientes"
-              quantity="18"
-            />
-
-            <CardStatistics
-              percentage="-25"
-              type="Problemas resuletos"
-              quantity="18"
-            />
-
-            <CardStatistics
-              percentage="25"
-              type="Problemas escalados"
-              quantity="18"
-            />
+            {yearStatusIssues.map((card) => (
+              <CardStatistics
+                percentage={card.percentage}
+                type={card.title}
+                quantity={card.quantity}
+              />
+            ))}
           </div>
           <div className="w-full h-[300px] my-4">
-            <ResponsiveContainer width="99%" aspect={3.2}>
+            <ResponsiveContainer width="99%">
               <LineChart
                 height={300}
                 width={500}
-                data={data}
+                data={semesterResult}
                 margin={{
                   top: 5,
                   right: 30,
@@ -122,11 +105,12 @@ function GeneralPanel() {
                 <Legend />
                 <Line
                   type="monotone"
-                  dataKey="pv"
+                  dataKey="Disponibilidad"
                   stroke="#8884d8"
                   activeDot={{ r: 8 }}
                 />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="Desempeño" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="Calidad" stroke="#AF8B27" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -160,9 +144,3 @@ function GeneralPanel() {
 }
 
 export default GeneralPanel;
-
-/* 
-
-
-
-*/

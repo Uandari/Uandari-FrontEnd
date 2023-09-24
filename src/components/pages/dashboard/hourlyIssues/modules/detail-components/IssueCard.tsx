@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import DrawerComponent from '../Drawer';
+import DrawerComponent from '@components/basic/drawer/index';
+import { IssueInterface } from '@interfaces/Issue';
+import { issueMock } from '@mocks/IssueMock';
 
 export type CardTabProps = {
   status: string;
@@ -10,10 +12,15 @@ export type CardTabProps = {
 
 function IssueCard({ status, problem, description }: CardTabProps) {
   const [open, setOpen] = useState(false);
+  const [issueData, setIssueData] = useState<IssueInterface | null>(null);
 
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    setIssueData(issueMock);
+  }, []);
 
   return (
     <div>
@@ -33,7 +40,9 @@ function IssueCard({ status, problem, description }: CardTabProps) {
           <p className="text-main_text_color text-sm">{description}</p>
         </div>
       </button>
-      <DrawerComponent onClose={toggleDrawer} open={open} />
+      {issueData && (
+        <DrawerComponent onClose={toggleDrawer} open={open} issue={issueData} />
+      )}
     </div>
   );
 }

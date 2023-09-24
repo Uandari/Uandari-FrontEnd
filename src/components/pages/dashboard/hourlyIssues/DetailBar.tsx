@@ -1,6 +1,5 @@
 import GoalsIcon from '@icons/crosshair.svg';
 import CollapsedIcon from '@icons/open-close-icon.svg';
-import ScrewIcon from '@icons/screw.svg';
 import { cardIssues } from '@mocks/CardIssues';
 import { labelTabs } from '@mocks/LabelTabs';
 
