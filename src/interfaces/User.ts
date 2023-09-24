@@ -10,7 +10,6 @@ export interface UserFormData {
   mail: string;
   password: string;
   idRole: number;
-  token: string;
   imageUrl: string;
 }
 

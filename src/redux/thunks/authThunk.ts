@@ -20,8 +20,8 @@ export const postLogin =
         })
         .then((response) => {
           localStorage.setItem('accessToken', response.data.payload.accessToken);
-          dispatch(authorizerData(response.data.payload));
-          dispatch(authDataSuccess(response.data.payload));
+          dispatch(authorizerData(response.data.payload.accessToken));
+          dispatch(authDataSuccess(response.data.payload.accessToken));
         })
         .catch((error) => {
           const customError = new CustomApiError(error).message;

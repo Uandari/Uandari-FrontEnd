@@ -27,7 +27,7 @@ export const createUser =
     async (dispatch) => {
       dispatch(createUsersStart());
       await publicApi
-        .post('/user/create',  userData , {
+        .post('/user/create', userData, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${accessToken}`,
@@ -124,8 +124,13 @@ export const updateUser =
 export const deleteUser =
   (userId: number): AppThunkAction =>
     async (dispatch) => {
-      await privateApi
-        .post('/user/delete', { userId })
+      await publicApi
+        .post('/user/delete', { userId }, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           if (response.data.isError) {
             const customError = new CustomApiError(response.data).message;
