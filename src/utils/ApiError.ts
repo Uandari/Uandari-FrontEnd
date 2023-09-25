@@ -8,10 +8,13 @@ class CustomApiError extends Error {
     let message;
 
     if (error.response) {
-      const errorData = error.response.data;
-      message =
-        `(${errorData.code}) ${errorData.clientMessage}` ||
-        'Hubo un error inesperado.';
+      if (error.response.status >= 400) {
+        message = `(${error.response.status}) Hubo un error inesperado.`;
+      } else {
+        const errorData = error.response.data;
+
+        message = `(${errorData.code}) ${errorData.clientMessage}`;
+      }
     } else if (error.request) {
       message = 'Hubo un error de conexión, vuelva a intentarlo más tarde.';
     } else {

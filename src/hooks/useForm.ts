@@ -9,7 +9,6 @@ const useForm = <T>(
   );
   const [errors, setErrors] = useState({} as Record<string, string>);
 
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
@@ -29,8 +28,6 @@ const useForm = <T>(
     e.preventDefault();
 
     const errorsAux = {} as Record<string, string>;
-
-
 
     if (Object.keys(errorsAux).length === 0) {
       onSubmit(state);

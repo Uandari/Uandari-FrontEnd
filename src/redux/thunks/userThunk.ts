@@ -54,11 +54,15 @@ export const createUser =
     };
 
 export const getUser =
-  (userId: number): AppThunkAction<Promise<User>> =>
+  (controlNumber: string): AppThunkAction<Promise<User>> =>
     async (dispatch) => {
       try {
         const response = await publicApi.post('/user', {
-          userId,
+          controlNumber,
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
         });
 
         if (response.data.isError) {
@@ -99,8 +103,13 @@ export const updateUser =
   (userData: User): AppThunkAction =>
     async (dispatch) => {
       dispatch(updateUserStart);
-      await privateApi
-        .put('/user/update', userData)
+      await publicApi
+        .put('/user/update', userData, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           if (response.data.isError) {
             const customError = new CustomApiError(response.data).message;
@@ -122,10 +131,10 @@ export const updateUser =
     };
 
 export const deleteUser =
-  (userId: number): AppThunkAction =>
+  (userControlNumber: string): AppThunkAction =>
     async (dispatch) => {
       await publicApi
-        .post('/user/delete', { userId }, {
+        .post('/user/delete', { userControlNumber }, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${accessToken}`,
