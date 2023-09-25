@@ -3,23 +3,23 @@ import { useState } from 'react';
 import ColorChangingBox from './ColorChangingBox';
 
 export type RowBoardProps = {
-  month: string;
+  operation: string;
   result: {
-    name: string;
-    days: { day: number; state: number }[];
+    shift: string;
+    weeks: { day: string; value: number }[];
   }[];
 };
 
-export default function RowBoard({ month, result }: RowBoardProps) {
-  const daysLength = result[0]?.days?.length || 0;
+export default function RowBoard({ operation, result }: RowBoardProps) {
+  const daysLength = result[0]?.weeks?.length || 0;
 
   const [localDaysState, setLocalDaysState] = useState(result);
 
-  const handleUpdateDayState = (day: number, newState: number) => {
+  const handleUpdateDayState = (day: string, newState: number) => {
     const updatedLocalDaysState = localDaysState.map((item) => ({
       ...item,
-      days: item.days.map((d) =>
-        d.day === day ? { ...d, state: newState } : d,
+      days: item.weeks.map((w) =>
+      w.day === day ? { ...w, state: newState } : w,
       ),
     }));
 
@@ -30,7 +30,7 @@ export default function RowBoard({ month, result }: RowBoardProps) {
   return (
     <div className=" border-main_color ">
       <div className="w-full border-t h-8 flex">
-        <div className="w-[280px] border-r" />
+        <div className=" border-r" />
         <div className="flex flex-1">
           {Array.from({ length: daysLength }, (_, index) => (
             <div
@@ -44,29 +44,24 @@ export default function RowBoard({ month, result }: RowBoardProps) {
       </div>
       <div className="flex">
         <div className="border-r text-center w-14 flex items-center border-y">
-          <div
-            style={{ transform: 'rotate(-90deg)' }}
-            className="text-center w-16"
-          >
-            {month}
-          </div>
+           A
         </div>
-        <div className="col-span-2 border-t h-full w-full">
+        <div className="col-span-2 border-t h-full ">
           {localDaysState.map((item) => {
             return (
-              <div key={item.name} className="flex border-b w-full">
-                <div className="w-[224px] ">
-                  <p className="p-2 border-r">{item.name}</p>
+              <div key={item.shift} className="flex border-b">
+                <div className="">
+                  <p className="p-2 border-r">{item.shift}</p>
                 </div>
-                {item.days.map((day) => (
+                {item.weeks.map((week) => (
                   <div
-                    key={day.day}
+                    key={week.day}
                     className="flex flex-1 text-transparent border-r p-2 justify-center items-center relative"
                   >
-                    {day.day}
+                    {week.day}
                     <ColorChangingBox
-                      key={day.day}
-                      day={day}
+                      key={week.day}
+                      day={week}
                       onUpdateDayState={handleUpdateDayState}
                     />
                   </div>
@@ -75,14 +70,6 @@ export default function RowBoard({ month, result }: RowBoardProps) {
             );
           })}
         </div>
-      </div>
-      <div className="py-2 flex items-center justify-end pr-8">
-        <button
-          type="button"
-          className="bg-main_blue_dark px-6 py-1 text-white rounded-md"
-        >
-          Guardar cambios del mes
-        </button>
       </div>
     </div>
   );

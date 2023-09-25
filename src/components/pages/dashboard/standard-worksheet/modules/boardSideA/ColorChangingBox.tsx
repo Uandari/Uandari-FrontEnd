@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 type ColorChangingBoxProps = {
-  day: { day: number; state: number };
-  onUpdateDayState: (day: number, newState: number) => void;
+  day: { day: string; value: number };
+  onUpdateDayState: (day: string, newValue: number) => void;
 };
 
 export default function ColorChangingBox({
@@ -14,7 +14,7 @@ export default function ColorChangingBox({
     () => ['main_white', 'main_red', 'main_yellow', 'main_green', 'blue-500'],
     [],
   );
-  const [currentColorIndex, setCurrentColorIndex] = useState(day.state);
+  const [currentColorIndex, setCurrentColorIndex] = useState(day.value);
   const [currentColor, setCurrentColor] = useState('');
 
   const handleClick = () => {
