@@ -6,7 +6,7 @@ import passwordIcon from '@icons/password.svg';
 import lastNamesIcon from '@icons/lastNames.svg';
 import controlNumberIcon from '@icons/controlNumber.svg';
 import { Button, Form, Input, Select } from 'antd';
-import { User, UserFormData } from '@interfaces/User';
+import { UserFormData } from '@interfaces/User';
 import useForm from '@hooks/useForm';
 import { initialUserInfo } from '@mocks/Users';
 import useUsers from '@hooks/useUsers';
@@ -17,65 +17,62 @@ import { getRoles } from '@redux/thunks/roleThunk';
 import { getUser } from '@redux/thunks/userThunk';
 
 type FormBoardProps = {
-  userIdToUpdate?: number;
+  onClose: (callback?: () => void) => void;
+  userControlNumberToUpdate?: string;
 };
 
-function FormBoard({ 
-  userIdToUpdate, }: FormBoardProps) {
-
+export default function FormBoard({
+  userControlNumberToUpdate, onClose }: FormBoardProps) {
   const dispatch = useAppDispatch();
+
+  const { handleCreateUser, handleUpdateUser, searchTerm } = useUsers();
   const [rolesData, setRolesData] = useState<Role[]>([]);
   const { data } = useAppSelector((state: RootState) => state.roleReducer);
-  const { handleCreateUser, handleUpdateUser, searchTerm, } = useUsers();
   const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
-
   const handleCreateOrUpdateUser = (state: UserFormData) => {
-    if (userIdToUpdate) {
+    if (userControlNumberToUpdate) {
       handleUpdateUser({
         ...state,
-        idUser: userIdToUpdate,
+        controlNumber: userControlNumberToUpdate,
       });
     } else {
-      const userInfoToCreate: User = { ...state };
-      delete userInfoToCreate.idUser;
+      const userInfoToCreate: UserFormData = { ...state };
+      delete userInfoToCreate.controlNumber;
 
       handleCreateUser(userInfoToCreate);
     }
+    onClose();
   };
 
-  const { handleInputChange, handleSubmit, state, setState } =
-    useForm<UserFormData>(
-      initialUserInfo,
-      handleCreateOrUpdateUser,
-    );
+  const { errors, handleInputChange, handleSubmit, state, setState, reset } =
+  useForm<UserFormData>(
+    initialUserInfo,
+    handleCreateOrUpdateUser,
+  );
 
   useEffect(() => {
-    if (userIdToUpdate) {
-      dispatch(getUser(userIdToUpdate))
+    if (userControlNumberToUpdate) {
+      dispatch(getUser(userControlNumberToUpdate))
         .then((userData: UserFormData) => {
           setState({
+            idUser: userData.idUser,
             name: userData.name,
             lastNames: userData.lastNames,
             controlNumber: userData.controlNumber,
             mail: userData.mail,
             password: userData.password,
             idRole: userData.idRole,
+            token: userData.token,
             imageUrl: '',
           });
-        })
+        }
+        )
         .catch((error) => {
           console.error('Error fetching user details:', error.message);
         });
     }
-  }, [dispatch, userIdToUpdate, setState]);
+  }, [dispatch, userControlNumberToUpdate, setState]);
 
   useEffect(() => {
     if (Array.isArray(data)) {
@@ -95,17 +92,16 @@ function FormBoard({
     form.validateFields(['controlNumber', 'name', 'lastNames', 'mail', 'role']);
   }, [form]);
 
-  
+
+  console.log('FormBoard userControlNumberToUpdate: ' + userControlNumberToUpdate)
   return (
     <Form form={form} initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
       style={{ maxWidth: 600 }}
       layout="vertical">
       <div className="px-5 pt-3">
         <p className="text-black font-medium ">
-          {userIdToUpdate ? 'Editar Usuario' : 'Registro de Usuario'}
+          {userControlNumberToUpdate ? 'Editar Usuario' : 'Registro de Usuario'}
         </p>
       </div>
       <div className="px-5 pt-5">
@@ -191,8 +187,6 @@ function FormBoard({
   );
 }
 
-export default FormBoard;
-
 FormBoard.defaultProps = {
-  userIdToUpdate: undefined,
+  userControlNumberToUpdate: undefined,
 };

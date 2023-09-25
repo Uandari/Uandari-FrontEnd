@@ -31,7 +31,7 @@ const useUsers = () => {
     setSelectedUser(null);
   };
 
-  const handleDeleteUser = async (controlNumber: string) => {
+  const handleDeleteUser = async (id: number) => {
     Swal.fire({
       title: 'Eliminar Usuario',
       text: '¿Está seguro que desea eliminar el usuario seleccionado?',
@@ -49,15 +49,16 @@ const useUsers = () => {
     });
   };
 
-  const handleCreateUser = async (userData: User) => {
+  const handleCreateUser = async (userData: UserFormData) => {
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
 
-  const handleUpdateUser = async (userData: Administrator) => {
+  const handleUpdateUser = async (userData: User) => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
   };
+  
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,

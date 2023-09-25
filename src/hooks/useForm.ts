@@ -9,35 +9,6 @@ const useForm = <T>(
   );
   const [errors, setErrors] = useState({} as Record<string, string>);
 
-  const isValidInput = (
-    functionValidationRegex: (value: string) => string | undefined,
-    name: string,
-    minLength?: number,
-    maxLength?: number,
-  ) => {
-    const value = state[name] as string;
-    const messageRegex = functionValidationRegex(value);
-
-    let errorMessage = '';
-
-    if (minLength && maxLength) {
-      if (value.length < minLength && value.length > maxLength) {
-        errorMessage = `, (La longitud debe estar entre ${minLength} - ${maxLength})`;
-      }
-    } else if (minLength && value.length < minLength) {
-      errorMessage = `, (La longitud debe ser mayor a ${minLength})`;
-    } else if (maxLength && value.length > maxLength) {
-      errorMessage = `, (La longitud debe ser menor a ${maxLength})`;
-    }
-
-    if (messageRegex || errorMessage) {
-      return messageRegex
-        ? messageRegex + errorMessage
-        : errorMessage.split(',')[1];
-    }
-
-    return undefined;
-  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -59,20 +30,7 @@ const useForm = <T>(
 
     const errorsAux = {} as Record<string, string>;
 
-    configs.forEach((config) => {
-      const { name, functionValidationRegex, minLength, maxLength } = config;
 
-      const errorMessage = isValidInput(
-        functionValidationRegex,
-        name,
-        minLength,
-        maxLength,
-      );
-
-      if (errorMessage) {
-        errorsAux[name] = errorMessage;
-      }
-    });
 
     if (Object.keys(errorsAux).length === 0) {
       onSubmit(state);

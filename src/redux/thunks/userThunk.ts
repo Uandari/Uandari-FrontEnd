@@ -55,11 +55,11 @@ export const createUser =
 
 export const getUser =
   (userId: number): AppThunkAction<Promise<User>> =>
-  async (dispatch) => {
-    try {
-      const response = await privateApi.post('/user', {
-        userId,
-      });
+    async (dispatch) => {
+      try {
+        const response = await publicApi.post('/user', {
+          userId,
+        });
 
         if (response.data.isError) {
           throw new Error(response.data.clientMessage);
@@ -92,35 +92,40 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
 
 export const updateUser =
   (userData: User): AppThunkAction =>
-  async (dispatch) => {
-    dispatch(updateUserStart);
-    await privateApi
-      .put('/user/update', userData)
-      .then((response) => {
-        if (response.data.isError) {
-          const customError = new CustomApiError(response.data).message;
+    async (dispatch) => {
+      dispatch(updateUserStart);
+      await privateApi
+        .put('/user/update', userData)
+        .then((response) => {
+          if (response.data.isError) {
+            const customError = new CustomApiError(response.data).message;
+            dispatch(updateUserError(customError));
+            return;
+          }
+          dispatch(updateUserSuccess());
+          Swal.fire({
+            title: 'Actualizado',
+            text: 'El usuario ha sido actualizado',
+            icon: 'success',
+            confirmButtonColor: colors.success,
+          });
+        })
+        .catch((error) => {
+          const customError = new CustomApiError(error).message;
           dispatch(updateUserError(customError));
-          return;
-        }
-        dispatch(updateUserSuccess());
-        Swal.fire({
-          title: 'Actualizado',
-          text: 'El usuario ha sido actualizado',
-          icon: 'success',
-          confirmButtonColor: colors.success,
         });
-      })
-      .catch((error) => {
-        const customError = new CustomApiError(error).message;
-        dispatch(updateUserError(customError));
-      });
-  };
+    };
 
 export const deleteUser =
-  (userId: number): AppThunkAction =>
+  (userControlNumber: string): AppThunkAction =>
     async (dispatch) => {
-      await privateApi
-        .post('/user/delete', { userId })
+      await publicApi
+        .post('/user/delete', { userId }, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((response) => {
           if (response.data.isError) {
             const customError = new CustomApiError(response.data).message;

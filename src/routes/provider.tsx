@@ -43,7 +43,7 @@ import {
   SKILLS_MATRIX,
   POINTS_PLAN,
 } from './paths';
-import PrivateRoute from './privateRoute';
+// import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
   {
