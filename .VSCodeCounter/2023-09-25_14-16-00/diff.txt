@@ -1,0 +1,40 @@
+Date : 2023-09-25 14:16:00
+Directory : c:\Users\ricar\Desktop\front-vw\vw-frontend
+Total : 7 files,  409 codes, 0 comments, 16 blanks, all 425 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |          5 |        283 |          0 |         14 |        297 |
+| TypeScript     |          2 |        126 |          0 |          2 |        128 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |          7 |        409 |          0 |         16 |        425 |
+| src                                                                                                  |          7 |        409 |          0 |         16 |        425 |
+| src\components                                                                                       |          4 |        277 |          0 |         14 |        291 |
+| src\components\pages                                                                                 |          4 |        277 |          0 |         14 |        291 |
+| src\components\pages\dashboard                                                                       |          4 |        277 |          0 |         14 |        291 |
+| src\components\pages\dashboard\fiveS                                                                 |          1 |        163 |          0 |          1 |        164 |
+| src\components\pages\dashboard\skills-matrix                                                         |          3 |        114 |          0 |         13 |        127 |
+| src\mocks                                                                                            |          2 |        126 |          0 |          2 |        128 |
+| src\routes                                                                                           |          1 |          6 |          0 |          0 |          6 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                             | language       | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\fiveS\index.tsx           | TypeScript JSX |        163 |          0 |          1 |        164 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\Drawer.tsx  | TypeScript JSX |          4 |          0 |          2 |          6 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\UserRow.tsx | TypeScript JSX |         36 |          0 |          5 |         41 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\index.tsx   | TypeScript JSX |         74 |          0 |          6 |         80 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\FiveS.ts                                       | TypeScript     |         68 |          0 |          1 |         69 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\UsersSkills.ts                                 | TypeScript     |         58 |          0 |          1 |         59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\provider.tsx                                  | TypeScript JSX |          6 |          0 |          0 |          6 |
+| Total                                                                                                |                |        409 |          0 |         16 |        425 |
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

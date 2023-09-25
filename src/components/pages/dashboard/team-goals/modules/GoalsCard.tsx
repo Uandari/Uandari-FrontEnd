@@ -21,19 +21,23 @@ export default function GoalsCard({
       <div className="flex-1 flex flex-col justify-center ml-6 gap-1.5 my-2">
         <div className="flex items-center ">
           <div className="rounded-sm w-4 h-4 bg-main_green" />
-          <span className="ml-2">{done} Objetivos cumplidos</span>
+          <span className="ml-2 text-sm">{done} Objetivos cumplidos</span>
         </div>
         <div className="flex items-center">
           <div className="rounded-sm w-4 h-4 bg-main_yellow" />
-          <span className="ml-2">{accidents} Accidentes</span>
+          <span className="ml-2 text-sm">{accidents} Accidentes</span>
         </div>
         <div className="flex items-center">
           <div className="rounded-sm w-4 h-4 bg-main_red" />
-          <span className="ml-2">{incomplete} Objetivos no cumplidos</span>
+          <span className="ml-2 text-sm">
+            {incomplete} Objetivos no cumplidos
+          </span>
         </div>
         <div className="flex items-center">
           <div className="rounded-sm w-4 h-4 bg-blue-500 " />
-          <span className="ml-2">{free} Días(s) libre de producción</span>
+          <span className="ml-2 text-sm">
+            {free} Días(s) libre de producción
+          </span>
         </div>
       </div>
     </div>
