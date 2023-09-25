@@ -36,7 +36,6 @@ import {
   ASSISTENCE_PER_SHIFT,
   ISSUES_EVOLUTION,
 } from './paths';
-import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
