@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
-import { shiftsLabels } from '@mocks/Shifts';
 import { cellsLabels } from '@mocks/Cells';
-
 import { goalForYear } from '@mocks/GoalsForYear';
+import { shiftsLabels } from '@mocks/Shifts';
 import { operations } from '@mocks/StandardWorksheetA';
 import { Select } from 'antd';
-import RowBoard from '../boardSideA/RowBoard';
 
+import RowBoard from '../boardSideA/RowBoard';
 
 export default function SideATab() {
   const [goalsValues, setGoalsValues] = useState(goalForYear);
@@ -59,61 +58,58 @@ export default function SideATab() {
           options={cellsLabels}
         />
       </div>
-      <div className='grid grid-rows-2'>
-        <div className='grid grid-cols-12'>
-          <div className='grid grid-rows-4 col-span-1'>
-            <div className='border flex items-center justify-center '>
+      <div className="grid grid-rows-2">
+        <div className="grid grid-cols-12">
+          <div className="grid grid-rows-4 col-span-1">
+            <div className="border flex items-center justify-center ">
               Semana
             </div>
-            <div className='border flex items-center justify-center '>
+            <div className="border flex items-center justify-center ">
               Dia de la Semana
             </div>
-            <div className='border flex items-center justify-center '>
+            <div className="border flex items-center justify-center ">
               Operación
             </div>
-            <div className='border flex items-center justify-center  '>
+            <div className="border flex items-center justify-center  ">
               Mapeo
             </div>
           </div>
-          <div className='grid grid-rows-4 col-span-1'>
-            <div className='flex items-center justify-center row-span-3 border'>
+          <div className="grid grid-rows-4 col-span-1">
+            <div className="flex items-center justify-center row-span-3 border">
               <div
                 style={{ transform: 'rotate(-90deg)' }}
                 className="text-center w-16 "
-              > Grupo </div>
+              >
+                {' '}
+                Grupo{' '}
+              </div>
             </div>
-            <div className=' border flex items-center justify-center '>
+            <div className=" border flex items-center justify-center ">
               Mapeo
             </div>
           </div>
-          <div className='grid grid-cols-4 col-span-10'>
-            <div className='border flex items-center justify-center'>
+          <div className="grid grid-cols-4 col-span-10">
+            <div className="border flex items-center justify-center">
               Semana
             </div>
-            <div className='border flex items-center justify-center '>
+            <div className="border flex items-center justify-center ">
               Semana
             </div>
-            <div className='border flex items-center justify-center'>
+            <div className="border flex items-center justify-center">
               Semana
             </div>
-            <div className='border flex items-center justify-center'>
+            <div className="border flex items-center justify-center">
               Semana
             </div>
           </div>
         </div>
       </div>
       <div className="row-span-1 grid grid-cols-12 border-main_color">
-
-
-        <div className='border col-span-1'>
-
-        </div>
-        <div className='border col-span-10'>
-          <div className='grid grid-cols-4 row-span-1'>
-
-            <div className='grid grid-rows-4 '>
-              <div className='border flex items-center justify-center row-span-5 '>
-
+        <div className="border col-span-1" />
+        <div className="border col-span-10">
+          <div className="grid grid-cols-4 row-span-1">
+            <div className="grid grid-rows-4 ">
+              <div className="border flex items-center justify-center row-span-5 ">
                 {operations.map((operation) => (
                   <RowBoard
                     key={operation.operation}
@@ -124,12 +120,8 @@ export default function SideATab() {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
-
     </div>
   );
 }

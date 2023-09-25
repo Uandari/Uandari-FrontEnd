@@ -19,7 +19,7 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
     const updatedLocalDaysState = localDaysState.map((item) => ({
       ...item,
       days: item.weeks.map((w) =>
-      w.day === day ? { ...w, state: newState } : w,
+        w.day === day ? { ...w, state: newState } : w,
       ),
     }));
 
@@ -44,7 +44,7 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
       </div>
       <div className="flex">
         <div className="border-r text-center w-14 flex items-center border-y">
-           A
+          A
         </div>
         <div className="col-span-2 border-t h-full ">
           {localDaysState.map((item) => {
