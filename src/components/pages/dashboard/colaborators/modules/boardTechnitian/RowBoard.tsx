@@ -20,7 +20,7 @@ function RowBoard({
   imageUrl,
 }: RowBoardProps) {
   return (
-    <div className="grid grid-cols-8 border-b border-main_color py-6 gap-x-6 ">
+    <div className="grid grid-cols-8 border-b border-main_color py-6 gap-x-24 ">
       {/* User general info */}
       <div className="flex items-center col-span-2 pl-12  text-main_gray border-main_color">
         <img src={imageUrl} className="h-12 mr-3" alt="Foto de usuario" />

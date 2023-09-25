@@ -19,10 +19,13 @@ const pages: TabsProps['items'] = [
 
 export default function Colaborators() {
   return (
-    <div className="flex flex-1 flex-col">
-      <Topbar title="Colaboradores" variant="secondary" />
-      <div className="flex flex-1 overflow-y-auto bg-main_white">
-        <Tabs className="h-full flex flex-1 " size="large" items={pages} />
+    <div className="border border-b grid bg-white flex-1 h-screen">
+      <div className="sticky top-0">
+        <Topbar title="Colaboradores" variant="secondary" />
+        <div className="w-full">
+
+          <Tabs className="h-full flex flex-1 " size="large" items={pages} />
+        </div>
       </div>
     </div>
   );
