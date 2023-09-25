@@ -1,0 +1,16 @@
+"filename", "language", "TypeScript JSX", "TypeScript", "XML", "comment", "blank", "total"
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\infoIcon.svg", "XML", 0, 0, 5, 0, 1, 6
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\card_statistics\index.tsx", "TypeScript JSX", 41, 0, 0, 0, 3, 44
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\fiveS\ReportCard.tsx", "TypeScript JSX", 24, 0, 0, 0, 3, 27
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\fiveS\RowReport.tsx", "TypeScript JSX", 64, 0, 0, 2, 7, 73
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\fiveS\index.tsx", "TypeScript JSX", 87, 0, 0, 0, 5, 92
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-evolution\Graph.tsx", "TypeScript JSX", 58, 0, 0, 0, 4, 62
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-evolution\index.tsx", "TypeScript JSX", 19, 0, 0, 0, 1, 20
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\CardStatistics.tsx", "TypeScript JSX", -49, 0, 0, 0, -4, -53
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\issues-tracking\modules\Tabs\GeneralPanel\index.tsx", "TypeScript JSX", 1, 0, 0, 0, 0, 1
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\problem-list\modules\CardStatistics.tsx", "TypeScript JSX", 4, 0, 0, 0, 0, 4
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\GraphShift.ts", "TypeScript", 0, 44, 0, 0, 1, 45
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\MainThreeIssues.ts", "TypeScript", 0, 17, 0, 0, 1, 18
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\ReportCard.ts", "TypeScript", 0, 92, 0, 0, 1, 93
+"c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\provider.tsx", "TypeScript JSX", 6, 0, 0, 0, 0, 6
+"Total", "-", 255, 153, 5, 2, 23, 438
