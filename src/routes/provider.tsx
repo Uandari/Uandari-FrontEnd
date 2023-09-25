@@ -4,6 +4,7 @@ import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import Colaborators from '@components/pages/dashboard/colaborators';
+import CriticalRoute from '@components/pages/dashboard/critical-route';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
 import FiveS from '@components/pages/dashboard/fiveS';
 import Goals from '@components/pages/dashboard/goals';
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
       {
         path: PAGE_5S,
         element: <FiveS />,
+      },
+      {
+        path: CRITICAL_PATH,
+        element: <CriticalRoute />,
       },
     ],
     errorElement: <NotFound />,
