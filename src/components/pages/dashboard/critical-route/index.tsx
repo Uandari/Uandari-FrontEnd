@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-import PDFViewer from '@components/basic/pdf_modules/PDFViewer';
 import DocumentList from '@components/basic/pdf_modules/DocumentList';
-
+import PDFViewer from '@components/basic/pdf_modules/PDFViewer';
 import Topbar from '@components/layout/topbar';
 import { Document } from '@interfaces/Document';
 
@@ -18,7 +17,7 @@ export default function CriticalRoute() {
       name: 'Documento 2',
       uploadDate: '2023-09-24',
       pdfUrl: '../../../../../src/assets/CriticalRoute/RT2.pdf',
-      namePerson: 'Ricardo Gonzalez Flores',
+      namePerson: 'Ricardo González Flores',
     },
   ];
 
@@ -26,7 +25,6 @@ export default function CriticalRoute() {
     documents[0], // Para que siempre empiece con el primer documento
   );
 
-  // Manejar la selección de un documento
   const handleClick = (document: Document) => {
     setSelectedDocument(document);
   };
