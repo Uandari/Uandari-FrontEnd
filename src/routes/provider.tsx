@@ -5,6 +5,7 @@ import Dashboard from '@components/pages/dashboard';
 import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import Colaborators from '@components/pages/dashboard/colaborators';
 import EscalatedIssues from '@components/pages/dashboard/escalated-issues';
+import FiveS from '@components/pages/dashboard/fiveS';
 import Goals from '@components/pages/dashboard/goals';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesEvolution from '@components/pages/dashboard/issues-evolution';
@@ -35,6 +36,7 @@ import {
   STANDARD_WORKSHEETS,
   ASSISTENCE_PER_SHIFT,
   ISSUES_EVOLUTION,
+  PAGE_5S,
 } from './paths';
 // import PrivateRoute from './privateRoute';
 
@@ -83,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: ISSUES_EVOLUTION,
         element: <IssuesEvolution />,
+      },
+      {
+        path: PAGE_5S,
+        element: <FiveS />,
       },
     ],
     errorElement: <NotFound />,

@@ -17,7 +17,7 @@ export const TEAM_GOALS = 'metas-de-equipo';
 export const SKILLS_MATRIX = 'skills-matrix';
 export const ASSISTENCE_PER_SHIFT = 'asistencia-por-turno';
 export const CRITICAL_PATH = 'ruta-critica';
-export const PAGE_5S = 'pagina-5s';
+export const PAGE_5S = '5s';
 export const POINTS_PLAN = 'plan-de-puntos';
 export const STANDARD_WORKSHEETS = 'hojas-de-trabajo-estandar';
 

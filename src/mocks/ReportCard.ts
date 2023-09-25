@@ -1,0 +1,92 @@
+export const reportCardData = [
+  {
+    id: 1,
+    date: '12/09/2023',
+    shift: 'Turno A',
+    name: 'Fulano Gómez Martínez',
+  },
+  {
+    id: 2,
+    date: '13/09/2023',
+    shift: 'Turno B',
+    name: 'Sultana Pérez Rodríguez',
+  },
+  {
+    id: 3,
+    date: '14/09/2023',
+    shift: 'Turno C',
+    name: 'Mengano López Pérez',
+  },
+  {
+    id: 4,
+    date: '15/09/2023',
+    shift: 'Turno A',
+    name: 'Zutano González Sánchez',
+  },
+  {
+    id: 5,
+    date: '16/09/2023',
+    shift: 'Turno B',
+    name: 'Juanita Rodríguez Pérez',
+  },
+  {
+    id: 6,
+    date: '17/09/2023',
+    shift: 'Turno C',
+    name: 'Pedro Martínez López',
+  },
+  {
+    id: 7,
+    date: '18/09/2023',
+    shift: 'Turno A',
+    name: 'Ana Sánchez González',
+  },
+  {
+    id: 8,
+    date: '19/09/2023',
+    shift: 'Turno B',
+    name: 'Carlos Pérez Gómez',
+  },
+  {
+    id: 9,
+    date: '20/09/2023',
+    shift: 'Turno C',
+    name: 'Luisa López Pérez',
+  },
+  {
+    id: 10,
+    date: '21/09/2023',
+    shift: 'Turno A',
+    name: 'Sofía González Martínez',
+  },
+  {
+    id: 11,
+    date: '22/09/2023',
+    shift: 'Turno B',
+    name: 'Mateo Pérez Sánchez',
+  },
+  {
+    id: 12,
+    date: '23/09/2023',
+    shift: 'Turno C',
+    name: 'Valentina López Gómez',
+  },
+  {
+    id: 13,
+    date: '24/09/2023',
+    shift: 'Turno A',
+    name: 'Diego González Pérez',
+  },
+  {
+    id: 14,
+    date: '25/09/2023',
+    shift: 'Turno B',
+    name: 'Camila Pérez Martínez',
+  },
+  {
+    id: 15,
+    date: '26/09/2023',
+    shift: 'Turno C',
+    name: 'Joaquín López González',
+  },
+];
