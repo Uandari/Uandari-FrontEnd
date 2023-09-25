@@ -1,7 +1,8 @@
 import Topbar from '@components/layout/topbar';
+import { Tabs, TabsProps } from 'antd';
+
 import SideATab from './modules/Tabs/SideATab';
 import SideBTab from './modules/Tabs/SideBTab';
-import { Tabs, TabsProps } from 'antd';
 
 const itemsTabs: TabsProps['items'] = [
   {
@@ -18,10 +19,10 @@ const itemsTabs: TabsProps['items'] = [
 
 export default function StandardWorksheet() {
   return (
-    <div className="flex flex-1 flex-col">
-      <Topbar title="Colaboradores" variant="secondary" />
-      <div className="flex flex-1 overflow-y-auto bg-main_white">
-        <Tabs className="h-full flex flex-1 " size="large" items={itemsTabs} />
+    <div className="border border-b grid bg-white flex-1 h-screen">
+      <div className="sticky top-0">
+        <Topbar title="Hoja de Trabajo Estándar" variant="secondary" />
+        <Tabs defaultActiveKey="1" items={itemsTabs} />
       </div>
     </div>
   );
