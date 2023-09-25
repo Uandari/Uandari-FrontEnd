@@ -49,3 +49,9 @@ export function getToken(): string | null {
 export function removeToken(): void {
   localStorage.removeItem('accessToken');
 }
+
+export function numberPad(n: number, length: number) {
+  let len = length - `${n}`.length;
+  // eslint-disable-next-line no-plusplus
+  return (len > 0 ? new Array(++len).join('0') : '') + n;
+}

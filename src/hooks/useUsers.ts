@@ -6,6 +6,7 @@ import { User, UserFetched, UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
+  getUser,
   getUsers,
   updateUser as updateUserAction,
 } from '@redux/thunks/userThunk';
@@ -30,7 +31,8 @@ const useUsers = () => {
     setSelectedUser(null);
   };
 
-  const handleDeleteUser = async (id: number) => {
+  const handleDeleteUser = async (controlNumber: string) => {
+    console.log("HandleDeleteUser controlNumber: " + controlNumber)
     Swal.fire({
       title: 'Eliminar Usuario',
       text: '¿Está seguro que desea eliminar el usuario seleccionado?',
@@ -42,22 +44,27 @@ const useUsers = () => {
       cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(deleteUserAction(id));
+        await dispatch(deleteUserAction(controlNumber));
         dispatch(getUsers());
       }
     });
   };
 
   const handleCreateUser = async (userData: UserFormData) => {
+    console.log("HandleCreateUser userData: " + userData)
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
 
   const handleUpdateUser = async (userData: User) => {
+    console.log("handleUpdateUser userData: " + userData)
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
   };
-  
+
+  const handleGetUser = async (controlNumber: string) => {
+    await dispatch(getUser(controlNumber));
+  };
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -80,6 +87,7 @@ const useUsers = () => {
     searchTerm,
     setSearhTerm,
     handleInputChange,
+    handleGetUser,
   };
 };
 

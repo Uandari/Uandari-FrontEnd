@@ -43,13 +43,13 @@ import {
   SKILLS_MATRIX,
   POINTS_PLAN,
 } from './paths';
-// import PrivateRoute from './privateRoute';
+import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
+import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
   {
     path: DASHBOARD_MAIN,
-    // element: <PrivateRoute element={<Dashboard />} />,
-    element: <Dashboard />,
+    element: <PrivateRoute element={<Dashboard />} />,
     children: [
       {
         path: '/',
@@ -116,7 +116,7 @@ const router = createBrowserRouter([
   },
   {
     path: ADMIN,
-    element: <AdminPanel />,
+    element: <PrivateRoute element={<AdminPanel />} />,
     children: [
       {
         path: ADMIN_USERS,
@@ -126,21 +126,12 @@ const router = createBrowserRouter([
         path: ADMIN_CELLS,
         element: <CellsList />,
       },
-      /* {
-        path: ADMIN_LINES,
-        element: <LinesList />,
-      }, */
-      /* {
-        path: ADMIN_ROLES,
-        element: <RolesList />,
-      }, */
     ],
     errorElement: <NotFound />,
   },
   {
     path: UPLOADS,
-    // element: <PrivateRoute element={<UploadPanel />} />,
-    element: <UploadPanel />,
+    element: <PrivateRoute element={<UploadPanel />} />,
     children: [
       {
         path: CRITICAL_PATH,
