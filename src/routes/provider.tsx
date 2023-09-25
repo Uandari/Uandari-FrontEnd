@@ -43,7 +43,6 @@ import {
   SKILLS_MATRIX,
   POINTS_PLAN,
 } from './paths';
-import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
 import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
