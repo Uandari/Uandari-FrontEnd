@@ -117,7 +117,7 @@ export default function DrawerComponent({
             onChange={(value) => setSelectedSkill(value)}
           >
             {skillsLabels.map((skill) => (
-              <Select.Option key={skill.value} value={skill.value}>
+              <Select.Option key={skill.value} value={skill.label}>
                 {skill.label}
               </Select.Option>
             ))}
