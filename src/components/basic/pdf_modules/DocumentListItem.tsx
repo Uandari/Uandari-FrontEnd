@@ -1,3 +1,5 @@
+import { Document } from '@interfaces/Document';
+
 type DocumentListItemProps = {
   document: {
     pdfUrl: string;
@@ -5,7 +7,7 @@ type DocumentListItemProps = {
     uploadDate: string;
     namePerson: string;
   };
-  handleClick: (document: any) => void;
+  handleClick: (document: Document) => void;
 };
 
 function DocumentListItem({ document, handleClick }: DocumentListItemProps) {
