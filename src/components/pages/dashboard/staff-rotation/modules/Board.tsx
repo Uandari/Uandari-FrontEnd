@@ -1,10 +1,10 @@
-import {  useState } from 'react';
-import { shiftsLabels } from '@mocks/Shifts';
+import { useState } from 'react';
 
 import CalendarIcon from '@icons/calender.svg';
-
 import { goalForYear } from '@mocks/GoalsForYear';
+import { shiftsLabels } from '@mocks/Shifts';
 import { Select } from 'antd';
+
 import RowBoard from './RowBoard';
 
 export default function Board() {
@@ -33,7 +33,6 @@ export default function Board() {
   };
 
   return (
-
     <div className="overflow-y-auto bg-white">
       <div className=" overflow-y-scroll">
         <div className="flex gap-8 flex-wrap p-6">
@@ -101,7 +100,6 @@ export default function Board() {
           </button>
         </div>
       </div>
-
     </div>
   );
 }

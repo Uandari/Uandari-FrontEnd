@@ -1,9 +1,8 @@
 import Topbar from '@components/layout/topbar';
+
 import Board from './modules/Board';
 
-
 export default function StaffRotation() {
-
   return (
     <div className="flex flex-1 border">
       <div className="flex flex-1 flex-col bg-white">
@@ -17,4 +16,3 @@ export default function StaffRotation() {
     </div>
   );
 }
-
