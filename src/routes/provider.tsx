@@ -11,6 +11,7 @@ import Goals from '@components/pages/dashboard/goals';
 import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesEvolution from '@components/pages/dashboard/issues-evolution';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
+import PointsPlan from '@components/pages/dashboard/points-plan';
 import IssuesList from '@components/pages/dashboard/problem-list';
 import SkillsMatrix from '@components/pages/dashboard/skills-matrix';
 import StandardWorksheet from '@components/pages/dashboard/standard-worksheet';
@@ -40,6 +41,7 @@ import {
   ISSUES_EVOLUTION,
   PAGE_5S,
   SKILLS_MATRIX,
+  POINTS_PLAN,
 } from './paths';
 // import PrivateRoute from './privateRoute';
 
@@ -100,6 +102,10 @@ const router = createBrowserRouter([
       {
         path: SKILLS_MATRIX,
         element: <SkillsMatrix />,
+      },
+      {
+        path: POINTS_PLAN,
+        element: <PointsPlan />,
       },
     ],
     errorElement: <NotFound />,
