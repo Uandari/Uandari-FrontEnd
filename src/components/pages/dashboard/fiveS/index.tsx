@@ -21,6 +21,79 @@ function FiveS() {
               Checklist Autogestión 5s
             </h2>
             <p className="text-main_text_color">Descripción de la desviación</p>
+
+            <div className="flex gap-8 flex-wrap py-2 pt-6">
+              <Select
+                showSearch
+                placeholder="Seleccionar línea"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').includes(input)
+                }
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? '')
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? '').toLowerCase())
+                }
+                options={shiftsLabels}
+              />
+              <Select
+                showSearch
+                placeholder="Seleccionar turno"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').includes(input)
+                }
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? '')
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? '').toLowerCase())
+                }
+                options={shiftsLabels}
+              />
+              <Select
+                showSearch
+                placeholder="Seleccionar tramo"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').includes(input)
+                }
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? '')
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? '').toLowerCase())
+                }
+                options={shiftsLabels}
+              />
+              <Select
+                showSearch
+                placeholder="Seleccionar supervisor"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').includes(input)
+                }
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? '')
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? '').toLowerCase())
+                }
+                options={shiftsLabels}
+              />
+              <Select
+                showSearch
+                placeholder="Seleccionar portavoz"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').includes(input)
+                }
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? '')
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? '').toLowerCase())
+                }
+                options={shiftsLabels}
+              />
+            </div>
           </div>
           <div className="grid grid-cols-7 border-y">
             <div className="col-span-3 p-3 border-r text-main_text_color">

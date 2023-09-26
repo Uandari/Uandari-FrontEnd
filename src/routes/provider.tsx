@@ -12,6 +12,7 @@ import HourlyIssues from '@components/pages/dashboard/hourlyIssues';
 import IssuesEvolution from '@components/pages/dashboard/issues-evolution';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import IssuesList from '@components/pages/dashboard/problem-list';
+import SkillsMatrix from '@components/pages/dashboard/skills-matrix';
 import StandardWorksheet from '@components/pages/dashboard/standard-worksheet';
 import TeamGoals from '@components/pages/dashboard/team-goals';
 import LoginPage from '@components/pages/login';
@@ -38,6 +39,7 @@ import {
   ASSISTENCE_PER_SHIFT,
   ISSUES_EVOLUTION,
   PAGE_5S,
+  SKILLS_MATRIX,
 } from './paths';
 // import PrivateRoute from './privateRoute';
 
@@ -94,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: CRITICAL_PATH,
         element: <CriticalRoute />,
+      },
+      {
+        path: SKILLS_MATRIX,
+        element: <SkillsMatrix />,
       },
     ],
     errorElement: <NotFound />,
