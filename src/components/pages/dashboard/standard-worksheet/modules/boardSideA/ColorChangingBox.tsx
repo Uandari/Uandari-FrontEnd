@@ -11,7 +11,7 @@ export default function ColorChangingBox({
 }: ColorChangingBoxProps) {
   // Allows to render just once, and not every time the component renders useMemo
   const colors = useMemo(
-    () => ['main_white', 'main_red', 'main_yellow', 'main_green', 'blue-500'],
+    () => ['main_white','main_red', 'main_green'],
     [],
   );
   const [currentColorIndex, setCurrentColorIndex] = useState(day.value);

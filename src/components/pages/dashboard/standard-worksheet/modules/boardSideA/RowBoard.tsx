@@ -11,7 +11,6 @@ export type RowBoardProps = {
 };
 
 export default function RowBoard({ operation, result }: RowBoardProps) {
-  const daysLength = result[0]?.weeks?.length || 0;
 
   const [localDaysState, setLocalDaysState] = useState(result);
 
@@ -28,32 +27,30 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
   };
 
   return (
-    <div className=" border-main_color ">
-      <div className="w-full border-t h-8 flex">
-        <div className=" border-r" />
-        <div className="flex flex-1">
-          {Array.from({ length: daysLength }, (_, index) => (
-            <div
-              className="flex flex-1 border-r p-2 justify-center items-center"
-              key={index}
-            >
-              {index + 1}
-            </div>
-          ))}
+    <div className="grid grid-cols-12 row-span-6">
+      <div className="grid grid-cols-9 col-span-2">
+        <div className="grid col-span-6 border-b border-r items-center justify-center">
+          {operation}
+        </div>
+        <div className="grid col-span-3 grid-rows-3">
+          {localDaysState.map((item) => {
+            return (
+              <div className="flex items-center justify-center border-b">
+                {item.shift}
+              </div>
+            );
+          })}
+
         </div>
       </div>
-      <div className="flex">
-        <div className="col-span-2 border-t h-full ">
+      <div className="grid grid-rows-3 col-span-10">
           {localDaysState.map((item) => {
             return (
               <div key={item.shift} className="flex border-b">
-                <div className="">
-                  <p className="p-2 border-r">{item.shift}</p>
-                </div>
                 {item.weeks.map((week) => (
                   <div
                     key={week.day}
-                    className="flex flex-1 text-transparent border-r p-2 justify-center items-center relative"
+                    className="flex flex-1 text-transparent border-l p-2 justify-center items-center relative"
                   >
                     {week.day}
                     <ColorChangingBox
@@ -66,8 +63,8 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
               </div>
             );
           })}
-        </div>
       </div>
     </div>
+
   );
 }
