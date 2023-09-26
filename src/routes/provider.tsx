@@ -42,7 +42,9 @@ import {
   PAGE_5S,
   SKILLS_MATRIX,
   POINTS_PLAN,
+  STAFF_ROTATION,
 } from './paths';
+import StaffRotation from '@components/pages/dashboard/staff-rotation';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -106,6 +108,10 @@ const router = createBrowserRouter([
       {
         path: POINTS_PLAN,
         element: <PointsPlan />,
+      },
+      {
+        path: STAFF_ROTATION,
+        element: <StaffRotation />,
       },
     ],
     errorElement: <NotFound />,
