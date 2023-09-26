@@ -43,9 +43,15 @@ export function enumToArray<T extends Record<keyof T, string>>(
 }
 
 export function getToken(): string | null {
-  return localStorage.getItem('token');
+  return localStorage.getItem('accessToken');
 }
 
 export function removeToken(): void {
-  localStorage.removeItem('token');
+  localStorage.removeItem('accessToken');
+}
+
+export function numberPad(n: number, length: number) {
+  let len = length - `${n}`.length;
+  // eslint-disable-next-line no-plusplus
+  return (len > 0 ? new Array(++len).join('0') : '') + n;
 }

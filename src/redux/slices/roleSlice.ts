@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { User, UserFetched } from '@interfaces/User';
+import { Role } from '@interfaces/Role';
 import { createSlice } from '@reduxjs/toolkit';
 
 interface InitialStateType<T> {
@@ -8,82 +8,82 @@ interface InitialStateType<T> {
   error: string | null;
 }
 
-type UserState = InitialStateType<UserFetched[] | User | null | UserFetched>;
+type RoleState = InitialStateType<Role[] | Role | null >;
 
-const initialState: UserState = {
+const initialState: RoleState = {
   data: null,
   loading: false,
   error: null,
 };
 
-export const usersSlice = createSlice({
-  name: 'user',
+export const rolesSlice = createSlice({
+  name: 'roles',
   initialState,
   reducers: {
-    createUsersStart(state) {
+    createRolesStart(state) {
       state.error = null;
       state.loading = true;
     },
-    createUserSuccess(state) {
+    createRoleSuccess(state) {
       state.loading = false;
       state.error = null;
     },
-    createUserError(state, action) {
+    createRoleError(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
-    getUsersStart(state) {
+    getRolesStart(state) {
       state.loading = true;
       state.error = null;
     },
-    getUsersSuccess(state, action) {
+    getRolesSuccess(state, action) {
       state.data = action.payload;
       state.loading = false;
       state.error = null;
     },
-    getUsersError(state, action) {
+    getRolesError(state, action) {
       state.loading = false;
       state.error = action.payload;
       state.data = [];
     },
-    getUserStart(state, action) {
+    getRoleStart(state, action) {
       state.error = action.payload;
       state.loading = true;
     },
-    getUserSuccess(state, action) {
+    getRoleSuccess(state, action) {
       state.data = action.payload;
       state.loading = false;
       state.error = null;
     },
-    getUserError(state, action) {
+    getRoleError(state, action) {
       state.error = action.payload;
       state.loading = false;
     },
-    updateUserStart(state) {
+    updateRoleStart(state) {
       state.error = null;
       state.loading = true;
     },
-    updateUserSuccess(state) {
+    updateRoleSuccess(state) {
       state.loading = false;
       state.error = null;
     },
-    updateUserError(state, action) {
+    updateRoleError(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
-    deleteUserStart(state) {
+    deleteRoleStart(state) {
       state.error = null;
       state.loading = true;
     },
-    deleteUserSuccess(state) {
+    deleteRoleSuccess(state) {
       state.loading = false;
       state.error = null;
     },
-    deleteUserError(state, action) {
+    deleteRoleError(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
-    resetUserMessageError(state) {
+    resetRoleMessageError(state) {
       state.loading = false;
       state.error = null;
     },
@@ -91,19 +91,19 @@ export const usersSlice = createSlice({
 });
 
 export const {
-  resetUserMessageError,
-  createUsersStart,
-  createUserError,
-  createUserSuccess,
-  deleteUserError,
-  deleteUserSuccess,
-  getUserSuccess,
-  getUsersError,
-  getUsersStart,
-  getUsersSuccess,
-  updateUserError,
-  updateUserSuccess,
-  updateUserStart,
-} = usersSlice.actions;
+  resetRoleMessageError,
+  createRolesStart,
+  createRoleError,
+  createRoleSuccess,
+  deleteRoleError,
+  deleteRoleSuccess,
+  getRoleSuccess,
+  getRolesError,
+  getRolesStart,
+  getRolesSuccess,
+  updateRoleError,
+  updateRoleSuccess,
+  updateRoleStart,
+} = rolesSlice.actions;
 
-export default usersSlice.reducer;
+export default rolesSlice.reducer;

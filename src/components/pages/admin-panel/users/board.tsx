@@ -3,23 +3,21 @@ import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
 import HeadBoard from './modules/HeadBoard';
+import { UserFetched } from '@interfaces/User';
 
 export type BoardProps = {
   children: React.ReactNode;
+  isModalOpenToUpdate: boolean,
 };
 
-export default function Board({ children }: BoardProps) {
+export default function Board({ children, isModalOpenToUpdate }: BoardProps) {
   const {
-    isModalOpen,
-    isModalOpenToUpdate,
-    handleOpenModal,
     handleCloseModal,
-    handleDeleteUser,
-    setIsModalOpenToUpdate,
-    setSelectedUser,
     selectedUser,
     searchTerm,
     handleInputChange,
+    setSelectedUser,
+    setIsModalOpenToUpdate
   } = useUsers();
 
   const handleClose = (callback?: () => void) => {
@@ -29,6 +27,9 @@ export default function Board({ children }: BoardProps) {
     }
   };
 
+  console.log(isModalOpenToUpdate)
+  console.log(selectedUser)
+
   return (
     <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
@@ -37,8 +38,11 @@ export default function Board({ children }: BoardProps) {
             <div className="mb-4 w-full">
               <Form.Item>
                 <Input
+                  type='text'
+                  id='search'
+                  name='search'
                   size="large"
-                  placeholder="Buscar usuario"
+                  placeholder="Buscar usuario por nombre"
                   value={searchTerm}
                   onChange={handleInputChange}
                 />
@@ -50,10 +54,11 @@ export default function Board({ children }: BoardProps) {
           placement="leftTop"
           trigger="click"
           content={
-            <FormBoard
-              userIdToUpdate={selectedUser?.id}
-              onClose={handleClose}
-            />
+            (isModalOpenToUpdate ? (
+              <FormBoard userControlNumberToUpdate={selectedUser?.controlNumber} onClose={handleClose} />
+            ) : (
+              <FormBoard onClose={handleClose} />
+            ) )
           }
         >
           <Button
@@ -72,15 +77,5 @@ export default function Board({ children }: BoardProps) {
       </div>
     </div>
 
-    /* {
-    isModalOpenToUpdate && (
-      <NewUserModal
-        userIdToUpdate={selectedUser?.userId}
-        onClose={handleClose}
-      />
-    )
-  }
-  { isModalOpen && <NewUserModal onClose={handleClose} /> }
-     */
   );
 }
