@@ -18,6 +18,7 @@ type UserRowProps = {
 
 function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
   const [open, setOpen] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleOpenCollapse = () => {
     setOpen(!open);
@@ -46,6 +47,7 @@ function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
         <div className="w-full flex justify-between items-center">
           <p className="font-medium">Habilidades</p>
           <button
+            onClick={() => setOpenDrawer(true)}
             type="button"
             className="bg-main_blue_dark px-6 py-1 text-main_white w-[200px] rounded-lg"
           >
@@ -61,7 +63,7 @@ function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
           ))}
         </div>
       </div>
-      <DrawerComponent />
+      <DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
     </div>
   );
 }
