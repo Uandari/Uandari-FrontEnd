@@ -1,14 +1,15 @@
 export const shiftsLabels = [
   {
-    value: 'Célula 1',
-    label: 'Célula 1',
+    value: 'Turno A',
+    label: 'Turno A',
   },
   {
-    value: 'Célula 2',
-    label: 'Célula 2',
+    value: 'Turno B',
+    label: 'Turno B',
   },
   {
-    value: 'Célula 3',
-    label: 'Célula 3',
+    value: 'Turno B',
+    label: 'Turno B',
   },
+  
 ];

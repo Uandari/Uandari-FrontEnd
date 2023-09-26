@@ -1,5 +1,20 @@
 import { Cell } from '@interfaces/Cell';
 
+export const cellsLabels = [
+  {
+    value: 'Célula 1',
+    label: 'Célula 1',
+  },
+  {
+    value: 'Célula 2',
+    label: 'Célula 2',
+  },
+  {
+    value: 'Célula 3',
+    label: 'Célula 3',
+  },
+];
+
 export const initialCellInfo = {
   id: 0,
   cellName: '',

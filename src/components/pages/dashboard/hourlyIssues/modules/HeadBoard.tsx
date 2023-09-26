@@ -57,7 +57,7 @@ function HeadBoard() {
         <CellBoard title="Debe acumulado" />
         <CellBoard title="Diferencia" />
         <CellBoard title="Diferencia Acumulada" />
-        <CellBoard title="Problema" colSpan="col-span-2" />
+        <CellBoard title="Problema" colSpan='2'/>
       </div>
     </div>
   );
