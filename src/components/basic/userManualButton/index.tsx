@@ -4,13 +4,9 @@ import HelpIcon from '@icons/helpIcon.svg';
 export default function OpenUserManual() {
   const pdfUrl = UserManualFile;
 
-  const handleClick = () => {
-    window.open(pdfUrl, '_blank');
-  };
-
   return (
     <div>
-      <a href={pdfUrl} target="_blank" onClick={handleClick} rel="noreferrer">
+      <a href={pdfUrl} target="_blank" rel="noreferrer">
         {' '}
         <button
           type="button"
