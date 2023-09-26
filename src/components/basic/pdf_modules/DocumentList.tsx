@@ -26,7 +26,7 @@ export default function DocumentList({
   }, [setYear]);
 
   return (
-    <div className="border-l overflow-y-scroll w-1/3">
+    <div className="border-l overflow-y-scroll hide-scrollbar w-1/3">
       <h2 className="font-medium text-xl p-4">Lista de Documentos</h2>
       <div className="flex gap-x-3 pl-4 mb-3">
         <Select
