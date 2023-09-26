@@ -1,16 +1,59 @@
-import OptionsIcon from '@assets/icons/bulletsButton.svg';
+import { useState } from 'react';
+
 import UserImage from '@assets/usersIcons/6.png';
-import { Button, Drawer, Popover, Space } from 'antd';
+import { levelsLabels } from '@mocks/Levels';
+import { skillsLabels } from '@mocks/Skills';
+import { Button, Drawer, Select, Space } from 'antd';
+
+import SkillTab from './SkillTab';
 
 type DrawerComponentProps = {
   setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>;
   openDrawer: boolean;
+  user: {
+    id: number;
+    fullname: string;
+    controlNumber: number;
+    skills: {
+      name: string;
+      level: string;
+    }[];
+  };
 };
 
 export default function DrawerComponent({
   setOpenDrawer,
   openDrawer,
+  user,
 }: DrawerComponentProps) {
+  const [userDetail, setUserDetail] = useState(user);
+  const [selectedSkill, setSelectedSkill] = useState(''); // Estado para la habilidad seleccionada
+  const [selectedLevel, setSelectedLevel] = useState(''); // Estado para el nivel seleccionado
+
+  const handleLevelChange = (newLevel: string, skillIndex: number) => {
+    const updatedSkills = [...userDetail.skills]; // Crear una copia del array de habilidades
+    updatedSkills[skillIndex].level = newLevel; // Actualizar el nivel de habilidad
+    setUserDetail({ ...userDetail, skills: updatedSkills }); // Actualizar el estado local del usuario
+  };
+
+  const handleDeleteSkill = (skillIndex: number) => {
+    const updatedSkills = [...userDetail.skills];
+    updatedSkills.splice(skillIndex, 1); // Eliminar la habilidad en el índice dado
+    setUserDetail({ ...userDetail, skills: updatedSkills });
+  };
+
+  const handleAddSkill = () => {
+    if (selectedSkill && selectedLevel) {
+      const newSkill = { name: selectedSkill, level: selectedLevel };
+      const updatedSkills = [...userDetail.skills, newSkill];
+      setUserDetail({ ...userDetail, skills: updatedSkills });
+
+      // Reiniciar los estados de los Select después de agregar la habilidad
+      setSelectedSkill('');
+      setSelectedLevel('');
+    }
+  };
+
   const onClose = () => {
     setOpenDrawer(false);
   };
@@ -36,54 +79,71 @@ export default function DrawerComponent({
           <img className="w-12" src={UserImage} alt="img-user" />
           <div>
             <p className="text-main_title_color font-medium text-lg">
-              Nombre de usuario
+              {userDetail.fullname}
             </p>
             <p className="text-main_text_color text-sm">
-              Número de control: 12334
+              Número de control: {userDetail.controlNumber}
             </p>
           </div>
         </div>
-        <div className="border-b py-3 relative">
-          <p className="text-main_title_color font-medium">
-            Nombre de habilidad
-          </p>
-          <p className="text-main_text_color">Nivel 1</p>
-          <Popover
-            trigger="click"
-            placement="left"
-            content={
-              <div className="flex flex-col gap-y-2">
-                <button
-                  className="px-3 py-1 hover:bg-slate-100 rounded-md text-left  "
-                  type="button"
-                >
-                  Capacitacion y adiestramiento
-                </button>
-                <button
-                  className="px-3 py-1 hover:bg-slate-100 rounded-md text-left"
-                  type="button"
-                >
-                  Capacitacion y adiestramiento
-                </button>
-                <button
-                  className="px-3 py-1 hover:bg-slate-100 rounded-md text-left"
-                  type="button"
-                >
-                  Capacitacion y adiestramiento
-                </button>
-                <button
-                  className="px-3 py-1 hover:bg-red-100 rounded-md text-left"
-                  type="button"
-                >
-                  Eliminar
-                </button>
-              </div>
-            }
+        {userDetail.skills.map((skill, index) => (
+          <SkillTab
+            skill={skill}
+            skillIndex={index}
+            handleDeleteSkill={handleDeleteSkill}
+            handleLevelChange={handleLevelChange}
+          />
+        ))}
+        <div className="grid grid-cols-5 gap-x-4 mt-6">
+          <Select
+            className="col-span-2"
+            showSearch
+            placeholder="Seleccionar habilidad"
+            optionFilterProp="children"
+            filterOption={(input, option) => {
+              if (option) {
+                if (
+                  typeof input === 'string' &&
+                  typeof option.props.children === 'string'
+                ) {
+                  return option.props.children
+                    .toLowerCase()
+                    .includes(input.toLowerCase());
+                }
+              }
+              return false; // No aplicar filtro si input u option no son cadenas de texto
+            }}
+            value={selectedSkill}
+            onChange={(value) => setSelectedSkill(value)}
           >
-            <button className="absolute top-3 right-2" type="button">
-              <img src={OptionsIcon} alt="options-icon" />
-            </button>
-          </Popover>
+            {skillsLabels.map((skill) => (
+              <Select.Option key={skill.value} value={skill.value}>
+                {skill.label}
+              </Select.Option>
+            ))}
+          </Select>
+
+          <Select
+            className="col-span-2"
+            placeholder="Seleccionar nivel"
+            optionFilterProp="children"
+            value={selectedLevel} // Valor seleccionado para nivel
+            onChange={(value) => setSelectedLevel(value)}
+          >
+            {levelsLabels.map((level) => (
+              <Select.Option key={level.value} value={level.label}>
+                {level.label}
+              </Select.Option>
+            ))}
+          </Select>
+          <button
+            type="button"
+            className="text-white bg-main_blue_dark px-3 py-1 font-medium rounded-md"
+            onClick={handleAddSkill}
+            value={selectedLevel} // Valor seleccionado para nivel
+          >
+            Añadir
+          </button>
         </div>
       </div>
     </Drawer>

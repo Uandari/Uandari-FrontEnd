@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import DownIcon from '@assets/icons/downIcon.svg';
 import UserImage from '@assets/usersIcons/11.png';
+import { userSkills } from '@mocks/UserSkills';
 
 import DrawerComponent from './Drawer';
 
@@ -16,7 +17,13 @@ type UserRowProps = {
   }[];
 };
 
-function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
+export default function UserRow({
+  id,
+  image,
+  fullname,
+  controlNumber,
+  skills,
+}: UserRowProps) {
   const [open, setOpen] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -63,7 +70,11 @@ function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
           ))}
         </div>
       </div>
-      <DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
+      <DrawerComponent
+        user={userSkills}
+        openDrawer={openDrawer}
+        setOpenDrawer={setOpenDrawer}
+      />
     </div>
   );
 }
@@ -71,5 +82,3 @@ function UserRow({ id, image, fullname, controlNumber, skills }: UserRowProps) {
 UserRow.defaultProps = {
   image: null,
 };
-
-export default UserRow;

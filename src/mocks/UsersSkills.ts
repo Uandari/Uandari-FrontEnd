@@ -1,4 +1,4 @@
-export const userSkills = [
+export const usersSkills = [
   {
     id: 1,
     fullname: 'Fulano Gómez Gutiérrez',

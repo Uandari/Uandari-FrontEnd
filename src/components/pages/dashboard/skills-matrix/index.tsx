@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Topbar from '@components/layout/topbar';
 import { shiftsLabels } from '@mocks/Shifts';
-import { userSkills } from '@mocks/UsersSkills';
+import { usersSkills } from '@mocks/UsersSkills';
 import { Select } from 'antd';
 
 import UserRow from './UserRow';
@@ -10,7 +10,7 @@ import UserRow from './UserRow';
 function SkillsMatrix() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredUsers = userSkills.filter((user) => {
+  const filteredUsers = usersSkills.filter((user) => {
     const fullName = `${user.fullname}`;
     return fullName.toLowerCase().includes(searchTerm.toLowerCase());
   });
