@@ -43,9 +43,6 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
         </div>
       </div>
       <div className="flex">
-        <div className="border-r text-center w-14 flex items-center border-y">
-          A
-        </div>
         <div className="col-span-2 border-t h-full ">
           {localDaysState.map((item) => {
             return (

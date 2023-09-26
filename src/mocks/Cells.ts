@@ -15,7 +15,6 @@ export const cellsLabels = [
   },
 ];
 
-
 export const initialCellInfo = {
   id: 0,
   cellName: '',
