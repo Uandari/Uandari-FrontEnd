@@ -46,6 +46,7 @@ import {
   RESULTS_LOG,
 } from './paths';
 import StaffRotation from '@components/pages/dashboard/staff-rotation';
+import ResultsLog from '@components/pages/dashboard/results-log';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
