@@ -3,8 +3,8 @@ import { useState } from 'react';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
 import { TechnitiansListMock } from '@mocks/Technitian';
 
-import RowBoard from '../boardTechnitian/RowBoard';
 import Board from '../../boardTechnitian';
+import RowBoard from '../boardTechnitian/RowBoard';
 
 export default function TechnitiansTab() {
   const [searchTerm] = useState('');
@@ -29,7 +29,8 @@ export default function TechnitiansTab() {
             shift={technitian.shift}
             imageUrl={imagenUsuario1}
           />
-        ))) : (
+        ))
+      ) : (
         <div className="text-center text-xl mt-28 text-gray">
           No se encontraron técnicos
         </div>

@@ -7,8 +7,11 @@ export type BoardProps = {
 export default function Board({ children }: BoardProps) {
   return (
     <div className="h-full">
-        <HeadBoard />
-      <div className="overflow-y-auto hide-scrollbar" style={{ maxHeight: '70vh' }}>
+      <HeadBoard />
+      <div
+        className="overflow-y-auto hide-scrollbar"
+        style={{ maxHeight: '70vh' }}
+      >
         {children}
       </div>
     </div>

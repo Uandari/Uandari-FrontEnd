@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import LoginBackground from '@assets/login_img.svg';
@@ -7,21 +8,15 @@ import { UserCredentials } from '@interfaces/User';
 import { postLogin } from '@redux/thunks/authThunk';
 import { ADMIN, ADMIN_USERS } from '@routes/paths';
 import { Button, Form, Input } from 'antd';
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
-
   const [userCredentials, setUserCredentials] = useState<UserCredentials>({
     controlNumber: '',
     password: '',
   });
 
-
-  
-  const { data } = useAppSelector(
-    (state: RootState) => state.authReducer,
-  );
+  const { data } = useAppSelector((state: RootState) => state.authReducer);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -82,19 +77,36 @@ export default function LoginPage() {
         <Form className="w-[400px] text-center mt-6">
           <div className="mb-4 w-full">
             <Form.Item>
-              <Input size="large" placeholder="Número de control" name='controlNumber' id='control_number'
-              value={userCredentials.controlNumber} onChange={handleInputChange}/>
+              <Input
+                size="large"
+                placeholder="Número de control"
+                name="controlNumber"
+                id="control_number"
+                value={userCredentials.controlNumber}
+                onChange={handleInputChange}
+              />
             </Form.Item>
             <Form.Item>
-              <Input size="large" placeholder="Contraseña"  type='password' name='password' id='password' value={userCredentials.password} onChange={handleInputChange}/>
+              <Input
+                size="large"
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                id="password"
+                value={userCredentials.password}
+                onChange={handleInputChange}
+              />
             </Form.Item>
           </div>
 
           <div className="mb-6 flex items-center justify-center">
             <Button
-               onClick={() =>
+              onClick={() =>
                 dispatch(
-                  postLogin(userCredentials.controlNumber, userCredentials.password),
+                  postLogin(
+                    userCredentials.controlNumber,
+                    userCredentials.password,
+                  ),
                 )
               }
               size="large"

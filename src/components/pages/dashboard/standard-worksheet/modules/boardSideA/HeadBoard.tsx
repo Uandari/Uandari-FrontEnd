@@ -1,8 +1,7 @@
 import { cellsLabels } from '@mocks/Cells';
 import { shiftsLabels } from '@mocks/Shifts';
-import { Select } from 'antd';
-
 import { days } from '@mocks/StandardWorksheetA';
+import { Select } from 'antd';
 
 export default function HeadBoard() {
   return (
@@ -82,7 +81,9 @@ export default function HeadBoard() {
               Semana 1
             </div>
             <div className="grid grid-cols-7 row-span-2 border-t">
-              <div className="flex items-center justify-center border-l ">L</div>
+              <div className="flex items-center justify-center border-l ">
+                L
+              </div>
               <div className="flex items-center justify-center border-l">M</div>
               <div className="flex items-center justify-center border-l">M</div>
               <div className="flex items-center justify-center border-l">J</div>

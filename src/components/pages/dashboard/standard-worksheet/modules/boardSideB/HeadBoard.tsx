@@ -1,6 +1,7 @@
-import { Select } from 'antd';
-import CellBoard from './CellBoard';
 import { cellsLabels } from '@mocks/Cells';
+import { Select } from 'antd';
+
+import CellBoard from './CellBoard';
 
 export default function HeadBoard() {
   return (
@@ -21,17 +22,16 @@ export default function HeadBoard() {
           options={cellsLabels}
         />
       </div>
-    <div className="grid grid-cols-8 border-b border-main_color h-full">
-      <CellBoard title="" />
-      <CellBoard title="Célula" />
-      <CellBoard title="Operación" />
-      <CellBoard title="Descripción de la desviación" />
-      <CellBoard title="Acción" />
-      <CellBoard title="Responsable" />
-      <CellBoard title="Plazo" />
-      <CellBoard title="Estado" />
-    </div>
+      <div className="grid grid-cols-8 border-b border-main_color h-full">
+        <CellBoard title="" />
+        <CellBoard title="Célula" />
+        <CellBoard title="Operación" />
+        <CellBoard title="Descripción de la desviación" />
+        <CellBoard title="Acción" />
+        <CellBoard title="Responsable" />
+        <CellBoard title="Plazo" />
+        <CellBoard title="Estado" />
+      </div>
     </div>
   );
 }
-

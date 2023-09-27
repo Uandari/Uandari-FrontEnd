@@ -11,7 +11,6 @@ export type RowBoardProps = {
 };
 
 export default function RowBoard({ operation, result }: RowBoardProps) {
-
   const [localDaysState, setLocalDaysState] = useState(result);
 
   const handleUpdateDayState = (day: string, newState: number) => {
@@ -40,31 +39,29 @@ export default function RowBoard({ operation, result }: RowBoardProps) {
               </div>
             );
           })}
-
         </div>
       </div>
       <div className="grid grid-rows-3 col-span-10">
-          {localDaysState.map((item) => {
-            return (
-              <div key={item.shift} className="flex border-b">
-                {item.weeks.map((week) => (
-                  <div
+        {localDaysState.map((item) => {
+          return (
+            <div key={item.shift} className="flex border-b">
+              {item.weeks.map((week) => (
+                <div
+                  key={week.day}
+                  className="flex flex-1 text-transparent border-l p-2 justify-center items-center relative"
+                >
+                  {week.day}
+                  <ColorChangingBox
                     key={week.day}
-                    className="flex flex-1 text-transparent border-l p-2 justify-center items-center relative"
-                  >
-                    {week.day}
-                    <ColorChangingBox
-                      key={week.day}
-                      day={week}
-                      onUpdateDayState={handleUpdateDayState}
-                    />
-                  </div>
-                ))}
-              </div>
-            );
-          })}
+                    day={week}
+                    onUpdateDayState={handleUpdateDayState}
+                  />
+                </div>
+              ))}
+            </div>
+          );
+        })}
       </div>
     </div>
-
   );
 }

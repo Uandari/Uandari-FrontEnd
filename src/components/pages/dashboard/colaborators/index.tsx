@@ -23,7 +23,6 @@ export default function Colaborators() {
       <div className="sticky top-0">
         <Topbar title="Colaboradores" variant="secondary" />
         <div className="w-full">
-
           <Tabs className="h-full flex flex-1 " size="large" items={pages} />
         </div>
       </div>

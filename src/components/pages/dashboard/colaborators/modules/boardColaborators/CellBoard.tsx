@@ -5,9 +5,7 @@ export type CellBoardTypes = {
 
 function CellBoard({ title, colSpan }: CellBoardTypes) {
   return (
-    <div
-      className={`col-span-${colSpan} pl-12 font-medium text-main_gray`}
-    >
+    <div className={`col-span-${colSpan} pl-12 font-medium text-main_gray`}>
       <p> {title} </p>
     </div>
   );
