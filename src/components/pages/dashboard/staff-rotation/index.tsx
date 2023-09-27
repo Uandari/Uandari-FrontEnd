@@ -11,7 +11,7 @@ export default function StaffRotation() {
       <div className="border-b">
         <Topbar variant="secondary" title="Rotación de personal" />
       </div>
-      <div className="flex-1 overflow-y-auto   hide-scrollbar bg-main_white">
+      <div className="flex-1 overflow-y-auto  bg-main_white">
         <Board>
           {weeks.map((week) => (
             <div>
