@@ -1,0 +1,140 @@
+Date : 2023-09-26 15:48:19
+Directory : c:\Users\ricar\Desktop\front-vw\vw-frontend
+Total : 68 files,  1754 codes, 1 comments, 100 blanks, all 1855 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         43 |        715 |         -1 |         74 |        788 |
+| JSON           |          2 |        598 |          0 |          0 |        598 |
+| TypeScript     |         18 |        426 |          2 |         21 |        449 |
+| XML            |          5 |         15 |          0 |          5 |         20 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                  | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                     |         68 |      1,754 |          1 |        100 |      1,855 |
+| . (Files)                                                                                                                             |          2 |        598 |          0 |          0 |        598 |
+| src                                                                                                                                   |         66 |      1,156 |          1 |        100 |      1,257 |
+| src (Files)                                                                                                                           |          1 |         -4 |          0 |          0 |         -4 |
+| src\api                                                                                                                               |          1 |          1 |          0 |          1 |          2 |
+| src\app                                                                                                                               |          1 |          3 |          0 |          0 |          3 |
+| src\assets                                                                                                                            |          5 |         15 |          0 |          5 |         20 |
+| src\assets\icons                                                                                                                      |          5 |         15 |          0 |          5 |         20 |
+| src\components                                                                                                                        |         41 |        707 |         10 |         74 |        791 |
+| src\components\basic                                                                                                                  |          4 |        124 |          0 |         12 |        136 |
+| src\components\basic\pdf_modules                                                                                                      |          3 |        127 |          0 |         13 |        140 |
+| src\components\basic\userManualButton                                                                                                 |          1 |         -3 |          0 |         -1 |         -4 |
+| src\components\pages                                                                                                                  |         37 |        583 |         10 |         62 |        655 |
+| src\components\pages\admin-panel                                                                                                      |         12 |        -63 |         -2 |         -3 |        -68 |
+| src\components\pages\admin-panel (Files)                                                                                              |          1 |         -7 |          0 |          0 |         -7 |
+| src\components\pages\admin-panel\users                                                                                                |         11 |        -56 |         -2 |         -3 |        -61 |
+| src\components\pages\admin-panel\users (Files)                                                                                        |          1 |          4 |        -10 |          1 |         -5 |
+| src\components\pages\admin-panel\users\modules                                                                                        |         10 |        -60 |          8 |         -4 |        -56 |
+| src\components\pages\admin-panel\users\modules (Files)                                                                                |          2 |         52 |          6 |          2 |         60 |
+| src\components\pages\admin-panel\users\modules\Tabs                                                                                   |          8 |       -112 |          2 |         -6 |       -116 |
+| src\components\pages\dashboard                                                                                                        |         24 |        565 |          3 |         59 |        627 |
+| src\components\pages\dashboard\colaborators                                                                                           |          9 |         37 |         -2 |         13 |         48 |
+| src\components\pages\dashboard\colaborators (Files)                                                                                   |          4 |         10 |         -3 |          2 |          9 |
+| src\components\pages\dashboard\colaborators\modules                                                                                   |          5 |         27 |          1 |         11 |         39 |
+| src\components\pages\dashboard\colaborators\modules\Tabs                                                                              |          2 |        -23 |         -1 |          2 |        -22 |
+| src\components\pages\dashboard\colaborators\modules\boardColaborators                                                                 |          3 |         50 |          2 |          9 |         61 |
+| src\components\pages\dashboard\critical-route                                                                                         |          1 |         36 |          0 |          6 |         42 |
+| src\components\pages\dashboard\points-plan                                                                                            |          1 |         36 |          0 |          6 |         42 |
+| src\components\pages\dashboard\skills-matrix                                                                                          |          4 |        236 |          1 |         16 |        253 |
+| src\components\pages\dashboard\standard-worksheet                                                                                     |          8 |        216 |          4 |         18 |        238 |
+| src\components\pages\dashboard\standard-worksheet (Files)                                                                             |          2 |         18 |          0 |          0 |         18 |
+| src\components\pages\dashboard\standard-worksheet\modules                                                                             |          6 |        198 |          4 |         18 |        220 |
+| src\components\pages\dashboard\standard-worksheet\modules\Tabs                                                                        |          2 |         -9 |          0 |          0 |         -9 |
+| src\components\pages\dashboard\standard-worksheet\modules\boardSideA                                                                  |          3 |        188 |          4 |         18 |        210 |
+| src\components\pages\dashboard\standard-worksheet\modules\boardSideB                                                                  |          1 |         19 |          0 |          0 |         19 |
+| src\components\pages\dashboard\team-goals                                                                                             |          1 |          4 |          0 |          0 |          4 |
+| src\components\pages\dashboard\team-goals\modules                                                                                     |          1 |          4 |          0 |          0 |          4 |
+| src\components\pages\login                                                                                                            |          1 |         81 |          9 |          6 |         96 |
+| src\hooks                                                                                                                             |          2 |        -36 |          0 |         -8 |        -44 |
+| src\interfaces                                                                                                                        |          2 |         17 |          0 |          2 |         19 |
+| src\mocks                                                                                                                             |          7 |        175 |          0 |          7 |        182 |
+| src\redux                                                                                                                             |          3 |        260 |          1 |         18 |        279 |
+| src\redux\slices                                                                                                                      |          1 |        102 |          1 |          7 |        110 |
+| src\redux\thunks                                                                                                                      |          2 |        158 |          0 |         11 |        169 |
+| src\routes                                                                                                                            |          1 |         12 |        -11 |          0 |          1 |
+| src\utils                                                                                                                             |          2 |          6 |          1 |          1 |          8 |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                              | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\package-lock.json                                                                         | JSON           |        597 |          0 |          0 |        597 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\package.json                                                                              | JSON           |          1 |          0 |          0 |          1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\api\axios.ts                                                                          | TypeScript     |          1 |          0 |          1 |          2 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\app\store.ts                                                                          | TypeScript     |          3 |          0 |          0 |          3 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\downIcon.svg                                                             | XML            |          3 |          0 |          1 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\lastNames.svg                                                            | XML            |          3 |          0 |          1 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\mail.svg                                                                 | XML            |          3 |          0 |          1 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\name.svg                                                                 | XML            |          3 |          0 |          1 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\assets\icons\password.svg                                                             | XML            |          3 |          0 |          1 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\pdf_modules\DocumentList.tsx                                         | TypeScript JSX |         83 |          0 |          6 |         89 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\pdf_modules\DocumentListItem.tsx                                     | TypeScript JSX |         28 |          0 |          4 |         32 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\pdf_modules\PDFViewer.tsx                                            | TypeScript JSX |         16 |          0 |          3 |         19 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\basic\userManualButton\index.tsx                                           | TypeScript JSX |         -3 |          0 |         -1 |         -4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\index.tsx                                                | TypeScript JSX |         -7 |          0 |          0 |         -7 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\board.tsx                                          | TypeScript JSX |          4 |        -10 |          1 |         -5 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\FormBoard.tsx                              | TypeScript JSX |         56 |          6 |          3 |         65 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\RowBoard.tsx                               | TypeScript JSX |         -4 |          0 |         -1 |         -5 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\AdministratorsTab.tsx                 | TypeScript JSX |        -53 |          0 |         -6 |        -59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\AllTab.tsx                            | TypeScript JSX |         59 |          1 |          3 |         63 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\CoordinatorsTab.tsx                   | TypeScript JSX |        -53 |          0 |         -6 |        -59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\FilteredTab.tsx                       | TypeScript JSX |         90 |          1 |         20 |        111 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\ManagersTab.tsx                       | TypeScript JSX |        -53 |          0 |         -6 |        -59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\TeamLeadersTab.tsx                    | TypeScript JSX |        -53 |          0 |         -6 |        -59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\VisualizersTab.tsx                    | TypeScript JSX |        -53 |          0 |         -6 |        -59 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\admin-panel\users\modules\Tabs\index.tsx                             | TypeScript JSX |          4 |          0 |          1 |          5 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\RowBoard.tsx                                  | TypeScript JSX |        -23 |         -2 |         -3 |        -28 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\boardColaborators.tsx                         | TypeScript JSX |         31 |          0 |          4 |         35 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\boardTechnitian.tsx                           | TypeScript JSX |          0 |         -1 |          0 |         -1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\index.tsx                                     | TypeScript JSX |          2 |          0 |          1 |          3 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\Tabs\ColaboratorsTab.tsx              | TypeScript JSX |         -8 |          0 |          2 |         -6 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\Tabs\TechnitiansTab.tsx               | TypeScript JSX |        -15 |         -1 |          0 |        -16 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardColaborators\CellBoard.tsx       | TypeScript JSX |         17 |          0 |          3 |         20 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardColaborators\HeadBoard.tsx       | TypeScript JSX |         10 |          0 |          3 |         13 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\colaborators\modules\boardColaborators\RowBoard.tsx        | TypeScript JSX |         23 |          2 |          3 |         28 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\critical-route\index.tsx                                   | TypeScript JSX |         36 |          0 |          6 |         42 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\points-plan\index.tsx                                      | TypeScript JSX |         36 |          0 |          6 |         42 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\Drawer.tsx                                   | TypeScript JSX |        135 |          1 |         10 |        146 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\SkillTab.tsx                                 | TypeScript JSX |         67 |          0 |          4 |         71 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\UserRow.tsx                                  | TypeScript JSX |         42 |          0 |          2 |         44 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\skills-matrix\index.tsx                                    | TypeScript JSX |         -8 |          0 |          0 |         -8 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\boardSideA.tsx                          | TypeScript JSX |          4 |          0 |         -1 |          3 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\index.tsx                               | TypeScript JSX |         14 |          0 |          1 |         15 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\Tabs\SideATab.tsx               | TypeScript JSX |         13 |          0 |          4 |         17 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\Tabs\index.tsx                  | TypeScript JSX |        -22 |          0 |         -4 |        -26 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideA\ColorChangingBox.tsx | TypeScript JSX |         32 |          3 |          5 |         40 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideA\HeadBoard.tsx        | TypeScript JSX |         96 |          0 |          3 |         99 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideA\RowBoard.tsx         | TypeScript JSX |         60 |          1 |         10 |         71 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\standard-worksheet\modules\boardSideB\HeadBoard.tsx        | TypeScript JSX |         19 |          0 |          0 |         19 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\dashboard\team-goals\modules\GoalsCard.tsx                           | TypeScript JSX |          4 |          0 |          0 |          4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\components\pages\login\index.tsx                                                      | TypeScript JSX |         81 |          9 |          6 |         96 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\hooks\useForm.ts                                                                      | TypeScript     |        -44 |          0 |         -9 |        -53 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\hooks\useUsers.ts                                                                     | TypeScript     |          8 |          0 |          1 |          9 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\Document.ts                                                                | TypeScript     |          6 |          0 |          1 |          7 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\interfaces\User.ts                                                                    | TypeScript     |         11 |          0 |          1 |         12 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\main.tsx                                                                              | TypeScript JSX |         -4 |          0 |          0 |         -4 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Cells.ts                                                                        | TypeScript     |         14 |          0 |          1 |         15 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Levels.ts                                                                       | TypeScript     |         14 |          0 |          1 |         15 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Shifts.ts                                                                       | TypeScript     |          0 |          0 |          1 |          1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Skills.ts                                                                       | TypeScript     |         18 |          0 |          1 |         19 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\StandardWorksheetA.ts                                                           | TypeScript     |        262 |          0 |          2 |        264 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\UserSkills.ts                                                                   | TypeScript     |         19 |          0 |          1 |         20 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\mocks\Users.ts                                                                        | TypeScript     |       -152 |          0 |          0 |       -152 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\slices\roleSlice.ts                                                             | TypeScript     |        102 |          1 |          7 |        110 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\thunks\roleThunk.ts                                                             | TypeScript     |        137 |          0 |         10 |        147 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\redux\thunks\userThunk.ts                                                             | TypeScript     |         21 |          0 |          1 |         22 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\routes\provider.tsx                                                                   | TypeScript JSX |         12 |        -11 |          0 |          1 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\utils\ApiError.ts                                                                     | TypeScript     |          2 |          0 |          1 |          3 |
+| c:\Users\ricar\Desktop\front-vw\vw-frontend\src\utils\index.ts                                                                        | TypeScript     |          4 |          1 |          0 |          5 |
+| Total                                                                                                                                 |                |      1,754 |          1 |        100 |      1,855 |
++---------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

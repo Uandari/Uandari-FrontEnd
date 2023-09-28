@@ -20,7 +20,7 @@ import Board from '../../board';
 import RowBoard from '../RowBoard';
 
 export type TabProps = {
-  role: string | "";
+  role: string | '';
 };
 
 export default function FilteredTab({ role }: TabProps) {
@@ -63,7 +63,6 @@ export default function FilteredTab({ role }: TabProps) {
     dispatch(getUsers());
   }, [dispatch]);
 
-
   useEffect(() => {
     if (Array.isArray(data)) {
       setUsersData(
@@ -74,11 +73,11 @@ export default function FilteredTab({ role }: TabProps) {
     }
   }, [data, searchTerm]);
 
-
-  const filteredUsers = usersData.filter((user) => user.role.toString() === role);
+  const filteredUsers = usersData.filter(
+    (user) => user.role.toString() === role,
+  );
 
   return (
-
     <Board>
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user) => (
@@ -101,10 +100,7 @@ export default function FilteredTab({ role }: TabProps) {
   );
 }
 
-
-
-
 FilteredTab.defaultProps = {
-  role: "Rol",
+  role: 'Rol',
   allUsersTab: true,
 };

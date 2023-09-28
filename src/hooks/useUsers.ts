@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
 import { colors } from '@constants/colors';
-import { User, UserFetched, UserFormData } from '@interfaces/User';
+import { UserFetched, UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -32,7 +32,6 @@ const useUsers = () => {
   };
 
   const handleDeleteUser = async (controlNumber: string) => {
-    console.log("HandleDeleteUser controlNumber: " + controlNumber)
     Swal.fire({
       title: 'Eliminar Usuario',
       text: '¿Está seguro que desea eliminar el usuario seleccionado?',
@@ -51,16 +50,14 @@ const useUsers = () => {
   };
 
   const handleCreateUser = async (userData: UserFormData) => {
-    console.log("HandleCreateUser userData: " + userData)
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
 
-  const handleUpdateUser = async (userData: User) => {
-    console.log("handleUpdateUser userData: " + userData)
+  /* const handleUpdateUser = async (userData: UserFetched) => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
-  };
+  }; */
 
   const handleGetUser = async (controlNumber: string) => {
     await dispatch(getUser(controlNumber));
@@ -79,7 +76,7 @@ const useUsers = () => {
     handleOpenModal,
     handleCloseModal,
     handleDeleteUser,
-    handleUpdateUser,
+    // handleUpdateUser,
     handleCreateUser,
     setIsModalOpen,
     setIsModalOpenToUpdate,

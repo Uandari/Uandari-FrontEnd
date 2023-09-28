@@ -7,11 +7,10 @@ export interface UserFormData {
   idUser: number;
   name: string;
   lastNames: string;
-  controlNumber?: string;
+  controlNumber: string;
   mail: string;
   password: string;
   idRole: number;
-  token: string;
   imageUrl: string;
 }
 
