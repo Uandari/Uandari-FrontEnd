@@ -14,10 +14,7 @@ export default function Board({ children }: BoardProps) {
           <Form className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
-                <Input
-                  size="large"
-                  placeholder="Buscar Técnico"
-                />
+                <Input size="large" placeholder="Buscar Técnico" />
               </Form.Item>
             </div>
           </Form>

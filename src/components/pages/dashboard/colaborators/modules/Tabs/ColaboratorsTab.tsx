@@ -25,13 +25,12 @@ export default function ColaboratorsTab() {
             role={user.role}
             imageUrl={imagenUsuario1}
           />
-        ))) : (
+        ))
+      ) : (
         <div className="text-center text-xl mt-28 text-gray">
           No se encontraron colaboradores
         </div>
       )}
     </Board>
   );
-
 }
-
