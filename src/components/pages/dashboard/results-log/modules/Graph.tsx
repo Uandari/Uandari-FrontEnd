@@ -1,17 +1,26 @@
-import { DatePicker, DatePickerProps } from 'antd';
+/* eslint-disable no-nested-ternary */
+import { monthGoals } from '@mocks/MonthGoals';
+import { weeks } from '@mocks/StaffRotation';
+import { years } from '@mocks/Years';
+import { Select } from 'antd';
 import {
   ResponsiveContainer,
   Tooltip,
-  LineChart,
   CartesianGrid,
   XAxis,
   YAxis,
   Legend,
   Line,
+  PieChart,
 } from 'recharts';
 
 type GraphProps = {
-  name: string;
+  filterDay?: boolean;
+  filterWeek?: boolean;
+  filterMonth?: boolean;
+  filterYear?: boolean;
+  graph: 'PieChart' | 'BarChart' | 'LineChart';
+  title: string;
   data: {
     name: string;
     Turno_A: number;
@@ -20,19 +29,67 @@ type GraphProps = {
   }[];
 };
 
-function Graph({ name, data }: GraphProps) {
-  const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
-  };
+function Graph({
+  title,
+  data,
+  graph,
+  filterDay,
+  filterWeek,
+  filterMonth,
+  filterYear,
+}: GraphProps) {
+  const monthNames = monthGoals.map((goal) => goal.name);
   return (
     <div>
       <div className="px-4 mb-3">
-        <p className="text-lg mb-3">{name} </p>
-        <DatePicker className="w-[250px] " onChange={onChange} picker="week" />
+        <p className="text-lg mb-3">{title} </p>
+        {filterDay ? (
+          <Select placeholder="Filtrar por día">
+            {weeks.map((week) => (
+              <div>
+                {week.days.map((day) => (
+                  <Select.Option key={day.date} value={day.date}>
+                    {day.date}
+                  </Select.Option>
+                ))}
+              </div>
+            ))}
+          </Select>
+        ) : null}
+        {filterWeek ? (
+          <Select placeholder="Filtrar por semana">
+            {weeks.map((week) => (
+              <Select.Option key={week.value} value={week.value}>
+                {week.value}
+              </Select.Option>
+            ))}
+          </Select>
+        ) : null}
+        {filterMonth ? (
+          <Select placeholder="Filtrar por mes">
+            {monthNames.map((name) => (
+              <Select.Option key={name} value={name}>
+                {name}
+              </Select.Option>
+            ))}
+          </Select>
+        ) : null}
+        {filterYear ? (
+          <Select placeholder="Filtrar por año" options={years} />
+        ) : null}
       </div>
       <div className="h-[450px]">
         <ResponsiveContainer width="99%" height="100%">
-          <LineChart
+          <div>
+            {graph === 'BarChart' ? (
+              <div>BarChart</div>
+            ) : graph === 'PieChart' ? (
+              <div>PieChart</div>
+            ) : graph === 'LineChart' ? (
+              <div>LineChart</div>
+            ) : null}
+          </div>
+          {/*  <PieChart
             width={500}
             height={300}
             data={data}
@@ -51,7 +108,7 @@ function Graph({ name, data }: GraphProps) {
             <Line type="monotone" dataKey="Turno_A" stroke="#07A814" />
             <Line type="monotone" dataKey="Turno_B" stroke="#1D0F9E" />
             <Line type="monotone" dataKey="Turno_C" stroke="#CF5221" />
-          </LineChart>
+          </PieChart> */}
         </ResponsiveContainer>
       </div>
     </div>
@@ -59,3 +116,10 @@ function Graph({ name, data }: GraphProps) {
 }
 
 export default Graph;
+
+Graph.defaultProps = {
+  filterDay: false,
+  filterWeek: false,
+  filterMonth: false,
+  filterYear: false,
+};

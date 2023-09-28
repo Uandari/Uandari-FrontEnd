@@ -5,20 +5,20 @@ export const weeks = [
       {
         date: 'Lunes 18 de Agosto',
         workers: [
-          { name: 'Juan Martínez Delgado'},
-          { name: 'Andrés Cordero'},
+          { name: 'Juan Martínez Delgado' },
+          { name: 'Andrés Cordero' },
           { name: 'Juan Martínez Delgado' },
         ],
       },
       {
         date: 'Martes 2 de Noviembre',
         workers: [
-          { name: 'Juan Martínez Delgado'},
-          { name: 'Andrés Cordero'},
+          { name: 'Juan Martínez Delgado' },
+          { name: 'Andrés Cordero' },
           { name: 'Juan Martínez Delgado' },
         ],
       },
-    ]
+    ],
   },
   {
     value: 'Semana 4.3',
@@ -26,20 +26,20 @@ export const weeks = [
       {
         date: 'Lunes 18 de Agosto',
         workers: [
-          { name: 'Juan Martínez Delgado'},
-          { name: 'Andrés Cordero'},
+          { name: 'Juan Martínez Delgado' },
+          { name: 'Andrés Cordero' },
           { name: 'Juan Martínez Delgado' },
         ],
       },
       {
         date: 'Martes 2 de Noviembre',
         workers: [
-          { name: 'Juan Martínez Delgado'},
-          { name: 'Andrés Cordero'},
+          { name: 'Juan Martínez Delgado' },
+          { name: 'Andrés Cordero' },
           { name: 'Juan Martínez Delgado' },
         ],
       },
-    ]
+    ],
   },
 ];
 
