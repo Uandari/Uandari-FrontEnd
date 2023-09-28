@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
 import { colors } from '@constants/colors';
-import { User } from '@interfaces/User';
+import { User, UserFetched, UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -31,7 +31,8 @@ const useUsers = () => {
     setSelectedUser(null);
   };
 
-  const handleDeleteUser = async (id: number) => {
+  const handleDeleteUser = async (controlNumber: string) => {
+    console.log("HandleDeleteUser controlNumber: " + controlNumber)
     Swal.fire({
       title: 'Eliminar Usuario',
       text: '¿Está seguro que desea eliminar el usuario seleccionado?',
@@ -55,10 +56,14 @@ const useUsers = () => {
   };
 
   const handleUpdateUser = async (userData: User) => {
+    console.log("handleUpdateUser userData: " + userData)
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
   };
-  
+
+  const handleGetUser = async (controlNumber: string) => {
+    await dispatch(getUser(controlNumber));
+  };
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -73,7 +78,7 @@ const useUsers = () => {
     handleOpenDrawer,
     handleCloseDrawer,
     handleDeleteUser,
-    handleUpdateUser,
+    // handleUpdateUser,
     handleCreateUser,
     setIsDrawerOpen,
     setIsDrawerOpenToUpdate,

@@ -1,7 +1,7 @@
 import { Tabs, TabsProps } from 'antd';
 
-import DynamicTab from './FilteredTab';
 import AllTab from './AllTab';
+import DynamicTab from './FilteredTab';
 
 const tabsTitles: Record<string, string> = {
   0: 'Todos',

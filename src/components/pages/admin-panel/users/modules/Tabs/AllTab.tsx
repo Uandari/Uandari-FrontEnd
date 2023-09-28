@@ -1,5 +1,5 @@
-/* eslint-disable no-nested-ternary */
 import { useEffect, useState } from 'react';
+
 import { RootState, useAppDispatch, useAppSelector } from '@app/store';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
 import imagenUsuario10 from '@assets/usersIcons/10.png';
@@ -11,15 +11,16 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
+import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
+import useErrorModal from '@hooks/useErrorModal';
 import useUsers from '@hooks/useUsers';
 import { UserFetched } from '@interfaces/User';
 import { getUsers, resetUserError } from '@redux/thunks/userThunk';
-import RowBoard from '../RowBoard';
-import HeadBoard from '../HeadBoard';
 import { Button, Form, Input, Popover } from 'antd';
+
 import FormBoard from '../FormBoard';
-import useErrorModal from '@hooks/useErrorModal';
-import CircleProgressIndicator from '@components/basic/circle_progress_indicator';
+import HeadBoard from '../HeadBoard';
+import RowBoard from '../RowBoard';
 
 export default function AllTab() {
   const userImages = [
@@ -98,10 +99,10 @@ export default function AllTab() {
     return <CircleProgressIndicator />;
   }
 
-  console.log("isModalOpenToUpdate: " + isModalOpenToUpdate)
-  console.log("isModalOpen: " + isModalOpen)
-  console.log("selectedUser: " + selectedUser)
-  
+  console.log(`isModalOpenToUpdate: ${isModalOpenToUpdate}`);
+  console.log(`isModalOpen: ${isModalOpen}`);
+  console.log(`selectedUser: ${selectedUser}`);
+
   return (
     <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
