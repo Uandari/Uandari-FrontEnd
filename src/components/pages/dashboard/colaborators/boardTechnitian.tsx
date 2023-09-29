@@ -8,13 +8,17 @@ export type BoardProps = {
 
 export default function Board({ children }: BoardProps) {
   return (
-    <div className="h-full grid grid-rows-[8]">
+    <div className="h-full grid grid-rows-[7]">
       <div className="flex justify-between items-center px-4 border-b border-main_color">
         <div className="flex items-center gap-2">
           <Form className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
-                <Input size="large" placeholder="Buscar Técnico" />
+                <Input
+                  size="large"
+                  placeholder="Buscar colaborador"
+                  /* onChange={handleInputChange} */
+                />
               </Form.Item>
             </div>
           </Form>
