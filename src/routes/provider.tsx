@@ -43,8 +43,10 @@ import {
   SKILLS_MATRIX,
   POINTS_PLAN,
   STAFF_ROTATION,
+  RESULTS_LOG,
 } from './paths';
 import StaffRotation from '@components/pages/dashboard/staff-rotation';
+import ResultsLog from '@components/pages/dashboard/results-log';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -112,6 +114,10 @@ const router = createBrowserRouter([
       {
         path: STAFF_ROTATION,
         element: <StaffRotation />,
+      },
+      {
+        path: RESULTS_LOG,
+        element: <ResultsLog />,
       },
     ],
     errorElement: <NotFound />,

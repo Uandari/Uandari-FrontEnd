@@ -1,6 +1,6 @@
 import { Form, Input } from 'antd';
-import HeadBoard from './modules/boardColaborators/HeadBoard';
 
+import HeadBoard from './modules/boardColaborators/HeadBoard';
 
 export type BoardProps = {
   children: React.ReactNode;
@@ -14,10 +14,7 @@ export default function Board({ children }: BoardProps) {
           <Form className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
-                <Input
-                  size="large"
-                  placeholder="Buscar Colaborador"
-                />
+                <Input size="large" placeholder="Buscar Colaborador" />
               </Form.Item>
             </div>
           </Form>

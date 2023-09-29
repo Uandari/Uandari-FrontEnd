@@ -1,7 +1,7 @@
 import { operations } from '@mocks/StandardWorksheetA';
 
-import RowBoard from '../boardSideA/RowBoard';
 import Board from '../../boardSideA';
+import RowBoard from '../boardSideA/RowBoard';
 
 export default function SideATab() {
   return (
@@ -16,5 +16,3 @@ export default function SideATab() {
     </Board>
   );
 }
-
-
