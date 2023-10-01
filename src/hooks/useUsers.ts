@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
-import { colors } from '@constants/colors';
-import { UserFetched, UserFormData } from '@interfaces/User';
+import { Administrator } from '@interfaces/Admin';
+import { UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -13,21 +13,21 @@ import {
 import Swal from 'sweetalert2';
 
 const useUsers = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalOpenToUpdate, setIsModalOpenToUpdate] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawerOpenToUpdate, setIsDrawerOpenToUpdate] = useState(false);
   const [searchTerm, setSearhTerm] = useState('');
-  const [selectedUser, setSelectedUser] = useState<UserFetched | null>(null);
+  const [selectedUser, setSelectedUser] = useState<Administrator | null>(null);
 
   const dispatch = useAppDispatch();
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-    setIsModalOpenToUpdate(false);
+  const handleOpenDrawer = () => {
+    setIsDrawerOpen(true);
+    setIsDrawerOpenToUpdate(false);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setIsModalOpenToUpdate(false);
+  const handleCloseDrawer = () => {
+    setIsDrawerOpen(false);
+    setIsDrawerOpenToUpdate(false);
     setSelectedUser(null);
   };
 
@@ -37,9 +37,9 @@ const useUsers = () => {
       text: '¿Está seguro que desea eliminar el usuario seleccionado?',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: `${colors.success}`,
-      cancelButtonColor: `${colors.error}`,
-      confirmButtonText: 'Sí, eliminar',
+      confirmButtonColor: '#001E50',
+      cancelButtonColor: '#6E78816A',
+      confirmButtonText: 'Confirmar',
       cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -49,15 +49,15 @@ const useUsers = () => {
     });
   };
 
-  const handleCreateUser = async (userData: UserFormData) => {
+  const handleCreateUser = async (userData: Administrator) => {
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
 
-  /* const handleUpdateUser = async (userData: UserFetched) => {
+  const handleUpdateUser = async (userData: Administrator) => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
-  }; */
+  };
 
   const handleGetUser = async (controlNumber: string) => {
     await dispatch(getUser(controlNumber));
@@ -70,16 +70,16 @@ const useUsers = () => {
   };
 
   return {
-    isModalOpen,
-    isModalOpenToUpdate,
+    isDrawerOpen,
+    isDrawerOpenToUpdate,
     selectedUser,
-    handleOpenModal,
-    handleCloseModal,
+    handleOpenDrawer,
+    handleCloseDrawer,
     handleDeleteUser,
-    // handleUpdateUser,
+    handleUpdateUser,
     handleCreateUser,
-    setIsModalOpen,
-    setIsModalOpenToUpdate,
+    setIsDrawerOpen,
+    setIsDrawerOpenToUpdate,
     setSelectedUser,
     searchTerm,
     setSearhTerm,

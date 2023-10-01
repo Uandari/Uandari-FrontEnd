@@ -1,4 +1,4 @@
-import {  UserFormData } from '@interfaces/User';
+import { UserFormData } from '@interfaces/User';
 
 export const initialUserInfo = {
   idUser: 0,
@@ -21,7 +21,6 @@ export const UsersListMock: UserFormData[] = [
     mail: 'andresmcorderor@gmail.com',
     password: 'efawfa1w81as56f189',
     idRole: 1,
-    token: '',
     imageUrl: '',
   },
 ];
