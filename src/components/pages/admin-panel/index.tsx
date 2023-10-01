@@ -3,7 +3,13 @@ import SidebarTab from '@components/layout/sidebar/sidebarTab';
 import IconCell from '@icons/cell.svg';
 import IconLine from '@icons/chart-line.svg';
 import IconRole from '@icons/roleIcon.svg';
-import { ADMIN_CELLS, ADMIN_LINES, ADMIN_ROLES, ADMIN_USERS } from '@routes/paths';
+import IconUser from '@icons/usersIcon.svg';
+import {
+  ADMIN_CELLS,
+  ADMIN_LINES,
+  ADMIN_ROLES,
+  ADMIN_USERS,
+} from '@routes/paths';
 import UserImg from '@usersIcons/2.png';
 import { Outlet } from 'react-router-dom';
 

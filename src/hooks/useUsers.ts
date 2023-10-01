@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
 import { colors } from '@constants/colors';
-import { User, UserFetched, UserFormData } from '@interfaces/User';
+import { UserFetched, UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
@@ -16,7 +16,7 @@ const useUsers = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDrawerOpenToUpdate, setIsDrawerOpenToUpdate] = useState(false);
   const [searchTerm, setSearhTerm] = useState('');
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [selectedUser, setSelectedUser] = useState<UserFetched | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -50,13 +50,12 @@ const useUsers = () => {
     });
   };
 
-  const handleCreateUser = async (userData: UserFormData) => {
+  const handleCreateUser = async (userData: Administrator) => {
     await dispatch(createUserAction(userData));
     dispatch(getUsers());
   };
 
-  const handleUpdateUser = async (userData: User) => {
-    console.log("handleUpdateUser userData: " + userData)
+  /* const handleUpdateUser = async (userData: UserFetched) => {
     await dispatch(updateUserAction(userData));
     dispatch(getUsers());
   };
@@ -78,7 +77,7 @@ const useUsers = () => {
     handleOpenDrawer,
     handleCloseDrawer,
     handleDeleteUser,
-    // handleUpdateUser,
+    handleUpdateUser,
     handleCreateUser,
     setIsDrawerOpen,
     setIsDrawerOpenToUpdate,
