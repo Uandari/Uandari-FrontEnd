@@ -95,14 +95,12 @@ function FormBoard() {
     }
   }, [availabilityProblems, categoryType, performaceProblems, qualityProblems]);
   return (
-    <div className="w-[365px]">
-      <div className="px-5 pt-3">
+    <div className="w-[400px] px-5 pt-4">
         <p className="text-main_text_color font-medium">Turno A</p>
         <div className="flex items-center gap-1">
           <img src={CalendarIcon} alt="calendar-icon" />
           <p className="text-main_text_color"> {formattedDate} </p>
         </div>
-      </div>
       <div className="flex items-center gap-2">
         <img src={CategoryIcon} alt="icon-category" />
         <Form.Item className="pt-6">
