@@ -1,14 +1,14 @@
 import Topbar from '@components/layout/topbar';
 import { Tabs, TabsProps } from 'antd';
 
-import TabPage from './TabPage';
+import UserPage from './admin-tab/index';
 
 export default function UsersList() {
-  const itemsTabs: TabsProps['items'] = [
+  const pages: TabsProps['items'] = [
     {
       key: '1',
       label: 'Administradores',
-      children: <TabPage />,
+      children: <UserPage />,
     },
     {
       key: '2',
@@ -18,10 +18,10 @@ export default function UsersList() {
   ];
 
   return (
-    <div className="border border-b grid bg-white flex-1 h-screen">
-      <div className="sticky top-0">
-        <Topbar title="Gestión de usuarios" variant="secondary" />
-        <Tabs defaultActiveKey="1" items={itemsTabs} />
+    <div className="flex flex-1 flex-col">
+      <Topbar title="Gestión de usuarios" variant="secondary" />
+      <div className="flex-1 overflow-y-auto bg-main_white">
+        <Tabs className="h-full flex flex-1" size="large" items={pages} />
       </div>
     </div>
   );

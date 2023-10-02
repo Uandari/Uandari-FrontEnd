@@ -10,7 +10,7 @@ import {
   ADMIN_ROLES,
   ADMIN_USERS,
 } from '@routes/paths';
-import UserImg from '@usersIcons/2.png';
+import UserImg from '@usersIcons/user_2.png';
 import { Outlet } from 'react-router-dom';
 
 export default function AdminPanel() {
