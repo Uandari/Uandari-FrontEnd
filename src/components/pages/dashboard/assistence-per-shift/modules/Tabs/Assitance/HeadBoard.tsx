@@ -1,6 +1,6 @@
 function HeadBoard() {
   return (
-    <div className="grid grid-cols-5 border-y font-medium">
+    <div className="grid grid-cols-5 border-t font-medium">
       <div className="h-20" />
       <div className="flex items-center justify-center border-x">Presentes</div>
       <div className="flex items-center justify-center">Ausentes</div>

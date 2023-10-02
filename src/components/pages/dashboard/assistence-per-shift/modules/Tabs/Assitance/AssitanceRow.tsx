@@ -61,17 +61,17 @@ export default function AssitanceRow({
 
   return (
     <div className="grid grid-cols-5">
-      <div className="w-full h-32 grid grid-cols-5 border-r">
+      <div className="w-full h-32 grid grid-cols-5 border-r border-y ">
         <div className="h-full flex justify-center items-center col-span-3 border-r font-medium">
           {shift}
         </div>
-        <div className="grid grid-rows-2 h-full col-span-2">
+        <div className="grid grid-rows-2 h-full col-span-2  ">
           <div className="flex justify-center items-center border-b">Debe</div>
           <div className="flex justify-center items-center ">Es</div>
         </div>
       </div>
       {/* Presentes */}
-      <div className="border-r grid grid-rows-2">
+      <div className="border-y  border-r grid grid-rows-2">
         <input
           type="number"
           min={0}
@@ -92,7 +92,7 @@ export default function AssitanceRow({
         />
       </div>
       {/* Ausentes */}
-      <div className="border-r grid grid-rows-2">
+      <div className="border-y  border-r grid grid-rows-2">
         <input
           type="number"
           min={0}
@@ -113,7 +113,7 @@ export default function AssitanceRow({
         />
       </div>
       {/* Prestados */}
-      <div className="border-r grid grid-rows-2">
+      <div className="border-y border-r grid grid-rows-2">
         <input
           type="number"
           min={0}
@@ -134,7 +134,7 @@ export default function AssitanceRow({
         />
       </div>
       {/* Capacitación / Taller KVP */}
-      <div className="border-r grid grid-rows-2">
+      <div className="border-y grid grid-rows-2">
         <input
           type="number"
           min={0}
@@ -154,7 +154,7 @@ export default function AssitanceRow({
           onKeyPress={(e) => handleKeyPress(e)}
         />
       </div>
-      <div className="border-y py-3 col-span-5 flex justify-end pr-12">
+      <div className=" py-3 col-span-5 flex justify-end pr-12">
         <button
           type="button"
           className="bg-main_blue_dark text-white px-6 py-2 font-medium rounded-lg"
