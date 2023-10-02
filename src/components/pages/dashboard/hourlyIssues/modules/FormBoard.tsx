@@ -147,7 +147,7 @@ function FormBoard() {
         </div>
       </Form.Item>
       <Form.Item>
-        <div className="flex items-start gap-2">
+        <div className="flex items-center gap-2 ">
           <img src={ClockIcon} alt="problemType-icon" />
           <DatePicker
             placeholder="Fecha estimada de solución"
@@ -156,8 +156,8 @@ function FormBoard() {
         </div>
       </Form.Item>
       <Form.Item>
-        <div className="flex items-start gap-2">
-          <img src={PeopleIcon} alt="problemType-icon" />
+        <div className="flex items-center gap-2 ">
+          <img src={PeopleIcon} alt="problemType-icon"  />
           <Select
             showSearch
             allowClear
