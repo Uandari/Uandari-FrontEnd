@@ -1,8 +1,7 @@
 import { publicApi } from '@api/axios';
 import { AppThunkAction } from '@app/store';
 import { colors } from '@constants/colors';
-import { User } from '@interfaces/IssueCard';
-import { UserFormData } from '@interfaces/User';
+import { Administrator } from '@interfaces/Admin';
 import {
   createUserError,
   createUserSuccess,
@@ -24,7 +23,7 @@ import Swal from 'sweetalert2';
 const accessToken = localStorage.getItem('accessToken');
 
 export const createUser =
-  (userData: UserFormData): AppThunkAction =>
+  (userData: Administrator): AppThunkAction =>
   async (dispatch) => {
     dispatch(createUsersStart());
     await publicApi
@@ -55,11 +54,10 @@ export const createUser =
   };
 
 export const getUser =
-  (controlNumber: string): AppThunkAction<Promise<User>> =>
+  (controlNumber: string): AppThunkAction<Promise<Administrator>> =>
   async (dispatch) => {
     try {
-      const response = await publicApi.post('/user', {
-        controlNumber,
+      const response = await publicApi.get(`/user/${controlNumber}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${accessToken}`,
@@ -87,11 +85,6 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
       },
     })
     .then((response) => {
-      /* if (response.data.isError) {
-        const customError = new CustomApiError(response.data).message;
-        dispatch(getUsersError(customError));
-        return;
-      } */
       dispatch(getUsersSuccess(response.data.payload));
     })
     .catch((error) => {
@@ -101,7 +94,7 @@ export const getUsers = (): AppThunkAction => async (dispatch) => {
 };
 
 export const updateUser =
-  (userData: User): AppThunkAction =>
+  (userData: Administrator): AppThunkAction =>
   async (dispatch) => {
     dispatch(updateUserStart);
     await publicApi
@@ -132,12 +125,12 @@ export const updateUser =
   };
 
 export const deleteUser =
-  (userControlNumber: string): AppThunkAction =>
+  (controlNumber: string): AppThunkAction =>
   async (dispatch) => {
     await publicApi
       .post(
         '/user/delete',
-        { userControlNumber },
+        { controlNumber },
         {
           headers: {
             'Content-Type': 'application/json',

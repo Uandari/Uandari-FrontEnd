@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { useAppDispatch } from '@app/store';
 import { Administrator } from '@interfaces/Admin';
-import { UserFormData } from '@interfaces/User';
 import {
   createUser as createUserAction,
   deleteUser as deleteUserAction,
