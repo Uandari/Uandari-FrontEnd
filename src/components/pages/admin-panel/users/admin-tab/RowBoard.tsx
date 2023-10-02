@@ -5,7 +5,7 @@ import { Popover } from 'antd';
 
 type RowBoardProps = {
   name: string;
-  lastnames: string;
+  lastNames: string;
   img: string;
   controlNumber: string;
   role: string;
@@ -15,7 +15,7 @@ type RowBoardProps = {
 
 function RowBoard({
   name,
-  lastnames,
+  lastNames,
   img,
   controlNumber,
   role,
@@ -27,12 +27,12 @@ function RowBoard({
     setOpenPopover(newOpen);
   };
   return (
-    <div className="grid grid-cols-5 border-b py-3 px-5 gap-4 relative">
+    <div className="grid grid-cols-3 border-b py-3 px-5 gap-4 relative">
       <div className="flex gap-x-2 items-center">
         <img className="w-12" src={img} alt="img-profile" />
         <div>
           <p className="font-medium text-main_title_color">
-            {name} {lastnames}
+            {name} {lastNames}
           </p>
         </div>
       </div>

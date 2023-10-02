@@ -120,7 +120,7 @@ export default function DrawerComponent({
               name="name"
               value={userData?.name}
               className="form-input"
-              placeholder="Nombre de usuario"
+              placeholder="Nombre de administrador"
               onChange={(e) => handleInputChange(e)}
             />
           </div>
@@ -130,7 +130,7 @@ export default function DrawerComponent({
               name="lastnames"
               value={userData?.lastNames}
               className="form-input"
-              placeholder="Apellidos de usuario"
+              placeholder="Apellidos de administrador"
               onChange={(e) => handleInputChange(e)}
             />
           </div>
@@ -142,7 +142,7 @@ export default function DrawerComponent({
             name="controlNumber"
             value={userData?.controlNumber}
             className="form-input"
-            placeholder="Número de control de usuario"
+            placeholder="Número de control de administrador"
             onChange={(e) => handleInputChange(e)}
           />
         </div>

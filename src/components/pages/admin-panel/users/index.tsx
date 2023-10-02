@@ -1,7 +1,8 @@
 import Topbar from '@components/layout/topbar';
 import { Tabs, TabsProps } from 'antd';
+import AdminPage from './admin-tab';
+import UserPage from './user-tab';
 
-import AdminPage from './admin-tab/index';
 
 export default function UsersList() {
   const pages: TabsProps['items'] = [
@@ -13,7 +14,7 @@ export default function UsersList() {
     {
       key: '2',
       label: 'Usuarios',
-      children: '',
+      children: <UserPage />,
     },
   ];
 

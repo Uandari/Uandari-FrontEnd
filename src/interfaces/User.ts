@@ -32,5 +32,4 @@ export interface UserFetched {
   imageUrl: string;
   controlNumber: string;
   role: string;
-  idRole: number;
 }

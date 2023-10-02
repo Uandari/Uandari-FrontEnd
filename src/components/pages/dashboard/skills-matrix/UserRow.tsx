@@ -17,6 +17,9 @@ type UserRowProps = {
   }[];
 };
 
+ 
+
+
 export default function UserRow({
   id,
   image,
@@ -38,7 +41,7 @@ export default function UserRow({
         className="flex justify-between items-center w-full"
       >
         <div className="flex gap-x-3 items-center">
-          <img className="w-12" src={UserImage} alt="user-img" />
+          <img className="w-12" src={image} alt="user-img" />
           <div>
             <h4 className=" text-main_title_color">{fullname}</h4>
             <p className="text-main_gray text-left">{controlNumber}</p>
