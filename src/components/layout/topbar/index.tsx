@@ -10,9 +10,10 @@ type TopBarProps = {
   issues?: number;
   underline?: boolean;
   date?: boolean;
+  areTabsBelow?: boolean;
 };
 
-export default function Topbar({ title, issues, underline, date }: TopBarProps) {
+export default function Topbar({ title, issues, underline, date, areTabsBelow }: TopBarProps) {
   const [formattedDate, setFormattedDate] = useState<string>('');
   useEffect(() => {
     const currentDate = new Date();
@@ -22,7 +23,7 @@ export default function Topbar({ title, issues, underline, date }: TopBarProps) 
   }, []);
 
     return (
-      <div className={`w-full p-8 relative ${underline ? 'border-b' : '' } bg-main_white`}>
+      <div className={`w-full px-8 pt-8 ${areTabsBelow ? 'pb-3' : 'pb-8' }  relative ${underline ? 'border-b' : '' } bg-main_white`}>
         <h3 className="text-main_title_color font-semibold text-xl">{title}</h3>
         {date ? <div className="flex items-center gap-2">
           <img src={CalendarIcon} alt="calendar-icon" />
@@ -42,4 +43,6 @@ export default function Topbar({ title, issues, underline, date }: TopBarProps) 
 Topbar.defaultProps = {
   issues: null,
   underline: false,
+  date: false,
+  areTabsBelow: false
 };
