@@ -1,5 +1,7 @@
 import AdminPanel from '@components/pages/admin-panel';
 import CellsList from '@components/pages/admin-panel/cells';
+import LinesPage from '@components/pages/admin-panel/lines';
+import RolesPage from '@components/pages/admin-panel/roles';
 import UsersList from '@components/pages/admin-panel/users';
 import Dashboard from '@components/pages/dashboard';
 import AssistencePerShift from '@components/pages/dashboard/assistence-per-shift';
@@ -13,7 +15,9 @@ import IssuesEvolution from '@components/pages/dashboard/issues-evolution';
 import IssuesTracking from '@components/pages/dashboard/issues-tracking';
 import PointsPlan from '@components/pages/dashboard/points-plan';
 import IssuesList from '@components/pages/dashboard/problem-list';
+import ResultsLog from '@components/pages/dashboard/results-log';
 import SkillsMatrix from '@components/pages/dashboard/skills-matrix';
+import StaffRotation from '@components/pages/dashboard/staff-rotation';
 import StandardWorksheet from '@components/pages/dashboard/standard-worksheet';
 import TeamGoals from '@components/pages/dashboard/team-goals';
 import LoginPage from '@components/pages/login';
@@ -44,9 +48,9 @@ import {
   POINTS_PLAN,
   STAFF_ROTATION,
   RESULTS_LOG,
+  ADMIN_LINES,
+  ADMIN_ROLES,
 } from './paths';
-import StaffRotation from '@components/pages/dashboard/staff-rotation';
-import ResultsLog from '@components/pages/dashboard/results-log';
 // import PrivateRoute from './privateRoute';
 
 const router = createBrowserRouter([
@@ -138,14 +142,14 @@ const router = createBrowserRouter([
         path: ADMIN_CELLS,
         element: <CellsList />,
       },
-      /* {
+      {
         path: ADMIN_LINES,
-        element: <LinesList />,
-      }, */
-      /* {
+        element: <LinesPage />,
+      },
+      {
         path: ADMIN_ROLES,
-        element: <RolesList />,
-      }, */
+        element: <RolesPage />,
+      },
     ],
     errorElement: <NotFound />,
   },
