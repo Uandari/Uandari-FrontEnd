@@ -32,7 +32,7 @@ function IssuesTracking() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar title="Seguimiento de problemas" issues={4} />
+      <Topbar title="Seguimiento de problemas" issues={4} areTabsBelow/>
       <div className="flex flex-1 overflow-y-auto bg-main_white px-4">
         <Tabs className="h-full flex flex-1 " size="large" items={pages} />
       </div>

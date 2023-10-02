@@ -30,7 +30,7 @@ export default function Topbar({ title, issues, underline, date, areTabsBelow }:
           <p className="text-main_text_color text-sm p">{formattedDate}</p>
         </div> : null}
 
-        {issues ?  <div className={`absolute ${date ? 'bottom-11' : 'bottom-8' } right-8 flex gap-2 items-center`}>
+        {issues ?  <div className={`absolute ${date ? 'bottom-11' : 'bottom-8' }  ${areTabsBelow ? 'bottom-4' : 'bottom-8' } right-8 flex gap-2 items-center`}>
           <img src={AnalticsIcon} alt="chart-icon" />
           <p className="text-main_title_color text-sm">
             Problemas <span className="text-main_text_color">{issues}</span>
