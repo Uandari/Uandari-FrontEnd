@@ -31,8 +31,8 @@ export default function CriticalRoute() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar variant="primary" title="Ruta Crítica" issues={4} />
-      <div className="flex flex-1 overflow-y-auto bg-white border-t">
+      <Topbar  title="Ruta Crítica" issues={4}  underline/>
+      <div className="flex flex-1 overflow-y-auto bg-white ">
         {selectedDocument && <PDFViewer document={selectedDocument} />}
         <DocumentList documents={documents} handleClick={handleClick} />
       </div>

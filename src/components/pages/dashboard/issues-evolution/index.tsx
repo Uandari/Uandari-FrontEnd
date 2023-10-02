@@ -9,8 +9,8 @@ import CardStatistics from '../problem-list/modules/CardStatistics';
 function IssuesEvolution() {
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar title="Evolución de problemas" variant="secondary" />
-      <div className="flex flex-col flex-1 overflow-y-auto bg-main_white border-t border-main_color">
+      <Topbar title="Evolución de problemas" underline issues={10} />
+      <div className="flex flex-col flex-1 overflow-y-auto bg-main_white">
         <div className="grid grid-cols-3 gap-x-4 p-4 w-full">
           {mainThreeProblems.map((card) => (
             <CardStatistics

@@ -3,14 +3,16 @@ import { useEffect, useState } from 'react';
 import CalendarIcon from '@icons/calender.svg';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+import AnalticsIcon from '@icons/analytics.svg';
 
 type TopBarProps = {
   title: string;
-  variant?: 'primary' | 'secondary';
   issues?: number;
+  underline?: boolean;
+  date?: boolean;
 };
 
-export default function Topbar({ title, variant, issues }: TopBarProps) {
+export default function Topbar({ title, issues, underline, date }: TopBarProps) {
   const [formattedDate, setFormattedDate] = useState<string>('');
   useEffect(() => {
     const currentDate = new Date();
@@ -19,25 +21,25 @@ export default function Topbar({ title, variant, issues }: TopBarProps) {
     );
   }, []);
 
-  if (variant === 'primary') {
     return (
-      <div className=" w-full h-28 pl-8 pt-10 relative bg-main_white">
+      <div className={`w-full p-8 relative ${underline ? 'border-b' : '' } bg-main_white`}>
         <h3 className="text-main_title_color font-semibold text-xl">{title}</h3>
-        <div className="flex items-center gap-2">
+        {date ? <div className="flex items-center gap-2">
           <img src={CalendarIcon} alt="calendar-icon" />
-          <p className="text-main_text_color text-sm">{formattedDate}</p>
-        </div>
+          <p className="text-main_text_color text-sm p">{formattedDate}</p>
+        </div> : null}
+
+        {issues ?  <div className={`absolute ${date ? 'bottom-11' : 'bottom-8' } right-8 flex gap-2 items-center`}>
+          <img src={AnalticsIcon} alt="chart-icon" />
+          <p className="text-main_title_color text-sm">
+            Problemas <span className="text-main_text_color">{issues}</span>
+          </p>
+        </div> : null}
       </div>
     );
   }
-  return (
-    <div className="w-full h-28 pl-8 pt-10 relative bg-main_white">
-      <h3 className="text-main_title_color font-semibold text-xl">{title}</h3>
-    </div>
-  );
-}
 
 Topbar.defaultProps = {
-  variant: 'primary',
   issues: null,
+  underline: false,
 };

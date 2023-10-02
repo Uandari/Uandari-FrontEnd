@@ -2,7 +2,7 @@ import CellBoard from './CellBoard';
 
 export default function HeadBoard() {
   return (
-    <div className="grid grid-cols-8 h-[64px]">
+    <div className="grid grid-cols-8 border-b border-main_color h-[64px]">
       <CellBoard title="Fecha" />
       <CellBoard title="Desvio de escala" />
       <CellBoard title="Impulsor" />

@@ -7,7 +7,7 @@ export default function CellsList() {
   return (
     <div className="border border-b grid bg-white flex-1 h-screen">
       <div className="sticky top-0">
-        <Topbar title="Gestión de usuarios" variant="secondary" />
+        <Topbar title="Gestión de usuarios" />
         <Board>
       {CellsListMock.map((cell) => (
         <RowBoard

@@ -16,8 +16,8 @@ function SkillsMatrix() {
   });
   return (
     <div className="flex flex-1 flex-col bg-white">
-      <Topbar variant="secondary" title="Matriz de habilidades" />
-      <div className="flex flex-1 flex-col overflow-y-scroll border-t">
+      <Topbar  title="Matriz de habilidades" underline />
+      <div className="flex flex-1 flex-col overflow-y-scroll">
         <div className="py-6 border-b flex items-center justify-end pr-8 gap-x-4 ">
           <input
             placeholder="Buscar usuario"

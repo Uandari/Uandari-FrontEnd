@@ -43,8 +43,8 @@ function getRandomValue(min: number, max: number) {
 export default function ResultsLog() {
   return (
     <div className="flex flex-1 flex-col p-">
-      <Topbar variant="primary" title="Registro de resultados" />
-      <div className="flex flex-col flex-1 overflow-y-auto px-9 py-3 bg-main_white border-t border-main_color">
+      <Topbar title="Registro de resultados" underline/>
+      <div className="flex flex-col flex-1 overflow-y-auto px-9 py-3 bg-main_white">
         <div className="p-4 flex justify-end">
           <button
             className="bg-main_blue_dark py-2 rounded-lg px-6 text-white"
