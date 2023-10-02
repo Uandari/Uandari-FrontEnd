@@ -35,7 +35,7 @@ import {
   STANDARD_WORKSHEETS,
   TEAM_GOALS,
 } from '@routes/paths';
-import UserImg from '@usersIcons/1.png';
+import UserImg from '@usersIcons/user_1.png';
 import { Outlet } from 'react-router-dom';
 
 export default function Dashboard() {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import UserImage from '@assets/usersIcons/6.png';
+import UserImage from '@assets/usersIcons/user_6.png';
 import { levelsLabels } from '@mocks/Levels';
 import { skillsLabels } from '@mocks/Skills';
 import { Button, Drawer, Select, Space } from 'antd';
