@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 type ColorChangingBoxProps = {
-  day: { day: string; value: number };
-  onUpdateDayState: (day: string, newValue: number) => void;
+  day: { day: string; state: number };
+  onUpdateDayState: (day: string, newState: number) => void;
 };
 
 export default function ColorChangingBox({
@@ -11,7 +11,7 @@ export default function ColorChangingBox({
 }: ColorChangingBoxProps) {
   // Allows to render just once, and not every time the component renders useMemo
   const colors = useMemo(() => ['main_white', 'main_red', 'main_green'], []);
-  const [currentColorIndex, setCurrentColorIndex] = useState(day.value);
+  const [currentColorIndex, setCurrentColorIndex] = useState(day.state);
   const [currentColor, setCurrentColor] = useState('');
 
   const handleClick = () => {
@@ -34,3 +34,5 @@ export default function ColorChangingBox({
     />
   );
 }
+
+

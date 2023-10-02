@@ -6,7 +6,7 @@ export type RowBoardProps = {
   operation: string;
   result: {
     shift: string;
-    weeks: { day: string; value: number }[];
+    weeks: { day: string; state: number }[];
   }[];
 };
 
