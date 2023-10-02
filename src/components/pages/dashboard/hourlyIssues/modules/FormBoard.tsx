@@ -121,8 +121,8 @@ function FormBoard() {
         <div className="flex items-center gap-2">
           <img src={ProblemTypeIcon} alt="problemType-icon" />
           <Select
-            defaultValue={arrayProblems[0].label}
             options={arrayProblems}
+            placeholder="Tipo de problema"
           />
         </div>
       </Form.Item>
