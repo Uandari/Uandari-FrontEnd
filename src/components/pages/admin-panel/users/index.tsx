@@ -1,14 +1,14 @@
 import Topbar from '@components/layout/topbar';
 import { Tabs, TabsProps } from 'antd';
 
-import UserPage from './admin-tab/index';
+import AdminPage from './admin-tab/index';
 
 export default function UsersList() {
   const pages: TabsProps['items'] = [
     {
       key: '1',
       label: 'Administradores',
-      children: <UserPage />,
+      children: <AdminPage />,
     },
     {
       key: '2',

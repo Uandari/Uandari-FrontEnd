@@ -3,7 +3,7 @@ import { useState } from 'react';
 import IconDots from '@assets/icons/bulletsButton.svg';
 import { Popover } from 'antd';
 
-type RowAdminProps = {
+type RowBoardProps = {
   name: string;
   lastnames: string;
   img: string;
@@ -13,7 +13,7 @@ type RowAdminProps = {
   onUpdate: () => void;
 };
 
-function RowAdmin({
+function RowBoard({
   name,
   lastnames,
   img,
@@ -21,7 +21,7 @@ function RowAdmin({
   role,
   onDelete,
   onUpdate,
-}: RowAdminProps) {
+}: RowBoardProps) {
   const [openPopover, setOpenPopover] = useState(false);
   const handleOpenChange = (newOpen: boolean) => {
     setOpenPopover(newOpen);
@@ -80,4 +80,4 @@ function RowAdmin({
   );
 }
 
-export default RowAdmin;
+export default RowBoard;

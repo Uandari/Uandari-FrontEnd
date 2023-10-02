@@ -7,7 +7,7 @@ import { Administrator, AdministratorsFeteched } from '@interfaces/Admin';
 import { getUsers } from '@redux/thunks/userThunk';
 
 import DrawerComponent from './Drawer';
-import RowAdmin from './RowAdmin';
+import RowBoard from './RowBoard';
 
 export default function UserPage() {
   const {
@@ -72,7 +72,7 @@ export default function UserPage() {
       </div>
       {usersData.length > 0 && usersData ? (
         usersData.map((user) => (
-          <RowAdmin
+          <RowBoard
             key={user.idUser}
             name={user.name}
             lastnames={user.lastNames}
