@@ -55,16 +55,14 @@ function Graph({
     <div >
       <p className="text-lg mb-3 font-semibold">{title} </p>
       {filterDay ? (
-        <Select placeholder="Filtrar por día" className='mx-2'>
-          {weeks.map((week) => (
-            <div>
-              {week.days.map((day) => (
-                <Select.Option key={day.date} value={day.date}>
-                  {day.date}
-                </Select.Option>
-              ))}
-            </div>
-          ))}
+        <Select placeholder="Filtrar por día" className='mx-2 w-56'>
+          {weeks.flatMap((week) =>
+            week.days.map((day) => (
+              <Select.Option key={day.date} value={day.date}>
+                {day.date}
+              </Select.Option>
+            ))
+          )}
         </Select>
       ) : null}
       {filterWeek ? (
@@ -130,7 +128,7 @@ function Graph({
             <div className='row-span-5 max-h-[1200px]'>
               <ResponsiveContainer height='100%' width='100%'>
                 <BarChart data={data}>
-                <CartesianGrid stroke="#f5f5f5" />
+                  <CartesianGrid stroke="#f5f5f5" />
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Legend />
@@ -206,14 +204,14 @@ function Graph({
                     bottom: 5,
                   }}
                 >
-                   <CartesianGrid stroke="#f5f5f5" />
+                  <CartesianGrid stroke="#f5f5f5" />
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Line dataKey="Turno_1" strokeWidth={3} stroke={COLORS[0]}   activeDot={{ r: 8 }} />
-                  <Line dataKey="Turno_2"  strokeWidth={3} stroke={COLORS[1]} activeDot={{ r: 8 }} />
-                  <Line dataKey="Turno_3" strokeWidth={3} stroke={COLORS[3]}  activeDot={{ r: 8 }} />
+                  <Line dataKey="Turno_1" strokeWidth={3} stroke={COLORS[0]} activeDot={{ r: 8 }} />
+                  <Line dataKey="Turno_2" strokeWidth={3} stroke={COLORS[1]} activeDot={{ r: 8 }} />
+                  <Line dataKey="Turno_3" strokeWidth={3} stroke={COLORS[3]} activeDot={{ r: 8 }} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
