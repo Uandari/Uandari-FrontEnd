@@ -31,7 +31,7 @@ export default function PointsPlan() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar title="Plan de Puntos" issues={4} underline/>
+      <Topbar title="Plan de Puntos" issues={4} underline />
       <div className="flex flex-1 overflow-y-auto bg-white ">
         {selectedDocument && <PDFViewer document={selectedDocument} />}
         <DocumentList documents={documents} handleClick={handleClick} />

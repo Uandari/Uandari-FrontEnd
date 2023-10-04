@@ -1,6 +1,6 @@
 export interface Cell {
-	id: number;
-	cellName: string;
-	idUser: number;
-	idLine: number;
+  id: number;
+  cellName: string;
+  idUser: number;
+  idLine: number;
 }

@@ -20,7 +20,7 @@ const pages: TabsProps['items'] = [
 export default function AssistencePerShift() {
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar title="Asistencia por turno" areTabsBelow/>
+      <Topbar title="Asistencia por turno" areTabsBelow />
       <div className="flex flex-1 overflow-y-scroll  bg-main_white">
         <Tabs className="h-full flex flex-1 " size="large" items={pages} />
       </div>

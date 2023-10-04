@@ -8,7 +8,7 @@ import RowBoard from './modules/RowBoard';
 export default function StaffRotation() {
   return (
     <div className="flex flex-1 flex-col bg-white">
-        <Topbar title="Rotación de personal" underline/>
+      <Topbar title="Rotación de personal" underline />
       <div className="flex-1 overflow-y-auto  bg-main_white">
         <Board>
           {weeks.map((week) => (

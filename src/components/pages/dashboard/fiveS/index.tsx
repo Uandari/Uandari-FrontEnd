@@ -13,7 +13,7 @@ function FiveS() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <Topbar title="5s" underline/>
+      <Topbar title="5s" underline />
       <div className="flex flex-1 overflow-y-auto bg-white ">
         <div className="flex flex-col w-[75%] overflow-y-scroll">
           <div className="p-4">

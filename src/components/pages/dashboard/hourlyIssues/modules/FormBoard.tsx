@@ -96,11 +96,11 @@ function FormBoard() {
   }, [availabilityProblems, categoryType, performaceProblems, qualityProblems]);
   return (
     <div className="w-[400px] px-5 pt-4">
-        <p className="text-main_text_color font-medium">Turno A</p>
-        <div className="flex items-center gap-1">
-          <img src={CalendarIcon} alt="calendar-icon" />
-          <p className="text-main_text_color"> {formattedDate} </p>
-        </div>
+      <p className="text-main_text_color font-medium">Turno A</p>
+      <div className="flex items-center gap-1">
+        <img src={CalendarIcon} alt="calendar-icon" />
+        <p className="text-main_text_color"> {formattedDate} </p>
+      </div>
       <div className="flex items-center gap-2">
         <img src={CategoryIcon} alt="icon-category" />
         <Form.Item className="pt-6">
@@ -118,10 +118,7 @@ function FormBoard() {
       <Form.Item>
         <div className="flex items-center gap-2">
           <img src={ProblemTypeIcon} alt="problemType-icon" />
-          <Select
-            options={arrayProblems}
-            placeholder="Tipo de problema"
-          />
+          <Select options={arrayProblems} placeholder="Tipo de problema" />
         </div>
       </Form.Item>
       <Form.Item>
@@ -157,7 +154,7 @@ function FormBoard() {
       </Form.Item>
       <Form.Item>
         <div className="flex items-center gap-2 ">
-          <img src={PeopleIcon} alt="problemType-icon"  />
+          <img src={PeopleIcon} alt="problemType-icon" />
           <Select
             showSearch
             allowClear

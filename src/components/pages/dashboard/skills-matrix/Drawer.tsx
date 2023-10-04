@@ -112,7 +112,7 @@ export default function DrawerComponent({
                 }
               }
               return false; // No aplicar filtro si input u option no son cadenas de texto
-            }} 
+            }}
             onChange={(value) => setSelectedSkill(value)}
           >
             {skillsLabels.map((skill) => (

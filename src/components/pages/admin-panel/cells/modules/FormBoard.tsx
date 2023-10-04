@@ -1,14 +1,13 @@
-
+import controlNumberIcon from '@icons/controlNumber.svg';
 import UserIcon from '@icons/iconUser.svg';
 import roleIcon from '@icons/role.svg';
-import controlNumberIcon from '@icons/controlNumber.svg';
 import { Button, Form, Input, Select } from 'antd';
 
 type FormBoardProps = {
   userIdToUpdate?: number;
 };
 
-function FormBoard({userIdToUpdate }: FormBoardProps) {
+function FormBoard({ userIdToUpdate }: FormBoardProps) {
   const rolesMock = [
     { value: 1, label: 'Gerente' },
     { value: 2, label: 'Administrador' },
@@ -17,7 +16,6 @@ function FormBoard({userIdToUpdate }: FormBoardProps) {
     { value: 5, label: 'Visualizador' },
   ];
 
-  
   return (
     <div className="w-[365px]">
       <div className="px-5 pt-3">

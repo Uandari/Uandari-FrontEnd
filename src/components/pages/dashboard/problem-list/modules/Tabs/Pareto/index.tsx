@@ -125,8 +125,12 @@ function Pareto() {
         </button>
       </div>
 
-      <div id="charts" className="w-full flex flex-col px-4 gap-y-12 overflow-y-auto"  style={{ maxHeight: '77vh' }}>
-        <div className='mt-4'>
+      <div
+        id="charts"
+        className="w-full flex flex-col px-4 gap-y-12 overflow-y-auto"
+        style={{ maxHeight: '77vh' }}
+      >
+        <div className="mt-4">
           <Chart
             key={1}
             title="Pareto temas de Volumen / Disponibilidad"

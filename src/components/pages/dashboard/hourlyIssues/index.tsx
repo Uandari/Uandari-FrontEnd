@@ -11,8 +11,9 @@ function HourlyIssues() {
     <div className="flex flex-1">
       {/* Justo aquí se cambia el ancho */}
       <div
-        className={`transition-all duration-300 ${collapsed ? 'w-[3%]' : 'w-[20%]'
-          }`}
+        className={`transition-all duration-300 ${
+          collapsed ? 'w-[3%]' : 'w-[20%]'
+        }`}
       >
         <DetailBar collapsed={collapsed} setCollapsed={setCollapsed} />
       </div>

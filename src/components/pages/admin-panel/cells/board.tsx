@@ -1,4 +1,3 @@
-
 import { Button, Form, Input, Popover } from 'antd';
 
 import FormBoard from './modules/FormBoard';
@@ -16,23 +15,12 @@ export default function Board({ children }: BoardProps) {
           <Form className="w-[400px] text-center mt-2">
             <div className="mb-4 w-full">
               <Form.Item>
-                <Input
-                  size="large"
-                  placeholder="Buscar usuario"
-                />
+                <Input size="large" placeholder="Buscar usuario" />
               </Form.Item>
             </div>
           </Form>
         </div>
-        <Popover
-          placement="leftTop"
-          trigger="click"
-          content={
-            <FormBoard
-            />
-
-          }
-        >
+        <Popover placement="leftTop" trigger="click" content={<FormBoard />}>
           <Button
             size="large"
             className=" text-base bg-main_blue_dark  text-main_white rounded-lg mb-4  font-medium"

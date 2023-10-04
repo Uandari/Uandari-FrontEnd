@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import DownloadIcon from '@assets/icons/downloadIcon.svg';
 import { goalsStatus } from '@mocks/GoalsStatus';
 import { DatePicker, DatePickerProps } from 'antd';
 import dayjs from 'dayjs';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import DownloadIcon from '@assets/icons/downloadIcon.svg';
 
 export type GoalReportProps = {
   year: string;
@@ -63,7 +63,7 @@ function GoalsReport({ year, setYear }: GoalReportProps) {
     }
   };
   return (
-    <div id='charts'>
+    <div id="charts">
       <div className="flex justify-between pb-8">
         <h3 className="text-xl font-medium pb-3">Reporte de metas</h3>
         <DatePicker
