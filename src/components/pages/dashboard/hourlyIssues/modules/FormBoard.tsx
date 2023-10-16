@@ -95,13 +95,11 @@ function FormBoard() {
     }
   }, [availabilityProblems, categoryType, performaceProblems, qualityProblems]);
   return (
-    <div className="w-[365px]">
-      <div className="px-5 pt-3">
-        <p className="text-main_text_color font-medium">Turno A</p>
-        <div className="flex items-center gap-1">
-          <img src={CalendarIcon} alt="calendar-icon" />
-          <p className="text-main_text_color"> {formattedDate} </p>
-        </div>
+    <div className="w-[400px] px-5 pt-4">
+      <p className="text-main_text_color font-medium">Turno A</p>
+      <div className="flex items-center gap-1">
+        <img src={CalendarIcon} alt="calendar-icon" />
+        <p className="text-main_text_color"> {formattedDate} </p>
       </div>
       <div className="flex items-center gap-2">
         <img src={CategoryIcon} alt="icon-category" />
@@ -120,10 +118,7 @@ function FormBoard() {
       <Form.Item>
         <div className="flex items-center gap-2">
           <img src={ProblemTypeIcon} alt="problemType-icon" />
-          <Select
-            defaultValue={arrayProblems[0].label}
-            options={arrayProblems}
-          />
+          <Select options={arrayProblems} placeholder="Tipo de problema" />
         </div>
       </Form.Item>
       <Form.Item>
@@ -149,7 +144,7 @@ function FormBoard() {
         </div>
       </Form.Item>
       <Form.Item>
-        <div className="flex items-start gap-2">
+        <div className="flex items-center gap-2 ">
           <img src={ClockIcon} alt="problemType-icon" />
           <DatePicker
             placeholder="Fecha estimada de solución"
@@ -158,7 +153,7 @@ function FormBoard() {
         </div>
       </Form.Item>
       <Form.Item>
-        <div className="flex items-start gap-2">
+        <div className="flex items-center gap-2 ">
           <img src={PeopleIcon} alt="problemType-icon" />
           <Select
             showSearch

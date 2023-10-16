@@ -1,4 +1,4 @@
 export interface Line {
-	id: number;
-	lineName: string;
+  id: number;
+  lineName: string;
 }

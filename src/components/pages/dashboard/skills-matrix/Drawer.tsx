@@ -98,7 +98,7 @@ export default function DrawerComponent({
           <Select
             className="col-span-2"
             showSearch
-            placeholder="Seleccionar habilidad"
+            placeholder="Habilidades"
             optionFilterProp="children"
             filterOption={(input, option) => {
               if (option) {
@@ -113,7 +113,6 @@ export default function DrawerComponent({
               }
               return false; // No aplicar filtro si input u option no son cadenas de texto
             }}
-            value={selectedSkill}
             onChange={(value) => setSelectedSkill(value)}
           >
             {skillsLabels.map((skill) => (
@@ -125,9 +124,8 @@ export default function DrawerComponent({
 
           <Select
             className="col-span-2"
-            placeholder="Seleccionar nivel"
+            placeholder="Nivel de habilidad"
             optionFilterProp="children"
-            value={selectedLevel} // Valor seleccionado para nivel
             onChange={(value) => setSelectedLevel(value)}
           >
             {levelsLabels.map((level) => (

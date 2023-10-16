@@ -10,9 +10,9 @@ function Goals() {
   const [year, setYear] = useState('');
 
   return (
-    <div className="flex flex-1 flex-col">
-      <Topbar title="Metas" variant="secondary" />
-      <div className="flex flex-1 overflow-y-auto bg-main_white border-t border-main_color">
+    <div className="flex flex-1 flex-col bg-white">
+      <Topbar title="Metas" underline />
+      <div className="flex flex-1 overflow-y-auto">
         <div className="w-3/5">
           {monthGoals.map((month) => {
             return (

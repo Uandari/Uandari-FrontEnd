@@ -2,20 +2,16 @@
 import editIcon from '@icons/editIcon.svg';
  */
 export type RowBoardProps = {
-  cellNumber: string,
-  line: number,
-
+  cellNumber: string;
+  line: number;
 };
 
-export default function RowBoard({
-  cellNumber,
-  line
-}: RowBoardProps) {
+export default function RowBoard({ cellNumber, line }: RowBoardProps) {
   return (
     <div className="grid grid-cols-4  border-b border-main_color h-24 ">
-       {/* Control number */}
-       <div className="flex items-center justify-start  pl-28 text-center text-main_gray">
-        {cellNumber }
+      {/* Control number */}
+      <div className="flex items-center justify-start  pl-28 text-center text-main_gray">
+        {cellNumber}
       </div>
       {/* Control number */}
       <div className="flex items-center justify-start  pl-28 text-center text-main_gray">

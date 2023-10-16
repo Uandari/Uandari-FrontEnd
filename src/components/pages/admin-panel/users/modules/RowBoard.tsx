@@ -53,8 +53,3 @@ export default function RowBoard({
     </div>
   );
 }
-
-RowBoard.defaultProps = {
-  onUpdate: undefined,
-  onDelete: undefined,
-};

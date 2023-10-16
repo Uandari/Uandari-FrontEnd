@@ -102,7 +102,7 @@ function Pareto() {
 
   return (
     <div className="flex flex-col h-full flex-1 pb-6">
-      <div className="w-full flex justify-between px-4">
+      <div className="w-full flex justify-between px-4 pb-4 border-b ">
         <DatePicker
           suffixIcon={null}
           onChange={onChangeDate}
@@ -125,8 +125,12 @@ function Pareto() {
         </button>
       </div>
 
-      <div id="charts" className="w-full flex flex-col px-4 mt-4 gap-y-12">
-        <div>
+      <div
+        id="charts"
+        className="w-full flex flex-col px-4 gap-y-12 overflow-y-auto"
+        style={{ maxHeight: '77vh' }}
+      >
+        <div className="mt-4">
           <Chart
             key={1}
             title="Pareto temas de Volumen / Disponibilidad"

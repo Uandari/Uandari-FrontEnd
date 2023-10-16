@@ -8,7 +8,7 @@ function HourlyIssues() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="flex flex-1 border">
+    <div className="flex flex-1">
       {/* Justo aquí se cambia el ancho */}
       <div
         className={`transition-all duration-300 ${
@@ -20,9 +20,10 @@ function HourlyIssues() {
       <div className="flex flex-1 flex-col bg-white">
         <div className="z-[1000] ">
           <Topbar
-            variant="primary"
             title="Registro de problemas hora por hora"
             issues={4}
+            date
+            underline
           />
         </div>
         <div className="flex-1 overflow-y-auto">

@@ -11,5 +11,4 @@ export const shiftsLabels = [
     value: 'Turno B',
     label: 'Turno B',
   },
-  
 ];

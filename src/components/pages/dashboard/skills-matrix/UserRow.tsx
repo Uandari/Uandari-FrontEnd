@@ -58,7 +58,7 @@ export default function UserRow({
             type="button"
             className="bg-main_blue_dark px-6 py-1 text-main_white w-[200px] rounded-lg"
           >
-            Editar habiliades
+            Editar habilidades
           </button>
         </div>
         <div>

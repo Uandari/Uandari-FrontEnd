@@ -8,10 +8,10 @@ function Board() {
   const mockData = EscalatedIssuesMock;
   return (
     <div className="h-full grid grid-rows-[7]">
-      <div className="row-span-1 border-t border-main_color">
+      <div className="row-span-1">
         <HeadBoard />
       </div>
-      <div className="overflow-y-auto row-span-6 border hide-scrollbar ">
+      <div className="overflow-y-auto row-span-6 hide-scrollbar ">
         {mockData.map((escalatedIssue: EscalatedIssues) => (
           <RowBoard
             afecta5s={escalatedIssue.afecta5s}

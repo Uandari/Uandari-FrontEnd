@@ -1,7 +1,5 @@
-import { UsersListMock } from '@mocks/Users';
-import Board from '../../board';
-import RowBoard from '../RowBoard';
 import imagenUsuario1 from '@assets/usersIcons/1.png';
+import imagenUsuario10 from '@assets/usersIcons/10.png';
 import imagenUsuario2 from '@assets/usersIcons/2.png';
 import imagenUsuario3 from '@assets/usersIcons/3.png';
 import imagenUsuario4 from '@assets/usersIcons/4.png';
@@ -10,7 +8,10 @@ import imagenUsuario6 from '@assets/usersIcons/6.png';
 import imagenUsuario7 from '@assets/usersIcons/7.png';
 import imagenUsuario8 from '@assets/usersIcons/8.png';
 import imagenUsuario9 from '@assets/usersIcons/9.png';
-import imagenUsuario10 from '@assets/usersIcons/10.png';
+import { UsersListMock } from '@mocks/Users';
+
+import Board from '../../board';
+import RowBoard from '../RowBoard';
 
 export default function AdministratorsTab() {
   const userImages = [
@@ -32,7 +33,6 @@ export default function AdministratorsTab() {
     return userImages[randomIndex];
   }
 
-
   const roleMap: Record<string, string> = {
     1: 'Gerentes',
     2: 'Administradores',
@@ -43,16 +43,15 @@ export default function AdministratorsTab() {
 
   return (
     <Board>
-      {UsersListMock
-        .filter(user => user.idRole === 2)
-        .map((user) => (
-          <RowBoard
-            key={user.controlNumber}
-            userName={`${user.name} ${user.lastnames}`}
-            controlNumber={user.controlNumber}
-            role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
-            imageUrl={getRandomImageUrl()}
-          />
-        ))}
-    </Board>)
+      {UsersListMock.filter((user) => user.idRole === 2).map((user) => (
+        <RowBoard
+          key={user.controlNumber}
+          userName={`${user.name} ${user.lastnames}`}
+          controlNumber={user.controlNumber}
+          role={roleMap[user.idRole.toString()] || 'Rol predeterminado'}
+          imageUrl={getRandomImageUrl()}
+        />
+      ))}
+    </Board>
+  );
 }
