@@ -1,11 +1,5 @@
 import { useState } from 'react';
 
-import Topbar from '@components/layout/topbar';
-import { shiftsLabels } from '@mocks/Shifts';
-import { usersSkills } from '@mocks/UsersSkills';
-import { Select } from 'antd';
-
-import UserRow from './UserRow';
 import imagenUsuario1 from '@assets/usersIcons/user_1.png';
 import imagenUsuario2 from '@assets/usersIcons/user_10.png';
 import imagenUsuario3 from '@assets/usersIcons/user_11.png';
@@ -16,7 +10,12 @@ import imagenUsuario7 from '@assets/usersIcons/user_2.png';
 import imagenUsuario8 from '@assets/usersIcons/user_3.png';
 import imagenUsuario9 from '@assets/usersIcons/user_4.png';
 import imagenUsuario10 from '@assets/usersIcons/user_5.png';
+import Topbar from '@components/layout/topbar';
+import { shiftsLabels } from '@mocks/Shifts';
+import { usersSkills } from '@mocks/UsersSkills';
+import { Select } from 'antd';
 
+import UserRow from './UserRow';
 
 const userImages = [
   imagenUsuario1,
