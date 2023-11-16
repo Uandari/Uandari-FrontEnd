@@ -128,11 +128,11 @@ export default function Dashboard() {
             title="Plan de puntos"
             path={`${DASHBOARD_MAIN}${POINTS_PLAN}`}
           />
-          <SidebarTab
+          {/*           <SidebarTab
             icon={StandarWorkIcon}
             title="Hojas de trabajo estándar"
             path={`${DASHBOARD_MAIN}${STANDARD_WORKSHEETS}`}
-          />
+          /> */}
         </Sidebar>
         <Outlet />
       </div>
