@@ -2,11 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector, RootState } from '@app/store';
 import PlusIcon from '@assets/icons/plus.svg';
-import useUsers from '@hooks/useUsers';
-import { Administrator, AdministratorsFeteched } from '@interfaces/Admin';
-import { getUsers } from '@redux/thunks/userThunk';
-import { User, UserFetched } from '@interfaces/User';
-import { UsersListMock } from '@mocks/Users';
 import imagenUsuario1 from '@assets/usersIcons/user_1.png';
 import imagenUsuario2 from '@assets/usersIcons/user_10.png';
 import imagenUsuario3 from '@assets/usersIcons/user_11.png';
@@ -17,6 +12,11 @@ import imagenUsuario7 from '@assets/usersIcons/user_2.png';
 import imagenUsuario8 from '@assets/usersIcons/user_3.png';
 import imagenUsuario9 from '@assets/usersIcons/user_4.png';
 import imagenUsuario10 from '@assets/usersIcons/user_5.png';
+import useUsers from '@hooks/useUsers';
+import { Administrator, AdministratorsFeteched } from '@interfaces/Admin';
+import { User, UserFetched } from '@interfaces/User';
+import { UsersListMock } from '@mocks/Users';
+import { getUsers } from '@redux/thunks/userThunk';
 
 import DrawerComponent from './Drawer';
 import RowBoard from './RowBoard';
@@ -78,7 +78,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div >
+    <div>
       <div className="flex justify-between items-center px-4 pb-4 pt-0 border-b">
         <input
           placeholder="Buscar línea por nombre"
@@ -96,7 +96,9 @@ export default function AdminPage() {
 
       <div className="grid grid-cols-3 border-b py-2 px-5 border-main_color">
         <div className="font-medium text-main_text_color">Usuario</div>
-        <div className="font-medium text-main_text_color">Número de control</div>
+        <div className="font-medium text-main_text_color">
+          Número de control
+        </div>
         <div className="font-medium text-main_text_color">Rol</div>
       </div>
       {UsersListMock.map((user: UserFetched) => {

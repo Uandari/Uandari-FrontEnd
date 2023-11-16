@@ -17,9 +17,9 @@ export const cellsLabels = [
 
 export const initialCellInfo = {
   id: 0,
-	cellName: '',
-	teamLeader: '',
-	line: '',
+  cellName: '',
+  teamLeader: '',
+  line: '',
 };
 
 export const CellsListMock: Cell[] = [

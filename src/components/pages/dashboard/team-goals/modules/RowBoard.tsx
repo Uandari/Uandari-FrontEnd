@@ -28,7 +28,7 @@ export default function RowBoard({ month, result }: RowBoardProps) {
   };
 
   return (
-    <div className=" border-main_color overflow-x-scroll">
+    <div className=" border-main_color">
       <div className="w-full border-t h-8 flex">
         <div className="w-[280px] border-r" />
         <div className="flex flex-1">

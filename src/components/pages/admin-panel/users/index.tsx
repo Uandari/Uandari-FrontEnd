@@ -1,8 +1,8 @@
 import Topbar from '@components/layout/topbar';
 import { Tabs, TabsProps } from 'antd';
+
 import AdminPage from './admin-tab';
 import UserPage from './user-tab';
-
 
 export default function UsersList() {
   const pages: TabsProps['items'] = [
